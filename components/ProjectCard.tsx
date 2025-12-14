@@ -11,15 +11,17 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.div
-      className="bg-secondary p-6 rounded-lg cursor-pointer"
+      className="bg-secondary p-6 rounded-lg cursor-pointer relative border border-transparent"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{
         scale: 1.03,
-        boxShadow: "0 20px 25px -5px rgba(0, 188, 212, 0.1), 0 10px 10px -5px rgba(0, 188, 212, 0.04)"
+        borderColor: 'rgba(0, 188, 212, 0.6)',
+        boxShadow: '0 0 30px rgba(0, 188, 212, 0.4), 0 0 60px rgba(0, 188, 212, 0.2)',
       }}
       transition={{
-        duration: 0.6,
+        duration: 0.3,
+        ease: 'easeOut',
         delay: index * 0.1
       }}
     >
@@ -46,7 +48,25 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent hover:text-accent/80 transition-colors duration-200 flex items-center gap-1"
+            className="text-accent hover:text-accent/80 transition-colors duration-200 flex items-center gap-1 px-2 py-1 rounded border"
+            style={{ borderWidth: '1px' }}
+            animate={{
+              borderColor: [
+                'rgba(59, 130, 246, 0.5)',
+                'rgba(59, 130, 246, 0.8)',
+                'rgba(59, 130, 246, 0.5)',
+              ],
+              boxShadow: [
+                '0 0 8px rgba(59, 130, 246, 0.2)',
+                '0 0 16px rgba(59, 130, 246, 0.4)',
+                '0 0 8px rgba(59, 130, 246, 0.2)',
+              ],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -61,7 +81,25 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent hover:text-accent/80 transition-colors duration-200 flex items-center gap-1"
+            className="text-accent hover:text-accent/80 transition-colors duration-200 flex items-center gap-1 px-2 py-1 rounded border"
+            style={{ borderWidth: '1px' }}
+            animate={{
+              borderColor: [
+                'rgba(59, 130, 246, 0.5)',
+                'rgba(59, 130, 246, 0.8)',
+                'rgba(59, 130, 246, 0.5)',
+              ],
+              boxShadow: [
+                '0 0 8px rgba(59, 130, 246, 0.2)',
+                '0 0 16px rgba(59, 130, 246, 0.4)',
+                '0 0 8px rgba(59, 130, 246, 0.2)',
+              ],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

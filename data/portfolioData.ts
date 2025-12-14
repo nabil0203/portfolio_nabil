@@ -87,7 +87,8 @@ export const skillsData: Skill[] = [
   { name: 'VS Code', category: 'Tools & Technologies' },
 
   // Other
-  { name: 'Data Structures & Algorithms', category: 'Other' },
+  { name: 'Data Structures', category: 'Other' },
+  { name: 'Algorithms', category: 'Other' },
   { name: 'OOP', category: 'Other' },
   { name: 'Machine Learning', category: 'Other' }
 ]
@@ -134,7 +135,7 @@ export const certificationsData: string[] = [
 ]
 
 export const hobbiesData: string[] = [
-  'Following global geopolitical trends and international affairs'
+  'Following global geopolitical trends and international affairs',
 ]
 
 export const volunteerExperiencesData: VolunteerExperience[] = [

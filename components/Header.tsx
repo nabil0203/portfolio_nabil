@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 export default function Header() {
   const [activeSection, setActiveSection] = useState('')
   const [isVisible, setIsVisible] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId) // Set active immediately on click
@@ -13,6 +14,11 @@ export default function Header() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
+  }
+
+  const scrollToHero = () => {
+    setActiveSection('') // Clear active section when going to hero
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const navItems = [
@@ -26,10 +32,9 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
-      const viewportHeight = window.innerHeight
 
-      // If we're in the hero section area (top 80% of viewport), hide navigation and clear active section
-      if (scrollPosition < viewportHeight * 0.8) {
+      // If we're at the very top (within first 50px), hide navigation and clear active section
+      if (scrollPosition < 50) {
         setActiveSection('')
         setIsVisible(false)
         return
@@ -79,31 +84,34 @@ export default function Header() {
         y: isVisible ? 0 : -100
       }}
       transition={{
-        duration: 0.5,
+        duration: 0.2,
         ease: "easeOut"
       }}
       style={{
         pointerEvents: isVisible ? 'auto' : 'none'
       }}
     >
-      <nav className="w-full px-6 py-4">
+      <nav className="w-full px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex justify-between items-center">
-          <motion.div
-            className="text-xl font-bold text-accent"
+          <motion.button
+            onClick={scrollToHero}
+            className="text-base sm:text-lg md:text-xl font-bold text-accent cursor-pointer"
             whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}
           >
             Chowdhury Nabil Ahmed
-          </motion.div>
+          </motion.button>
 
-          <div className="flex space-x-6">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-4 lg:space-x-6">
             {navItems.map((item) => {
               const isActive = activeSection === item.id
               return (
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative px-3 py-2 text-sm font-medium tracking-wide uppercase transition-all duration-300 ${
+                  className={`relative px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium tracking-wide uppercase transition-all duration-300 ${
                     isActive
                       ? 'text-accent'
                       : 'text-text-secondary hover:text-text-primary'
@@ -127,7 +135,76 @@ export default function Header() {
               )
             })}
           </div>
+
+          {/* Mobile Menu Button */}
+          <motion.button
+            className="md:hidden text-text-primary p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {isMobileMenuOpen ? (
+                <path d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </motion.button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden mt-4 pb-4 border-t border-secondary/50 pt-4"
+          >
+            <div className="flex flex-col space-y-2">
+              {navItems.map((item) => {
+                const isActive = activeSection === item.id
+                return (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => {
+                      scrollToSection(item.id)
+                      setIsMobileMenuOpen(false)
+                    }}
+                    className={`relative px-4 py-2 text-sm font-medium text-left transition-all duration-300 ${
+                      isActive
+                        ? 'text-accent'
+                        : 'text-text-secondary hover:text-text-primary'
+                    }`}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {item.label}
+                    {isActive && (
+                      <motion.div
+                        className="absolute left-0 top-0 bottom-0 w-1 bg-accent"
+                        layoutId="mobileActiveIndicator"
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 30
+                        }}
+                      />
+                    )}
+                  </motion.button>
+                )
+              })}
+            </div>
+          </motion.div>
+        )}
       </nav>
     </motion.header>
   )

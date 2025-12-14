@@ -1,3 +1,6 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import MotionDiv from './MotionDiv'
 import { skillsData } from '@/data/portfolioData'
 
@@ -23,7 +26,17 @@ export default function SkillsSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Object.entries(skillGroups).map(([category, skills], groupIndex) => (
             <MotionDiv key={category} delay={groupIndex * 0.1}>
-              <div className="bg-secondary p-6 rounded-lg">
+              <motion.div
+                className="bg-secondary p-6 rounded-lg relative border border-transparent"
+                whileHover={{
+                  borderColor: 'rgba(0, 188, 212, 0.6)',
+                  boxShadow: '0 0 30px rgba(0, 188, 212, 0.4), 0 0 60px rgba(0, 188, 212, 0.2)',
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: 'easeOut',
+                }}
+              >
                 <h3 className="text-xl font-semibold mb-4 text-accent">{category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {skills.map((skill, skillIndex) => (
@@ -38,7 +51,7 @@ export default function SkillsSection() {
                     </MotionDiv>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             </MotionDiv>
           ))}
         </div>

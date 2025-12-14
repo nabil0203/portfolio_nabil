@@ -1,15 +1,23 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, Transition } from 'framer-motion'
 import ScrollIndicator from './ScrollIndicator'
 import { Github, FileText, Linkedin } from 'lucide-react' // Using Lucide icons
+import React from 'react';
 
-// --- A. Componentized Button for Reusability ---
-const HeroButton = ({ href, children, Icon }) => (
+// This explicitly tells TypeScript the types of the destructured props
+interface HeroButtonProps {
+  href: string;
+  children: React.ReactNode;
+  Icon?: React.ElementType; 
+}
+
+
+// --- A. Componentize Button for Reusability ---
+const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon }) => (
   <a
     href={href}
     target="_blank"
-    // BEST PRACTICE: Security measure for target="_blank"
     rel="noopener noreferrer"
     className="inline-flex items-center gap-2 px-6 py-3
                rounded-lg border border-white/30
@@ -22,11 +30,11 @@ const HeroButton = ({ href, children, Icon }) => (
 )
 
 // --- B. Centralized Classes for Readability ---
-const glowTransition = {
+const glowTransition: Transition = { 
   duration: 3,
   repeat: Infinity,
-  repeatType: "reverse", // Smoother pulse animation
-  ease: 'easeInOut',
+  repeatType: "reverse", 
+  ease: 'easeInOut', 
 }
 
 const mainContentGlow = {
@@ -57,7 +65,7 @@ export default function HeroSection() {
       <motion.div
         className="relative z-10 max-w-5xl mx-auto p-8 md:p-16 bg-secondary/30 border rounded-xl backdrop-blur-sm"
         style={{ borderWidth: '1px' }}
-        animate={mainContentGlow} 
+        animate={mainContentGlow}
         transition={glowTransition}
       >
         {/* Name */}

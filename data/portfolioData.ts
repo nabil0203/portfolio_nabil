@@ -53,7 +53,7 @@ export const educationData = [
     degree: 'BSc in Software Engineering',
     institution: 'Daffodil International University',
     gpa: '3.91', 
-    graduation: 'Expected Graduation: 2025',
+    graduation: 'Expected Graduation: 2027',
     description: 'Specializing in Software Engineering with focus on Data Structures, Algorithms, and Web Development.',
   },
 ];

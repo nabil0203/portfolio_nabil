@@ -42,7 +42,7 @@ export default function AboutSection() {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-2">
                     {edu.gpa && (
                       <span className="inline-block px-3 py-1 text-sm font-bold rounded bg-accent/10 text-accent border border-accent">
-                        GPA: {edu.gpa}
+                        CGPA: {edu.gpa}
                       </span>
                     )}
                     

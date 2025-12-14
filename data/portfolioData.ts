@@ -39,7 +39,7 @@ export interface VolunteerExperience {
 
 
 // Contact Information
-export const contactData: Contact = {
+export const contactData: Contact = { 
   email: 'nabilahmed0203@gmail.com',
   phone: '+8801709548627',
   location: 'Dhamrai, Dhaka, Bangladesh',
@@ -48,14 +48,15 @@ export const contactData: Contact = {
 }
 
 // Education Data
-export const educationData: Education[] = [
+export const educationData = [
   {
-    degree: 'Bachelor of Science in Computer Science',
+    degree: 'BSc in Software Engineering',
     institution: 'Daffodil International University',
+    gpa: '3.91', 
     graduation: 'Expected Graduation: 2025',
-    description: 'Specializing in Software Engineering with focus on Data Structures, Algorithms, and Web Development'
-  }
-]
+    description: 'Specializing in Software Engineering with focus on Data Structures, Algorithms, and Web Development.',
+  },
+];
 
 // Skills Data
 export const skillsData: Skill[] = [
@@ -127,7 +128,7 @@ export const projectsData: Project[] = [
 // Additional Information Data
 export const languagesData: string[] = [
   'English (Proficient)',
-  'Bengali (Native)'
+  'Bengali (Native)',
 ]
 
 export const certificationsData: string[] = [

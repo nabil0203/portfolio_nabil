@@ -7,7 +7,7 @@ export default function ProjectsSection() {
     <section id="projects" className="py-20 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         <MotionDiv>
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-text-primary">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-16 text-center text-text-primary relative group">
             Featured Projects
           </h2>
         </MotionDiv>

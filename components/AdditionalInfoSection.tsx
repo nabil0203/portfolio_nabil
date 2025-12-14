@@ -4,7 +4,7 @@ export default function AdditionalInfoSection() {
   return (
     <section id="additional-info" className="scroll-mt-24">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-text-primary">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-16 text-center text-text-primary relative group">
           Additional Information
         </h2>
 

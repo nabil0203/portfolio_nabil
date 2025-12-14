@@ -2,39 +2,38 @@
 
 import { motion, Transition } from 'framer-motion'
 import ScrollIndicator from './ScrollIndicator'
-import { Github, FileText, Linkedin } from 'lucide-react' // Using Lucide icons
+import { Github, FileText, Linkedin } from 'lucide-react'
 import React from 'react';
 
-// This explicitly tells TypeScript the types of the destructured props
 interface HeroButtonProps {
   href: string;
   children: React.ReactNode;
-  Icon?: React.ElementType; 
+  Icon?: React.ElementType;
 }
 
 
-// --- A. Componentize Button for Reusability ---
+// --- A. Componentize Button for Reusability (No changes needed here) ---
 const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon }) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 px-6 py-3
-               rounded-lg border border-white/30
-               text-text-primary hover:bg-white/10 transition
-               whitespace-nowrap" // Prevents wrapping on small screens
+    className="inline-flex items-center justify-center gap-2 px-6 py-3
+    rounded-lg border border-white/30
+    text-text-primary hover:bg-white/10 transition
+    w-full sm:w-auto" // **IMPROVEMENT: Full width on mobile, auto width on small screens and up**
   >
     {Icon && <Icon size={20} />}
     {children}
   </a>
 )
 
-// --- B. Centralized Classes for Readability ---
-const glowTransition: Transition = { 
+// --- B. Centralized Classes for Readability (No changes needed here) ---
+const glowTransition: Transition = {
   duration: 3,
   repeat: Infinity,
-  repeatType: "reverse", 
-  ease: 'easeInOut', 
+  repeatType: "reverse",
+  ease: 'easeInOut',
 }
 
 const mainContentGlow = {
@@ -52,51 +51,53 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] flex items-center justify-center text-center
-                 bg-gradient-to-br from-primary via-primary to-secondary/60 overflow-hidden"
+      // **IMPROVEMENT: Use min-h-screen for full viewport height on initial load**
+      className="relative min-h-screen flex items-center justify-center text-center
+      bg-gradient-to-br from-primary via-primary to-secondary/60 overflow-hidden px-4" // **IMPROVEMENT: Added horizontal padding `px-4` to the section itself**
     >
       {/* Soft ambient glow */}
       <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent" />
 
-      {/* Floating blur accents - Consider a slight animation here too! */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 -right-32 w-96 h-96 bg-secondary/30 rounded-full blur-3xl" />
+      {/* Floating blur accents - Reduced blur size for less obstruction on smaller screens */}
+      <div className="absolute -top-16 -left-16 w-64 h-64 bg-accent/20 rounded-full blur-2xl" />
+      <div className="absolute bottom-0 -right-16 w-64 h-64 bg-secondary/30 rounded-full blur-2xl" />
 
       <motion.div
-        className="relative z-10 max-w-5xl mx-auto p-8 md:p-16 bg-secondary/30 border rounded-xl backdrop-blur-sm"
+        // **IMPROVEMENT: Adjusted padding to be smaller on mobile (`p-6` vs `p-8/p-16`)**
+        className="relative z-10 max-w-5xl mx-auto p-6 md:p-16 bg-secondary/30 border rounded-xl backdrop-blur-sm"
         style={{ borderWidth: '1px' }}
         animate={mainContentGlow}
         transition={glowTransition}
       >
-        {/* Name */}
+        {/* Name: Adjusted font sizes to scale down more gracefully */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
-          className="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight pt-2 pb-1
-                     bg-gradient-to-b from-gray-100 via-gray-200 to-gray-400
-                     bg-clip-text text-transparent"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 md:mb-6 leading-tight
+          bg-gradient-to-b from-gray-100 via-gray-200 to-gray-400
+          bg-clip-text text-transparent pt-6 sm:pt-4"
         >
           Chowdhury Nabil Ahmed
         </motion.h1>
 
-        {/* Role */}
+        {/* Role: Adjusted font size to scale down */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-xl md:text-2xl text-accent mb-8 font-medium"
+          className="text-lg md:text-2xl text-accent mb-6 font-medium"
         >
           Majoring in Software Engineering
         </motion.h2>
 
-        {/* Description */}
+        {/* Description: Adjusted font size to scale down */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-base md:text-xl text-text-secondary leading-relaxed
-                     max-w-4xl mx-auto mb-10"
+          className="text-sm md:text-xl text-text-secondary leading-relaxed
+          max-w-4xl mx-auto mb-8 md:mb-10"
         >
           A Computer Science undergraduate specializing in Software Engineering,
           skilled in Data Structures and Algorithms using C++ and OOP principles.
@@ -104,7 +105,7 @@ export default function HeroSection() {
           skills in Web Development and Machine Learning with Python.
         </motion.p>
 
-        {/* Buttons */}
+        {/* Buttons: Ensure stacking on mobile by making `flex-col` the default */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

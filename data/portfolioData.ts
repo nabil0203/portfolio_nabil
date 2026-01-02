@@ -140,7 +140,7 @@ export const projectsData: Project[] = [
     title: 'Pharm Ease',
     description: 'A comprehensive pharmacy management system designed to streamline medication dispensing, inventory management, and patient records. Features include prescription processing, stock alerts, and user-friendly interfaces for both pharmacists and patients.',
     tools: ['React', 'Node.js', 'MongoDB', 'Express.js'],
-    githubUrl: 'https://github.com/nabil0203/pharm-ease',
+    githubUrl: 'https://github.com/nabil0203/Pharm_Ease',
     featured: true
   },
   
@@ -149,7 +149,7 @@ export const projectsData: Project[] = [
     title: 'Scholar Shelf',
     description: 'An educational platform connecting students with tutors and study resources. Includes features for scheduling sessions, resource sharing, progress tracking, and interactive learning tools to enhance the educational experience.',
     tools: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/nabil0203/scholar-shelf',
+    githubUrl: 'https://github.com/nabil0203/Scholar_Shelf',
     featured: true
   }
   

@@ -1,5 +1,19 @@
 // Portfolio Data Types and Content
 
+export interface PersonalInfo {
+  name: string
+  title: string
+  description: string
+}
+
+export interface SiteMetadata {
+  title: string
+  description: string
+  keywords: string[]
+  url: string
+  siteName: string
+}
+
 export interface Contact {
   email: string
   phone: string
@@ -12,6 +26,7 @@ export interface Education {
   degree: string
   institution: string
   graduation: string
+  gpa?: string
   description?: string
 }
 
@@ -37,6 +52,21 @@ export interface VolunteerExperience {
   description?: string
 }
 
+// Personal Information
+export const personalInfo: PersonalInfo = {
+  name: 'Chowdhury Nabil Ahmed',
+  title: 'Majoring in Software Engineering',
+  description: 'A Computer Science undergraduate specializing in Software Engineering, skilled in Data Structures and Algorithms using C++ and OOP principles. Solved 400+ problems on major online platforms and currently expanding skills in Web Development and Machine Learning with Python.'
+}
+
+// Site Metadata
+export const siteMetadata: SiteMetadata = {
+  title: 'Chowdhury Nabil Ahmed - Portfolio',
+  description: 'Computer Science Undergraduate specializing in Software Engineering, skilled in Data Structures and Algorithms, Web Development, and Machine Learning.',
+  keywords: ['Chowdhury Nabil Ahmed', 'Software Engineer', 'Computer Science', 'Web Development', 'Machine Learning', 'Portfolio'],
+  url: 'https://nabil0203.vercel.app',
+  siteName: 'Nabil Portfolio'
+}
 
 // Contact Information
 export const contactData: Contact = { 

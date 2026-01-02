@@ -26,12 +26,13 @@ export default function MotionDiv({ children, className, delay }: MotionDivProps
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.1 }}
       variants={variants}
       transition={{
-        duration: 0.6,
-        ease: "easeOut",
-        delay: delay || 0
+        type: "spring",
+        stiffness: 120,
+        damping: 20,
+        delay: delay || 0.1
       }}
     >
       {children}

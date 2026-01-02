@@ -3,12 +3,13 @@
 import { motion, Transition } from 'framer-motion'
 import ScrollIndicator from './ScrollIndicator'
 import { Github, FileText, Linkedin } from 'lucide-react'
-import React from 'react';
+import { ReactNode, ElementType } from 'react'
+import { personalInfo } from '@/data/portfolioData'
 
 interface HeroButtonProps {
   href: string;
-  children: React.ReactNode;
-  Icon?: React.ElementType;
+  children: ReactNode;
+  Icon?: ElementType;
 }
 
 
@@ -78,7 +79,7 @@ export default function HeroSection() {
           bg-gradient-to-b from-gray-100 via-gray-200 to-gray-400
           bg-clip-text text-transparent pt-6 sm:pt-4"
         >
-          Chowdhury Nabil Ahmed
+          {personalInfo.name}
         </motion.h1>
 
         {/* Role: Adjusted font size to scale down */}
@@ -88,7 +89,7 @@ export default function HeroSection() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-lg md:text-2xl text-accent mb-6 font-medium"
         >
-          Majoring in Software Engineering
+          {personalInfo.title}
         </motion.h2>
 
         {/* Description: Adjusted font size to scale down */}
@@ -99,10 +100,7 @@ export default function HeroSection() {
           className="text-sm md:text-xl text-text-secondary leading-relaxed
           max-w-4xl mx-auto mb-8 md:mb-10"
         >
-          A Computer Science undergraduate specializing in Software Engineering,
-          skilled in Data Structures and Algorithms using C++ and OOP principles.
-          Solved 400+ problems on major online platforms and currently expanding
-          skills in Web Development and Machine Learning with Python.
+          {personalInfo.description}
         </motion.p>
 
         {/* Buttons: Ensure stacking on mobile by making `flex-col` the default */}

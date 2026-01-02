@@ -63,6 +63,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       animate={{ opacity: 1, y: 0 }}
       variants={cardHoverVariants}
       whileHover="hover"
+      transition={{ duration: 0.2 }}
     >
       {/* 1. Project Image/Thumbnail (New) */}
       {project.imageUrl && (
@@ -114,6 +115,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             animate="pulse"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
             aria-label={`View ${project.title} source code on GitHub`}
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -133,6 +135,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             animate="pulse"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
             aria-label={`View live demonstration of ${project.title}`}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

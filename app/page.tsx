@@ -8,6 +8,7 @@ import ProjectsSection from '@/components/ProjectsSection'
 import AdditionalInfoSection from '@/components/AdditionalInfoSection'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
+import BackToTop from '@/components/BackToTop'
 
 export default function Home() {
   return (
@@ -18,13 +19,13 @@ export default function Home() {
         <MotionDiv className="py-12">
           <AboutSection />
         </MotionDiv>
-        <MotionDiv delay={0.3} className="py-12">
+        <MotionDiv className="py-12">
           <SkillsSection />
         </MotionDiv>
-        <MotionDiv delay={0.4} className="py-12">
+        <MotionDiv className="py-12">
           <ProjectsSection />
         </MotionDiv>
-        <MotionDiv delay={0.5} className="py-12">
+        <MotionDiv className="py-12">
           <AdditionalInfoSection />
         </MotionDiv>
         <MotionDiv className="py-12">
@@ -32,6 +33,7 @@ export default function Home() {
         </MotionDiv>
       </main>
       <Footer />
+      <BackToTop />
     </Layout>
   )
 }

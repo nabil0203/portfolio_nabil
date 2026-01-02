@@ -17,7 +17,7 @@ export default function AboutSection() {
         <MotionDiv>
           <div className="bg-secondary p-8 md:p-12 rounded-xl max-w-4xl mx-auto shadow-2xl">
             {/* Education Sub-Header: More prominent bottom margin */}
-            <h3 className="text-3xl font-bold mb-10 text-accent border-b border-border-color pb-3">
+            <h3 className="text-3xl font-bold mb-10 text-accent border-b border-accent/30 pb-3">
               Education
             </h3>
             
@@ -27,7 +27,7 @@ export default function AboutSection() {
                 // Added bottom padding and a separator border to each entry, except the last one
                 <div 
                   key={index} 
-                  className={`pb-8 ${index < educationData.length - 1 ? 'border-b border-border-color/50' : ''}`}
+                  className={`pb-8 ${index < educationData.length - 1 ? 'border-b border-accent/30' : ''}`}
                 >
                   
                   {/* Degree: Increased size and bolded */}

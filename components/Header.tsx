@@ -2,6 +2,15 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { personalInfo } from '@/data/portfolioData'
+
+const navItems = [
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'additional-information', label: 'Additional Information' },
+  { id: 'contact', label: 'Contact' }
+]
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState('')
@@ -20,14 +29,6 @@ export default function Header() {
     setActiveSection('') // Clear active section when going to hero
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-
-  const navItems = [
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'additional-info', label: 'Additional Information' },
-    { id: 'contact', label: 'Contact' }
-  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,7 +101,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}
           >
-            Chowdhury Nabil Ahmed
+            {personalInfo.name}
           </motion.button>
 
           {/* Desktop Navigation */}
@@ -118,6 +119,7 @@ export default function Header() {
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
                 >
                   {item.label}
                   {isActive && (
@@ -185,7 +187,9 @@ export default function Header() {
                         ? 'text-accent'
                         : 'text-text-secondary hover:text-text-primary'
                     }`}
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.2 }}
                   >
                     {item.label}
                     {isActive && (

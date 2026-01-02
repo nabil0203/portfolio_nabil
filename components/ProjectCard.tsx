@@ -58,13 +58,14 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <motion.div
-      className="bg-secondary p-8 rounded-xl shadow-xl transition-all duration-300 border border-transparent flex flex-col h-full" // Increased padding/roundness, added h-full
+      className="relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6 transition-colors flex flex-col h-full shadow-xl shadow-black/20"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      variants={cardHoverVariants}
-      whileHover="hover"
+      whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 0.08)", borderColor: "rgba(255, 255, 255, 0.2)" }}
       transition={{ duration: 0.2 }}
     >
+      {/* Subtle inner glow */}
+      <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent/10 blur-3xl rounded-full" />
       {/* 1. Project Image/Thumbnail (New) */}
       {project.imageUrl && (
         <div className="mb-6 h-48 overflow-hidden rounded-lg shadow-inner">
@@ -78,12 +79,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       )}
 
       {/* 2. Content */}
-      <h3 className="text-2xl font-bold mb-3 text-text-primary border-b border-accent/20 pb-1">
+      <h3 className="text-white font-bold text-2xl mb-2">
         {project.title}
       </h3>
 
       {/* Description now takes remaining flexible space */}
-      <p className="text-text-secondary mb-4 leading-relaxed flex-grow">
+      <p className="text-gray-300 text-sm leading-relaxed flex-grow">
         {project.description}
       </p>
 
@@ -94,7 +95,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.tools.map((tool, toolIndex) => (
             <span
               key={toolIndex}
-              className="px-3 py-1 bg-primary text-xs text-accent rounded-full border border-accent/30 shadow-sm"
+              className="text-xs font-bold tracking-wider text-accent bg-accent/5 px-2 py-1 rounded border border-accent/10"
             >
               {tool}
             </span>

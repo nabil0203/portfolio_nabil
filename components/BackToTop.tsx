@@ -7,16 +7,20 @@ export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 500) {
+    const checkScrollTop = () => {
+      // Show button if page is scrolled more than 400px
+      if (window.pageYOffset > 400) {
         setIsVisible(true)
       } else {
         setIsVisible(false)
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    // Run once on mount to handle page refreshes
+    checkScrollTop()
+
+    window.addEventListener('scroll', checkScrollTop)
+    return () => window.removeEventListener('scroll', checkScrollTop)
   }, [])
 
   const scrollToTop = () => {

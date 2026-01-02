@@ -8,10 +8,10 @@ export default function ProjectsSection() {
       <div className="max-w-7xl mx-auto px-6">
         <MotionDiv>
           <h2 className="text-3xl md:text-4xl font-extrabold mb-16 text-center text-text-primary relative group">
-            Featured Projects
+            Projects
           </h2>
         </MotionDiv>
-
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />

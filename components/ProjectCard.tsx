@@ -58,7 +58,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <motion.div
-      className="relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-6 transition-colors flex flex-col h-full shadow-xl shadow-black/20"
+      className="relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-10 transition-colors flex flex-col h-full shadow-xl shadow-black/20"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 0.08)", borderColor: "rgba(255, 255, 255, 0.2)" }}
@@ -79,23 +79,23 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       )}
 
       {/* 2. Content */}
-      <h3 className="text-white font-bold text-2xl mb-2">
+      <h3 className="text-white font-bold text-2xl mb-4">
         {project.title}
       </h3>
 
       {/* Description now takes remaining flexible space */}
-      <p className="text-gray-300 text-sm leading-relaxed flex-grow">
+      <p className="text-gray-300 text-sm mb-4 leading-relaxed flex-grow">
         {project.description}
       </p>
 
       {/* 3. Tools */}
-      <div className="mt-4 mb-6">
+      <div className="mt-4 mb-8">
         <h4 className="text-sm font-medium text-accent mb-2">Built With:</h4>
         <div className="flex flex-wrap gap-2">
           {project.tools.map((tool, toolIndex) => (
             <span
               key={toolIndex}
-              className="text-xs font-bold tracking-wider text-accent bg-accent/5 px-2 py-1 rounded border border-accent/10"
+              className="text-xs font-bold tracking-wider text-accent bg-accent/5 px-2 py-1  rounded border border-accent/10"
             >
               {tool}
             </span>

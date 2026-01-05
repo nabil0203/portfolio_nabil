@@ -139,7 +139,7 @@ export const skillsData: Skill[] = [
 export const projectsData: Project[] = [
   {
     id: 'taskify',
-    title: 'Taskify',
+    title: '✅Taskify',
     description: 'A modern task management application with intuitive drag-and-drop functionality, real-time collaboration, deadline tracking, and customizable workflows. Designed to boost productivity for individuals and teams.',
     tools: ['React', 'Firebase', 'Material-UI', 'JavaScript'],
     githubUrl: 'https://github.com/nabil0203/taskify',
@@ -148,7 +148,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 'pharm-ease',
-    title: 'Pharm Ease',
+    title: '💊Pharm Ease',
     description: 'A comprehensive pharmacy management system designed to streamline medication dispensing, inventory management, and patient records. Features include prescription processing, stock alerts, and user-friendly interfaces for both pharmacists and patients.',
     tools: ['React', 'Node.js', 'MongoDB', 'Express.js'],
     githubUrl: 'https://github.com/nabil0203/Pharm_Ease',
@@ -157,7 +157,7 @@ export const projectsData: Project[] = [
   
   {
     id: 'scholar-shelf',
-    title: 'Scholar Shelf',
+    title: '📖Scholar Shelf',
     description: 'An educational platform connecting students with tutors and study resources. Includes features for scheduling sessions, resource sharing, progress tracking, and interactive learning tools to enhance the educational experience.',
     tools: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
     githubUrl: 'https://github.com/nabil0203/Scholar_Shelf',

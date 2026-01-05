@@ -54,7 +54,7 @@ export default function HeroSection() {
       id="hero"
       // **IMPROVEMENT: Use min-h-screen for full viewport height on initial load**
       className="relative min-h-screen flex items-center justify-center text-center
-      bg-gradient-to-br from-primary via-primary to-secondary/60 overflow-hidden px-4" // **IMPROVEMENT: Added horizontal padding `px-4` to the section itself**
+      bg-gradient-to-br from-primary via-primary to-secondary/60 overflow-hidden px-4" 
     >
       {/* Soft ambient glow */}
       <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent" />

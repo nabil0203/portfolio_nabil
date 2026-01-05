@@ -84,7 +84,7 @@ export const contactData: Contact = {
 // Education Data
 export const educationData = [
   {
-    degree: 'BSc in Software Engineering',
+    degree: 'B.Sc. in Software Engineering',
     institution: 'Daffodil International University',
     gpa: '3.91', 
     graduation: 'Expected Graduation: 2027',
@@ -141,7 +141,7 @@ export const projectsData: Project[] = [
     id: 'taskify',
     title: '✅Taskify',
     description: 'A modern task management application with intuitive drag-and-drop functionality, real-time collaboration, deadline tracking, and customizable workflows. Designed to boost productivity for individuals and teams.',
-    tools: ['React', 'Firebase', 'Material-UI', 'JavaScript'],
+    tools: ['Django', 'Bootstrap', 'SQLite', 'HTML'],
     githubUrl: 'https://github.com/nabil0203/taskify',
     liveUrl: 'https://taskify-cq2h.onrender.com',
     featured: true
@@ -149,8 +149,8 @@ export const projectsData: Project[] = [
   {
     id: 'pharm-ease',
     title: '💊Pharm Ease',
-    description: 'A comprehensive pharmacy management system designed to streamline medication dispensing, inventory management, and patient records. Features include prescription processing, stock alerts, and user-friendly interfaces for both pharmacists and patients.',
-    tools: ['React', 'Node.js', 'MongoDB', 'Express.js'],
+    description: 'A comprehensive pharmacy management system designed to streamline medication dispensing, inventory management, and patient records. Features include prescription processing, stock alerts, and user-friendly interfaces for both pharmacists and patients. ',
+    tools: ['C language'],
     githubUrl: 'https://github.com/nabil0203/Pharm_Ease',
     featured: true
   },
@@ -159,7 +159,7 @@ export const projectsData: Project[] = [
     id: 'scholar-shelf',
     title: '📖Scholar Shelf',
     description: 'An educational platform connecting students with tutors and study resources. Includes features for scheduling sessions, resource sharing, progress tracking, and interactive learning tools to enhance the educational experience.',
-    tools: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
+    tools: ['PHP', 'MySQL', 'CSS'],
     githubUrl: 'https://github.com/nabil0203/Scholar_Shelf',
     featured: true
   }

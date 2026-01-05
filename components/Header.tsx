@@ -18,7 +18,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId: string) => {
-    setActiveSection(sectionId) // Set active immediately on click
+    setActiveSection(sectionId)
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
@@ -26,7 +26,7 @@ export default function Header() {
   }
 
   const scrollToHero = () => {
-    setActiveSection('') // Clear active section when going to hero
+    setActiveSection('')
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -34,7 +34,6 @@ export default function Header() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
 
-      // If we're at the very top (within first 50px), hide navigation and clear active section
       if (scrollPosition < 50) {
         setActiveSection('')
         setIsVisible(false)

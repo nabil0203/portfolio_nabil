@@ -50,7 +50,7 @@ export default function ContactSection() {
         </MotionDiv>
 
         <MotionDiv delay={0.2}>
-          <div className="bg-secondary p-8 rounded-lg">
+          <div className="bg-surface/80 p-8 rounded-lg">
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               {contactInfo.map((contact, index) => (
                 <motion.div

@@ -61,7 +61,7 @@ export default function SkillsSection() {
             // Use MotionDiv for the category card animation
             <MotionDiv key={category} delay={groupIndex * 0.1}>
               <motion.div
-                className="bg-secondary p-8 rounded-xl shadow-xl transition-all duration-300 border border-secondary"
+                className="bg-surface/50 p-8 rounded-xl shadow-xl transition-all duration-300 border border-secondary"
                 variants={skillGroupVariants}
                 whileHover="hover"
               >
@@ -77,8 +77,8 @@ export default function SkillsSection() {
                       className="inline-block"
                     >
                       <span
-                        className="px-4 py-1.5 bg-primary text-white text-sm font-medium rounded-full border border-accent/40 shadow-md 
-                                 hover:bg-accent hover:text-primary transition-all duration-300 cursor-default"
+                        className="px-4 py-1.5 bg-surface/50 text-white text-sm font-medium rounded-full border border-accent/40 shadow-md 
+                                 hover:bg-accent hover:text-white transition-all duration-300 cursor-default"
                         // Added aria-label for better screen reader context on the skill tag itself
                         aria-label={`Skill: ${skill}`}
                       >

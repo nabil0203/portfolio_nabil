@@ -20,9 +20,12 @@ const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon }) => (
     target="_blank"
     rel="noopener noreferrer"
     className="inline-flex items-center justify-center gap-2 px-6 py-3
-    rounded-lg border border-white/30
-    text-white hover:bg-white/10 transition
-    w-full sm:w-auto" // **IMPROVEMENT: Full width on mobile, auto width on small screens and up**
+    rounded-lg bg-gradient-to-r from-gray-800 to-blue-900
+    hover:from-black hover:to-blue-800
+    text-white 
+    transition-all duration-200
+    w-full sm:w-auto"
+
   >
     {Icon && <Icon size={20} />}
     {children}
@@ -52,9 +55,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      // **IMPROVEMENT: Use min-h-screen for full viewport height on initial load**
-      className="relative min-h-screen flex items-center justify-center text-center
-      bg-gradient-to-br from-primary via-primary to-secondary/60 overflow-hidden px-4" 
+      className="relative min-h-screen flex items-center justify-center text-center bg-black overflow-hidden px-4"
     >
       {/* Soft ambient glow */}
       <div className="absolute inset-0 bg-gradient-radial from-accent/10 via-transparent to-transparent" />
@@ -65,8 +66,8 @@ export default function HeroSection() {
 
       <motion.div
         // **IMPROVEMENT: Adjusted padding to be smaller on mobile (`p-6` vs `p-8/p-16`)**
-        className="relative z-10 max-w-5xl mx-auto p-6 md:p-16 bg-secondary/30 border rounded-xl backdrop-blur-sm"
-        style={{ borderWidth: '1px' }}
+        className="relative z-10 max-w-6xl mx-auto p-6 md:p-20 bg-secondary/10 border rounded-xl backdrop-blur-md"
+        style={{ borderWidth: '2px' }}
         animate={mainContentGlow}
         transition={glowTransition}
       >
@@ -75,8 +76,8 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 md:mb-6 leading-tight
-          bg-gradient-to-b from-gray-100 via-gray-200 to-gray-400
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold py-2 mb-4 md:mb-6 leading-tight
+          bg-gradient-to-b from-gray-100 via-gray-300 to-gray-800
           bg-clip-text text-transparent pt-6 sm:pt-4"
         >
           {personalInfo.name}
@@ -87,7 +88,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-3xl md:text-5xl lg:text-2xl font-black text-accent tracking-tighter mx-6 mb-6 leading-tight"
+          className="text-3xl md:text-5xl lg:text-2xl font-extrabold text-accent tracking-tighter mx-6 mb-6 leading-tight"
         >
           {personalInfo.title}
         </motion.h2>

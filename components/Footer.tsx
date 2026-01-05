@@ -46,7 +46,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-secondary py-6">
+    <footer className="bg-surface/90 py-6">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center">
           <div className="flex justify-center space-x-6 mb-6">

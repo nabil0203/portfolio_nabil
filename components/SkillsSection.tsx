@@ -50,7 +50,7 @@ export default function SkillsSection() {
         <MotionDiv>
           <h2
             id="skills-heading"
-            className="text-3xl md:text-4xl font-extrabold mb-16 text-center text-text-primary relative group"
+            className="text-3xl md:text-4xl font-extrabold mb-16 text-center text-white relative group"
           >
             Skills & Technologies
           </h2>
@@ -77,7 +77,7 @@ export default function SkillsSection() {
                       className="inline-block"
                     >
                       <span
-                        className="px-4 py-1.5 bg-primary text-text-primary text-sm font-medium rounded-full border border-accent/40 shadow-md 
+                        className="px-4 py-1.5 bg-primary text-white text-sm font-medium rounded-full border border-accent/40 shadow-md 
                                  hover:bg-accent hover:text-primary transition-all duration-300 cursor-default"
                         // Added aria-label for better screen reader context on the skill tag itself
                         aria-label={`Skill: ${skill}`}

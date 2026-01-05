@@ -110,7 +110,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent bg-primary hover:bg-accent hover:text-primary transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border text-sm"
+            className="text-accent bg-slate-800 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border text-sm"
             style={{ borderWidth: '1px' }}
             variants={linkPulseVariants}
             animate="pulse"
@@ -130,7 +130,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent bg-primary hover:bg-accent hover:text-primary transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border text-sm"
+            className="text-accent bg-slate-800 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border text-sm"
             style={{ borderWidth: '1px' }}
             variants={linkPulseVariants}
             animate="pulse"

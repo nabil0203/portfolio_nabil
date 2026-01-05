@@ -21,7 +21,7 @@ const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon }) => (
     rel="noopener noreferrer"
     className="inline-flex items-center justify-center gap-2 px-6 py-3
     rounded-lg border border-white/30
-    text-text-primary hover:bg-white/10 transition
+    text-white hover:bg-white/10 transition
     w-full sm:w-auto" // **IMPROVEMENT: Full width on mobile, auto width on small screens and up**
   >
     {Icon && <Icon size={20} />}
@@ -97,7 +97,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-sm md:text-xl text-text-secondary leading-relaxed
+          className="text-sm md:text-xl text-gray-300 leading-relaxed
           max-w-4xl mx-auto mb-8 md:mb-10"
         >
           {personalInfo.heroDescription}

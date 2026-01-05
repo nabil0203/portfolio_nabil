@@ -69,7 +69,7 @@ export default function Footer() {
             ))}
           </div>
 
-          <p className="text-text-secondary">
+          <p className="text-gray-400">
             © {currentYear} {personalInfo.name}. All rights reserved.
           </p>
         </div>

@@ -79,7 +79,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 bg-primary/90 backdrop-blur-sm border-b border-secondary/50"
+      className="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-sm border-b border-slate-700/50"
       animate={{
         opacity: isVisible ? 1 : 0,
         y: isVisible ? 0 : -100
@@ -115,7 +115,7 @@ export default function Header() {
                   className={`relative px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium tracking-wide uppercase transition-all duration-300 ${
                     isActive
                       ? 'text-accent'
-                      : 'text-text-secondary hover:text-text-primary'
+                      : 'text-gray-400 hover:text-white'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -140,7 +140,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden text-text-primary p-2"
+            className="md:hidden text-white p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileTap={{ scale: 0.95 }}
             aria-label="Toggle menu"
@@ -185,7 +185,7 @@ export default function Header() {
                     className={`relative px-4 py-2 text-sm font-medium text-left transition-all duration-300 ${
                       isActive
                         ? 'text-accent'
-                        : 'text-text-secondary hover:text-text-primary'
+                        : 'text-gray-400 hover:text-white'
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}

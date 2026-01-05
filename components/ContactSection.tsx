@@ -44,7 +44,7 @@ export default function ContactSection() {
     <section id="contact" className="py-20 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         <MotionDiv>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-16 text-center text-text-primary relative group">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-16 text-center text-white relative group">
             Get In Touch
           </h2>
         </MotionDiv>
@@ -63,19 +63,19 @@ export default function ContactSection() {
                   <div className="text-accent mb-2 flex justify-center">
                     {contact.icon}
                   </div>
-                  <p className="text-sm text-text-secondary mb-1">{contact.label}</p>
+                  <p className="text-sm text-gray-400 mb-1">{contact.label}</p>
                   {contact.href ? (
                     <motion.a
                       href={contact.href}
                       target={contact.href.startsWith('http') ? '_blank' : undefined}
                       rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-text-primary hover:text-accent transition-colors duration-200"
+                      className="text-white hover:text-accent transition-colors duration-200"
                       whileHover={{ scale: 1.05 }}
                     >
                       {contact.value}
                     </motion.a>
                   ) : (
-                    <p className="text-text-primary">{contact.value}</p>
+                    <p className="text-white">{contact.value}</p>
                   )}
                 </motion.div>
               ))}

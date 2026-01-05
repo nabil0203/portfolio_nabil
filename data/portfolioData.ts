@@ -3,7 +3,9 @@
 export interface PersonalInfo {
   name: string
   title: string
-  description: string
+  heroDescription: string
+  aboutDescription: string
+  aboutTitle: string
 }
 
 export interface SiteMetadata {
@@ -55,8 +57,10 @@ export interface VolunteerExperience {
 // Personal Information
 export const personalInfo: PersonalInfo = {
   name: 'Chowdhury Nabil Ahmed',
-  title: 'Majoring in Software Engineering',
-  description: 'A Computer Science undergraduate specializing in Software Engineering, skilled in Data Structures and Algorithms using C++ and OOP principles. Solved 400+ problems on major online platforms and currently expanding skills in Web Development and Machine Learning with Python.'
+  title: 'Majoring in Software Engineering | Full Stack Developer',
+  heroDescription: 'Problem solver with 400+ problems solved. Building modern web applications with Django & React.',
+  aboutDescription: 'A Computer Science undergraduate specializing in Software Engineering, skilled in Data Structures and Algorithms using C++ and OOP principles. Solved 400+ problems on major online platforms and currently expanding skills in Web Development and Machine Learning with Python. Specializing in Software Engineering with focus on Data Structures, Algorithms, and Web Development.',
+  aboutTitle: 'About Me'
 }
 
 // Site Metadata
@@ -84,8 +88,15 @@ export const educationData = [
     institution: 'Daffodil International University',
     gpa: '3.91', 
     graduation: 'Expected Graduation: 2027',
-    description: 'Specializing in Software Engineering with focus on Data Structures, Algorithms, and Web Development.',
+    description: '',
   },
+  {
+    degree: 'HSC in Science',
+    institution: 'Jahangirnagar University School and College',
+    gpa: '5.00',
+    graduation: '2020',
+    description: '',
+  }
 ];
 
 // Skills Data

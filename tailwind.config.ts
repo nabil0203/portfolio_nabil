@@ -10,13 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#121212',
-        secondary: '#1e1e1e',
-        accent: '#00bcd4',
-        text: {
-          primary: '#f3f4f6',
-          secondary: '#9ca3af',
-        },
+        background: '#020617', // Deep Navy
+        surface: '#0f172a',    // Dark Slate
+        accent: '#3b82f6',     // Electric Blue
+        primary: '#f8fafc',    // High-contrast white
+        secondary: '#94a3b8',  // Muted Slate
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

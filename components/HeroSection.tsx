@@ -4,7 +4,7 @@ import { motion, Transition } from 'framer-motion'
 import ScrollIndicator from './ScrollIndicator'
 import { Github, FileText, Linkedin } from 'lucide-react'
 import { ReactNode, ElementType } from 'react'
-import { personalInfo } from '@/data/portfolioData'
+import { personalInfo, contactData } from '@/data/portfolioData'
 
 interface HeroButtonProps {
   href: string;
@@ -61,7 +61,7 @@ export default function HeroSection() {
 
       {/* Floating blur accents - Reduced blur size for less obstruction on smaller screens */}
       <div className="absolute -top-16 -left-16 w-64 h-64 bg-accent/20 rounded-full blur-2xl" />
-      <div className="absolute bottom-0 -right-16 w-64 h-64 bg-secondary/30 rounded-full blur-2xl" />
+      <div className="absolute bottom-0 -right-16 w-64 h-64 bg-accent/20 rounded-full blur-2xl" />
 
       <motion.div
         // **IMPROVEMENT: Adjusted padding to be smaller on mobile (`p-6` vs `p-8/p-16`)**
@@ -87,7 +87,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-lg md:text-2xl text-accent mb-6 font-medium"
+          className="text-3xl md:text-5xl lg:text-2xl font-black text-accent tracking-tighter mx-6 mb-6 leading-tight"
         >
           {personalInfo.title}
         </motion.h2>
@@ -100,7 +100,7 @@ export default function HeroSection() {
           className="text-sm md:text-xl text-text-secondary leading-relaxed
           max-w-4xl mx-auto mb-8 md:mb-10"
         >
-          {personalInfo.description}
+          {personalInfo.heroDescription}
         </motion.p>
 
         {/* Buttons: Ensure stacking on mobile by making `flex-col` the default */}
@@ -110,7 +110,7 @@ export default function HeroSection() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="flex flex-col sm:flex-row justify-center gap-4"
         >
-          <HeroButton href="https://www.linkedin.com/in/nabil0203/" Icon={Linkedin}>
+          <HeroButton href={contactData.linkedin} Icon={Linkedin}>
             LinkedIn
           </HeroButton>
 
@@ -118,7 +118,7 @@ export default function HeroSection() {
             Resume
           </HeroButton>
 
-          <HeroButton href="https://github.com/nabil0203" Icon={Github}>
+          <HeroButton href={contactData.github} Icon={Github}>
             GitHub
           </HeroButton>
         </motion.div>

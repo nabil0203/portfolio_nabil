@@ -8,7 +8,6 @@ export default function BackToTop() {
 
   useEffect(() => {
     const checkScrollTop = () => {
-      // Show button if page is scrolled more than 400px
       if (window.pageYOffset > 400) {
         setIsVisible(true)
       } else {
@@ -16,7 +15,6 @@ export default function BackToTop() {
       }
     }
 
-    // Run once on mount to handle page refreshes
     checkScrollTop()
 
     window.addEventListener('scroll', checkScrollTop)
@@ -46,7 +44,6 @@ export default function BackToTop() {
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
           >
             <path
               strokeLinecap="round"

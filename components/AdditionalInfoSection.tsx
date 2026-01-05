@@ -9,11 +9,9 @@ export default function AdditionalInfoSection() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
-          {/* Languages, Certifications, Hobbies */}
           <div>
             <h3 className="text-2xl font-semibold mb-6 text-accent">Personal Details</h3>
             <div className="space-y-6">
-              {/* Languages */}
               {languagesData.length > 0 && (
                 <div>
                   <h4 className="text-lg font-medium text-white mb-3">Languages</h4>
@@ -25,7 +23,6 @@ export default function AdditionalInfoSection() {
                 </div>
               )}
 
-              {/* Certifications */}
               {certificationsData.length > 0 && (
                 <div>
                   <h4 className="text-lg font-medium text-white mb-3">Certifications</h4>
@@ -37,7 +34,6 @@ export default function AdditionalInfoSection() {
                 </div>
               )}
 
-              {/* Hobbies */}
               {hobbiesData.length > 0 && (
                 <div>
                   <h4 className="text-lg font-medium text-white mb-3">Hobbies</h4>
@@ -51,7 +47,6 @@ export default function AdditionalInfoSection() {
             </div>
           </div>
 
-          {/* Volunteer Experience */}
           <div>
             <h3 className="text-2xl font-semibold mb-6 text-accent">Volunteer Experience</h3>
             <div className="space-y-6">

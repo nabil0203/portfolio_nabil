@@ -12,8 +12,6 @@ interface HeroButtonProps {
   Icon?: ElementType;
 }
 
-
-// --- A. Componentize Button for Reusability (No changes needed here) ---
 const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon }) => (
   <a
     href={href}
@@ -32,7 +30,6 @@ const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon }) => (
   </a>
 )
 
-// --- B. Centralized Classes for Readability (No changes needed here) ---
 const glowTransition: Transition = {
   duration: 3,
   repeat: Infinity,
@@ -65,13 +62,11 @@ export default function HeroSection() {
       <div className="absolute bottom-0 -right-16 w-64 h-64 bg-accent/20 rounded-full blur-2xl" />
 
       <motion.div
-        // **IMPROVEMENT: Adjusted padding to be smaller on mobile (`p-6` vs `p-8/p-16`)**
         className="relative z-10 max-w-6xl mx-auto p-6 md:p-20 bg-secondary/10 border rounded-xl backdrop-blur-md"
         style={{ borderWidth: '2px' }}
         animate={mainContentGlow}
         transition={glowTransition}
       >
-        {/* Name: Adjusted font sizes to scale down more gracefully */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -83,7 +78,6 @@ export default function HeroSection() {
           {personalInfo.name}
         </motion.h1>
 
-        {/* Role: Adjusted font size to scale down */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -93,7 +87,6 @@ export default function HeroSection() {
           {personalInfo.title}
         </motion.h2>
 
-        {/* Description: Adjusted font size to scale down */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -104,7 +97,6 @@ export default function HeroSection() {
           {personalInfo.heroDescription}
         </motion.p>
 
-        {/* Buttons: Ensure stacking on mobile by making `flex-col` the default */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -1,19 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import MotionDiv from './MotionDiv' // Assuming this handles scroll-based animation
-import { skillsData } from '@/data/portfolioData' // Assuming a structure like { name: string, category: string }[]
+import MotionDiv from './MotionDiv'
+import { skillsData } from '@/data/portfolioData'
 
-// --- Type Definitions for better clarity ---
 type Skill = {
   name: string
   category: string
 }
 
-// Group skills by category for efficient rendering
 const skillGroups = (skillsData as Skill[]).reduce(
   (acc, skill) => {
-    // Initialize array if category doesn't exist
     if (!acc[skill.category]) {
       acc[skill.category] = []
     }
@@ -23,10 +20,8 @@ const skillGroups = (skillsData as Skill[]).reduce(
   {} as Record<string, string[]>,
 )
 
-// Define animation variants for cleaner component code
 const skillGroupVariants = {
   hover: {
-    // Using a more readable CSS-like structure for the border/shadow colors
     borderColor: 'rgba(0, 188, 212, 0.6)',
     boxShadow:
       '0 0 30px rgba(0, 188, 212, 0.4), 0 0 60px rgba(0, 188, 212, 0.2)',
@@ -39,9 +34,8 @@ const skillGroupTransition = {
 }
 
 export default function SkillsSection() {
-  // Check if skillsData is empty to render a fallback or skip the section
   if (Object.keys(skillGroups).length === 0) {
-    return null // Don't render if there are no skills
+    return null
   }
 
   return (
@@ -58,10 +52,9 @@ export default function SkillsSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
           {Object.entries(skillGroups).map(([category, skills], groupIndex) => (
-            // Use MotionDiv for the category card animation
             <MotionDiv key={category} delay={groupIndex * 0.1}>
               <motion.div
-                className="bg-surface/50 p-8 rounded-xl shadow-xl transition-all duration-300 border border-secondary"
+                className="bg-surface/80 p-8 rounded-xl transition-all duration-300 border border-white/20"
                 variants={skillGroupVariants}
                 whileHover="hover"
               >
@@ -69,7 +62,6 @@ export default function SkillsSection() {
                   {category}
                 </h3>
                 <div className="flex flex-wrap gap-3" role="list">
-                  {/* Using a reduced/slower delay for individual skills */}
                   {skills.map((skill, skillIndex) => (
                     <MotionDiv
                       key={skill}
@@ -79,7 +71,6 @@ export default function SkillsSection() {
                       <span
                         className="px-4 py-1.5 bg-surface/50 text-white text-sm font-medium rounded-full border border-accent/40 shadow-md 
                                  hover:bg-accent hover:text-white transition-all duration-300 cursor-default"
-                        // Added aria-label for better screen reader context on the skill tag itself
                         aria-label={`Skill: ${skill}`}
                       >
                         {skill}

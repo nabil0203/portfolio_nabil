@@ -1,32 +1,17 @@
 'use client'
 
 import { motion, Variants } from 'framer-motion'
-import { Project } from '@/data/portfolioData' // Assuming Project type is defined here
-import { useMemo } from 'react'
+import { Project } from '@/data/portfolioData'
 
-// Define the accent color constants for better thematic control
-const ACCENT_COLOR_RGB = '20, 184, 166' // Teal-500 equivalent for glow
-const LINK_COLOR_RGB = '59, 130, 246' // Blue-500 equivalent for link pulse
+const LINK_COLOR_RGB = '59, 130, 246'
 
 interface ProjectCardProps {
   project: Project & {
-    imageUrl?: string // Added optional image URL for visual appeal
+    imageUrl?: string
   }
   index: number
 }
 
-// --- Animation Constants ---
-
-// Card hover effect variants
-const cardHoverVariants: Variants = {
-  hover: {
-    scale: 1.03,
-    borderColor: `rgba(${ACCENT_COLOR_RGB}, 0.8)`,
-    boxShadow: `0 0 15px rgba(${ACCENT_COLOR_RGB}, 0.5), 0 0 30px rgba(${ACCENT_COLOR_RGB}, 0.3)`,
-  },
-}
-
-// Link pulse animation variants (less aggressive than the original)
 const linkPulseVariants: Variants = {
   pulse: {
     borderColor: [
@@ -43,19 +28,12 @@ const linkPulseVariants: Variants = {
 }
 
 const linkPulseTransition = {
-  duration: 3, // Slightly longer duration makes it less distracting
+  duration: 3,
   repeat: Infinity,
   ease: 'easeInOut',
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
-  // Use useMemo to stabilize the entry transition object
-  const entryTransition = useMemo(() => ({
-    duration: 0.5,
-    ease: 'easeOut',
-    delay: index * 0.1,
-  }), [index])
-
   return (
     <motion.div
       className="relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-10 transition-colors flex flex-col h-full shadow-xl shadow-black/20"
@@ -64,9 +42,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 0.08)", borderColor: "rgba(255, 255, 255, 0.2)" }}
       transition={{ duration: 0.2 }}
     >
-      {/* Subtle inner glow */}
       <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent/10 blur-3xl rounded-full" />
-      {/* 1. Project Image/Thumbnail (New) */}
       {project.imageUrl && (
         <div className="mb-6 h-48 overflow-hidden rounded-lg shadow-inner">
           <img
@@ -78,17 +54,14 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
       )}
 
-      {/* 2. Content */}
       <h3 className="text-white font-bold text-2xl mb-4">
         {project.title}
       </h3>
 
-      {/* Description now takes remaining flexible space */}
       <p className="text-gray-300 text-sm mb-4 leading-relaxed flex-grow">
         {project.description}
       </p>
 
-      {/* 3. Tools */}
       <div className="mt-4 mb-8">
         <h4 className="text-sm font-medium text-accent mb-2">Built With:</h4>
         <div className="flex flex-wrap gap-2">
@@ -103,14 +76,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
       </div>
 
-      {/* 4. Action Links */}
-      <div className="flex gap-4 pt-2 border-t border-secondary/50">
+      <div className="flex gap-4 pt-4 border-t border-secondary/50">
         {project.githubUrl && (
           <motion.a
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border text-sm"
+            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border text-sm"
             style={{ borderWidth: '1px' }}
             variants={linkPulseVariants}
             animate="pulse"
@@ -130,7 +102,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border text-sm"
+            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border text-sm"
             style={{ borderWidth: '1px' }}
             variants={linkPulseVariants}
             animate="pulse"

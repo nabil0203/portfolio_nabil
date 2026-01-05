@@ -17,7 +17,6 @@ export default function ContactSection() {
         </svg>
       )
     },
-    
     {
       label: 'Email',
       value: contactData.email,
@@ -79,9 +78,6 @@ export default function ContactSection() {
                   )}
                 </motion.div>
               ))}
-            </div>
-
-            <div className="text-center">
             </div>
           </div>
         </MotionDiv>

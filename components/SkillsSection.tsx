@@ -7,6 +7,7 @@ import { skillsData } from '@/data/portfolioData'
 type Skill = {
   name: string
   category: string
+  url?: string
 }
 
 const skillGroups = (skillsData as Skill[]).reduce(
@@ -14,10 +15,10 @@ const skillGroups = (skillsData as Skill[]).reduce(
     if (!acc[skill.category]) {
       acc[skill.category] = []
     }
-    acc[skill.category].push(skill.name)
+    acc[skill.category].push({ name: skill.name, url: skill.url })
     return acc
   },
-  {} as Record<string, string[]>,
+  {} as Record<string, Array<{ name: string; url?: string }>>,
 )
 
 const skillGroupVariants = {
@@ -40,7 +41,7 @@ export default function SkillsSection() {
 
   return (
     <section id="skills" className="py-20 scroll-mt-24" aria-labelledby="skills-heading">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[90rem] mx-auto px-8">
         <MotionDiv>
           <h2
             id="skills-heading"
@@ -62,21 +63,35 @@ export default function SkillsSection() {
                   {category}
                 </h3>
                 <div className="flex flex-wrap gap-3" role="list">
-                  {skills.map((skill, skillIndex) => (
-                    <MotionDiv
-                      key={skill}
-                      delay={skillIndex * 0.03}
-                      className="inline-block"
-                    >
-                      <span
-                        className="px-4 py-1.5 bg-surface/50 text-white text-sm font-medium rounded-full border border-accent/40 shadow-md 
-                                 hover:bg-accent hover:text-white transition-all duration-300 cursor-default"
-                        aria-label={`Skill: ${skill}`}
+                  {skills.map((skill, skillIndex) => {
+                    const SkillComponent = skill.url ? motion.a : motion.span
+                    const skillProps = skill.url ? {
+                      href: skill.url,
+                      target: '_blank',
+                      rel: 'noopener noreferrer',
+                      className: "px-4 py-1.5 bg-surface/50 text-white text-sm font-medium rounded-full border border-accent/40 shadow-md hover:bg-accent hover:text-white transition-all duration-300 cursor-pointer",
+                      ariaLabel: `Visit ${skill.name} profile`
+                    } : {
+                      className: "px-4 py-1.5 bg-surface/50 text-white text-sm font-medium rounded-full border border-accent/40 shadow-md hover:bg-accent hover:text-white transition-all duration-300 cursor-default",
+                      ariaLabel: `Skill: ${skill.name}`
+                    }
+
+                    return (
+                      <MotionDiv
+                        key={skill.name}
+                        delay={skillIndex * 0.03}
+                        className="inline-block"
                       >
-                        {skill}
-                      </span>
-                    </MotionDiv>
-                  ))}
+                        <SkillComponent
+                          {...skillProps}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={skill.url ? { scale: 0.95 } : undefined}
+                        >
+                          {skill.name}
+                        </SkillComponent>
+                      </MotionDiv>
+                    )
+                  })}
                 </div>
               </motion.div>
             </MotionDiv>

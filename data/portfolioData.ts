@@ -35,6 +35,7 @@ export interface Education {
 export interface Skill {
   name: string
   category: string
+  url?: string
 }
 
 export interface Project {
@@ -65,7 +66,7 @@ export const personalInfo: PersonalInfo = {
 
 // Site Metadata
 export const siteMetadata: SiteMetadata = {
-  title: 'Chowdhury Nabil Ahmed - Portfolio',
+  title: 'Chowdhury Nabil Ahmed',
   description: 'Computer Science Undergraduate specializing in Software Engineering, skilled in Data Structures and Algorithms, Web Development, and Machine Learning.',
   keywords: ['Chowdhury Nabil Ahmed', 'Software Engineer', 'Computer Science', 'Web Development', 'Machine Learning', 'Portfolio'],
   url: 'https://nabil0203.vercel.app',
@@ -128,11 +129,20 @@ export const skillsData: Skill[] = [
   { name: 'GitHub', category: 'Tools & Technologies' },
   { name: 'VS Code', category: 'Tools & Technologies' },
 
+
+  // Problem Solving Platforms
+  { name: 'Codeforces', category: 'Problem Solving Platforms', url: 'https://codeforces.com/profile/BlaZe_0203' },
+  { name: 'LeetCode', category: 'Problem Solving Platforms', url: 'https://leetcode.com/u/BlaZe_0203/' },
+  { name: 'Beecrowd', category: 'Problem Solving Platforms', url: 'https://judge.beecrowd.com/en/profile/757266' },
+  { name: 'HackerRank', category: 'Problem Solving Platforms', url: 'https://www.hackerrank.com/profile/BlaZe_0203' },
+  { name: 'CodeChef', category: 'Problem Solving Platforms', url: 'https://www.codechef.com/users/blaze_0203' },
+
   // Other
   { name: 'Data Structures', category: 'Other' },
   { name: 'Algorithms', category: 'Other' },
   { name: 'OOP', category: 'Other' },
   { name: 'Machine Learning', category: 'Other' }
+
 ]
 
 // Projects Data

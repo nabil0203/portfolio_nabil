@@ -87,7 +87,7 @@ export const educationData = [
   {
     degree: 'B.Sc. in Software Engineering',
     institution: 'Daffodil International University',
-    gpa: '3.91', 
+    gpa: '3.90', 
     graduation: 'Expected Graduation: 2027',
     description: '',
   },

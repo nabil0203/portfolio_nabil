@@ -16,19 +16,19 @@ export default function Home() {
       <Header />
       <HeroSection />
       <main>
-        <MotionDiv className="py-12">
+        <MotionDiv className="py-8">
           <AboutSection />
         </MotionDiv>
-        <MotionDiv className="py-12">
+        <MotionDiv className="py-8">
           <SkillsSection />
         </MotionDiv>
-        <MotionDiv className="py-12">
+        <MotionDiv className="py-8">
           <ProjectsSection />
         </MotionDiv>
-        <MotionDiv className="py-12">
+        <MotionDiv className="py-8">
           <AdditionalInfoSection />
         </MotionDiv>
-        <MotionDiv className="py-12">
+        <MotionDiv className="py-8">
           <ContactSection />
         </MotionDiv>
       </main>

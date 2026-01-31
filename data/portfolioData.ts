@@ -123,6 +123,7 @@ export const skillsData: Skill[] = [
   // Database
   { name: 'MySQL', category: 'Database' },
   { name: 'PostgreSQL', category: 'Database' },
+  { name: 'SQLite', category: 'Database' },
 
   // Tools & Technologies
   { name: 'Git', category: 'Tools & Technologies' },
@@ -147,6 +148,15 @@ export const skillsData: Skill[] = [
 
 // Projects Data
 export const projectsData: Project[] = [
+  {
+    id: 'shopnest',
+    title: '🛒 ShopNest',
+    description: 'A full-featured, modern single-vendor e-commerce platform built with Django. ShopNest provides a complete online shopping experience with product management, shopping cart, secure payment integration, and user authentication.',
+    tools: ['Django','SQLite', 'CSS', 'HTML'],
+    githubUrl: 'https://github.com/nabil0203/ShopNest',
+    liveUrl: 'https://shopnest-4thm.onrender.com/',
+    featured: true
+  },
   {
     id: 'taskify',
     title: '✅Taskify',

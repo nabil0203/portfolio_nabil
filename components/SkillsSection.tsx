@@ -40,7 +40,7 @@ export default function SkillsSection() {
   }
 
   return (
-    <section id="skills" className="py-20 scroll-mt-24" aria-labelledby="skills-heading">
+    <section id="skills" className="py-12 scroll-mt-24" aria-labelledby="skills-heading">
       <div className="max-w-[90rem] mx-auto px-8">
         <MotionDiv>
           <h2

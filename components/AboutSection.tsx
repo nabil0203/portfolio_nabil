@@ -4,7 +4,7 @@ import { User, GraduationCap, Calendar } from 'lucide-react'
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 scroll-mt-24 bg-secondary/5">
+    <section id="about" className="py-16 scroll-mt-24 bg-secondary/5">
       <div className="max-w-7xl mx-auto px-6">
         <MotionDiv>
           <h2 className="text-4xl md:text-5xl font-extrabold mb-20 text-center text-white relative group">

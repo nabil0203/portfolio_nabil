@@ -2,7 +2,7 @@ import { languagesData, certificationsData, hobbiesData, volunteerExperiencesDat
 
 export default function AdditionalInfoSection() {
   return (
-    <section id="additional-information" className="py-20 scroll-mt-24">
+    <section id="additional-information" className="py-12 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-16 text-center text-white relative group">
           Additional Information

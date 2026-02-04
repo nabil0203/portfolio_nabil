@@ -60,7 +60,7 @@ export const personalInfo: PersonalInfo = {
   name: 'Chowdhury Nabil Ahmed',
   title: 'Majoring in Software Engineering | Web Developer',
   heroDescription: 'Problem solver with 400+ problems solved. Building modern web applications with Django & React.',
-  aboutDescription: 'A Computer Science undergraduate specializing in Software Engineering, skilled in Data Structures and Algorithms using C++ and OOP principles. Solved 400+ problems on major online platforms and currently expanding skills in Web Development and Machine Learning with Python. Specializing in Software Engineering with focus on Data Structures, Algorithms, and Web Development.',
+  aboutDescription: 'A Computer Science undergraduate specializing in Software Engineering, skilled in Data Structures and Algorithms using C++ and Object-Oriented Programming. Solved 400+ problems on major online platforms. Actively building web applications using Python, Django, and REST APIs. Also expanding into Machine Learning with Python.',
   aboutTitle: 'About Me'
 }
 

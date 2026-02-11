@@ -55,7 +55,7 @@ export default function SkillsSection() {
           {Object.entries(skillGroups).map(([category, skills], groupIndex) => (
             <MotionDiv key={category} delay={groupIndex * 0.1}>
               <motion.div
-                className="bg-surface/80 p-8 rounded-xl transition-all duration-300 border border-white/20"
+                className="bg-surface/80 p-8 rounded-xl transition-all duration-0 border border-white/20"
                 variants={skillGroupVariants}
                 whileHover="hover"
               >

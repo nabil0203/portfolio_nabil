@@ -111,10 +111,10 @@ export const skillsData: Skill[] = [
 
   // Frontend
   { name: 'React', category: 'Frontend' },
-  { name: 'Next.js', category: 'Frontend' },
   { name: 'HTML', category: 'Frontend' },
   { name: 'CSS', category: 'Frontend' },
   { name: 'Tailwind CSS', category: 'Frontend' },
+  { name: 'Bootstrap', category: 'Frontend' },
 
   // Backend
   { name: 'Django', category: 'Backend' },

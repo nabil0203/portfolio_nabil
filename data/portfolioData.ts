@@ -172,7 +172,7 @@ export const projectsData: Project[] = [
     title: '🧪 Quiz Verse',
     description: 'Quiz Verse is a lightweight, interactive multiple-choice quiz application built with Django. It demonstrates full-stack fundamentals including database relationships, form handling, request lifecycle management, and dynamic template rendering.',
     tools: ['Django', 'SQLite', 'HTML', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/nabil0203/QR_Code_Generator',
+    githubUrl: 'https://github.com/nabil0203/Quiz_Verse',
     featured: true
   },  
   {

@@ -108,6 +108,7 @@ export const skillsData: Skill[] = [
   { name: 'Python', category: 'Programming Languages' },
   { name: 'Java', category: 'Programming Languages' },
   { name: 'JavaScript', category: 'Programming Languages' },
+  { name: 'PHP', category: 'Programming Languages' },
 
   // Frontend
   { name: 'React', category: 'Frontend' },
@@ -167,14 +168,21 @@ export const projectsData: Project[] = [
     featured: true
   },
   {
-    id: 'pharm-ease',
-    title: '💊Pharm Ease',
-    description: 'A comprehensive pharmacy management system designed to streamline medication dispensing, inventory management, and patient records. Features include prescription processing, stock alerts, and user-friendly interfaces for both pharmacists and patients. ',
-    tools: ['C language'],
-    githubUrl: 'https://github.com/nabil0203/Pharm_Ease',
+    id: 'qr-code-generator',
+    title: '⛆ QR Code Generator',
+    description: 'A simple Python script that reads a Text/URL and a File name from a Text file. Then generates a QR code and saves it as an image.',
+    tools: ['Python'],
+    githubUrl: 'https://github.com/nabil0203/QR_Code_Generator',
     featured: true
   },
-  
+   {
+    id: 'auto-vault',
+    title: '🚗Auto Vault',
+    description: 'This is a lightweight PHP and MySQL web application designed to manage car showroom records efficiently. It allows users to add, view, update, and delete car details. This project was developed as part of the SE_332 – Web Application Lab course to demonstrate core database operations in web development.',
+    tools: ['PHP', 'MySQL', 'CSS', 'HTML'],
+    githubUrl: 'https://github.com/nabil0203/AutoVault',
+    featured: true
+  },
   {
     id: 'scholar-shelf',
     title: '📖Scholar Shelf',
@@ -182,7 +190,24 @@ export const projectsData: Project[] = [
     tools: ['PHP', 'MySQL', 'CSS'],
     githubUrl: 'https://github.com/nabil0203/Scholar_Shelf',
     featured: true
-  }
+  },
+  {
+    id: 'carMaster',
+    title: '🚘CarMaster',
+    description: 'CarMaster is a console-based Car Showroom Management System built using Java and Object-Oriented Programming principles. It allows users to add, update, display, and delete different types of cars through a menu-driven interface',
+    tools: ['Java', 'OOP'],
+    githubUrl: 'https://github.com/nabil0203/CarMaster',
+    featured: true
+  },
+  {
+    id: 'pharm-ease',
+    title: '💊Pharm Ease',
+    description: 'A console based pharmacy management system designed to streamline medication dispensing, inventory management, and patient records. Features include prescription processing, stock alerts, and user-friendly interfaces for both pharmacists and patients. ',
+    tools: ['C language'],
+    githubUrl: 'https://github.com/nabil0203/Pharm_Ease',
+    featured: true
+  },
+
   
 ]
 

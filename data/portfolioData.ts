@@ -167,6 +167,14 @@ export const projectsData: Project[] = [
     liveUrl: 'https://taskify-cq2h.onrender.com',
     featured: true
   },
+    {
+    id: 'quiz-verse',
+    title: '🧪 Quiz Verse',
+    description: 'Quiz Verse is a lightweight, interactive multiple-choice quiz application built with Django. It demonstrates full-stack fundamentals including database relationships, form handling, request lifecycle management, and dynamic template rendering.',
+    tools: ['Django', 'SQLite', 'HTML', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/nabil0203/QR_Code_Generator',
+    featured: true
+  },  
   {
     id: 'qr-code-generator',
     title: '⛆ QR Code Generator',
@@ -178,7 +186,7 @@ export const projectsData: Project[] = [
    {
     id: 'auto-vault',
     title: '🚗Auto Vault',
-    description: 'This is a lightweight PHP and MySQL web application designed to manage car showroom records efficiently. It allows users to add, view, update, and delete car details. This project was developed as part of the SE_332 – Web Application Lab course to demonstrate core database operations in web development.',
+    description: 'This is a lightweight PHP and MySQL web application. It allows users to add, view, update, and delete car details. This project was developed as part of the SE_332 – Web Application Lab course to demonstrate core database operations in web development.',
     tools: ['PHP', 'MySQL', 'CSS', 'HTML'],
     githubUrl: 'https://github.com/nabil0203/AutoVault',
     featured: true

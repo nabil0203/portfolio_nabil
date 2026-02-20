@@ -12,7 +12,7 @@ interface MotionDivProps {
 const variants = {
   hidden: {
     opacity: 0,
-    y: 50
+    y: 20 
   },
   visible: {
     opacity: 1,
@@ -26,12 +26,11 @@ export default function MotionDiv({ children, className, delay }: MotionDivProps
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={variants}
       transition={{
-        type: "spring",
-        stiffness: 120,
-        damping: 20,
+        duration: 0.5,
+        ease: "easeOut",
         delay: delay || 0.1
       }}
     >

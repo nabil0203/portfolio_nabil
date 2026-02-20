@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, Variants } from 'framer-motion'
+import { motion, Variants, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { Project } from '@/data/portfolioData'
 
 const LINK_COLOR_RGB = '59, 130, 246'
@@ -12,8 +12,9 @@ interface ProjectCardProps {
   index: number
 }
 
-const linkPulseVariants: Variants = {
-  pulse: {
+const linkHoverVariants: Variants = {
+  hover: {
+    scale: 1.05,
     borderColor: [
       `rgba(${LINK_COLOR_RGB}, 0.5)`,
       `rgba(${LINK_COLOR_RGB}, 1)`,
@@ -24,16 +25,39 @@ const linkPulseVariants: Variants = {
       `0 0 8px rgba(${LINK_COLOR_RGB}, 0.5)`,
       `0 0 4px rgba(${LINK_COLOR_RGB}, 0.2)`,
     ],
+    transition: {
+      duration: 1.5,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    }
   },
 }
 
-const linkPulseTransition = {
-  duration: 3,
-  repeat: Infinity,
-  ease: 'easeInOut',
-}
-
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x, { stiffness: 400, damping: 30 });
+  const mouseYSpring = useSpring(y, { stiffness: 400, damping: 30 });
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    x.set(mouseX / width - 0.5);
+    y.set(mouseY / height - 0.5);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
   return (
     <motion.div
       className="relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-10 transition-colors flex flex-col h-full shadow-xl shadow-black/20"
@@ -41,6 +65,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 0.08)", borderColor: "rgba(255, 255, 255, 0.2)" }}
       transition={{ duration: 0.2 }}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d"
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent/10 blur-3xl rounded-full" />
       {project.imageUrl && (
@@ -84,9 +115,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             rel="noopener noreferrer"
             className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border text-sm"
             style={{ borderWidth: '1px' }}
-            variants={linkPulseVariants}
-            animate="pulse"
-            whileHover={{ scale: 1.05 }}
+            variants={linkHoverVariants}
+            whileHover="hover"
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}
             aria-label={`View ${project.title} source code on GitHub`}
@@ -104,9 +134,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             rel="noopener noreferrer"
             className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border text-sm"
             style={{ borderWidth: '1px' }}
-            variants={linkPulseVariants}
-            animate="pulse"
-            whileHover={{ scale: 1.05 }}
+            variants={linkHoverVariants}
+            whileHover="hover"
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}
             aria-label={`View live demonstration of ${project.title}`}

@@ -1,8 +1,33 @@
+'use client'
+
+import { useEffect } from 'react'
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import MotionDiv from './MotionDiv'
 import { educationData, personalInfo } from '@/data/portfolioData'
 import { User, GraduationCap, Calendar } from 'lucide-react'
-
 export default function AboutSection() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 50, stiffness: 100 };
+  const smoothMouseX = useSpring(mouseX, springConfig);
+  const smoothMouseY = useSpring(mouseY, springConfig);
+
+  const x1 = useTransform(smoothMouseX, [-0.5, 0.5], [-30, 30]);
+  const y1 = useTransform(smoothMouseY, [-0.5, 0.5], [-30, 30]);
+
+  const x2 = useTransform(smoothMouseX, [-0.5, 0.5], [40, -40]);
+  const y2 = useTransform(smoothMouseY, [-0.5, 0.5], [40, -40]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseX.set(e.clientX / window.innerWidth - 0.5);
+      mouseY.set(e.clientY / window.innerHeight - 0.5);
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
+
   return (
     <section id="about" className="py-16 scroll-mt-24 bg-secondary/5">
       <div className="max-w-7xl mx-auto px-6">
@@ -15,10 +40,10 @@ export default function AboutSection() {
         <MotionDiv>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start mt-12">
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-surface/50 to-accent/10 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-surface/50 to-accent-secondary/10 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="relative bg-surface/30 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
-                <div className="flex items-center gap-4 mb-6">
+              <div className="relative bg-surface/30 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl overflow-hidden">
+                <div className="flex items-center gap-4 mb-6 relative z-10">
                   <div className="p-3 bg-accent/10 rounded-2xl border border-accent/20">
                     <User className="w-8 h-8 text-accent" />
                   </div>
@@ -27,12 +52,12 @@ export default function AboutSection() {
                     <div className="w-12 h-1 bg-accent rounded-full mt-1"></div>
                   </div>
                 </div>
-                <p className="text-gray-300 leading-relaxed text-lg">
+                <p className="text-gray-300 leading-relaxed text-lg relative z-10">
                   {personalInfo.aboutDescription}
                 </p>
 
-                <div className="absolute top-4 right-4 w-20 h-20 bg-accent/5 rounded-full blur-2xl" />
-                <div className="absolute bottom-4 left-4 w-16 h-16 bg-accent/10 rounded-full blur-xl" />
+                <motion.div style={{ x: x1, y: y1 }} className="absolute top-4 right-4 w-20 h-20 bg-accent-glow/10 rounded-full blur-2xl z-0 pointer-events-none" />
+                <motion.div style={{ x: x2, y: y2 }} className="absolute bottom-4 left-4 w-16 h-16 bg-accent-secondary/15 rounded-full blur-xl z-0 pointer-events-none" />
               </div>
             </div>
 
@@ -43,11 +68,11 @@ export default function AboutSection() {
             {/* Right Column - Education Card */}
             <div className="relative group">
               {/* Background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface/60 to-accent/5 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface/60 to-accent-glow/5 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Content */}
-              <div className="relative bg-surface/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
-                <div className="flex items-center gap-4 mb-8">
+              <div className="relative bg-surface/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl overflow-hidden">
+                <div className="flex items-center gap-4 mb-8 relative z-10">
                   <div className="p-3 bg-accent/15 rounded-2xl border border-accent/30">
                     <GraduationCap className="w-8 h-8 text-accent" />
                   </div>
@@ -57,7 +82,7 @@ export default function AboutSection() {
                   </div>
                 </div>
 
-                <div className="relative">
+                <div className="relative z-10">
                   <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent/50 to-accent/20"></div>
 
                   <div className="space-y-8 pl-12">
@@ -94,8 +119,8 @@ export default function AboutSection() {
                   </div>
                 </div>
 
-                <div className="absolute top-6 right-6 w-24 h-24 bg-accent/5 rounded-full blur-3xl" />
-                <div className="absolute bottom-6 left-6 w-20 h-20 bg-accent/8 rounded-full blur-2xl" />
+                <motion.div style={{ x: x2, y: y2 }} className="absolute top-6 right-6 w-24 h-24 bg-accent-secondary/10 rounded-full blur-3xl z-0 pointer-events-none" />
+                <motion.div style={{ x: x1, y: y1 }} className="absolute bottom-6 left-6 w-20 h-20 bg-accent-glow/15 rounded-full blur-2xl z-0 pointer-events-none" />
               </div>
             </div>
           </div>

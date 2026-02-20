@@ -13,6 +13,8 @@ const config: Config = {
         'background': '#020617', // Deep Navy
         'surface': '#0f172a',    // Dark Slate
         'accent': '#3b82f6',     // Electric Blue
+        'accent-secondary': '#8b5cf6', // Vibrant Purple (NEW)
+        'accent-glow': '#06b6d4',      // Neon Cyan (NEW)
         'primary': '#f8fafc',    // High-contrast white
         'secondary': '#94a3b8',  // Muted Slate
       },

@@ -60,11 +60,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <motion.div
-      className="relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-10 transition-colors flex flex-col h-full shadow-xl shadow-black/20"
+      className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-md border border-white/10 p-8 transition-colors flex flex-col h-full shadow-lg shadow-black/20 group"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 0.08)", borderColor: "rgba(255, 255, 255, 0.2)" }}
-      transition={{ duration: 0.2 }}
+      whileHover={{ y: -8, backgroundColor: "rgba(255, 255, 255, 0.06)", borderColor: "rgba(255, 255, 255, 0.2)" }}
+      transition={{ duration: 0.3 }}
       style={{
         rotateX,
         rotateY,
@@ -73,9 +73,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent/10 blur-3xl rounded-full" />
+      <div className="absolute -top-20 -right-20 w-48 h-48 bg-accent/10 group-hover:bg-accent/20 blur-[3rem] rounded-full transition-colors duration-500" />
       {project.imageUrl && (
-        <div className="mb-6 h-48 overflow-hidden rounded-lg shadow-inner">
+        <div className="mb-6 h-52 overflow-hidden rounded-xl shadow-inner border border-white/5 relative group-hover:border-white/10 transition-colors">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none" />
           <img
             src={project.imageUrl}
             alt={`Preview image for ${project.title} project`}
@@ -93,13 +94,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         {project.description}
       </p>
 
-      <div className="mt-4 mb-8">
-        <h4 className="text-sm font-medium text-accent mb-2">Built With:</h4>
-        <div className="flex flex-wrap gap-2">
+      <div className="mt-4 mb-8 flex-grow">
+        <div className="flex flex-wrap gap-2 mt-2">
           {project.tools.map((tool, toolIndex) => (
             <span
               key={toolIndex}
-              className="text-xs font-bold tracking-wider text-accent bg-accent/5 px-2 py-1  rounded border border-accent/10"
+              className="text-xs font-medium tracking-wide text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20 shadow-sm"
             >
               {tool}
             </span>
@@ -107,7 +107,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
       </div>
 
-      <div className="flex gap-4 pt-4 border-t border-secondary/50">
+      <div className="flex gap-4 pt-4 border-t border-white/5">
         {project.githubUrl && (
           <motion.a
             href={project.githubUrl}

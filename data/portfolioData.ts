@@ -131,6 +131,11 @@ export const skillsData: Skill[] = [
   { name: 'GitHub', category: 'Tools & Technologies' },
   { name: 'VS Code', category: 'Tools & Technologies' },
 
+  // Other
+  { name: 'Data Structures', category: 'Other' },
+  { name: 'Algorithms', category: 'Other' },
+  { name: 'OOP', category: 'Other' },
+  { name: 'Machine Learning', category: 'Other' },
 
   // Problem Solving Platforms
   { name: 'Codeforces', category: 'Problem Solving Platforms', url: 'https://codeforces.com/profile/BlaZe_0203' },
@@ -138,12 +143,6 @@ export const skillsData: Skill[] = [
   { name: 'Beecrowd', category: 'Problem Solving Platforms', url: 'https://judge.beecrowd.com/en/profile/757266' },
   { name: 'HackerRank', category: 'Problem Solving Platforms', url: 'https://www.hackerrank.com/profile/BlaZe_0203' },
   { name: 'CodeChef', category: 'Problem Solving Platforms', url: 'https://www.codechef.com/users/blaze_0203' },
-
-  // Other
-  { name: 'Data Structures', category: 'Other' },
-  { name: 'Algorithms', category: 'Other' },
-  { name: 'OOP', category: 'Other' },
-  { name: 'Machine Learning', category: 'Other' }
 
 ]
 

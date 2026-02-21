@@ -152,7 +152,7 @@ export const projectsData: Project[] = [
     id: 'shopnest',
     title: '🛒 ShopNest',
     description: 'A full-featured, modern single-vendor e-commerce platform built with Django. ShopNest provides a complete online shopping experience with product browsing, stock availability display, shopping cart, user authentication, and secure online payment processing via SSLCommerz gateway.',
-    tools: ['Django','SQLite', 'CSS', 'HTML', 'SSLCommerz API'],
+    tools: ['Django','SQLite','Tailwind CSS', 'SSLCommerz API'],
     githubUrl: 'https://github.com/nabil0203/ShopNest',
     liveUrl: 'https://shopnest-4thm.onrender.com/',
     featured: true

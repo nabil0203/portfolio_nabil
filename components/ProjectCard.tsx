@@ -99,7 +99,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.tools.map((tool, toolIndex) => (
             <span
               key={toolIndex}
-              className="text-xs font-medium tracking-wide text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20 shadow-sm"
+              className="text-xs font-medium tracking-wide text-cyan-300 bg-cyan-400/10 px-3 py-1 rounded-full border border-cyan-400/20 shadow-sm"
             >
               {tool}
             </span>
@@ -113,7 +113,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border text-sm"
+            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border border-blue-400 text-sm"
             style={{ borderWidth: '1px' }}
             variants={linkHoverVariants}
             whileHover="hover"
@@ -132,7 +132,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border text-sm"
+            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border border-blue-400 text-sm"
             style={{ borderWidth: '1px' }}
             variants={linkHoverVariants}
             whileHover="hover"

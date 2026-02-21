@@ -32,9 +32,10 @@ export default function AboutSection() {
     <section id="about" className="py-16 scroll-mt-24 bg-secondary/5">
       <div className="max-w-7xl mx-auto px-6">
         <MotionDiv>
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-20 text-center text-white relative group">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center text-white relative group">
             {personalInfo.aboutTitle}
           </h2>
+          <div className="h-1.5 w-32 bg-gradient-to-r from-accent via-accent-secondary to-accent-glow mx-auto rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
         </MotionDiv>
 
         <MotionDiv>

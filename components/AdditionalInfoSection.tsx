@@ -4,9 +4,10 @@ export default function AdditionalInfoSection() {
   return (
     <section id="additional-information" className="py-12 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-16 text-center text-white relative group">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center text-white relative group">
           Additional Information
         </h2>
+        <div className="h-1.5 w-32 bg-gradient-to-r from-accent via-accent-secondary to-accent-glow mx-auto rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)] mb-16"></div>
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div>

@@ -37,11 +37,11 @@ export default function SkillsSection() {
           <div className="text-center mb-20 relative">
             <h2
               id="skills-heading"
-              className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white block via-white to-white/70 mb-6"
+              className="text-3xl md:text-4xl font-extrabold mb-8 text-center text-white relative group"
             >
               Skills & Technologies
             </h2>
-            <div className="h-1.5 w-24 bg-gradient-to-r from-accent via-accent-secondary to-accent-glow mx-auto rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
+            <div className="h-1.5 w-32 bg-gradient-to-r from-accent via-accent-secondary to-accent-glow mx-auto rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
           </div>
         </MotionDiv>
 

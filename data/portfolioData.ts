@@ -45,6 +45,7 @@ export interface Project {
   tools: string[]
   githubUrl?: string
   liveUrl?: string
+  imageUrl?: string 
   featured?: boolean
 }
 
@@ -155,6 +156,7 @@ export const projectsData: Project[] = [
     tools: ['Django','SQLite','Tailwind CSS', 'SSLCommerz API'],
     githubUrl: 'https://github.com/nabil0203/ShopNest',
     liveUrl: 'https://shopnest-4thm.onrender.com/',
+    imageUrl: '/images/projects/shopnest.png',
     featured: true
   },
   {
@@ -164,6 +166,7 @@ export const projectsData: Project[] = [
     tools: ['Django', 'Bootstrap', 'SQLite', 'HTML'],
     githubUrl: 'https://github.com/nabil0203/taskify',
     liveUrl: 'https://taskify-cq2h.onrender.com',
+    imageUrl: '/images/projects/taskify.jpg',
     featured: true
   },
   {
@@ -172,6 +175,7 @@ export const projectsData: Project[] = [
     description: 'Quiz Verse is a lightweight, interactive multiple-choice quiz application built with Django. It demonstrates full-stack fundamentals including database relationships, form handling, request lifecycle management, and dynamic template rendering.',
     tools: ['Django', 'SQLite', 'HTML', 'Tailwind CSS'],
     githubUrl: 'https://github.com/nabil0203/Quiz_Verse',
+    imageUrl: '/images/projects/quizverse.png',
     featured: true
   },  
   {
@@ -180,14 +184,16 @@ export const projectsData: Project[] = [
     description: 'A simple Python script that reads a Text/URL and a File name from a Text file. Then generates a QR code and saves it as an image.',
     tools: ['Python', 'qrcode'],
     githubUrl: 'https://github.com/nabil0203/QR_Code_Generator',
+    imageUrl: '',
     featured: true
   },
   {
     id: 'auto-vault',
     title: '🚗Auto Vault',
-    description: 'This is a lightweight PHP and MySQL web application. It allows users to add, view, update, and delete car details. This project was developed as part of the SE_332 – Web Application Lab course to demonstrate core database operations in web development.',
+    description: 'This is a lightweight PHP and MySQL web application. It allows users to add, view, update, and delete car details. This project was developed as part of the SE_332 - Web Application Lab course to demonstrate core database operations in web development.',
     tools: ['PHP', 'MySQL', 'CSS', 'HTML'],
     githubUrl: 'https://github.com/nabil0203/AutoVault',
+    imageUrl: '',
     featured: true
   },
   {
@@ -196,6 +202,7 @@ export const projectsData: Project[] = [
     description: 'An educational platform connecting students with tutors and study resources. Includes features for scheduling sessions, resource sharing, progress tracking, and interactive learning tools to enhance the educational experience.',
     tools: ['PHP', 'MySQL', 'CSS'],
     githubUrl: 'https://github.com/nabil0203/Scholar_Shelf',
+    imageUrl: '',
     featured: true
   },
   {
@@ -204,6 +211,7 @@ export const projectsData: Project[] = [
     description: 'CarMaster is a console-based Car Showroom Management System built using Java and Object-Oriented Programming principles. It allows users to add, update, display, and delete different types of cars through a menu-driven interface',
     tools: ['Java', 'OOP'],
     githubUrl: 'https://github.com/nabil0203/CarMaster',
+    imageUrl: '',
     featured: true
   },
   {
@@ -212,6 +220,7 @@ export const projectsData: Project[] = [
     description: 'A console based pharmacy management system designed to streamline medication dispensing, inventory management, and patient records. Features include prescription processing, stock alerts, and user-friendly interfaces for both pharmacists and patients. ',
     tools: ['C language'],
     githubUrl: 'https://github.com/nabil0203/Pharm_Ease',
+    imageUrl: '',
     featured: true
   },
 

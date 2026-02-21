@@ -64,18 +64,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -8, backgroundColor: "rgba(255, 255, 255, 0.06)", borderColor: "rgba(255, 255, 255, 0.2)" }}
-      transition={{ duration: 0.3 }}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d"
-      }}
+      transition={{ duration: 0.1 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       <div className="absolute -top-20 -right-20 w-48 h-48 bg-accent/10 group-hover:bg-accent/20 blur-[3rem] rounded-full transition-colors duration-500" />
       {project.imageUrl && (
-        <div className="mb-6 h-52 overflow-hidden rounded-xl shadow-inner border border-white/5 relative group-hover:border-white/10 transition-colors">
+        <div className="-mx-8 -mt-8 mb-6 h-52 overflow-hidden shadow-inner border border-white/5 relative group-hover:border-white/10 transition-colors">
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none" />
           <img
             src={project.imageUrl}

@@ -60,7 +60,7 @@ export interface VolunteerExperience {
 // Personal Information
 export const personalInfo: PersonalInfo = {
   name: 'Chowdhury Nabil Ahmed',
-  title: 'Majoring in Software Engineering | Web Developer',
+  title: 'Web Developer, Majoring in Software Engineering',
   heroDescription: 'Problem solver with 400+ problems solved. Building modern web applications with Django & React.',
   aboutDescription: 'A Computer Science undergraduate specializing in Software Engineering, skilled in Data Structures and Algorithms using C++ and Object-Oriented Programming. Solved 400+ problems on major online platforms. Actively building web applications using Python, Django, and REST APIs. Also expanding into Machine Learning with Python.',
   aboutTitle: 'About Me'
@@ -115,10 +115,10 @@ export const skillsData: Skill[] = [
 
   // Frontend
   { name: 'React', category: 'Frontend' },
-  { name: 'HTML', category: 'Frontend' },
-  { name: 'CSS', category: 'Frontend' },
   { name: 'Tailwind CSS', category: 'Frontend' },
   { name: 'Bootstrap', category: 'Frontend' },
+  { name: 'HTML', category: 'Frontend' },
+  { name: 'CSS', category: 'Frontend' },
 
   // Backend
   { name: 'Django', category: 'Backend' },
@@ -129,10 +129,10 @@ export const skillsData: Skill[] = [
   { name: 'PostgreSQL', category: 'Database' },
   { name: 'SQLite', category: 'Database' },
 
-  // Tools & Technologies
-  { name: 'Git', category: 'Tools & Technologies' },
-  { name: 'GitHub', category: 'Tools & Technologies' },
-  { name: 'VS Code', category: 'Tools & Technologies' },
+  // Tools
+  { name: 'Git', category: 'Tools' },
+  { name: 'GitHub', category: 'Tools' },
+  { name: 'VS Code', category: 'Tools' },
 
   // Other
   { name: 'Data Structures', category: 'Other' },

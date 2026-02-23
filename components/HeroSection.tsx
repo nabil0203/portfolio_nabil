@@ -133,10 +133,10 @@ export default function HeroSection() {
 
           <motion.h2
             variants={letterVariants}
-            className="text-[clamp(1.1rem,5vw,1.75rem)] sm:text-3xl md:text-4xl lg:text-3xl font-extrabold tracking-tighter sm:mx-6 mb-6 leading-tight whitespace-nowrap sm:whitespace-normal
+            className="text-[clamp(1.1rem,5vw,1.75rem)] sm:text-3xl md:text-4xl lg:text-4xl font-extrabold tracking-tighter sm:mx-6 mb-6 leading-tight whitespace-nowrap sm:whitespace-normal
             bg-gradient-to-r from-accent via-accent-glow to-accent-secondary bg-clip-text text-transparent drop-shadow-sm"
           >
-            {personalInfo.title.split(' | ').map((line, index) => (
+            {personalInfo.title.split(',').map((line, index) => (
               <span key={index} className="block mt-2">
                 {line}
               </span>

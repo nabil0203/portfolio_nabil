@@ -22,14 +22,14 @@ const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon, ariaLabel
     aria-label={ariaLabel}
     whileHover={{ scale: 1.05, y: -2 }}
     whileTap={{ scale: 0.95 }}
-    className="inline-flex items-center justify-center gap-3 px-8 py-3.5
-    rounded-full bg-surface/50 border border-white/10 backdrop-blur-md
-    hover:bg-accent/10 hover:border-accent/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)]
-    text-primary font-medium tracking-wide
+    className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-2.5 sm:px-8 sm:py-3.5
+    rounded-2xl bg-gradient-to-r from-blue-800 to-blue-950 border border-blue-700 backdrop-blur-md
+    hover:from-blue-700 hover:to-blue-900 hover:border-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)]
+    text-white text-sm sm:text-base font-medium tracking-wide
     transition-all duration-300 ease-out
     w-full sm:w-auto z-20 group"
   >
-    {Icon && <Icon size={20} className="text-accent-glow group-hover:text-accent transition-colors" aria-hidden="true" />}
+    {Icon && <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300 group-hover:text-white transition-colors" aria-hidden="true" />}
     <span>{children}</span>
   </motion.a>
 )
@@ -46,11 +46,6 @@ const mainContentGlow = {
     '0 0 20px rgba(59, 130, 246, 0.05)',
     '0 0 40px rgba(6, 182, 212, 0.15)',
     '0 0 20px rgba(139, 92, 246, 0.05)',
-  ],
-  borderColor: [
-    'rgba(255, 255, 255, 0.05)',
-    'rgba(59, 130, 246, 0.3)',
-    'rgba(255, 255, 255, 0.05)',
   ],
 }
 
@@ -117,8 +112,7 @@ export default function HeroSection() {
       />
 
       <motion.div
-        className="relative z-10 max-w-6xl w-full mx-auto p-6 sm:p-10 md:p-20 bg-surface/30 border rounded-3xl backdrop-blur-xl shadow-2xl"
-        style={{ borderWidth: '1px' }}
+        className="relative z-10 max-w-6xl w-full mx-auto p-6 sm:p-10 md:p-20 bg-surface/30 border-2 border-accent/40 rounded-3xl backdrop-blur-xl shadow-2xl"
         animate={mainContentGlow}
         transition={glowTransition}
       >

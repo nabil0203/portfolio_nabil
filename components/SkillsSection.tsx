@@ -46,8 +46,8 @@ export default function SkillsSection() {
         </MotionDiv>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
-          {Object.entries(skillGroups).map(([category, skills], groupIndex) => (
-            <MotionDiv key={category} delay={groupIndex * 0.1}>
+          {Object.entries(skillGroups).map(([category, skills]) => (
+            <MotionDiv key={category}>
               <motion.div
                 className="group relative flex flex-col h-full bg-surface/20 backdrop-blur-xl p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-300"
                 whileHover={{ y: -6 }}
@@ -73,13 +73,12 @@ export default function SkillsSection() {
                   <div className="w-full h-[1px] bg-gradient-to-r from-accent/40 via-accent-secondary/20 to-transparent mb-5 sm:mb-8" />
 
                   <div className="flex flex-wrap gap-3" role="list">
-                    {skills.map((skill, skillIndex) => {
+                    {skills.map((skill) => {
                       const SkillComponent = skill.url ? motion.a : motion.span
 
                       return (
                         <MotionDiv
                           key={skill.name}
-                          delay={skillIndex * 0.03 + groupIndex * 0.1}
                           className="inline-block"
                         >
                           <SkillComponent

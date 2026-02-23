@@ -22,6 +22,7 @@ export interface Contact {
   location: string
   github: string
   linkedin: string
+  resume?: string
 }
 
 export interface Education {
@@ -45,7 +46,7 @@ export interface Project {
   tools: string[]
   githubUrl?: string
   liveUrl?: string
-  imageUrl?: string 
+  imageUrl?: string
   featured?: boolean
 }
 
@@ -75,12 +76,13 @@ export const siteMetadata: SiteMetadata = {
 }
 
 // Contact Information
-export const contactData: Contact = { 
+export const contactData: Contact = {
   email: 'nabilahmed0203@gmail.com',
   phone: '+8801709548627',
   location: 'Dhamrai, Dhaka, Bangladesh',
   github: 'https://github.com/nabil0203',
-  linkedin: 'https://linkedin.com/in/nabil0203'
+  linkedin: 'https://linkedin.com/in/nabil0203',
+  resume: 'https://drive.google.com/file/d/12LMfHVCskTmOKRfbn6wUQjbzcQ8166xE/view?usp=sharing'
 }
 
 // Education Data
@@ -88,7 +90,7 @@ export const educationData = [
   {
     degree: 'B.Sc. in Software Engineering',
     institution: 'Daffodil International University',
-    gpa: '3.90', 
+    gpa: '3.90',
     graduation: 'Expected Graduation: 2027',
     description: '',
   },
@@ -153,7 +155,7 @@ export const projectsData: Project[] = [
     id: 'shopnest',
     title: '🛒 ShopNest',
     description: 'A full-featured, modern single-vendor e-commerce platform built with Django. ShopNest provides a complete online shopping experience with product browsing, stock availability display, shopping cart, user authentication, and secure online payment processing via SSLCommerz gateway.',
-    tools: ['Django','SQLite','Tailwind CSS', 'SSLCommerz API'],
+    tools: ['Django', 'SQLite', 'Tailwind CSS', 'SSLCommerz API'],
     githubUrl: 'https://github.com/nabil0203/ShopNest',
     liveUrl: 'https://shopnest-4thm.onrender.com/',
     imageUrl: '/images/projects/shopnest.png',
@@ -177,7 +179,7 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/nabil0203/Quiz_Verse',
     imageUrl: '/images/projects/quizverse.png',
     featured: true
-  },  
+  },
   {
     id: 'qr-code-generator',
     title: '⛆ QR Code Generator',
@@ -224,7 +226,7 @@ export const projectsData: Project[] = [
     featured: true
   },
 
-  
+
 ]
 
 // Additional Information Data

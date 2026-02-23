@@ -60,7 +60,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <motion.div
-      className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-md border border-white/10 p-8 transition-colors flex flex-col h-full shadow-lg shadow-black/20 group"
+      className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-md border border-white/10 p-5 sm:p-8 transition-colors flex flex-col h-full shadow-lg shadow-black/20 group"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -8, backgroundColor: "rgba(255, 255, 255, 0.06)", borderColor: "rgba(255, 255, 255, 0.2)" }}
@@ -70,7 +70,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <div className="absolute -top-20 -right-20 w-48 h-48 bg-accent/10 group-hover:bg-accent/20 blur-[3rem] rounded-full transition-colors duration-500" />
       {project.imageUrl && (
-        <div className="-mx-8 -mt-8 mb-6 h-52 overflow-hidden shadow-inner border border-white/5 relative group-hover:border-white/10 transition-colors">
+        <div className="-mx-5 -mt-5 mb-4 sm:-mx-8 sm:-mt-8 sm:mb-6 h-40 sm:h-52 overflow-hidden shadow-inner border border-white/5 relative group-hover:border-white/10 transition-colors">
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none" />
           <img
             src={project.imageUrl}
@@ -81,20 +81,20 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
       )}
 
-      <h3 className="text-white font-bold text-2xl mb-4">
+      <h3 className="text-white font-bold text-xl sm:text-2xl mb-2 sm:mb-4">
         {project.title}
       </h3>
 
-      <p className="text-gray-300 text-sm mb-4 leading-relaxed flex-grow">
+      <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed flex-grow">
         {project.description}
       </p>
 
-      <div className="mt-4 mb-8 flex-grow">
-        <div className="flex flex-wrap gap-2 mt-2">
+      <div className="mt-3 sm:mt-4 mb-6 sm:mb-8 flex-grow">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2">
           {project.tools.map((tool, toolIndex) => (
             <span
               key={toolIndex}
-              className="text-xs font-medium tracking-wide text-cyan-300 bg-cyan-400/10 px-3 py-1 rounded-full border border-cyan-400/20 shadow-sm"
+              className="text-[10px] sm:text-xs font-medium tracking-wide text-cyan-300 bg-cyan-400/10 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full border border-cyan-400/20 shadow-sm"
             >
               {tool}
             </span>
@@ -102,13 +102,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
       </div>
 
-      <div className="flex gap-4 pt-4 border-t border-white/5">
+      <div className="flex gap-3 sm:gap-4 pt-4 border-t border-white/5">
         {project.githubUrl && (
           <motion.a
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border border-blue-400 text-sm"
+            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium border border-blue-400 text-xs sm:text-sm"
             style={{ borderWidth: '1px' }}
             variants={linkHoverVariants}
             whileHover="hover"
@@ -127,7 +127,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-2 px-4 py-2 rounded-lg font-medium border border-blue-400 text-sm"
+            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium border border-blue-400 text-xs sm:text-sm"
             style={{ borderWidth: '1px' }}
             variants={linkHoverVariants}
             whileHover="hover"

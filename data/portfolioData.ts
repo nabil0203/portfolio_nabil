@@ -63,7 +63,7 @@ export const personalInfo: PersonalInfo = {
   title: 'Web Developer, Majoring in Software Engineering',
   heroDescription: 'Problem solver with 400+ problems solved. Building modern web applications with Django & React.',
   aboutDescription: [
-    'A Computer Science undergraduate specializing in Software Engineering. Skilled in Data Structures and Algorithms and OOP.',
+    'A Computer Science undergraduate specializing in Software Engineering. Skilled in Data Structures, Algorithms and OOP.',
     'Solved 400+ problems on major online platforms.',
     'Actively building web applications using Django, React, and REST APIs.',
     'Eager to join as an intern or junior developer where I can apply my skills and contribute to the growth of the organization.',

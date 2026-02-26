@@ -13,6 +13,7 @@ export default function SkillCard({ category, skills }: SkillCardProps) {
         <motion.div
             className="group relative flex flex-col h-full bg-surface/20 backdrop-blur-xl p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-100"
             whileHover={{ y: -6 }}
+            transition={{ duration: 0.1 }}
         >
             {/* Glow behind card on hover */}
             <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 via-accent-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-100 blur-2xl z-0 pointer-events-none" />
@@ -51,6 +52,7 @@ export default function SkillCard({ category, skills }: SkillCardProps) {
                                         }`}
                                     whileHover={{ scale: 1.05, y: -2 }}
                                     whileTap={skill.url ? { scale: 0.95 } : undefined}
+                                    transition={{ duration: 0.1 }}
                                 >
                                     <span className="relative z-10 tracking-wide">{skill.name}</span>
                                     {skill.url && (

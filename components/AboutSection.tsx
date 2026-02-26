@@ -41,7 +41,7 @@ export default function AboutSection() {
         <MotionDiv>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start mt-12">
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-surface/50 to-accent-secondary/10 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-surface/50 to-accent-secondary/10 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-100" />
 
               <div className="relative bg-surface/30 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl overflow-hidden">
                 <div className="flex items-center gap-4 mb-6 relative z-10">
@@ -50,12 +50,13 @@ export default function AboutSection() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">Summary</h3>
-                    <div className="w-12 h-1 bg-accent rounded-full mt-1"></div>
                   </div>
                 </div>
-                <p className="text-gray-300 leading-relaxed text-sm sm:text-lg relative z-10">
-                  {personalInfo.aboutDescription}
-                </p>
+                <div className="text-gray-300 leading-relaxed text-sm sm:text-lg relative z-10 space-y-4">
+                  {personalInfo.aboutDescription.map((item, index) => (
+                    <p key={index}>{item}</p>
+                  ))}
+                </div>
 
                 <motion.div style={{ x: x1, y: y1 }} className="absolute top-4 right-4 w-20 h-20 bg-accent-glow/10 rounded-full blur-2xl z-0 pointer-events-none" />
                 <motion.div style={{ x: x2, y: y2 }} className="absolute bottom-4 left-4 w-16 h-16 bg-accent-secondary/15 rounded-full blur-xl z-0 pointer-events-none" />
@@ -69,7 +70,7 @@ export default function AboutSection() {
             {/* Right Column - Education Card */}
             <div className="relative group">
               {/* Background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface/60 to-accent-glow/5 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface/60 to-accent-glow/5 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-100" />
 
               {/* Content */}
               <div className="relative bg-surface/40 backdrop-blur-xl border border-white/10 rounded-3xl p-5 sm:p-8 shadow-2xl overflow-hidden">
@@ -79,21 +80,20 @@ export default function AboutSection() {
                   </div>
                   <div>
                     <h3 className="text-xl sm:text-2xl font-bold text-white">Education</h3>
-                    <div className="w-10 sm:w-12 h-1 bg-accent rounded-full mt-1"></div>
                   </div>
                 </div>
 
                 <div className="relative z-10">
-                  <div className="absolute left-1 sm:left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent/50 to-accent/20"></div>
+                  <div className="absolute left-[13px] sm:left-[27px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent/50 to-accent/20"></div>
 
-                  <div className="space-y-8 pl-6 sm:pl-12">
+                  <div className="space-y-6 pl-6 sm:pl-12">
                     {educationData.map((edu, index) => (
                       <div key={index} className="relative group/item">
-                        <div className="absolute -left-5 sm:-left-8 top-3 w-5 h-5 sm:w-6 sm:h-6 bg-accent rounded-full border-2 sm:border-4 border-surface shadow-lg shadow-accent/50 group-hover/item:shadow-accent/75 transition-shadow duration-300">
+                        <div className="absolute -left-5 sm:-left-8 top-3 w-5 h-5 sm:w-6 sm:h-6 bg-accent rounded-full border-2 sm:border-4 border-surface shadow-lg shadow-accent/50 group-hover/item:shadow-accent/75 transition-shadow duration-100">
                           <div className="absolute inset-0 bg-accent rounded-full animate-pulse opacity-50"></div>
                         </div>
 
-                        <div className="bg-surface/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/5 backdrop-blur-sm hover:border-accent/20 transition-colors duration-300">
+                        <div className="bg-surface/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/5 backdrop-blur-sm hover:border-accent/20 transition-colors duration-100">
                           <h4 className="text-base sm:text-xl font-bold text-white mb-1 sm:mb-2">{edu.degree}</h4>
                           <p className="text-accent text-sm sm:text-lg font-medium mb-2 sm:mb-3">{edu.institution}</p>
 

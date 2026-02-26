@@ -84,7 +84,7 @@ export default function Header() {
         y: isVisible ? 0 : -100
       }}
       transition={{
-        duration: 0.2,
+        duration: 0.1,
         ease: "easeOut"
       }}
       style={{
@@ -98,7 +98,7 @@ export default function Header() {
             className="text-base sm:text-lg md:text-xl font-bold text-accent cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.1 }}
           >
             {personalInfo.name}
           </motion.button>
@@ -111,14 +111,13 @@ export default function Header() {
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium tracking-wide uppercase transition-all duration-300 ${
-                    isActive
-                      ? 'text-accent'
-                      : 'text-gray-400 hover:text-white'
-                  }`}
+                  className={`relative px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium tracking-wide uppercase transition-all duration-100 ${isActive
+                    ? 'text-accent'
+                    : 'text-gray-400 hover:text-white'
+                    }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.1 }}
                 >
                   {item.label}
                   {isActive && (
@@ -168,7 +167,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.1 }}
             className="md:hidden mt-4 pb-4 border-t border-secondary/50 pt-4"
           >
             <div className="flex flex-col space-y-2">
@@ -181,14 +180,13 @@ export default function Header() {
                       scrollToSection(item.id)
                       setIsMobileMenuOpen(false)
                     }}
-                    className={`relative px-4 py-2 text-sm font-medium text-left transition-all duration-300 ${
-                      isActive
-                        ? 'text-accent'
-                        : 'text-gray-400 hover:text-white'
-                    }`}
+                    className={`relative px-4 py-2 text-sm font-medium text-left transition-all duration-100 ${isActive
+                      ? 'text-accent'
+                      : 'text-gray-400 hover:text-white'
+                      }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.1 }}
                   >
                     {item.label}
                     {isActive && (

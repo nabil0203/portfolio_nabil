@@ -68,14 +68,14 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="absolute -top-20 -right-20 w-48 h-48 bg-accent/10 group-hover:bg-accent/20 blur-[3rem] rounded-full transition-colors duration-500" />
+      <div className="absolute -top-20 -right-20 w-48 h-48 bg-accent/10 group-hover:bg-accent/20 blur-[3rem] rounded-full transition-colors duration-100" />
       {project.imageUrl && (
         <div className="-mx-5 -mt-5 mb-4 sm:-mx-8 sm:-mt-8 sm:mb-6 h-40 sm:h-52 overflow-hidden shadow-inner border border-white/5 relative group-hover:border-white/10 transition-colors">
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none" />
           <img
             src={project.imageUrl}
             alt={`Preview image for ${project.title} project`}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            className="w-full h-full object-cover transition-transform duration-100 hover:scale-110"
             loading="lazy"
           />
         </div>
@@ -108,12 +108,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium border border-blue-400 text-xs sm:text-sm"
+            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-100 flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium border border-blue-400 text-xs sm:text-sm"
             style={{ borderWidth: '1px' }}
             variants={linkHoverVariants}
             whileHover="hover"
             whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.1 }}
             aria-label={`View ${project.title} source code on GitHub`}
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -127,12 +127,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-300 flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium border border-blue-400 text-xs sm:text-sm"
+            className="text-cyan-400 bg-surface/80 hover:bg-accent hover:text-white transition-colors duration-100 flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium border border-blue-400 text-xs sm:text-sm"
             style={{ borderWidth: '1px' }}
             variants={linkHoverVariants}
             whileHover="hover"
             whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.1 }}
             aria-label={`View live demonstration of ${project.title}`}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

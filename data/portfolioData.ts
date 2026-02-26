@@ -4,7 +4,7 @@ export interface PersonalInfo {
   name: string
   title: string
   heroDescription: string
-  aboutDescription: string
+  aboutDescription: string[]
   aboutTitle: string
 }
 
@@ -62,7 +62,12 @@ export const personalInfo: PersonalInfo = {
   name: 'Chowdhury Nabil Ahmed',
   title: 'Web Developer, Majoring in Software Engineering',
   heroDescription: 'Problem solver with 400+ problems solved. Building modern web applications with Django & React.',
-  aboutDescription: 'A Computer Science undergraduate specializing in Software Engineering, skilled in Data Structures and Algorithms using C++ and Object-Oriented Programming. Solved 400+ problems on major online platforms. Actively building web applications using Python, Django, and REST APIs. Also expanding into Machine Learning with Python.',
+  aboutDescription: [
+    'A Computer Science undergraduate specializing in Software Engineering. Skilled in Data Structures and Algorithms and OOP.',
+    'Solved 400+ problems on major online platforms.',
+    'Actively building web applications using Django, React, and REST APIs.',
+    'Eager to join as an intern or junior developer where I can apply my skills and contribute to the growth of the organization.',
+  ],
   aboutTitle: 'About Me'
 }
 

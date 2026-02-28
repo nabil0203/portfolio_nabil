@@ -24,7 +24,7 @@ const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon, ariaLabel
     whileTap={{ scale: 0.95 }}
     transition={{ duration: 0.1 }}
     className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-2.5 sm:px-8 sm:py-3.5
-    rounded-xl bg-gradient-to-r from-blue-800 to-blue-950 border border-blue-700 backdrop-blur-md
+    rounded-lg bg-gradient-to-r from-blue-800 to-blue-950 border border-blue-700 backdrop-blur-md
     hover:from-blue-700 hover:to-blue-900 hover:border-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)]
     text-white text-sm sm:text-base font-medium tracking-wide
     transition-all duration-100 ease-out

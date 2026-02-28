@@ -85,7 +85,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         {project.title}
       </h3>
 
-      <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed flex-grow">
+      <p className="text-gray-400 text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed flex-grow">
         {project.description}
       </p>
 
@@ -95,7 +95,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             <span
               key={toolIndex}
               className="text-[10px] sm:text-xs font-medium tracking-wide text-cyan-300 bg-cyan-400/10 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full border border-cyan-400/20 shadow-sm"
-            >
+            > 
               {tool}
             </span>
           ))}

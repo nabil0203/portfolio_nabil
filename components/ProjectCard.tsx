@@ -90,12 +90,18 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       </p>
 
       <div className="mt-3 sm:mt-4 mb-6 sm:mb-8 flex-grow">
+        <div className="flex items-center gap-1.5 mb-3">
+          <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          <h4 className="text-gray-400 text-sm font-semibold">Built With:</h4>
+        </div>
         <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2">
           {project.tools.map((tool, toolIndex) => (
             <span
               key={toolIndex}
               className="text-[10px] sm:text-xs font-medium tracking-wide text-cyan-300 bg-cyan-400/10 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full border border-cyan-400/20 shadow-sm"
-            > 
+            >
               {tool}
             </span>
           ))}

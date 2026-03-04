@@ -125,7 +125,7 @@ export default function HeroSection() {
         >
           <motion.h1
             variants={letterVariants}
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold py-2 mb-4 md:mb-6 leading-tight
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold py-2 mb-4 md:mb-6 leading-tight
             bg-gradient-to-r from-white via-primary to-slate-400
             bg-clip-text text-transparent pt-6 sm:pt-4 drop-shadow-sm"
           >
@@ -134,7 +134,7 @@ export default function HeroSection() {
 
           <motion.h2
             variants={letterVariants}
-            className="text-[clamp(1.1rem,5vw,1.75rem)] sm:text-3xl md:text-4xl lg:text-4xl font-extrabold tracking-tighter sm:mx-6 mb-6 leading-tight whitespace-nowrap sm:whitespace-normal
+            className="text-[clamp(1.1rem,5vw,1.75rem)] sm:text-3xl lg:text-3xl font-extrabold tracking-tighter sm:mx-6 mb-6 leading-tight whitespace-nowrap sm:whitespace-normal
             bg-gradient-to-r from-accent via-accent-glow to-accent-secondary bg-clip-text text-transparent drop-shadow-sm"
           >
             {personalInfo.title.split(',').map((line, index) => (
@@ -146,7 +146,7 @@ export default function HeroSection() {
 
           <motion.p
             variants={letterVariants}
-            className="text-base md:text-lg lg:text-xl text-slate-300/90 font-light leading-relaxed
+            className="text-base md:text-lg text-slate-300/90 font-light leading-relaxed
             max-w-3xl mx-auto mb-8 md:mb-12"
           >
             {personalInfo.heroDescription}

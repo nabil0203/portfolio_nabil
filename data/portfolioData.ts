@@ -177,6 +177,16 @@ export const projectsData: Project[] = [
     featured: true
   },
   {
+    id: 'coinly',
+    title: '💰Coinly',
+    description: 'An Expense tracking web application. This application is used by me personally on a daily basis. It allows me to track my daily expenses, view monthly ledgers, manage debt & receivables.',
+    tools: ['Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/nabil0203/Coinly',
+    liveUrl: 'https://coinly0203.vercel.app/',
+    imageUrl: '/images/projects/coinly.png',
+    featured: true
+  },
+  {
     id: 'quiz-verse',
     title: '🧪 Quiz Verse',
     description: 'Quiz Verse is a lightweight, interactive multiple-choice quiz application built with Django. It demonstrates full-stack fundamentals including database relationships, form handling, request lifecycle management, and dynamic template rendering.',

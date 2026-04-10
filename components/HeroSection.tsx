@@ -93,7 +93,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden px-4"
+      className="relative min-h-screen flex items-center justify-center bg-background overflow-x-hidden px-3 sm:px-4"
     >
       {/* Background pattern and glow */}
       <div className="absolute inset-0 bg-dot-pattern-faint opacity-30 mix-blend-screen" />
@@ -114,8 +114,8 @@ export default function HeroSection() {
       />
 
       <motion.div
-        className="relative z-10 max-w-6xl w-full mx-auto p-8 sm:p-10 md:p-16 bg-surface/30 border-2 border-accent/40 rounded-3xl backdrop-blur-xl shadow-2xl
-        flex flex-col lg:flex-row items-center gap-10 lg:gap-16"
+        className="relative z-10 max-w-6xl w-full mx-auto p-5 sm:p-8 md:p-12 lg:p-16 bg-surface/30 border-2 border-accent/40 rounded-3xl backdrop-blur-xl shadow-2xl
+        flex flex-col lg:flex-row items-center gap-8 lg:gap-16"
         animate={mainContentGlow}
         transition={glowTransition}
       >
@@ -129,21 +129,21 @@ export default function HeroSection() {
         >
           <motion.h1
             variants={letterVariants}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold py-2 mb-4 md:mb-6 leading-tight whitespace-nowrap
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold py-2 mb-4 md:mb-6 leading-tight break-words
             bg-gradient-to-r from-white via-primary to-slate-400
-            bg-clip-text text-transparent pt-6 sm:pt-4 drop-shadow-sm"
+            bg-clip-text text-transparent pt-4 sm:pt-4 drop-shadow-sm"
           >
             {personalInfo.name}
           </motion.h1>
 
           <motion.h2
             variants={letterVariants}
-            className="text-[clamp(1.1rem,5vw,1.75rem)] sm:text-3xl lg:text-3xl font-extrabold tracking-tighter sm:mx-6 lg:mx-0 mb-6 leading-tight whitespace-nowrap sm:whitespace-normal
+            className="text-[clamp(1rem,4.5vw,1.75rem)] sm:text-2xl lg:text-3xl font-extrabold tracking-tight mx-0 mb-6 leading-snug
             bg-gradient-to-r from-accent via-accent-glow to-accent-secondary bg-clip-text text-transparent drop-shadow-sm"
           >
             {personalInfo.title.split(',').map((line, index) => (
-              <span key={index} className="block mt-2">
-                {line}
+              <span key={index} className="block mt-1">
+                {line.trim()}
               </span>
             ))}
           </motion.h2>
@@ -158,7 +158,7 @@ export default function HeroSection() {
 
           <motion.div
             variants={letterVariants}
-            className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 px-4 sm:px-0"
+            className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4 px-0"
           >
             <HeroButton href={contactData.linkedin} Icon={Linkedin} ariaLabel="Open my LinkedIn profile">
               LinkedIn

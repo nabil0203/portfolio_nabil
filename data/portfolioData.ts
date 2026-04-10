@@ -1,3 +1,13 @@
+export type {
+  PersonalInfo,
+  SiteMetadata,
+  Contact,
+  Education,
+  Skill,
+  Project,
+  VolunteerExperience
+} from '@/data/portfolioTypes'
+
 import {
   PersonalInfo,
   SiteMetadata,

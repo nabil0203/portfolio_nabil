@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, Variants, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { Project } from '@/data/portfolioData'
+import { Project } from '@/data/portfolioTypes'
 
 const LINK_COLOR_RGB = '59, 130, 246'
 

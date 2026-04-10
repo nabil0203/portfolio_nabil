@@ -1,32 +1,19 @@
 'use client'
 
-import { useEffect } from 'react'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { motion, useTransform } from 'framer-motion'
 import MotionDiv from './MotionDiv'
 import { educationData, personalInfo } from '@/data/portfolioData'
 import { User, GraduationCap, Calendar } from 'lucide-react'
+import { useMousePosition } from '@/hooks/useMousePosition'
+
 export default function AboutSection() {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const { smoothMouseX, smoothMouseY } = useMousePosition()
 
-  const springConfig = { damping: 50, stiffness: 100 };
-  const smoothMouseX = useSpring(mouseX, springConfig);
-  const smoothMouseY = useSpring(mouseY, springConfig);
+  const x1 = useTransform(smoothMouseX, [-0.5, 0.5], [-30, 30])
+  const y1 = useTransform(smoothMouseY, [-0.5, 0.5], [-30, 30])
 
-  const x1 = useTransform(smoothMouseX, [-0.5, 0.5], [-30, 30]);
-  const y1 = useTransform(smoothMouseY, [-0.5, 0.5], [-30, 30]);
-
-  const x2 = useTransform(smoothMouseX, [-0.5, 0.5], [40, -40]);
-  const y2 = useTransform(smoothMouseY, [-0.5, 0.5], [40, -40]);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX / window.innerWidth - 0.5);
-      mouseY.set(e.clientY / window.innerHeight - 0.5);
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
+  const x2 = useTransform(smoothMouseX, [-0.5, 0.5], [40, -40])
+  const y2 = useTransform(smoothMouseY, [-0.5, 0.5], [40, -40])
 
   return (
     <section id="about" className="py-16 scroll-mt-24 bg-secondary/5">

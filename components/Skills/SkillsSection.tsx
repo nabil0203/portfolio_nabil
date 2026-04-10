@@ -1,15 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import MotionDiv from './MotionDiv'
+import MotionDiv from '../MotionDiv'
 import { skillsData } from '@/data/portfolioData'
 import SkillCard from './SkillCard'
-
-type Skill = {
-  name: string
-  category: string
-  url?: string
-}
+import { Skill } from '@/data/portfolioTypes'
 
 const skillGroups = (skillsData as Skill[]).reduce(
   (acc, skill) => {

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import MotionDiv from './MotionDiv'
+import MotionDiv from '../MotionDiv'
 
 interface SkillCardProps {
     category: string;

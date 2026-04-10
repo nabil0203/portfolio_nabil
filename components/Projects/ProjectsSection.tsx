@@ -1,4 +1,4 @@
-import MotionDiv from './MotionDiv'
+import MotionDiv from '../MotionDiv'
 import ProjectCard from './ProjectCard'
 import { projectsData } from '@/data/portfolioData'
 

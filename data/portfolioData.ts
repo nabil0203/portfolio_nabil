@@ -28,6 +28,7 @@ export interface Contact {
 export interface Education {
   degree: string
   institution: string
+  url?: string
   graduation: string
   gpa?: string
   description?: string
@@ -95,13 +96,15 @@ export const educationData = [
   {
     degree: 'B.Sc. in Software Engineering',
     institution: 'Daffodil International University',
+    url: 'https://daffodilvarsity.edu.bd',
     gpa: '3.90',
-    graduation: 'Expected Graduation: 2026',
+    graduation: 'Expected Graduation: December 2026',
     description: '',
   },
   {
     degree: 'HSC in Science',
     institution: 'Jahangirnagar University School and College',
+    url: 'https://juschoolcollege.org',
     gpa: '5.00',
     graduation: '2020',
     description: '',
@@ -132,6 +135,7 @@ export const skillsData: Skill[] = [
   // Database
   { name: 'MySQL', category: 'Database' },
   { name: 'PostgreSQL', category: 'Database' },
+  { name: 'Supabase', category: 'Database' },
   { name: 'SQLite', category: 'Database' },
 
   // Tools

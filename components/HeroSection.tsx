@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Image from 'next/image'
 import { motion, Transition, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import ScrollIndicator from './ScrollIndicator'
 import { Github, FileText, Linkedin } from 'lucide-react'
@@ -23,7 +24,7 @@ const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon, ariaLabel
     whileHover={{ scale: 1.05, y: -2 }}
     whileTap={{ scale: 0.95 }}
     transition={{ duration: 0.1 }}
-    className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-2.5 sm:px-8 sm:py-3.5
+    className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-2 sm:px-8 sm:py-3
     rounded-lg bg-gradient-to-r from-blue-800 to-blue-950 border border-blue-700 backdrop-blur-md
     hover:from-blue-700 hover:to-blue-900 hover:border-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)]
     text-white text-sm sm:text-base font-medium tracking-wide
@@ -92,7 +93,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center text-center bg-background overflow-hidden px-4"
+      className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden px-4"
     >
       {/* Background pattern and glow */}
       <div className="absolute inset-0 bg-dot-pattern-faint opacity-30 mix-blend-screen" />
@@ -113,11 +114,14 @@ export default function HeroSection() {
       />
 
       <motion.div
-        className="relative z-10 max-w-6xl w-full mx-auto p-6 sm:p-10 md:p-20 bg-surface/30 border-2 border-accent/40 rounded-3xl backdrop-blur-xl shadow-2xl"
+        className="relative z-10 max-w-6xl w-full mx-auto p-8 sm:p-10 md:p-16 bg-surface/30 border-2 border-accent/40 rounded-3xl backdrop-blur-xl shadow-2xl
+        flex flex-col lg:flex-row items-center gap-10 lg:gap-16"
         animate={mainContentGlow}
         transition={glowTransition}
       >
+        {/* LEFT COLUMN — Text Content */}
         <motion.div
+          className="flex-1 text-center lg:text-left"
           variants={textVariants}
           initial="hidden"
           whileInView="visible"
@@ -125,7 +129,7 @@ export default function HeroSection() {
         >
           <motion.h1
             variants={letterVariants}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold py-2 mb-4 md:mb-6 leading-tight
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold py-2 mb-4 md:mb-6 leading-tight whitespace-nowrap
             bg-gradient-to-r from-white via-primary to-slate-400
             bg-clip-text text-transparent pt-6 sm:pt-4 drop-shadow-sm"
           >
@@ -134,7 +138,7 @@ export default function HeroSection() {
 
           <motion.h2
             variants={letterVariants}
-            className="text-[clamp(1.1rem,5vw,1.75rem)] sm:text-3xl lg:text-3xl font-extrabold tracking-tighter sm:mx-6 mb-6 leading-tight whitespace-nowrap sm:whitespace-normal
+            className="text-[clamp(1.1rem,5vw,1.75rem)] sm:text-3xl lg:text-3xl font-extrabold tracking-tighter sm:mx-6 lg:mx-0 mb-6 leading-tight whitespace-nowrap sm:whitespace-normal
             bg-gradient-to-r from-accent via-accent-glow to-accent-secondary bg-clip-text text-transparent drop-shadow-sm"
           >
             {personalInfo.title.split(',').map((line, index) => (
@@ -147,14 +151,14 @@ export default function HeroSection() {
           <motion.p
             variants={letterVariants}
             className="text-base md:text-lg text-slate-300/90 font-light leading-relaxed
-            max-w-3xl mx-auto mb-8 md:mb-12"
+            max-w-3xl mx-auto lg:mx-0 mb-8 md:mb-12"
           >
             {personalInfo.heroDescription}
           </motion.p>
 
           <motion.div
             variants={letterVariants}
-            className="flex flex-col sm:flex-row justify-center gap-4"
+            className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 px-4 sm:px-0"
           >
             <HeroButton href={contactData.linkedin} Icon={Linkedin} ariaLabel="Open my LinkedIn profile">
               LinkedIn
@@ -169,6 +173,36 @@ export default function HeroSection() {
             <HeroButton href={contactData.github} Icon={Github} ariaLabel="Open my GitHub profile">
               GitHub
             </HeroButton>
+          </motion.div>
+        </motion.div>
+
+        {/* RIGHT COLUMN — Profile Image */}
+        <motion.div
+          className="flex-shrink-0 flex items-center justify-center order-first lg:order-last"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
+          <motion.div
+            className="relative"
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            {/* Outer glow ring */}
+            <div className="absolute inset-0 rounded-full bg-accent/30 blur-2xl scale-110 animate-pulse" />
+            {/* Decorative spinning border */}
+            <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-accent via-accent-glow to-accent-secondary opacity-60 blur-sm" />
+            {/* Image container */}
+            <div className="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full border-2 border-accent/60 overflow-hidden shadow-2xl">
+              <Image
+                src="/images/profile.jpg"
+                alt="Chowdhury Nabil Ahmed — profile photo"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           </motion.div>
         </motion.div>
       </motion.div>

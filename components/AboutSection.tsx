@@ -95,7 +95,21 @@ export default function AboutSection() {
 
                         <div className="bg-surface/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/5 backdrop-blur-sm hover:border-accent/20 transition-colors duration-100">
                           <h4 className="text-base sm:text-xl font-bold text-white mb-1 sm:mb-2">{edu.degree}</h4>
-                          <p className="text-accent text-sm sm:text-lg font-medium mb-2 sm:mb-3">{edu.institution}</p>
+                          {edu.url ? (
+                            <a 
+                              href={edu.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="inline-block text-accent hover:text-accent-glow transition-colors duration-100 text-sm sm:text-lg font-medium mb-2 sm:mb-3 group/link"
+                            >
+                              {edu.institution}
+                              <span className="inline-block ml-1 opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all duration-100 text-xs text-accent-glow">
+                                ↗
+                              </span>
+                            </a>
+                          ) : (
+                            <p className="text-accent text-sm sm:text-lg font-medium mb-2 sm:mb-3">{edu.institution}</p>
+                          )}
 
                           <div className="flex flex-wrap gap-2 sm:gap-3 mb-2 sm:mb-3">
                             {edu.gpa && (

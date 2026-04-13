@@ -95,8 +95,8 @@ export const skillsData: Skill[] = [
   // Database
   { name: 'MySQL', category: 'Database' },
   { name: 'PostgreSQL', category: 'Database' },
-  { name: 'Supabase', category: 'Database' },
   { name: 'SQLite', category: 'Database' },
+  { name: 'Supabase', category: 'Database' },
 
   // Tools
   { name: 'Git', category: 'Tools' },
@@ -123,7 +123,7 @@ export const projectsData: Project[] = [
   {
     id: 'shopnest',
     title: '🛒 ShopNest',
-    description: 'A full-featured, modern single-vendor e-commerce platform built with Django. ShopNest provides a complete online shopping experience with product browsing, stock availability display, shopping cart, user authentication, and secure online payment processing via SSLCommerz gateway.',
+    description: 'A full-featured, modern single-vendor e-commerce platform built with Django. ShopNest provides product browsing, stock availability display, shopping cart, user authentication, and secure online payment processing via SSLCommerz gateway.',
     tools: ['Django', 'SQLite', 'Tailwind CSS', 'SSLCommerz API'],
     githubUrl: 'https://github.com/nabil0203/ShopNest',
     liveUrl: 'https://shopnest-4thm.onrender.com/',
@@ -133,7 +133,7 @@ export const projectsData: Project[] = [
   {
     id: 'taskify',
     title: '✅Taskify',
-    description: 'A modern task management application with intuitive drag-and-drop functionality, real-time collaboration, deadline tracking, and customizable workflows. Designed to boost productivity for individuals and teams.',
+    description: 'A modern task management application with intuitive drag-and-drop functionality, real-time update, deadline tracking, and customizable workflows. Designed to boost productivity.',
     tools: ['Django', 'Bootstrap', 'SQLite', 'HTML'],
     githubUrl: 'https://github.com/nabil0203/taskify',
     liveUrl: 'https://taskify-cq2h.onrender.com',
@@ -153,7 +153,7 @@ export const projectsData: Project[] = [
   {
     id: 'quiz-verse',
     title: '🧪 Quiz Verse',
-    description: 'Quiz Verse is a lightweight, interactive multiple-choice quiz application built with Django. It demonstrates full-stack fundamentals including database relationships, form handling, request lifecycle management, and dynamic template rendering.',
+    description: 'Quiz Verse is an interactive multiple-choice quiz application built with Django. It demonstrates full-stack fundamentals including database relationships, form handling, request lifecycle management, and dynamic template rendering.',
     tools: ['Django', 'SQLite', 'HTML', 'Tailwind CSS'],
     githubUrl: 'https://github.com/nabil0203/Quiz_Verse',
     imageUrl: '/images/projects/quizverse.png',
@@ -171,7 +171,7 @@ export const projectsData: Project[] = [
   {
     id: 'auto-vault',
     title: '🚗Auto Vault',
-    description: 'This is a lightweight PHP and MySQL web application. It allows users to add, view, update, and delete car details. This project was developed as part of the SE_332 - Web Application Lab course to demonstrate core database operations in web development.',
+    description: 'This is a lightweight PHP and MySQL web application. It allows users to do CRUD operations on cars. This project was developed as part of the SE_332 - Web Application Lab course to demonstrate core database operations in web development.',
     tools: ['PHP', 'MySQL', 'CSS', 'HTML'],
     githubUrl: 'https://github.com/nabil0203/AutoVault',
     imageUrl: '',

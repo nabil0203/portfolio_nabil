@@ -27,12 +27,12 @@ export default function SkillsSection() {
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent/10 rounded-full blur-[128px] pointer-events-none -translate-y-1/2 -ml-48 scale-150"></div>
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent-secondary/10 rounded-full blur-[128px] pointer-events-none -translate-y-1/2 -mr-48 scale-150"></div>
 
-      <div className="max-w-[90rem] mx-auto px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
         <MotionDiv>
-          <div className="text-center mb-20 relative">
+          <div className="text-center mb-10 relative">
             <h2
               id="skills-heading"
-              className="text-3xl md:text-4xl font-extrabold mb-8 text-center text-white relative group"
+              className="text-3xl md:text-4xl font-extrabold mb-5 text-center text-white relative group"
             >
               Skills & Technologies
             </h2>
@@ -40,7 +40,7 @@ export default function SkillsSection() {
           </div>
         </MotionDiv>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8">
           {Object.entries(skillGroups).map(([category, skills]) => (
             <MotionDiv key={category}>
               <SkillCard category={category} skills={skills} />

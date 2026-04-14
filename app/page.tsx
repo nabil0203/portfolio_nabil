@@ -5,7 +5,7 @@ import HeroSection from '@/components/Hero/HeroSection'
 import Footer from '@/components/Footer'
 
 // Dynamic imports for sections below the fold
-const AboutSection = dynamic(() => import('@/components/AboutSection'))
+const AboutSection = dynamic(() => import('@/components/About/AboutSection'))
 const SkillsSection = dynamic(() => import('@/components/Skills/SkillsSection'))
 const ProjectsSection = dynamic(() => import('@/components/Projects/ProjectsSection'))
 const AdditionalInfoSection = dynamic(() => import('@/components/AdditionalInfoSection'))

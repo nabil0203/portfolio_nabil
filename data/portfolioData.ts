@@ -6,7 +6,7 @@ export type {
   Skill,
   Project,
   VolunteerExperience
-} from '@/data/portfolioTypes'
+} from '@/data/portfolioDataTypes'
 
 import {
   PersonalInfo,
@@ -16,7 +16,7 @@ import {
   Skill,
   Project,
   VolunteerExperience
-} from '@/data/portfolioTypes'
+} from '@/data/portfolioDataTypes'
 
 // Personal Information
 export const personalInfo: PersonalInfo = {
@@ -24,10 +24,10 @@ export const personalInfo: PersonalInfo = {
   title: 'Web Developer, Majoring in Software Engineering',
   heroDescription: 'Problem solver with 400+ problems solved in major platforms. Building modern web applications with Django & React.',
   aboutDescription: [
-    'A Computer Science undergraduate specializing in Software Engineering. Skilled in Data Structures, Algorithms and OOP.',
-    'Solved 400+ problems on major online platforms.',
-    'Actively building web applications using Django, React, and REST APIs.',
-    'Eager to join as an intern or junior developer where I can apply my skills and contribute to the growth of the organization.',
+    'A Web Developer with experience in building scalable, user-focused web applications. I am proficient in Django, React, and REST API development. Focusing on clean architecture, performance, and maintainable code.',
+    'Developing real-world projects, including marketplace systems and learning management systems, where I have worked on backend logic, database design, and end-to-end feature implementation.',
+    'Currently pursuing B.Sc. in Software Engineering, with a good foundation in Data Structures, Algorithms, and Object-Oriented Programming. Solved 400+ problems on major online platforms.',
+    'Seeking a Junior Software Developer or Internship opportunity where I can apply my skills and contribute to products, collaborate with professional teams, and continue growing as a software engineer.',
   ],
   aboutTitle: 'About Me'
 }

@@ -3,7 +3,7 @@
 import MotionDiv from '../MotionDiv'
 import { skillsData } from '@/data/portfolioData'
 import SkillCard from './SkillCard'
-import { Skill } from '@/data/portfolioTypes'
+import { Skill } from '@/data/portfolioDataTypes'
 
 const skillGroups = (skillsData as Skill[]).reduce(
   (acc, skill) => {

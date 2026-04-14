@@ -5,20 +5,40 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false)
+  const [bottomOffset, setBottomOffset] = useState(32) // Default bottom-8 (32px)
 
   useEffect(() => {
-    const checkScrollTop = () => {
-      if (window.pageYOffset > 400) {
+    const handleScroll = () => {
+      // Visibility check
+      if (window.pageYOffset > 300) {
         setIsVisible(true)
       } else {
         setIsVisible(false)
       }
+
+      // Footer collision check
+      const footer = document.querySelector('footer')
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect()
+        const footerVisibleHeight = window.innerHeight - footerRect.top
+        
+        if (footerVisibleHeight > 0) {
+          // Add extra padding (e.g., 20px) to the footer's visible height
+          setBottomOffset(Math.max(32, footerVisibleHeight + 20))
+        } else {
+          setBottomOffset(32)
+        }
+      }
     }
 
-    checkScrollTop()
-
-    window.addEventListener('scroll', checkScrollTop)
-    return () => window.removeEventListener('scroll', checkScrollTop)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleScroll)
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
   }, [])
 
   const scrollToTop = () => {
@@ -30,11 +50,24 @@ export default function BackToTop() {
       {isVisible && (
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ duration: 0.15 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1,
+            bottom: bottomOffset 
+          }}
+          exit={{ 
+            opacity: 0, 
+            scale: 0.5,
+            transition: { duration: 0.3, ease: "easeIn" } 
+          }}
+          transition={{ 
+            duration: 1.2,
+            ease: "easeInOut",
+            bottom: { duration: 0.4 } // Keep movement responsive to footer
+          }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 bg-accent text-primary p-3 rounded-full shadow-lg"
+          style={{ position: 'fixed', right: '2rem', zIndex: 50 }}
+          className="bg-accent text-primary p-3 rounded-full shadow-lg"
           whileHover={{ scale: 1.1, transition: { duration: 0.1 } }}
           whileTap={{ scale: 0.9 }}
           aria-label="Back to top"

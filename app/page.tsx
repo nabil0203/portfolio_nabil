@@ -9,7 +9,7 @@ const AboutSection = dynamic(() => import('@/components/About/AboutSection'))
 const SkillsSection = dynamic(() => import('@/components/Skills/SkillsSection'))
 const ProjectsSection = dynamic(() => import('@/components/Projects/ProjectsSection'))
 const AdditionalInfoSection = dynamic(() => import('@/components/AdditionalInfoSection'))
-const ContactSection = dynamic(() => import('@/components/ContactSection'))
+const ContactSection = dynamic(() => import('@/components/Contact/ContactSection'))
 const BackToTop = dynamic(() => import('@/components/BackToTop'))
 
 export default function Home() {
@@ -18,19 +18,19 @@ export default function Home() {
       <Header />
       <HeroSection />
       <main>
-        <MotionDiv className="py-8">
+        <MotionDiv>
           <AboutSection />
         </MotionDiv>
-        <MotionDiv className="py-8">
+        <MotionDiv>
           <SkillsSection />
         </MotionDiv>
-        <MotionDiv className="py-8">
+        <MotionDiv>
           <ProjectsSection />
         </MotionDiv>
-        <MotionDiv className="py-8">
+        <MotionDiv>
           <AdditionalInfoSection />
         </MotionDiv>
-        <MotionDiv className="py-8">
+        <MotionDiv>
           <ContactSection />
         </MotionDiv>
       </main>

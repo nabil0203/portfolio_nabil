@@ -22,7 +22,7 @@ export default function SkillsSection() {
   }
 
   return (
-    <section id="skills" className="py-10 scroll-mt-24 relative overflow-hidden" aria-labelledby="skills-heading">
+    <section id="skills" className="py-8 md:py-16 scroll-mt-24 relative overflow-hidden" aria-labelledby="skills-heading">
       {/* Background decorations for extra modern feel */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent/10 rounded-full blur-[128px] pointer-events-none -translate-y-1/2 -ml-48 scale-150"></div>
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent-secondary/10 rounded-full blur-[128px] pointer-events-none -translate-y-1/2 -mr-48 scale-150"></div>
@@ -34,7 +34,7 @@ export default function SkillsSection() {
               id="skills-heading"
               className="text-3xl md:text-4xl font-extrabold mb-5 text-center text-white relative group"
             >
-              Skills & Technologies
+              Skills <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-secondary">&</span> Technologies
             </h2>
             <div className="h-1.5 w-32 bg-gradient-to-r from-accent via-accent-secondary to-accent-glow mx-auto rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
           </div>

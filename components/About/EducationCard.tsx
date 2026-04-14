@@ -14,77 +14,75 @@ interface EducationCardProps {
 
 export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
   return (
-    <MotionDiv delay={0.25}>
-      <div className="relative group">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface/60 to-accent-glow/5 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className="relative group">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface/60 to-accent-glow/5 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300" />
 
-        {/* Content */}
-        <div className="relative bg-surface/40 backdrop-blur-xl border border-white/10 rounded-3xl p-5 sm:p-7 shadow-2xl overflow-hidden">
-          <div className="flex items-center gap-3 mb-5 sm:mb-6 relative z-10">
-            <div className="p-2.5 bg-accent/15 rounded-xl border border-accent/30">
-              <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
-            </div>
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white">Education</h3>
-            </div>
+      {/* Content */}
+      <div className="relative bg-surface/40 backdrop-blur-xl border border-white/10 rounded-3xl p-5 sm:p-7 shadow-2xl overflow-hidden">
+        <div className="flex items-center gap-3 mb-5 sm:mb-6 relative z-10">
+          <div className="p-2.5 bg-accent/15 rounded-xl border border-accent/30">
+            <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
           </div>
-
-          <div className="relative z-10">
-            <div className="absolute left-[12px] sm:left-[20px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent/50 to-accent/20"></div>
-
-            <div className="space-y-5 pl-6 sm:pl-9">
-              {educationData.map((edu, index) => (
-                <div key={index} className="relative group/item">
-                  <div className="absolute -left-4 sm:-left-5 top-3 w-4 h-4 sm:w-5 sm:h-5 bg-accent rounded-full border-2 border-surface shadow-lg shadow-accent/50 group-hover/item:shadow-accent/75 transition-shadow duration-300">
-                    <div className="absolute inset-0 bg-accent rounded-full animate-pulse opacity-50"></div>
-                  </div>
-
-                  <div className="bg-surface/50 rounded-xl p-4 sm:p-5 border border-white/5 backdrop-blur-sm hover:border-accent/20 transition-colors duration-100">
-                    <h4 className="text-sm sm:text-lg font-bold text-white/80 mb-1 sm:mb-1.5">{edu.degree}</h4>
-                    {edu.url ? (
-                      <a
-                        href={edu.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block text-accent hover:text-accent-glow transition-colors duration-100 text-sm sm:text-lg font-medium mb-2 group/link"
-                      >
-                        {edu.institution}
-                        <span className="inline-block ml-1 opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all duration-100 text-xs text-accent-glow">
-                          ↗
-                        </span>
-                      </a>
-                    ) : (
-                      <p className="text-accent text-base sm:text-sm font-medium mb-2">{edu.institution}</p>
-                    )}
-
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      {edu.gpa && (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs sm:text-xs font-bold rounded-full bg-accent/10 text-accent border border-accent/20">
-                          📊 CGPA: {edu.gpa}
-                        </span>
-                      )}
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs sm:text-xs font-bold rounded-full bg-accent/15 text-accent border border-accent/30">
-                        <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                        {edu.graduation}
-                      </span>
-                    </div>
-
-                    {edu.description && (
-                      <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
-                        {edu.description}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div>
+            <h3 className="text-xl sm:text-2xl font-bold text-white">Education</h3>
           </div>
-
-          <motion.div style={{ x: x2, y: y2 }} className="absolute top-6 right-6 w-24 h-24 bg-accent-secondary/10 rounded-full blur-3xl z-0 pointer-events-none" />
-          <motion.div style={{ x: x1, y: y1 }} className="absolute bottom-6 left-6 w-20 h-20 bg-accent-glow/15 rounded-full blur-2xl z-0 pointer-events-none" />
         </div>
+
+        <div className="relative z-10">
+          <div className="absolute left-[12px] sm:left-[20px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent/50 to-accent/20"></div>
+
+          <div className="space-y-5 pl-6 sm:pl-9">
+            {educationData.map((edu, index) => (
+              <div key={index} className="relative group/item">
+                <div className="absolute -left-4 sm:-left-5 top-3 w-4 h-4 sm:w-5 sm:h-5 bg-accent rounded-full border-2 border-surface shadow-lg shadow-accent/50 group-hover/item:shadow-accent/75 transition-shadow duration-300">
+                  <div className="absolute inset-0 bg-accent rounded-full animate-pulse opacity-50"></div>
+                </div>
+
+                <div className="bg-surface/50 rounded-xl p-4 sm:p-5 border border-white/5 backdrop-blur-sm hover:border-accent/20 transition-colors duration-100">
+                  <h4 className="text-sm sm:text-lg font-bold text-white/80 mb-1 sm:mb-1.5">{edu.degree}</h4>
+                  {edu.url ? (
+                    <a
+                      href={edu.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-accent hover:text-accent-glow transition-colors duration-100 text-sm sm:text-lg font-medium mb-2 group/link"
+                    >
+                      {edu.institution}
+                      <span className="inline-block ml-1 opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all duration-100 text-xs text-accent-glow">
+                        ↗
+                      </span>
+                    </a>
+                  ) : (
+                    <p className="text-accent text-base sm:text-sm font-medium mb-2">{edu.institution}</p>
+                  )}
+
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {edu.gpa && (
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs sm:text-xs font-bold rounded-full bg-accent/10 text-accent border border-accent/20">
+                        📊 CGPA: {edu.gpa}
+                      </span>
+                    )}
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs sm:text-xs font-bold rounded-full bg-accent/15 text-accent border border-accent/30">
+                      <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                      {edu.graduation}
+                    </span>
+                  </div>
+
+                  {edu.description && (
+                    <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
+                      {edu.description}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <motion.div style={{ x: x2, y: y2 }} className="absolute top-6 right-6 w-24 h-24 bg-accent-secondary/10 rounded-full blur-3xl z-0 pointer-events-none" />
+        <motion.div style={{ x: x1, y: y1 }} className="absolute bottom-6 left-6 w-20 h-20 bg-accent-glow/15 rounded-full blur-2xl z-0 pointer-events-none" />
       </div>
-    </MotionDiv>
+    </div>
   )
 }

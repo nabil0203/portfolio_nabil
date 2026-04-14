@@ -29,7 +29,6 @@ export const personalInfo: PersonalInfo = {
     'Currently pursuing B.Sc. in Software Engineering, with a good foundation in Data Structures, Algorithms, and Object-Oriented Programming. Solved 400+ problems on major online platforms.',
     'Seeking a Junior Software Developer or Internship opportunity where I can apply my skills and contribute to products, collaborate with professional teams, and continue growing as a software engineer.',
   ],
-  aboutTitle: 'About Me'
 }
 
 // Site Metadata

@@ -5,7 +5,6 @@ export interface PersonalInfo {
   title: string
   heroDescription: string
   aboutDescription: string[]
-  aboutTitle: string
 }
 
 export interface SiteMetadata {

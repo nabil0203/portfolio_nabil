@@ -1,16 +1,27 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import MotionDiv from './MotionDiv'
 import { languagesData, certificationsData, hobbiesData, volunteerExperiencesData } from '@/data/portfolioData'
 
 export default function AdditionalInfoSection() {
   return (
     <section id="additional-information" className="py-12 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center text-white relative group">
-          Additional Information
-        </h2>
-        <div className="h-1.5 w-32 bg-gradient-to-r from-accent via-accent-secondary to-accent-glow mx-auto rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)] mb-16"></div>
+        <MotionDiv className="text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center text-white relative group">
+            Additional <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-secondary">Information</span>
+          </h2>
+          <div className="h-1.5 w-32 bg-gradient-to-r from-accent via-accent-secondary to-accent-glow mx-auto rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)] mb-16"></div>
+        </MotionDiv>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <div>
+        <div className="grid md:grid-cols-2 gap-12 mb-16 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-2xl font-semibold mb-6 text-accent">Personal Details</h3>
             <div className="space-y-6">
               {languagesData.length > 0 && (
@@ -46,9 +57,14 @@ export default function AdditionalInfoSection() {
                 </div>
               )}
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-2xl font-semibold mb-6 text-accent">Volunteer Experience</h3>
             <div className="space-y-6">
               {volunteerExperiencesData.map((experience, index) => (
@@ -62,7 +78,7 @@ export default function AdditionalInfoSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

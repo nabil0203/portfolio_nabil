@@ -59,6 +59,13 @@ export default function ContactForm() {
       <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-colors duration-500" />
       <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-colors duration-500" />
 
+      <div className="relative z-10 mb-8">
+        <h3 className="text-2xl font-bold text-white mb-4">Send a Message</h3>
+        <p className="text-secondary">
+          Fill out the form below and I'll get back to you as soon as possible.
+        </p>
+      </div>
+
       <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
         {/* Honeypot for spam protection */}
         <input type="text" name="honeypot" style={{ display: 'none' }} onChange={handleChange} value={formData.honeypot} />

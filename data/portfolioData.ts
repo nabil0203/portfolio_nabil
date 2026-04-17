@@ -130,6 +130,16 @@ export const projectsData: Project[] = [
     featured: true
   },
   {
+    id: 'farm2market',
+    title: '🧑‍🌾 Farm2Market',
+    description: 'A Django-based web application that connects farmers directly with buyers, enabling streamlined product listings, cart management, order tracking, and logistics coordination eliminating the need for middlemen.',
+    tools: ['Django', 'MySQL', 'Supabase', 'Django templates', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/nabil0203/Farm2Market',
+    liveUrl: '',
+    imageUrl: '/images/projects/farm2market.png',
+    featured: true
+  },
+  {
     id: 'taskify',
     title: '✅Taskify',
     description: 'A modern task management application with intuitive drag-and-drop functionality, real-time update, deadline tracking, and customizable workflows. Designed to boost productivity.',

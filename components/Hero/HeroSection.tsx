@@ -90,7 +90,7 @@ export default function HeroSection() {
           <motion.h1
             variants={letterVariants}
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold py-2 mb-4 md:mb-6 leading-tight break-words
-            bg-gradient-to-r from-white via-primary to-slate-400
+            bg-gradient-to-r from-primary via-slate-300 to-slate-400
             bg-clip-text text-transparent pt-4 sm:pt-4 drop-shadow-sm"
           >
             {personalInfo.name}

@@ -69,11 +69,11 @@ export default function AdditionalInfoSection() {
             <div className="space-y-6">
               {volunteerExperiencesData.map((experience, index) => (
                 <div key={index} className="bg-surface/80 backdrop-blur-sm border border-white/10 p-6 rounded-lg shadow-lg">
-                  <h4 className="text-lg font-medium text-white mb-2">{experience.organization}</h4>
-                  <h4 className="text-lg font-semibold text-white mb-2">{experience.role}</h4>
-                  <p className="text-gray-400 mb-2">{experience.duration}</p>
+                  <h4 className="text-base sm:text-lg font-medium text-white/70  mb-2">{experience.organization}</h4>
+                  <h4 className="text-base sm:text-lg font-semibold text-blue-300 mb-2">{experience.role}</h4>
+                  <p className="text-sm sm:text-base text-gray-400 mb-2">{experience.duration}</p>
                   {experience.description && (
-                    <p className="text-gray-400">{experience.description}</p>
+                    <p className="text-sm sm:text-base text-gray-400">{experience.description}</p>
                   )}
                 </div>
               ))}

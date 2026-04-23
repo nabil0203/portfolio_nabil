@@ -135,7 +135,7 @@ export const projectsData: Project[] = [
     description: 'A Django-based web application that connects farmers directly with buyers, enabling streamlined product listings, cart management, order tracking, and logistics coordination eliminating the need for middlemen.',
     tools: ['Django', 'MySQL', 'Supabase', 'Django templates', 'Tailwind CSS'],
     githubUrl: 'https://github.com/nabil0203/Farm2Market',
-    liveUrl: '',
+    liveUrl: 'https://farm2market-dtll.onrender.com/',
     imageUrl: '/images/projects/farm2market.png',
     featured: true
   },

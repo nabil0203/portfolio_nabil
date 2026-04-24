@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import MotionDiv from './MotionDiv'
-import { languagesData, certificationsData, hobbiesData, volunteerExperiencesData } from '@/data/portfolioData'
+import { personalDetailsData, volunteerExperiencesData } from '@/data/portfolioData'
 
 export default function AdditionalInfoSection() {
   return (
@@ -24,33 +24,44 @@ export default function AdditionalInfoSection() {
           >
             <h3 className="text-2xl font-semibold mb-6 text-accent">Personal Details</h3>
             <div className="space-y-6">
-              {languagesData.length > 0 && (
+              {personalDetailsData.languages.length > 0 && (
                 <div>
                   <h4 className="text-lg font-medium text-white mb-3">Languages</h4>
                   <div className="text-gray-400 space-y-1">
-                    {languagesData.map((language, index) => (
+                    {personalDetailsData.languages.map((language, index) => (
                       <p key={index}>• {language}</p>
                     ))}
                   </div>
                 </div>
               )}
 
-              {certificationsData.length > 0 && (
+              {personalDetailsData.certifications.length > 0 && (
                 <div>
                   <h4 className="text-lg font-medium text-white mb-3">Certifications</h4>
                   <ul className="text-gray-400 space-y-1">
-                    {certificationsData.map((certification, index) => (
+                    {personalDetailsData.certifications.map((certification, index) => (
                       <li key={index}>• {certification}</li>
                     ))}
                   </ul>
                 </div>
               )}
 
-              {hobbiesData.length > 0 && (
+              {personalDetailsData.programs.length > 0 && (
+                <div>
+                  <h4 className="text-lg font-medium text-white mb-3">Programs</h4>
+                  <ul className="text-gray-400 space-y-1">
+                    {personalDetailsData.programs.map((program, index) => (
+                      <li key={index}>• {program}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {personalDetailsData.hobbies.length > 0 && (
                 <div>
                   <h4 className="text-lg font-medium text-white mb-3">Hobbies</h4>
                   <div className="text-gray-400 space-y-1">
-                    {hobbiesData.map((hobby, index) => (
+                    {personalDetailsData.hobbies.map((hobby, index) => (
                       <p key={index}>• {hobby}</p>
                     ))}
                   </div>

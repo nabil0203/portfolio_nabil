@@ -5,7 +5,8 @@ export type {
   Education,
   Skill,
   Project,
-  VolunteerExperience
+  VolunteerExperience,
+  PersonalDetails
 } from '@/data/portfolioDataTypes'
 
 import {
@@ -15,8 +16,20 @@ import {
   Education,
   Skill,
   Project,
-  VolunteerExperience
+  VolunteerExperience,
+  PersonalDetails
 } from '@/data/portfolioDataTypes'
+
+
+// Site Metadata
+export const siteMetadata: SiteMetadata = {
+  title: 'Chowdhury Nabil Ahmed',
+  description: 'Computer Science Undergraduate specializing in Software Engineering, skilled in Data Structures and Algorithms, Web Development, and Machine Learning.',
+  keywords: ['Chowdhury Nabil Ahmed', 'Software Engineer', 'Computer Science', 'Web Development', 'Machine Learning', 'Portfolio'],
+  url: 'https://nabil0203.vercel.app',
+  siteName: 'Nabil Portfolio'
+}
+
 
 // Personal Information
 export const personalInfo: PersonalInfo = {
@@ -31,41 +44,25 @@ export const personalInfo: PersonalInfo = {
   ],
 }
 
-// Site Metadata
-export const siteMetadata: SiteMetadata = {
-  title: 'Chowdhury Nabil Ahmed',
-  description: 'Computer Science Undergraduate specializing in Software Engineering, skilled in Data Structures and Algorithms, Web Development, and Machine Learning.',
-  keywords: ['Chowdhury Nabil Ahmed', 'Software Engineer', 'Computer Science', 'Web Development', 'Machine Learning', 'Portfolio'],
-  url: 'https://nabil0203.vercel.app',
-  siteName: 'Nabil Portfolio'
-}
-
-// Contact Information
-export const contactData: Contact = {
-  email: 'nabilahmed0203@gmail.com',
-  phone: '+8801709548627',
-  location: 'Dhamrai, Dhaka, Bangladesh',
-  github: 'https://github.com/nabil0203',
-  linkedin: 'https://linkedin.com/in/nabil0203',
-  resume: 'https://drive.google.com/file/d/12LMfHVCskTmOKRfbn6wUQjbzcQ8166xE/view?usp=sharing'
-}
 
 // Education Data
 export const educationData = [
   {
     degree: 'B.Sc. in Software Engineering',
     institution: 'Daffodil International University',
+    logo: '/images/education/diu.png',
     url: 'https://daffodilvarsity.edu.bd',
     gpa: '3.90',
-    graduation: 'Expected Graduation: December 2026',
-    description: '',
+    graduation: 'January 2023 - December 2026',
+    description: 'Result Based Scholarship Recipient',
   },
   {
     degree: 'HSC in Science',
     institution: 'Jahangirnagar University School and College',
+    logo: '/images/education/jusc.png',
     url: 'https://juschoolcollege.org',
     gpa: '5.00',
-    graduation: '2020',
+    graduation: 'June 2018 - January 2021',
     description: '',
   }
 ];
@@ -218,18 +215,21 @@ export const projectsData: Project[] = [
 ]
 
 // Additional Information Data
-export const languagesData: string[] = [
-  'English (Proficient)',
-  'Bengali (Native)',
-]
-
-export const certificationsData: string[] = [
-  'International English Language Testing System (IELTS 7.0)'
-]
-
-export const hobbiesData: string[] = [
-  'Following global geopolitical trends and international affairs',
-]
+export const personalDetailsData: PersonalDetails = {
+  languages: [
+    'Bengali (Native)',
+    'English (Proficient)',
+  ],
+  certifications: [
+    'International English Language Testing System (IELTS 7.0)'
+  ],
+  programs: [
+    'Aspire Leaders Program 2024 (Harvard Business School)'
+  ],
+  hobbies: [
+    'Following global geopolitical trends and international affairs',
+  ]
+}
 
 export const volunteerExperiencesData: VolunteerExperience[] = [
   {
@@ -246,3 +246,12 @@ export const volunteerExperiencesData: VolunteerExperience[] = [
   }
 ]
 
+// Contact Information
+export const contactData: Contact = {
+  email: 'nabilahmed0203@gmail.com',
+  phone: '+8801709548627',
+  location: 'Dhamrai, Dhaka, Bangladesh',
+  github: 'https://github.com/nabil0203',
+  linkedin: 'https://linkedin.com/in/nabil0203',
+  resume: 'https://drive.google.com/file/d/12LMfHVCskTmOKRfbn6wUQjbzcQ8166xE/view?usp=sharing'
+}

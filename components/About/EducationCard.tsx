@@ -3,7 +3,7 @@
 import { motion, MotionValue } from 'framer-motion'
 import MotionDiv from '../MotionDiv'
 import { educationData } from '@/data/portfolioData'
-import { GraduationCap, Calendar } from 'lucide-react'
+import { GraduationCap, Calendar, Award } from 'lucide-react'
 
 interface EducationCardProps {
   x1: MotionValue<number>
@@ -40,40 +40,59 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
                 </div>
 
                 <div className="bg-surface/50 rounded-xl p-4 sm:p-5 border border-white/5 backdrop-blur-sm hover:border-accent/20 transition-colors duration-100">
-                  <h4 className="text-sm sm:text-lg font-bold text-white/80 mb-1 sm:mb-1.5">{edu.degree}</h4>
-                  {edu.url ? (
-                    <a
-                      href={edu.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block text-accent hover:text-accent-glow transition-colors duration-100 text-sm sm:text-lg font-medium mb-2 group/link"
-                    >
-                      {edu.institution}
-                      <span className="inline-block ml-1 opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all duration-100 text-xs text-accent-glow">
-                        ↗
-                      </span>
-                    </a>
-                  ) : (
-                    <p className="text-accent text-base sm:text-sm font-medium mb-2">{edu.institution}</p>
-                  )}
-
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    {edu.gpa && (
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs sm:text-xs font-bold rounded-full bg-accent/10 text-accent border border-accent/20">
-                        📊 CGPA: {edu.gpa}
-                      </span>
+                  <div className="flex items-start gap-4 mb-4">
+                    {edu.logo && (
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white/5 p-2 shrink-0 overflow-hidden border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover/item:border-accent/30 transition-colors duration-300">
+                        <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain" />
+                      </div>
                     )}
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs sm:text-xs font-bold rounded-full bg-accent/15 text-accent border border-accent/30">
-                      <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                      {edu.graduation}
-                    </span>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-base sm:text-lg font-bold text-white/90 mb-1 leading-tight">{edu.degree}</h4>
+                      {edu.url ? (
+                        <a
+                          href={edu.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block text-accent hover:text-accent-glow transition-colors duration-300 text-sm sm:text-base font-medium group/link"
+                        >
+                          {edu.institution}
+                          <span className="inline-block ml-1 opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all duration-300 text-xs text-accent-glow">
+                            ↗
+                          </span>
+                        </a>
+                      ) : (
+                        <p className="text-accent text-sm sm:text-base font-medium">{edu.institution}</p>
+                      )}
+                    </div>
                   </div>
 
-                  {edu.description && (
-                    <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
-                      {edu.description}
-                    </p>
-                  )}
+                  <div className="mb-3">
+                    <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
+                      <Calendar className="w-4 h-4 text-accent shrink-0" />
+                      <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
+                        {edu.graduation}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-2">
+                    {edu.gpa && (
+                      <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
+                        <span className="text-sm">📊</span>
+                        <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
+                          CGPA: {edu.gpa}
+                        </span>
+                      </div>
+                    )}
+                    {edu.description && (
+                      <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
+                        <Award className="w-4 h-4 text-accent shrink-0" />
+                        <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
+                          {edu.description}
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}

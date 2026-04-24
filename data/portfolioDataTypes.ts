@@ -1,12 +1,5 @@
 // Portfolio Data Types
 
-export interface PersonalInfo {
-  name: string
-  title: string
-  heroDescription: string
-  aboutDescription: string[]
-}
-
 export interface SiteMetadata {
   title: string
   description: string
@@ -15,18 +8,17 @@ export interface SiteMetadata {
   siteName: string
 }
 
-export interface Contact {
-  email: string
-  phone: string
-  location: string
-  github: string
-  linkedin: string
-  resume?: string
+export interface PersonalInfo {
+  name: string
+  title: string
+  heroDescription: string
+  aboutDescription: string[]
 }
 
 export interface Education {
   degree: string
   institution: string
+  logo?: string
   url?: string
   graduation: string
   gpa?: string
@@ -50,9 +42,25 @@ export interface Project {
   featured?: boolean
 }
 
+export interface PersonalDetails {
+  languages: string[]
+  certifications: string[]
+  programs: string[]
+  hobbies: string[]
+}
+
 export interface VolunteerExperience {
   organization: string
   role: string
   duration: string
   description?: string
+}
+
+export interface Contact {
+  email: string
+  phone: string
+  location: string
+  github: string
+  linkedin: string
+  resume?: string
 }

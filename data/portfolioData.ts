@@ -53,8 +53,8 @@ export const educationData = [
     logo: '/images/education/diu.png',
     url: 'https://daffodilvarsity.edu.bd',
     gpa: '3.90',
-    graduation: 'January 2023 - December 2026',
-    description: 'Result Based Scholarship Recipient',
+    graduation: 'Jan 2023 - Dec 2026',
+    description: 'Result-Based Scholarship Recipient',
   },
   {
     degree: 'HSC in Science',
@@ -62,7 +62,7 @@ export const educationData = [
     logo: '/images/education/jusc.png',
     url: 'https://juschoolcollege.org',
     gpa: '5.00',
-    graduation: 'June 2018 - January 2021',
+    graduation: 'Jun 2018 - Jan 2021',
     description: '',
   }
 ];
@@ -204,7 +204,7 @@ export const projectsData: Project[] = [
   {
     id: 'pharm-ease',
     title: '💊Pharm Ease',
-    description: 'A console based pharmacy management system designed to streamline medication dispensing, inventory management, and patient records. Features include prescription processing, stock alerts, and user-friendly interfaces for both pharmacists and patients. ',
+    description: 'A console-based pharmacy management system designed to streamline medication dispensing, inventory management, and patient records. Features include prescription processing, stock alerts, and user-friendly interfaces for both pharmacists and patients. ',
     tools: ['C language'],
     githubUrl: 'https://github.com/nabil0203/Pharm_Ease',
     imageUrl: '',

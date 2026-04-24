@@ -36,11 +36,19 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
               <div key={index} className="relative group/item">
 
                 <div className="bg-surface/50 rounded-xl p-4 sm:p-5 border border-white/10 backdrop-blur-sm hover:border-accent/20 transition-colors duration-100">
-                  <div className="flex items-start gap-4 mb-4">
+                  <div className="flex items-start sm:items-center gap-4 sm:gap-6">
                     {edu.logo && (
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white/5 p-2 shrink-0 overflow-hidden border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover/item:border-accent/30 transition-colors duration-300">
-                        <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain" />
-                      </div>
+                      edu.url ? (
+                        <a href={edu.url} target="_blank" rel="noopener noreferrer" className="shrink-0 block">
+                          <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] p-3 sm:p-5 border border-white/10 shadow-lg flex items-center justify-center backdrop-blur-md group-hover/item:border-accent/40 group-hover/item:bg-white/10 transition-all duration-300">
+                            <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain drop-shadow-md group-hover/item:scale-105 transition-transform duration-300" />
+                          </div>
+                        </a>
+                      ) : (
+                        <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] p-3 sm:p-5 shrink-0 border border-white/10 shadow-lg flex items-center justify-center backdrop-blur-md group-hover/item:border-accent/40 group-hover/item:bg-white/10 transition-all duration-300">
+                          <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain drop-shadow-md group-hover/item:scale-105 transition-transform duration-300" />
+                        </div>
+                      )
                     )}
                     <div className="flex-1 min-w-0">
                       <h4 className="text-sm sm:text-base font-bold text-white/90 mb-1 leading-tight">{edu.degree}</h4>
@@ -59,32 +67,32 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
                       ) : (
                         <p className="text-accent text-sm sm:text-base font-medium">{edu.institution}</p>
                       )}
-                    </div>
-                  </div>
 
-                  <div className="flex flex-wrap items-center gap-2">
-                    {edu.gpa && (
-                      <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
-                        <GraduationCap className="w-4 h-4 text-accent shrink-0" />
-                        <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
-                          {edu.gpa}
-                        </span>
+                      <div className="flex flex-wrap items-center gap-2 mt-3">
+                        {edu.gpa && (
+                          <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
+                            <GraduationCap className="w-4 h-4 text-accent shrink-0" />
+                            <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
+                              {edu.gpa}
+                            </span>
+                          </div>
+                        )}
+                        <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
+                          <Calendar className="w-4 h-4 text-accent shrink-0" />
+                          <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
+                            {edu.graduation}
+                          </span>
+                        </div>
+                        {edu.description && (
+                          <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
+                            <Award className="w-4 h-4 text-accent shrink-0" />
+                            <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
+                              {edu.description}
+                            </span>
+                          </div>
+                        )}
                       </div>
-                    )}
-                    <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
-                      <Calendar className="w-4 h-4 text-accent shrink-0" />
-                      <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
-                        {edu.graduation}
-                      </span>
                     </div>
-                    {edu.description && (
-                      <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
-                        <Award className="w-4 h-4 text-accent shrink-0" />
-                        <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
-                          {edu.description}
-                        </span>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>

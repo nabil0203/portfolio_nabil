@@ -30,16 +30,12 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
         </div>
 
         <div className="relative z-10">
-          <div className="absolute left-[12px] sm:left-[20px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent/50 to-accent/20"></div>
 
-          <div className="space-y-5 pl-6 sm:pl-9">
+          <div className="space-y-5">
             {educationData.map((edu, index) => (
               <div key={index} className="relative group/item">
-                <div className="absolute -left-4 sm:-left-5 top-3 w-4 h-4 sm:w-5 sm:h-5 bg-accent rounded-full border-2 border-surface shadow-lg shadow-accent/50 group-hover/item:shadow-accent/75 transition-shadow duration-300">
-                  <div className="absolute inset-0 bg-accent rounded-full animate-pulse opacity-50"></div>
-                </div>
 
-                <div className="bg-surface/50 rounded-xl p-4 sm:p-5 border border-white/5 backdrop-blur-sm hover:border-accent/20 transition-colors duration-100">
+                <div className="bg-surface/50 rounded-xl p-4 sm:p-5 border border-white/10 backdrop-blur-sm hover:border-accent/20 transition-colors duration-100">
                   <div className="flex items-start gap-4 mb-4">
                     {edu.logo && (
                       <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white/5 p-2 shrink-0 overflow-hidden border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover/item:border-accent/30 transition-colors duration-300">
@@ -47,7 +43,7 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
                       </div>
                     )}
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-base sm:text-lg font-bold text-white/90 mb-1 leading-tight">{edu.degree}</h4>
+                      <h4 className="text-sm sm:text-base font-bold text-white/90 mb-1 leading-tight">{edu.degree}</h4>
                       {edu.url ? (
                         <a
                           href={edu.url}

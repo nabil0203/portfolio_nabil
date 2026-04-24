@@ -62,24 +62,21 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
                     </div>
                   </div>
 
-                  <div className="mb-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    {edu.gpa && (
+                      <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
+                        <GraduationCap className="w-4 h-4 text-accent shrink-0" />
+                        <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
+                          {edu.gpa}
+                        </span>
+                      </div>
+                    )}
                     <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
                       <Calendar className="w-4 h-4 text-accent shrink-0" />
                       <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
                         {edu.graduation}
                       </span>
                     </div>
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-2">
-                    {edu.gpa && (
-                      <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
-                        <span className="text-sm">📊</span>
-                        <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
-                          CGPA: {edu.gpa}
-                        </span>
-                      </div>
-                    )}
                     {edu.description && (
                       <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
                         <Award className="w-4 h-4 text-accent shrink-0" />

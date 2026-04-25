@@ -35,12 +35,12 @@ export const siteMetadata: SiteMetadata = {
 export const personalInfo: PersonalInfo = {
   name: 'Chowdhury Nabil Ahmed',
   title: 'Web Developer, Majoring in Software Engineering',
-  heroDescription: 'Problem solver with 400+ problems solved in major platforms. Building modern web applications with Django & React.',
+  heroDescription: 'Building scalable web applications with Django and React. Problem solver with 400+ solved problems across major platforms.',
   aboutDescription: [
-    'A Web Developer with experience in building scalable, user-focused web applications. I am proficient in Django, React, and REST API development. Focusing on clean architecture, performance, and maintainable code.',
-    'Developing real-world projects, including marketplace systems and learning management systems, where I have worked on backend logic, database design, and end-to-end feature implementation.',
-    'Currently pursuing B.Sc. in Software Engineering, with a good foundation in Data Structures, Algorithms, and Object-Oriented Programming. Solved 400+ problems on major online platforms.',
-    'Seeking a Junior Software Developer or Internship opportunity where I can apply my skills and contribute to products, collaborate with professional teams, and continue growing as a software engineer.',
+    'I’m a Software Engineering undergraduate with a focus on full-stack development using Django, React, and REST APIs. I prioritize clean architecture, performance, and maintainable code.',
+    'Building systems that solve real-world problems, including e-commerce platforms, learning management systems, and other productivity tools.',
+    'Alongside development, I have a good foundation in Data Structures, Algorithms, and Object-Oriented Programming. Solved 400+ problems on major online platforms.',
+    'Currently open to internship and junior developer opportunities where I can leverage my technical skills, contribute to impactful projects, and grow professionally within a dynamic development team.',
   ],
 }
 
@@ -97,7 +97,7 @@ export const skillsData: Skill[] = [
   // Tools
   { name: 'Git', category: 'Tools' },
   { name: 'GitHub', category: 'Tools' },
-  { name: 'VS Code', category: 'Tools' },
+  { name: 'Postman', category: 'Tools' },
 
   // Other
   { name: 'Data Structures', category: 'Other' },
@@ -119,8 +119,14 @@ export const projectsData: Project[] = [
   {
     id: 'shopnest',
     title: '🛒 ShopNest',
-    description: 'A full-featured, modern single-vendor e-commerce platform built with Django. ShopNest provides product browsing, stock availability display, shopping cart, user authentication, and secure online payment processing via SSLCommerz gateway.',
-    tools: ['Django', 'SQLite', 'Tailwind CSS', 'SSLCommerz API'],
+    description: 'A full-featured e-commerce web application.',
+    tools: ['Django', 'React', 'MySQL', 'REST API', 'SSLCommerz'],
+    features: [
+      'User authentication & authorization',
+      'Product catalog with search & filtering',
+      'Shopping cart & order management',
+      'SSLCommerz payment gateway integration',
+    ],
     githubUrl: 'https://github.com/nabil0203/ShopNest',
     liveUrl: 'https://shopnest-4thm.onrender.com/',
     imageUrl: '/images/projects/shopnest.png',
@@ -129,8 +135,14 @@ export const projectsData: Project[] = [
   {
     id: 'farm2market',
     title: '🧑‍🌾 Farm2Market',
-    description: 'A Django-based web application that connects farmers directly with buyers, enabling streamlined product listings, cart management, order tracking, and logistics coordination eliminating the need for middlemen.',
-    tools: ['Django', 'MySQL', 'Supabase', 'Django templates', 'Tailwind CSS'],
+    description: 'A Django-based web application that connects farmers directly with buyers.',
+    tools: ['Django', 'Django templates', 'MySQL', 'Supabase', 'Tailwind CSS'],
+    features: [
+      'Role-based access control (Farmer & Buyer)',
+      'Product listings & cart management',
+      'Order tracking & logistics coordination',
+      'Real-time notifications'
+    ],
     githubUrl: 'https://github.com/nabil0203/Farm2Market',
     liveUrl: 'https://farm2market-dtll.onrender.com/',
     imageUrl: '/images/projects/farm2market.png',
@@ -139,8 +151,14 @@ export const projectsData: Project[] = [
   {
     id: 'taskify',
     title: '✅Taskify',
-    description: 'A modern task management application with intuitive drag-and-drop functionality, real-time update, deadline tracking, and customizable workflows. Designed to boost productivity.',
+    description: 'A task management application with drag-and-drop functionality.',
     tools: ['Django', 'Bootstrap', 'SQLite', 'HTML'],
+    features: [
+      'Drag-and-drop task management',
+      'Deadline tracking',
+      'Real-time update',
+      'Customizable workflows'
+    ],
     githubUrl: 'https://github.com/nabil0203/taskify',
     liveUrl: 'https://taskify-cq2h.onrender.com',
     imageUrl: '/images/projects/taskify.jpg',
@@ -149,8 +167,14 @@ export const projectsData: Project[] = [
   {
     id: 'coinly',
     title: '💰Coinly',
-    description: 'An Expense tracking web application. This application is used by me personally on a daily basis. It allows me to track my daily expenses, view monthly ledgers, manage debt & receivables.',
+    description: 'My personal expense tracker web application.',
     tools: ['Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS'],
+    features: [
+      'Daily expense tracking',
+      'Monthly ledger view',
+      'Debt & receivables management',
+      'Personal finance dashboard',
+    ],
     githubUrl: 'https://github.com/nabil0203/Coinly',
     liveUrl: 'https://coinly0203.vercel.app/',
     imageUrl: '/images/projects/coinly.png',
@@ -159,8 +183,14 @@ export const projectsData: Project[] = [
   {
     id: 'quiz-verse',
     title: '🧪 Quiz Verse',
-    description: 'Quiz Verse is an interactive multiple-choice quiz application built with Django. It demonstrates full-stack fundamentals including database relationships, form handling, request lifecycle management, and dynamic template rendering.',
+    description: 'Quiz Verse is an interactive multiple-choice quiz application built with Django.',
     tools: ['Django', 'SQLite', 'HTML', 'Tailwind CSS'],
+    features: [
+      'Multiple-choice quiz',
+      'Dynamic Loading',
+      'Optimized queries',
+      'Form handling & validation',
+    ],
     githubUrl: 'https://github.com/nabil0203/Quiz_Verse',
     imageUrl: '/images/projects/quizverse.png',
     featured: true
@@ -168,47 +198,70 @@ export const projectsData: Project[] = [
   {
     id: 'qr-code-generator',
     title: '⛆ QR Code Generator',
-    description: 'A simple Python script that reads a Text/URL and a File name from a Text file. Then generates a QR code and saves it as an image.',
+    description: 'Users can generate QR codes from text or URLs.',
     tools: ['Python', 'qrcode'],
+    features: [
+      'Reads input from a text file',
+      'Generates QR codes from URLs or text',
+      'Saves output as an image file',
+    ],
     githubUrl: 'https://github.com/nabil0203/QR_Code_Generator',
-    imageUrl: '',
-    featured: true
+    imageUrl: '/images/projects/qrcode.jpg',
+    featured: false
   },
   {
     id: 'auto-vault',
     title: '🚗Auto Vault',
-    description: 'This is a lightweight PHP and MySQL web application. It allows users to do CRUD operations on cars. This project was developed as part of the SE_332 - Web Application Lab course to demonstrate core database operations in web development.',
+    description: 'A lightweight PHP and MySQL web application for managing cars of a showroom.',
     tools: ['PHP', 'MySQL', 'CSS', 'HTML'],
+    features: [
+      'CRUD operations',
+      'MySQL-backed data',
+      'Course lab project (SE_332)',
+    ],
     githubUrl: 'https://github.com/nabil0203/AutoVault',
-    imageUrl: '',
-    featured: true
+    featured: false
   },
   {
     id: 'scholar-shelf',
     title: '📖Scholar Shelf',
-    description: 'An educational platform connecting students with tutors and study resources. Includes features for scheduling sessions, resource sharing, progress tracking, and interactive learning tools to enhance the educational experience.',
+    description: 'An educational platform connecting students with tutors and study resources.',
     tools: ['PHP', 'MySQL', 'CSS'],
+    features: [
+      'Student-tutor connection platform',
+      'Session scheduling',
+      'Resource sharing & progress tracking',
+    ],
     githubUrl: 'https://github.com/nabil0203/Scholar_Shelf',
-    imageUrl: '',
-    featured: true
+    featured: false
   },
   {
     id: 'carMaster',
     title: '🚘CarMaster',
-    description: 'CarMaster is a console-based Car Showroom Management System built using Java and Object-Oriented Programming principles. It allows users to add, update, display, and delete different types of cars through a menu-driven interface',
+    description: 'A console-based Car Showroom Management System built using Java and OOP principles.',
     tools: ['Java', 'OOP'],
+    features: [
+      'Menu-driven console interface',
+      'Add, update, display & delete cars',
+      'Display cars by brand and price range',
+      'OOP design principles',
+    ],
     githubUrl: 'https://github.com/nabil0203/CarMaster',
-    imageUrl: '',
-    featured: true
+    featured: false
   },
   {
     id: 'pharm-ease',
     title: '💊Pharm Ease',
-    description: 'A console-based pharmacy management system designed to streamline medication dispensing, inventory management, and patient records. Features include prescription processing, stock alerts, and user-friendly interfaces for both pharmacists and patients. ',
+    description: 'A console-based pharmacy management system',
     tools: ['C language'],
+    features: [
+      'Console-based interface',
+      'Add, update, display & delete medicines',
+      'Inventory management & stock alerts',
+      'Patient records management',
+    ],
     githubUrl: 'https://github.com/nabil0203/Pharm_Ease',
-    imageUrl: '',
-    featured: true
+    featured: false
   },
 
 

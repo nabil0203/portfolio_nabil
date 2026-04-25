@@ -36,6 +36,7 @@ export interface Project {
   title: string
   description: string
   tools: string[]
+  features?: string[]
   githubUrl?: string
   liveUrl?: string
   imageUrl?: string

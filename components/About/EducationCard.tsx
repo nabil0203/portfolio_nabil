@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, MotionValue } from 'framer-motion'
-import MotionDiv from '../MotionDiv'
+import MotionDiv from '../Shared/MotionDiv'
 import { educationData } from '@/data/portfolioData'
 import { GraduationCap, Calendar, Award } from 'lucide-react'
 
@@ -32,21 +32,26 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
         <div className="relative z-10">
 
           <div className="space-y-5">
-            {educationData.map((edu, index) => (
-              <div key={index} className="relative group/item">
+            {educationData.map((edu) => {
+              const LogoContent = (
+                <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] p-3 sm:p-5 border border-white/10 shadow-lg flex items-center justify-center backdrop-blur-md group-hover/item:border-accent/40 group-hover/item:bg-white/10 transition-all duration-300">
+                  <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain drop-shadow-md group-hover/item:scale-105 transition-transform duration-300" />
+                </div>
+              )
+
+              return (
+              <div key={edu.institution} className="relative group/item">
 
                 <div className="bg-surface/50 rounded-xl p-4 sm:p-5 border border-white/10 backdrop-blur-sm hover:border-accent/20 transition-colors duration-100">
                   <div className="flex items-start sm:items-center gap-4 sm:gap-6">
                     {edu.logo && (
                       edu.url ? (
                         <a href={edu.url} target="_blank" rel="noopener noreferrer" className="shrink-0 block">
-                          <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] p-3 sm:p-5 border border-white/10 shadow-lg flex items-center justify-center backdrop-blur-md group-hover/item:border-accent/40 group-hover/item:bg-white/10 transition-all duration-300">
-                            <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain drop-shadow-md group-hover/item:scale-105 transition-transform duration-300" />
-                          </div>
+                          {LogoContent}
                         </a>
                       ) : (
-                        <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] p-3 sm:p-5 shrink-0 border border-white/10 shadow-lg flex items-center justify-center backdrop-blur-md group-hover/item:border-accent/40 group-hover/item:bg-white/10 transition-all duration-300">
-                          <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain drop-shadow-md group-hover/item:scale-105 transition-transform duration-300" />
+                        <div className="shrink-0">
+                          {LogoContent}
                         </div>
                       )
                     )}
@@ -96,7 +101,7 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
                   </div>
                 </div>
               </div>
-            ))}
+            )})}
           </div>
         </div>
 

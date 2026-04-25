@@ -2,28 +2,37 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { scrollToHero } from '@/utils/dom'
+import { SCROLL_THRESHOLD } from '@/data/constants'
 
+/**
+ * Back to top floating button.
+ * Becomes visible after scrolling down, and responds to footer intersection
+ * to adjust its vertical position automatically.
+ */
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false)
   const [bottomOffset, setBottomOffset] = useState(32) // Default bottom-8 (32px)
 
   useEffect(() => {
+    // 1. Scroll visibility tracking
     const handleScroll = () => {
-      // Visibility check
-      if (window.pageYOffset > 300) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
+      setIsVisible(window.scrollY > SCROLL_THRESHOLD)
+    }
 
-      // Footer collision check
-      const footer = document.querySelector('footer')
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial check
+
+    // 2. Footer collision tracking via IntersectionObserver
+    const footer = document.querySelector('footer')
+    
+    // Fallback if IntersectionObserver isn't perfectly aligning or for continuous updates when footer enters viewport
+    const handleFooterIntersection = () => {
       if (footer) {
         const footerRect = footer.getBoundingClientRect()
         const footerVisibleHeight = window.innerHeight - footerRect.top
         
         if (footerVisibleHeight > 0) {
-          // Add extra padding (e.g., 20px) to the footer's visible height
           setBottomOffset(Math.max(32, footerVisibleHeight + 20))
         } else {
           setBottomOffset(32)
@@ -31,19 +40,34 @@ export default function BackToTop() {
       }
     }
 
-    handleScroll()
-    window.addEventListener('scroll', handleScroll)
-    window.addEventListener('resize', handleScroll)
+    let observer: IntersectionObserver
     
+    if (footer) {
+      observer = new IntersectionObserver((entries) => {
+        const entry = entries[0]
+        if (entry.isIntersecting) {
+          // When footer is visible, track scroll tightly to adjust the offset
+          window.addEventListener('scroll', handleFooterIntersection, { passive: true })
+          handleFooterIntersection()
+        } else {
+          window.removeEventListener('scroll', handleFooterIntersection)
+          setBottomOffset(32)
+        }
+      }, {
+        threshold: 0
+      })
+      
+      observer.observe(footer)
+    }
+
     return () => {
       window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('resize', handleScroll)
+      window.removeEventListener('scroll', handleFooterIntersection)
+      if (observer) {
+        observer.disconnect()
+      }
     }
   }, [])
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
 
   return (
     <AnimatePresence>
@@ -63,11 +87,10 @@ export default function BackToTop() {
           transition={{ 
             duration: 1.2,
             ease: "easeInOut",
-            bottom: { duration: 0.4 } // Keep movement responsive to footer
+            bottom: { duration: 0.1 } // Snappier response
           }}
-          onClick={scrollToTop}
-          style={{ position: 'fixed', right: '2rem', zIndex: 50 }}
-          className="bg-accent text-primary p-3 rounded-full shadow-lg"
+          onClick={scrollToHero}
+          className="fixed right-8 z-50 bg-accent text-primary p-3 rounded-full shadow-lg"
           whileHover={{ scale: 1.1, transition: { duration: 0.1 } }}
           whileTap={{ scale: 0.9 }}
           aria-label="Back to top"

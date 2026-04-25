@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, MotionValue } from 'framer-motion'
-import MotionDiv from '../MotionDiv'
+import MotionDiv from '../Shared/MotionDiv'
 import { personalInfo } from '@/data/portfolioData'
 import { User } from 'lucide-react'
 
@@ -27,8 +27,8 @@ export default function SummaryCard({ x1, y1, x2, y2 }: SummaryCardProps) {
           </div>
         </div>
         <div className="text-gray-400 leading-relaxed text-sm sm:text-base relative z-10 space-y-3">
-          {personalInfo.aboutDescription.map((item, index) => (
-            <p key={index}>{item}</p>
+          {personalInfo.aboutDescription.map((item) => (
+            <p key={item}>{item}</p>
           ))}
         </div>
 

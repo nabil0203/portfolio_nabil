@@ -14,6 +14,21 @@
   :target {
     scroll-margin-top: 6rem; /* This matches scroll-mt-24 globally */
   }
+
+  @media (min-width: 1024px) {
+    :target {
+      scroll-margin-top: 0;
+    }
+  }
+
+  :root {
+    --sidebar-width: 0px;
+  }
+
+  .page-wrapper {
+    padding-left: var(--sidebar-width);
+    transition: padding-left 0.4s ease-out;
+  }
 }
 
 @layer components {

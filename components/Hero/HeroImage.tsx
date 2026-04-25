@@ -44,12 +44,9 @@ export default function HeroImage() {
           animate={blobControls}
         >
           <motion.div
-            className="absolute -inset-[100%]"
+            className="absolute -inset-[100%] bg-[conic-gradient(from_0deg,#3b82f6_0%,#06b6d4_33%,#8b5cf6_66%,#3b82f6_100%)]"
             animate={{ rotate: 360 }}
             transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-            style={{
-              background: 'conic-gradient(from 0deg, #3b82f6 0%, #06b6d4 33%, #8b5cf6 66%, #3b82f6 100%)',
-            }}
           />
         </motion.div>
 

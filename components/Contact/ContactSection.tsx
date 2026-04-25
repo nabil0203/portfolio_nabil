@@ -1,13 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import MotionDiv from '../MotionDiv'
+import MotionDiv from '../Shared/MotionDiv'
 import ContactInfo from './ContactInfo'
 import ContactForm from './ContactForm'
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-secondary/5 scroll-mt-24">
+    <section id="contact" className="py-24 relative overflow-hidden bg-secondary/5 scroll-mt-24 lg:scroll-mt-0">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <MotionDiv className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center text-white relative group">

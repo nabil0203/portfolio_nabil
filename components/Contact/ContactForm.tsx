@@ -1,57 +1,54 @@
 'use client'
 
-import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
+import { useContactForm } from '@/hooks/useContactForm'
+
+const InputField = ({ 
+  id, 
+  label, 
+  type = 'text', 
+  value, 
+  onChange, 
+  required = true,
+  isTextArea = false 
+}: { 
+  id: string, 
+  label: string, 
+  type?: string, 
+  value: string, 
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+  required?: boolean,
+  isTextArea?: boolean
+}) => (
+  <div className="space-y-2">
+    <label htmlFor={id} className="text-sm font-medium text-secondary ml-1">{label}</label>
+    {isTextArea ? (
+      <textarea
+        required={required}
+        id={id}
+        name={id}
+        rows={5}
+        value={value}
+        onChange={onChange}
+        className="w-full bg-surface/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 transition-all resize-none"
+      />
+    ) : (
+      <input
+        required={required}
+        id={id}
+        name={id}
+        type={type}
+        value={value}
+        onChange={onChange}
+        className="w-full bg-surface/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 transition-all"
+      />
+    )}
+  </div>
+)
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    honeypot: ''
-  })
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('submitting')
-    
-    // REPLACE THIS with your Web3Forms Access Key (get it from web3forms.com)
-    const ACCESS_KEY = '68be9ed4-9916-4aa8-9259-e932f899de3f'
-    const WEB3FORMS_URL = 'https://api.web3forms.com/submit'
-
-    try {
-      const response = await fetch(WEB3FORMS_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          ...formData,
-          access_key: ACCESS_KEY
-        })
-      })
-
-      if (response.ok) {
-        setStatus('success')
-        setFormData({ name: '', email: '', subject: '', message: '', honeypot: '' })
-        setTimeout(() => setStatus('idle'), 5000)
-      } else {
-        throw new Error('Failed to send message')
-      }
-    } catch (err) {
-      console.error('Submission error:', err)
-      setStatus('error')
-      setTimeout(() => setStatus('idle'), 5000)
-    }
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
+  const { formData, status, handleChange, handleSubmit } = useContactForm()
 
   return (
     <div className="bg-surface/30 backdrop-blur-xl border border-white/5 p-8 rounded-2xl relative overflow-hidden group">
@@ -71,61 +68,12 @@ export default function ContactForm() {
         <input type="text" name="honeypot" style={{ display: 'none' }} onChange={handleChange} value={formData.honeypot} />
 
         <div className="grid sm:grid-cols-2 gap-5">
-          <div className="space-y-2">
-            <label htmlFor="name" className="text-sm font-medium text-secondary ml-1">Name</label>
-            <input
-              required
-              id="name"
-              name="name"
-              type="text"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder=""
-              className="w-full bg-surface/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 transition-all"
-            />
-          </div>
-          <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium text-secondary ml-1">Email</label>
-            <input
-              required
-              id="email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder=""
-              className="w-full bg-surface/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 transition-all"
-            />
-          </div>
+          <InputField id="name" label="Name" value={formData.name} onChange={handleChange} />
+          <InputField id="email" label="Email" type="email" value={formData.email} onChange={handleChange} />
         </div>
 
-        <div className="space-y-2">
-          <label htmlFor="subject" className="text-sm font-medium text-secondary ml-1">Subject</label>
-          <input
-            required
-            id="subject"
-            name="subject"
-            type="text"
-            value={formData.subject}
-            onChange={handleChange}
-            placeholder=""
-            className="w-full bg-surface/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 transition-all"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="message" className="text-sm font-medium text-secondary ml-1">Message</label>
-          <textarea
-            required
-            id="message"
-            name="message"
-            rows={5}
-            value={formData.message}
-            onChange={handleChange}
-            placeholder=""
-            className="w-full bg-surface/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 transition-all resize-none"
-          />
-        </div>
+        <InputField id="subject" label="Subject" value={formData.subject} onChange={handleChange} />
+        <InputField id="message" label="Message" value={formData.message} onChange={handleChange} isTextArea />
 
         <button
           disabled={status !== 'idle'}

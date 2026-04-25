@@ -1,6 +1,6 @@
 'use client'
 
-import MotionDiv from '../MotionDiv'
+import MotionDiv from '../Shared/MotionDiv'
 import { skillsData } from '@/data/portfolioData'
 import SkillCard from './SkillCard'
 import { Skill } from '@/data/portfolioDataTypes'
@@ -22,7 +22,7 @@ export default function SkillsSection() {
   }
 
   return (
-    <section id="skills" className="py-8 md:py-16 scroll-mt-24 relative overflow-hidden" aria-labelledby="skills-heading">
+    <section id="skills" className="py-8 md:py-16 scroll-mt-24 lg:scroll-mt-0 relative overflow-hidden" aria-labelledby="skills-heading">
       {/* Background decorations for extra modern feel */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent/10 rounded-full blur-[128px] pointer-events-none -translate-y-1/2 -ml-48 scale-150"></div>
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent-secondary/10 rounded-full blur-[128px] pointer-events-none -translate-y-1/2 -mr-48 scale-150"></div>

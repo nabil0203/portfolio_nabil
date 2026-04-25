@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import MotionDiv from '../MotionDiv'
+import MotionDiv from '../Shared/MotionDiv'
 import ProjectCard from './ProjectCard'
 import { projectsData } from '@/data/portfolioData'
 
@@ -10,7 +10,7 @@ export default function ProjectsSection() {
   const displayedProjects = showAll ? projectsData : projectsData.slice(0, 6)
 
   return (
-    <section id="projects" className="py-8 md:py-16 scroll-mt-24 bg-secondary/5">
+    <section id="projects" className="py-8 md:py-16 scroll-mt-24 lg:scroll-mt-0 bg-secondary/5">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <MotionDiv>
           <h2 className="text-3xl md:text-4xl font-extrabold mb-5 text-center text-white relative group">

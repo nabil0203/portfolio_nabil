@@ -17,7 +17,7 @@ export default function AboutSection() {
   const y2 = useTransform(smoothMouseY, [-0.5, 0.5], [40, -40])
 
   return (
-    <section id="about" className="py-12 scroll-mt-24 lg:scroll-mt-0 bg-secondary/5">
+    <section id="about" className="pt-12 pb-24 md:pb-32 scroll-mt-24 lg:scroll-mt-0 bg-secondary/5">
       <div className="max-w-7xl mx-auto px-6">
         <MotionDiv>
           <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center text-white relative group">

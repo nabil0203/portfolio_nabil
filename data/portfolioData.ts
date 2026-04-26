@@ -112,7 +112,7 @@ export const skillsData: Skill[] = [
 export const projectsData: Project[] = [
   {
     id: 'shopnest',
-    title: '🛒 ShopNest',
+    title: 'ShopNest',
     description: 'A full-featured e-commerce web application.',
     tools: ['Django', 'React', 'MySQL', 'REST API', 'SSLCommerz'],
     features: [
@@ -128,7 +128,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 'farm2market',
-    title: '🧑‍🌾 Farm2Market',
+    title: 'Farm2Market',
     description: 'A Django-based web application that connects farmers directly with buyers.',
     tools: ['Django', 'Django templates', 'MySQL', 'Supabase', 'Tailwind CSS'],
     features: [
@@ -144,7 +144,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 'taskify',
-    title: '✅Taskify',
+    title: 'Taskify',
     description: 'A task management application with drag and drop functionality.',
     tools: ['Django', 'Bootstrap', 'SQLite', 'HTML'],
     features: [
@@ -160,7 +160,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 'coinly',
-    title: '💰Coinly',
+    title: 'Coinly',
     description: 'My personal expense tracker web application.',
     tools: ['Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS'],
     features: [
@@ -176,7 +176,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 'quiz-verse',
-    title: '🧪 Quiz Verse',
+    title: 'Quiz Verse',
     description: 'Quiz Verse is an interactive multiple-choice quiz application built with Django.',
     tools: ['Django', 'SQLite', 'HTML', 'Tailwind CSS'],
     features: [
@@ -191,7 +191,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 'qr-code-generator',
-    title: '⛆ QR Code Generator',
+    title: 'QR Code Generator',
     description: 'Users can generate QR codes from text or URLs.',
     tools: ['Python', 'qrcode'],
     features: [
@@ -205,7 +205,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 'auto-vault',
-    title: '🚗Auto Vault',
+    title: 'Auto Vault',
     description: 'A lightweight PHP and MySQL web application for managing cars of a showroom.',
     tools: ['PHP', 'MySQL', 'CSS', 'HTML'],
     features: [
@@ -218,7 +218,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 'scholar-shelf',
-    title: '📖Scholar Shelf',
+    title: 'Scholar Shelf',
     description: 'An educational platform connecting students with tutors and study resources.',
     tools: ['PHP', 'MySQL', 'CSS'],
     features: [
@@ -231,7 +231,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 'carMaster',
-    title: '🚘CarMaster',
+    title: 'CarMaster',
     description: 'A console-based Car Showroom Management System built using Java and OOP principles.',
     tools: ['Java', 'OOP'],
     features: [
@@ -245,7 +245,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 'pharm-ease',
-    title: '💊Pharm Ease',
+    title: 'Pharm Ease',
     description: 'A console-based pharmacy management system',
     tools: ['C language'],
     features: [
@@ -294,7 +294,6 @@ export const volunteerExperiencesData: VolunteerExperience[] = [
 // Contact Information
 export const contactData: Contact = {
   email: 'nabilahmed0203@gmail.com',
-  phone: '+8801709548627',
   location: 'Dhamrai, Dhaka, Bangladesh',
   github: 'https://github.com/nabil0203',
   linkedin: 'https://linkedin.com/in/nabil0203',
@@ -314,12 +313,6 @@ export const contactItems = [
     label: 'Email',
     value: contactData.email,
     color: 'text-blue-400'
-  },
-  {
-    icon: Phone,
-    label: 'Phone',
-    value: contactData.phone,
-    color: 'text-purple-400'
   },
   {
     icon: MapPin,

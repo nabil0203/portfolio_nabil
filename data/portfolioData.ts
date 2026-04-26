@@ -68,49 +68,53 @@ export const educationData = [
 ];
 
 // Skills Data
-export const skillsData: Skill[] = [
-  // Programming Languages
-  { name: 'C', category: 'Programming Languages' },
-  { name: 'C++', category: 'Programming Languages' },
-  { name: 'Python', category: 'Programming Languages' },
-  { name: 'Java', category: 'Programming Languages' },
-  { name: 'JavaScript', category: 'Programming Languages' },
-  { name: 'PHP', category: 'Programming Languages' },
 
-  // Frontend
-  { name: 'React', category: 'Frontend' },
-  { name: 'Tailwind CSS', category: 'Frontend' },
-  { name: 'Bootstrap', category: 'Frontend' },
-  { name: 'HTML', category: 'Frontend' },
-  { name: 'CSS', category: 'Frontend' },
+// - Simple Icons CDN:  https://cdn.simpleicons.org/<slug>[/<color>]
+// - Devicons CDN:      https://cdn.jsdelivr.net/gh/devicons/devicon/icons/<name>/<file>.svg
+export const skillsData: Skill[] = [
 
   // Backend
-  { name: 'Django', category: 'Backend' },
-  { name: 'REST APIs', category: 'Backend' },
+  { name: 'Django', category: 'Backend', logo: 'https://cdn.simpleicons.org/django/white' },
+  { name: 'Django REST Framework', category: 'Backend', logo: 'https://www.django-rest-framework.org/img/logo.png' },
 
+  // Frontend
+  { name: 'React', category: 'Frontend', logo: 'https://cdn.simpleicons.org/react' },
+  { name: 'Tailwind CSS', category: 'Frontend', logo: 'https://cdn.simpleicons.org/tailwindcss' },
+  { name: 'Bootstrap', category: 'Frontend', logo: 'https://cdn.simpleicons.org/bootstrap' },
+  { name: 'HTML', category: 'Frontend', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+  { name: 'CSS', category: 'Frontend', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+  
   // Database
-  { name: 'MySQL', category: 'Database' },
-  { name: 'PostgreSQL', category: 'Database' },
-  { name: 'SQLite', category: 'Database' },
-  { name: 'Supabase', category: 'Database' },
+  { name: 'MySQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+  { name: 'PostgreSQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+  { name: 'SQLite', category: 'Database', logo: 'https://cdn.simpleicons.org/sqlite' },
+  { name: 'Supabase', category: 'Database', logo: 'https://cdn.simpleicons.org/supabase' },
+  
+  // Programming Languages
+  { name: 'C', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
+  { name: 'C++', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
+  { name: 'Python', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+  { name: 'Java', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+  { name: 'JavaScript', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+
 
   // Tools
-  { name: 'Git', category: 'Tools' },
-  { name: 'GitHub', category: 'Tools' },
-  { name: 'Postman', category: 'Tools' },
+  { name: 'Git', category: 'Tools', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+  { name: 'GitHub', category: 'Tools', logo: 'https://cdn.simpleicons.org/github/white' },
+  { name: 'Postman', category: 'Tools', logo: 'https://cdn.simpleicons.org/postman' },
+  { name: 'VS Code', category: 'Tools', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
 
-  // Other
-  { name: 'Data Structures', category: 'Other' },
-  { name: 'Algorithms', category: 'Other' },
-  { name: 'OOP', category: 'Other' },
-  { name: 'Machine Learning', category: 'Other' },
+  // Others
+  { name: 'Data Structures', category: 'Others' },
+  { name: 'Algorithms', category: 'Others' },
+  { name: 'OOP', category: 'Others' },
 
   // Problem Solving Platforms
-  { name: 'Codeforces', category: 'Problem Solving Platforms', url: 'https://codeforces.com/profile/BlaZe_0203' },
-  { name: 'LeetCode', category: 'Problem Solving Platforms', url: 'https://leetcode.com/u/BlaZe_0203/' },
-  { name: 'Beecrowd', category: 'Problem Solving Platforms', url: 'https://judge.beecrowd.com/en/profile/757266' },
-  { name: 'HackerRank', category: 'Problem Solving Platforms', url: 'https://www.hackerrank.com/profile/BlaZe_0203' },
-  { name: 'CodeChef', category: 'Problem Solving Platforms', url: 'https://www.codechef.com/users/blaze_0203' },
+  { name: 'Codeforces', category: 'Problem Solving Platforms', url: 'https://codeforces.com/profile/BlaZe_0203', logo: 'https://cdn.simpleicons.org/codeforces' },
+  { name: 'LeetCode', category: 'Problem Solving Platforms', url: 'https://leetcode.com/u/BlaZe_0203/', logo: 'https://cdn.simpleicons.org/leetcode' },
+  { name: 'Beecrowd', category: 'Problem Solving Platforms', url: 'https://judge.beecrowd.com/en/profile/757266', logo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAclBMVEX////9/P3r5e7x7fO4pMRCAGr18/eKY55fEH76+ftVAHebfKzc0uFRAHTFtc5vNopSAHWjh7Kgg7BZAHmwmb3Tx9pzPo3HuNDYzd5mJIPg2OVoJ4RiGoDRxNiBVZd9T5WWdah5SJGQbKOGXZy+q8ipj7e703yJAAABHklEQVR4AbzQRWLDMBBA0W/FUeWx5ahWwIzp/Y8YZtj2aSUa4j8FCmYzvgvnmh/Dd5HEJDblu8WCmfvlq8wvV2ufbs5yXuXiRXxhvPfOObElL6o6b8JVazrTr5omleG1B5uSoKTDGIDYbXikZY1WdFaRSgZEvubRaEsSGhcDa6uAUJbcJXZERdQSAaVrAYo5dwunKVm6kKPRrQD1UMQxXImWBSfaV0BQxFwNoihJb1knm0Ak431IbkJpCtGXmXUAJXc/bnVqYrxUpIDtfMXNzFVoRWvL441kQOBNwN2fhCQouz7e+AjIXkZpfER5Os1kC+e3j1KJUVDXyq2BS7ZHa9/HfTzUpp6yLOv9yIvSugPxh+UOrOZVpB8F7DesAABdZRHOHW9vPgAAAABJRU5ErkJggg==' },
+  { name: 'HackerRank', category: 'Problem Solving Platforms', url: 'https://www.hackerrank.com/profile/BlaZe_0203', logo: 'https://cdn.simpleicons.org/hackerrank' },
+  { name: 'CodeChef', category: 'Problem Solving Platforms', url: 'https://www.codechef.com/users/blaze_0203', logo: 'https://cdn.simpleicons.org/codechef/white' },
 
 ]
 

@@ -10,10 +10,10 @@ const skillGroups = (skillsData as Skill[]).reduce(
     if (!acc[skill.category]) {
       acc[skill.category] = []
     }
-    acc[skill.category].push({ name: skill.name, url: skill.url })
+    acc[skill.category].push({ name: skill.name, url: skill.url, logo: skill.logo })
     return acc
   },
-  {} as Record<string, Array<{ name: string; url?: string }>>,
+  {} as Record<string, Array<{ name: string; url?: string; logo?: string }>>,
 )
 
 export default function SkillsSection() {
@@ -40,9 +40,9 @@ export default function SkillsSection() {
           </div>
         </MotionDiv>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8">
-          {Object.entries(skillGroups).map(([category, skills]) => (
-            <MotionDiv key={category}>
+        <div className="rounded-2xl border border-white/[0.07] bg-surface/10 backdrop-blur-xl px-5 sm:px-10 py-5 divide-y-0">
+          {Object.entries(skillGroups).map(([category, skills], index) => (
+            <MotionDiv key={category} delay={index * 0.04}>
               <SkillCard category={category} skills={skills} />
             </MotionDiv>
           ))}

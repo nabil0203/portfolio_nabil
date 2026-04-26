@@ -29,6 +29,7 @@ export interface Skill {
   name: string
   category: string
   url?: string
+  logo?: string
 }
 
 export interface Project {

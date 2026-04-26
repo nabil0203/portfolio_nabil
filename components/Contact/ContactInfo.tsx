@@ -26,7 +26,7 @@ export default function ContactInfo() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="flex items-center sm:items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-surface/30 border border-white/5 hover:border-accent/30 transition-all group overflow-hidden"
+            className="flex items-center sm:items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-slate-900/30 border border-slate-800/60 hover:border-accent/30 transition-all group overflow-hidden"
           >
             <div className={`p-2.5 sm:p-3 shrink-0 rounded-lg bg-surface/50 ${item.color} group-hover:scale-110 transition-transform`}>
               <item.icon className="w-5 h-5 sm:w-6 sm:h-6" />

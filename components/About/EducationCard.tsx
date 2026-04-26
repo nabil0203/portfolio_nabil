@@ -19,9 +19,9 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface/60 to-accent-glow/5 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300" />
 
       {/* Content */}
-      <div className="relative bg-surface/40 backdrop-blur-xl border border-white/10 rounded-3xl p-5 sm:p-7 shadow-2xl overflow-hidden">
+      <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-800/60 rounded-3xl p-5 sm:p-7 shadow-2xl overflow-hidden">
         <div className="flex items-center gap-3 mb-5 sm:mb-6 relative z-10">
-          <div className="p-2.5 bg-accent/15 rounded-xl border border-accent/30">
+          <div className="p-2.5 bg-accent/8 rounded-xl border border-blue-900/60">
             <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
           </div>
           <div>
@@ -36,7 +36,7 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
           <div className="space-y-5">
             {educationData.map((edu) => {
               const LogoContent = (
-                <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-3xl sm:rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] p-3 sm:p-5 shadow-md flex items-center justify-center backdrop-blur-md group-hover/item:border-accent/40 group-hover/item:bg-white/5 transition-all duration-200">
+                <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-3xl sm:rounded-2xl bg-slate-800/40 border border-slate-700/40 p-3 sm:p-5 shadow-md flex items-center justify-center backdrop-blur-md group-hover/item:border-accent/40 transition-all duration-200">
                   <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain drop-shadow-md group-hover/item:scale-105 transition-transform duration-200" />
                 </div>
               )
@@ -44,7 +44,7 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
               return (
               <div key={edu.institution} className="relative group/item">
 
-                <div className="bg-surface/50 rounded-3xl p-4 sm:p-5 border border-white/10 backdrop-blur-sm hover:border-accent/30 transition-colors duration-50">
+                <div className="bg-slate-900/30 rounded-3xl p-4 sm:p-5 border border-slate-800/60 backdrop-blur-sm hover:border-accent/30 transition-colors duration-200">
                   <div className="flex items-start sm:items-center gap-4 sm:gap-6"> 
                     {edu.logo && (
                       edu.url ? (
@@ -58,7 +58,7 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
                       )
                     )}
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-sm sm:text-base font-bold text-white/90 mb-1 leading-tight">{edu.degree}</h4>
+                      <h4 className="text-sm sm:text-base font-bold text-white mb-1 leading-tight">{edu.degree}</h4>
                       {edu.url ? (
                         <a
                           href={edu.url}
@@ -77,23 +77,23 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
 
                       <div className="flex flex-wrap items-center gap-2 mt-3">
                         {edu.gpa && (
-                          <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
+                          <div className="w-fit flex items-center gap-2 bg-blue-950/40 rounded-lg py-1 px-3 border border-blue-900/60 hover:border-blue-700/50 hover:bg-blue-900/40 transition-colors duration-200">
                             <GraduationCap className="w-4 h-4 text-accent shrink-0" />
-                            <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
+                            <span className="text-secondary text-xs sm:text-sm leading-relaxed font-medium">
                               {edu.gpa}
                             </span>
                           </div>
                         )}
-                        <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
+                        <div className="w-fit flex items-center gap-2 bg-blue-950/40 rounded-lg py-1 px-3 border border-blue-900/60 hover:border-blue-700/50 hover:bg-blue-900/40 transition-colors duration-200">
                           <Calendar className="w-4 h-4 text-accent shrink-0" />
-                          <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
+                          <span className="text-secondary text-xs sm:text-sm leading-relaxed font-medium">
                             {edu.graduation}
                           </span>
                         </div>
                         {edu.description && (
-                          <div className="w-fit flex items-center gap-2 bg-accent/5 rounded-lg py-1 px-3 border border-accent/10 hover:border-accent/20 hover:bg-accent/10 transition-colors duration-300">
+                          <div className="w-fit flex items-center gap-2 bg-blue-950/40 rounded-lg py-1 px-3 border border-blue-900/60 hover:border-blue-700/50 hover:bg-blue-900/40 transition-colors duration-200">
                             <Award className="w-4 h-4 text-accent shrink-0" />
-                            <span className="text-gray-300 text-xs sm:text-sm leading-relaxed font-medium">
+                            <span className="text-secondary text-xs sm:text-sm leading-relaxed font-medium">
                               {edu.description}
                             </span>
                           </div>

@@ -17,9 +17,9 @@ export default function SummaryCard({ x1, y1, x2, y2 }: SummaryCardProps) {
     <div className="relative group">
       <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-surface/50 to-accent-secondary/10 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300" />
 
-      <div className="relative bg-surface/30 backdrop-blur-xl border border-white/10 rounded-3xl p-5 sm:p-7 shadow-2xl overflow-hidden">
+      <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-800/60 rounded-3xl p-5 sm:p-7 shadow-2xl overflow-hidden">
         <div className="flex items-center gap-3 mb-5 relative z-10">
-          <div className="p-2.5 bg-accent/10 rounded-xl border border-accent/20">
+          <div className="p-2.5 bg-accent/8 rounded-xl border border-blue-900/60">
             <User className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
           </div>
           <div>
@@ -28,7 +28,7 @@ export default function SummaryCard({ x1, y1, x2, y2 }: SummaryCardProps) {
             </h3>
           </div>
         </div>
-        <div className="text-gray-400 leading-relaxed text-sm sm:text-base relative z-10 space-y-3">
+        <div className="text-secondary leading-relaxed text-sm sm:text-base relative z-10 space-y-3">
           {personalInfo.aboutDescription.map((item) => (
             <p key={item}>{item}</p>
           ))}

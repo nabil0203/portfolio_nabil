@@ -51,7 +51,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-background overflow-x-hidden px-3 sm:px-4"
+      className="relative min-h-[100dvh] flex flex-col bg-background overflow-x-hidden px-3 sm:px-4 py-24 md:py-20 lg:py-0"
     >
       {/* Background pattern and glow */}
       <div className="absolute inset-0 bg-dot-pattern-faint opacity-30 mix-blend-screen" />
@@ -74,7 +74,7 @@ export default function HeroSection() {
       </div>
 
       <motion.div
-        className="relative z-10 max-w-6xl w-full mx-auto p-5 sm:p-8 md:p-12 lg:p-16 bg-surface/30 border-2 border-accent/40 rounded-3xl backdrop-blur-xl shadow-2xl
+        className="relative z-10 max-w-6xl w-full my-auto mx-auto p-5 sm:p-8 md:p-12 lg:p-16 bg-slate-900/30 border border-slate-800/60 rounded-3xl backdrop-blur-xl shadow-2xl
         flex flex-col lg:flex-row items-center gap-8 lg:gap-16"
         animate={mainContentGlow}
         transition={glowTransition}
@@ -89,7 +89,7 @@ export default function HeroSection() {
         >
           <motion.h1
             variants={letterVariants}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold py-2 mb-4 md:mb-6 leading-tight break-words
+            className="text-[clamp(1.1rem,5.5vw,2.25rem)] sm:text-4xl md:text-5xl font-extrabold py-2 mb-4 md:mb-6 leading-tight whitespace-nowrap tracking-tight
             bg-gradient-to-r from-primary via-slate-300 to-slate-400
             bg-clip-text text-transparent pt-4 sm:pt-4 drop-shadow-sm"
           >
@@ -110,7 +110,7 @@ export default function HeroSection() {
 
           <motion.p
             variants={letterVariants}
-            className="text-base md:text-lg text-slate-300/90 font-light leading-relaxed
+            className="text-base md:text-lg text-secondary font-light leading-relaxed
             max-w-3xl mx-auto lg:mx-0 mb-8 md:mb-12"
           >
             {personalInfo.heroDescription}
@@ -118,7 +118,7 @@ export default function HeroSection() {
 
           <motion.div
             variants={letterVariants}
-            className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4 px-0"
+            className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 px-0"
           >
             <HeroButton href={contactData.linkedin} Icon={Linkedin} ariaLabel="Open my LinkedIn profile">
               LinkedIn

@@ -31,7 +31,7 @@ const InputField = ({
         rows={5}
         value={value}
         onChange={onChange}
-        className="w-full bg-surface/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 transition-all resize-none"
+        className="w-full bg-slate-900/40 border border-slate-800/60 rounded-xl px-4 py-3 text-white placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-blue-900/60 transition-all resize-none"
       />
     ) : (
       <input
@@ -41,7 +41,7 @@ const InputField = ({
         type={type}
         value={value}
         onChange={onChange}
-        className="w-full bg-surface/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 transition-all"
+        className="w-full bg-slate-900/40 border border-slate-800/60 rounded-xl px-4 py-3 text-white placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-blue-900/60 transition-all"
       />
     )}
   </div>
@@ -51,7 +51,7 @@ export default function ContactForm() {
   const { formData, status, handleChange, handleSubmit } = useContactForm()
 
   return (
-    <div className="bg-surface/30 backdrop-blur-xl border border-white/5 p-8 rounded-2xl relative overflow-hidden group">
+    <div className="bg-slate-900/30 backdrop-blur-xl border border-slate-800/60 p-8 rounded-2xl relative overflow-hidden group">
       {/* Decorative glow */}
       <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-colors duration-500" />
       <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-colors duration-500" />

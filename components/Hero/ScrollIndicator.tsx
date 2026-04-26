@@ -22,7 +22,7 @@ export default function ScrollIndicator() {
       >
         <div className="flex flex-col items-center gap-2">
           <span className="text-accent text-sm font-medium">Scroll Down</span>
-          <div className="w-6 h-10 border-2 border-accent/50 rounded-full flex justify-center p-1">
+          <div className="w-6 h-10 border-2 border-slate-700/60 rounded-full flex justify-center p-1">
             <motion.div
               className="w-1 h-3 bg-accent rounded-full"
               animate={{ y: [0, 8, 0] }}

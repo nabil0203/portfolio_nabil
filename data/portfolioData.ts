@@ -1,13 +1,5 @@
-export type {
-  PersonalInfo,
-  SiteMetadata,
-  Contact,
-  Education,
-  Skill,
-  Project,
-  VolunteerExperience,
-  PersonalDetails
-} from '@/data/portfolioDataTypes'
+
+import { Mail, Phone, MapPin, Linkedin } from 'lucide-react'
 
 import {
   PersonalInfo,
@@ -83,13 +75,13 @@ export const skillsData: Skill[] = [
   { name: 'Bootstrap', category: 'Frontend', logo: 'https://cdn.simpleicons.org/bootstrap' },
   { name: 'HTML', category: 'Frontend', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
   { name: 'CSS', category: 'Frontend', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-  
+
   // Database
   { name: 'MySQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
   { name: 'PostgreSQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
   { name: 'SQLite', category: 'Database', logo: 'https://cdn.simpleicons.org/sqlite' },
   { name: 'Supabase', category: 'Database', logo: 'https://cdn.simpleicons.org/supabase' },
-  
+
   // Programming Languages
   { name: 'C', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
   { name: 'C++', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
@@ -278,10 +270,10 @@ export const personalDetailsData: PersonalDetails = {
     'English (Proficient)',
   ],
   certifications: [
-    'International English Language Testing System (IELTS 7.0)'
+    'International English Language Testing System (IELTS 7.0)',
   ],
   programs: [
-    'Aspire Leaders Program 2024 (Harvard Business School)'
+    'Aspire Leaders Program 2024 (Harvard Business School)',
   ],
   hobbies: [
     'Following global geopolitical trends and international affairs',
@@ -293,14 +285,12 @@ export const volunteerExperiencesData: VolunteerExperience[] = [
     organization: 'DIU Software Engineering Club',
     role: 'General Member',
     duration: 'Feb 2023 - Present',
-    // description: '[Description of volunteer work and impact]'
   },
   {
     organization: 'Cyber Security Centre, DIU',
     role: 'General Member',
     duration: 'May 2023 - Jun 2024',
-    // description: '[Description of volunteer work and impact]'
-  }
+  },
 ]
 
 // Contact Information
@@ -312,3 +302,31 @@ export const contactData: Contact = {
   linkedin: 'https://linkedin.com/in/nabil0203',
   resume: 'https://drive.google.com/file/d/12LMfHVCskTmOKRfbn6wUQjbzcQ8166xE/view?usp=sharing'
 }
+
+// Contact Items
+export const contactItems = [
+  {
+    icon: Linkedin,
+    label: 'LinkedIn',
+    value: 'Chowdhury Nabil Ahmed',
+    color: 'text-blue-500'
+  },
+  {
+    icon: Mail,
+    label: 'Email',
+    value: contactData.email,
+    color: 'text-blue-400'
+  },
+  {
+    icon: Phone,
+    label: 'Phone',
+    value: contactData.phone,
+    color: 'text-purple-400'
+  },
+  {
+    icon: MapPin,
+    label: 'Location',
+    value: contactData.location,
+    color: 'text-pink-400'
+  },
+]

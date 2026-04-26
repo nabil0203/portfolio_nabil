@@ -23,7 +23,9 @@ export default function SummaryCard({ x1, y1, x2, y2 }: SummaryCardProps) {
             <User className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
           </div>
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">Summary</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.10em] text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/50 leading-none">
+              Summary
+            </h3>
           </div>
         </div>
         <div className="text-gray-400 leading-relaxed text-sm sm:text-base relative z-10 space-y-3">

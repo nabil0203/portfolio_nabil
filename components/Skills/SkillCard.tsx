@@ -9,7 +9,7 @@ interface SkillCardProps {
 
 export default function SkillCard({ category, skills }: SkillCardProps) {
     return (
-        <div className="group relative py-5 sm:py-6 px-0 sm:px-1 border-b border-white/[0.06] last:border-b-0 transition-all duration-200">
+        <div className="group relative py-5 sm:py-6 px-0 sm:px-1 transition-all duration-200">
 
             {/* Category heading — big, uppercase, accent dash prefix */}
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">

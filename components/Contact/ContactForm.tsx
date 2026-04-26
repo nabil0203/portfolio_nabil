@@ -57,7 +57,12 @@ export default function ContactForm() {
       <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-colors duration-500" />
 
       <div className="relative z-10 mb-8">
-        <h3 className="text-2xl font-bold text-white mb-4">Send a Message</h3>
+        <div className="flex items-center gap-3 sm:gap-4 mb-4">
+          <span className="text-accent text-xl font-light select-none flex-shrink-0">—</span>
+          <h3 className="inline-block text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.10em] text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/50 leading-none">
+            Send a Message
+          </h3>
+        </div>
         <p className="text-secondary">
           Fill out the form below and I'll get back to you as soon as possible.
         </p>

@@ -40,7 +40,7 @@ export default function SkillsSection() {
           </div>
         </MotionDiv>
 
-        <div className="rounded-2xl border border-white/[0.07] bg-surface/10 backdrop-blur-xl px-5 sm:px-10 py-5 divide-y-0">
+        <div className="rounded-2xl border border-white/10 bg-surface/10 backdrop-blur-xl px-5 sm:px-10 py-5 divide-y divide-white/[0.06]">
           {Object.entries(skillGroups).map(([category, skills], index) => (
             <MotionDiv key={category} delay={index * 0.04}>
               <SkillCard category={category} skills={skills} />

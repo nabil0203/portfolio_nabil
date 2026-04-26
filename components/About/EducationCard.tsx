@@ -25,7 +25,9 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
             <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
           </div>
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">Education</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.10em] text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/50 leading-none">
+              Education
+            </h3>
           </div>
         </div>
 
@@ -34,16 +36,16 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
           <div className="space-y-5">
             {educationData.map((edu) => {
               const LogoContent = (
-                <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] p-3 sm:p-5 border border-white/10 shadow-lg flex items-center justify-center backdrop-blur-md group-hover/item:border-accent/40 group-hover/item:bg-white/10 transition-all duration-300">
-                  <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain drop-shadow-md group-hover/item:scale-105 transition-transform duration-300" />
+                <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-3xl sm:rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] p-3 sm:p-5 shadow-md flex items-center justify-center backdrop-blur-md group-hover/item:border-accent/40 group-hover/item:bg-white/5 transition-all duration-200">
+                  <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain drop-shadow-md group-hover/item:scale-105 transition-transform duration-200" />
                 </div>
               )
 
               return (
               <div key={edu.institution} className="relative group/item">
 
-                <div className="bg-surface/50 rounded-xl p-4 sm:p-5 border border-white/10 backdrop-blur-sm hover:border-accent/20 transition-colors duration-100">
-                  <div className="flex items-start sm:items-center gap-4 sm:gap-6">
+                <div className="bg-surface/50 rounded-3xl p-4 sm:p-5 border border-white/10 backdrop-blur-sm hover:border-accent/30 transition-colors duration-50">
+                  <div className="flex items-start sm:items-center gap-4 sm:gap-6"> 
                     {edu.logo && (
                       edu.url ? (
                         <a href={edu.url} target="_blank" rel="noopener noreferrer" className="shrink-0 block">
@@ -62,10 +64,10 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
                           href={edu.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block text-accent hover:text-accent-glow transition-colors duration-300 text-sm sm:text-base font-medium group/link"
+                          className="inline-block text-accent hover:text-accent-glow transition-colors duration-200 text-sm sm:text-base font-medium group/link"
                         >
                           {edu.institution}
-                          <span className="inline-block ml-1 opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all duration-300 text-xs text-accent-glow">
+                          <span className="inline-block ml-1 opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all duration-200 text-xs text-accent-glow">
                             ↗
                           </span>
                         </a>

@@ -1,53 +1,18 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Globe, Github, Linkedin, ExternalLink } from 'lucide-react'
-import { contactData } from '@/data/portfolioData'
-
-const contactItems = [
-  {
-    icon: Mail,
-    label: 'Email',
-    value: contactData.email,
-    href: `mailto:${contactData.email}`,
-    color: 'text-blue-400'
-  },
-  {
-    icon: Phone,
-    label: 'Phone',
-    value: contactData.phone,
-    href: `tel:${contactData.phone}`,
-    color: 'text-purple-400'
-  },
-  {
-    icon: MapPin,
-    label: 'Location',
-    value: contactData.location,
-    href: null,
-    color: 'text-pink-400'
-  }
-]
-
-const socialLinks = [
-  {
-    icon: Github,
-    label: 'GitHub',
-    href: contactData.github,
-    color: 'hover:text-white'
-  },
-  {
-    icon: Linkedin,
-    label: 'LinkedIn',
-    href: contactData.linkedin,
-    color: 'hover:text-blue-500'
-  }
-]
+import { contactItems } from '@/data/portfolioData'
 
 export default function ContactInfo() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 lg:pt-8">
       <div>
-        <h3 className="text-2xl font-bold text-white mb-4">Contact Information</h3>
+        <div className="flex items-center gap-3 sm:gap-4 mb-4">
+          <span className="text-accent text-xl font-light select-none flex-shrink-0">—</span>
+          <h3 className="inline-block text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.10em] text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/50 leading-none">
+            Contact Information
+          </h3>
+        </div>
         <p className="text-sm sm:text-base text-secondary max-w-xl">
           Feel free to reach out for collaborations, opportunities, or just a friendly chat about technology and development.
         </p>
@@ -68,16 +33,9 @@ export default function ContactInfo() {
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-xs sm:text-sm text-secondary font-medium">{item.label}</p>
-              {item.href ? (
-                <a
-                  href={item.href}
-                  className="text-white hover:text-accent transition-colors block mt-0.5 font-medium text-[13px] sm:text-sm md:text-base truncate"
-                >
-                  {item.value}
-                </a>
-              ) : (
-                <p className="text-white mt-0.5 font-medium text-[13px] sm:text-sm md:text-base truncate">{item.value}</p>
-              )}
+              <p className="text-white mt-0.5 font-medium text-[13px] sm:text-sm md:text-base truncate">
+                {item.value}
+              </p>
             </div>
           </motion.div>
         ))}

@@ -75,25 +75,27 @@ export default function EducationCard({ x1, y1, x2, y2 }: EducationCardProps) {
                         <p className="text-accent text-sm sm:text-base font-medium">{edu.institution}</p>
                       )}
 
-                      <div className="flex flex-wrap items-center gap-2 mt-3">
-                        {edu.gpa && (
-                          <div className="w-fit flex items-center gap-2 bg-blue-950/40 rounded-lg py-1 px-3 border border-blue-900/60 hover:border-blue-700/50 hover:bg-blue-900/40 transition-colors duration-200">
-                            <GraduationCap className="w-4 h-4 text-accent shrink-0" />
-                            <span className="text-secondary text-xs sm:text-sm leading-relaxed font-medium">
-                              {edu.gpa}
+                      <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 mt-4">
+                        <div className="flex flex-wrap gap-2">
+                          {edu.gpa && (
+                            <div className="w-fit flex items-center gap-2 bg-blue-950/40 rounded-lg py-1 px-2.5 border border-blue-900/60">
+                              <GraduationCap className="w-3.5 h-3.5 text-accent shrink-0" />
+                              <span className="text-secondary text-[11px] sm:text-xs leading-relaxed font-medium">
+                                {edu.gpa}
+                              </span>
+                            </div>
+                          )}
+                          <div className="w-fit flex items-center gap-2 bg-blue-950/40 rounded-lg py-1 px-2.5 border border-blue-900/60">
+                            <Calendar className="w-3.5 h-3.5 text-accent shrink-0" />
+                            <span className="text-secondary text-[11px] sm:text-xs leading-relaxed font-medium">
+                              {edu.graduation}
                             </span>
                           </div>
-                        )}
-                        <div className="w-fit flex items-center gap-2 bg-blue-950/40 rounded-lg py-1 px-3 border border-blue-900/60 hover:border-blue-700/50 hover:bg-blue-900/40 transition-colors duration-200">
-                          <Calendar className="w-4 h-4 text-accent shrink-0" />
-                          <span className="text-secondary text-xs sm:text-sm leading-relaxed font-medium">
-                            {edu.graduation}
-                          </span>
                         </div>
                         {edu.description && (
-                          <div className="w-fit flex items-center gap-2 bg-blue-950/40 rounded-lg py-1 px-3 border border-blue-900/60 hover:border-blue-700/50 hover:bg-blue-900/40 transition-colors duration-200">
-                            <Award className="w-4 h-4 text-accent shrink-0" />
-                            <span className="text-secondary text-xs sm:text-sm leading-relaxed font-medium">
+                          <div className="w-fit flex items-center gap-2 bg-blue-950/40 rounded-lg py-1 px-2.5 border border-blue-900/60">
+                            <Award className="w-3.5 h-3.5 text-accent shrink-0" />
+                            <span className="text-secondary text-[11px] sm:text-xs leading-relaxed font-medium">
                               {edu.description}
                             </span>
                           </div>

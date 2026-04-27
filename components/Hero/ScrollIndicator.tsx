@@ -11,7 +11,7 @@ export default function ScrollIndicator() {
   }
 
   return (
-    <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+    <div className="relative md:absolute md:bottom-4 md:left-0 md:right-0 flex justify-center z-20 mt-8 md:mt-0">
       <motion.div
         className="cursor-pointer"
         onClick={scrollToNextSection}

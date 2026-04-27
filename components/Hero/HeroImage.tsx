@@ -58,7 +58,7 @@ export default function HeroImage() {
 
         {/* Synchronized Wavy Image Container */}
         <motion.div
-          className="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 overflow-hidden shadow-2xl"
+          className="relative w-44 h-44 sm:w-64 sm:h-64 lg:w-72 lg:h-72 overflow-hidden shadow-2xl"
           animate={blobControls}
         >
           <Image

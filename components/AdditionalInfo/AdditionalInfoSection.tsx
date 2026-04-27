@@ -143,8 +143,8 @@ export default function AdditionalInfoSection() {
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-3">
                       <div>
-                          <h4 className="text-lg font-bold text-white/90 group-hover:text-accent-glow transition-colors">{experience.organization}</h4>
-                          <h5 className="text-base font-medium text-accent mt-0.5">{experience.role}</h5>
+                          <h4 className="text-base sm:text-lg font-bold text-white/90 group-hover:text-accent-glow transition-colors whitespace-nowrap overflow-hidden text-ellipsis">{experience.organization}</h4>
+                          <h5 className="text-sm sm:text-base font-medium text-accent mt-0.5">{experience.role}</h5>
                       </div>
                       <div className="flex items-center gap-1.5 text-xs sm:text-sm text-secondary bg-slate-800/40 px-2.5 py-1.5 rounded-md border border-slate-700/50 whitespace-nowrap w-fit">
                           <Calendar className="w-3.5 h-3.5" />

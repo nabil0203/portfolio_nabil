@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { scrollToSection, scrollToHero } from '@/utils/dom'
+import Image from 'next/image'
 
 interface DesktopNavProps {
   navItems: Array<{ id: string; label: string; Icon: any }>
@@ -15,24 +16,23 @@ export default function DesktopNav({ navItems, activeSection, isVisible }: Deskt
       {/* Brand — pinned at top */}
       <motion.button
         onClick={scrollToHero}
-        className="w-full text-xl font-black tracking-tight text-white cursor-pointer flex items-center justify-center px-2"
+        className="w-full cursor-pointer flex items-center justify-center px-2"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.1 }}
       >
-        <span>N</span>
-        <motion.span
-          initial={false}
-          className="overflow-hidden whitespace-nowrap"
-          animate={{
-            width: isVisible ? "auto" : 0,
-            opacity: isVisible ? 1 : 0,
-          }}
+        <motion.div
+          animate={{ scale: isVisible ? 1 : 1.3 }}
           transition={{ duration: 0.3 }}
         >
-          abil
-        </motion.span>
-        <span className="text-accent">.</span>
+          <Image 
+            src="/logo.png" 
+            alt="Logo" 
+            width={40}
+            height={40}
+            className="object-contain"
+          />
+        </motion.div>
       </motion.button>
 
       {/* Nav items — vertically centered */}

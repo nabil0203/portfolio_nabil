@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { scrollToSection, scrollToHero } from '@/utils/dom'
+import Image from 'next/image'
 
 interface MobileNavProps {
   navItems: Array<{ id: string; label: string; Icon: any }>
@@ -17,12 +18,18 @@ export default function MobileNav({ navItems, activeSection }: MobileNavProps) {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <motion.button
           onClick={scrollToHero}
-          className="text-xl sm:text-2xl font-black tracking-tight text-white cursor-pointer flex items-center gap-1"
+          className="cursor-pointer flex items-center gap-1"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.1 }}
         >
-          Nabil<span className="text-accent">.</span>
+          <Image 
+            src="/logo.png" 
+            alt="Logo" 
+            width={36}
+            height={36}
+            className="object-contain"
+          />
         </motion.button>
 
         {/* Mobile hamburger */}

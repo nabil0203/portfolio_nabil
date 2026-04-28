@@ -114,7 +114,7 @@ export const projectsData: Project[] = [
     id: 'shopnest',
     title: 'ShopNest',
     description: 'A full-featured e-commerce web application.',
-    tools: ['Django', 'React', 'MySQL', 'REST API', 'SSLCommerz'],
+    tools: ['Django', 'SQLite', 'Tailwind CSS', 'SSLCommerz Api'],
     features: [
       'User authentication & authorization',
       'Product catalog with search & filtering',

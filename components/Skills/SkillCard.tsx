@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { Code } from 'lucide-react'
 
 interface SkillCardProps {
     category: string;
@@ -97,9 +98,7 @@ export default function SkillCard({ category, skills }: SkillCardProps) {
                                         unoptimized
                                     />
                                 ) : (
-                                    <svg className="w-6 h-6 text-slate-500 transition-transform duration-300 group-hover/icon:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                                    </svg>
+                                    <Code className="w-6 h-6 text-slate-500 transition-transform duration-300 group-hover/icon:scale-110" />
                                 )}
                             </div>
                             

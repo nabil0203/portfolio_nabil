@@ -113,7 +113,8 @@ export const projectsData: Project[] = [
   {
     id: 'shopnest',
     title: 'ShopNest',
-    description: 'A full-featured e-commerce web application.',
+    shortDescription: 'A full-featured single-vendor e-commerce platform.',
+    description: 'A full-featured, modern single-vendor e-commerce platform built with Django. ShopNest provides a complete online shopping experience with product management, shopping cart, secure payment integration, and user authentication.',
     tools: ['Django', 'SQLite', 'Tailwind CSS', 'SSLCommerz Api'],
     features: [
       'User authentication & authorization',
@@ -124,12 +125,15 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/nabil0203/ShopNest',
     liveUrl: 'https://shopnest-4thm.onrender.com/',
     imageUrl: '/images/projects/shopnest.png',
-    featured: true
+    featured: true,
+    year: '2025',
+    status: 'Live',
   },
   {
     id: 'farm2market',
     title: 'Farm2Market',
-    description: 'A Django-based web application that connects farmers directly with buyers.',
+    shortDescription: 'A modern multi-role agricultural marketplace.',
+    description: 'A full-featured, modern multi-role agricultural marketplace built with Django. Farm2Market provides a complete online agricultural marketplace with product management, order management, and user authentication.',
     tools: ['Django', 'Django templates', 'MySQL', 'Supabase', 'Tailwind CSS'],
     features: [
       'Role-based access control (Farmer & Buyer)',
@@ -140,12 +144,15 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/nabil0203/Farm2Market',
     liveUrl: 'https://farm2market-dtll.onrender.com/',
     imageUrl: '/images/projects/farm2market.png',
-    featured: true
+    featured: true,
+    year: '2025',
+    status: 'Live',
   },
   {
     id: 'taskify',
     title: 'Taskify',
-    description: 'A task management application with drag and drop functionality.',
+    shortDescription: 'A task management application with drag-and-drop functionality.',
+    description: 'A modern, sleek, and intuitive task management tool designed to enhance productivity. Taskify features seamless drag-and-drop task prioritization, real-time updates, deadline tracking, and customizable Kanban-style workflows for efficient daily organization.',
     tools: ['Django', 'Bootstrap', 'SQLite', 'HTML'],
     features: [
       'Drag and drop task management',
@@ -156,12 +163,15 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/nabil0203/taskify',
     liveUrl: 'https://taskify-cq2h.onrender.com',
     imageUrl: '/images/projects/taskify.jpg',
-    featured: true
+    featured: true,
+    year: '2025',
+    status: 'Live',
   },
   {
     id: 'coinly',
     title: 'Coinly',
-    description: 'My personal expense tracker web application.',
+    shortDescription: 'My personal expense tracker web application.',
+    description: 'Coinly is a comprehensive personal finance tracking application built with Next.js and MongoDB. It offers daily expense tracking, a monthly ledger view, and debt & receivables management, all visualized through a clean, interactive dashboard.',
     tools: ['Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS'],
     features: [
       'Daily expense tracking',
@@ -172,27 +182,33 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/nabil0203/Coinly',
     liveUrl: 'https://coinly0203.vercel.app/',
     imageUrl: '/images/projects/coinly.png',
-    featured: true
+    featured: true,
+    year: '2025',
+    status: 'Live',
   },
   {
     id: 'quiz-verse',
     title: 'Quiz Verse',
-    description: 'Quiz Verse is an interactive multiple-choice quiz application built with Django.',
+    shortDescription: 'An interactive multiple-choice quiz application.',
+    description: 'QuizVerse is an interactive multiple-choice quiz application built with Django. It demonstrates full-stack fundamentals including database relationships, form handling, request lifecycle management, and dynamic template rendering—all styled with a modern UI using Tailwind CSS.',
     tools: ['Django', 'SQLite', 'HTML', 'Tailwind CSS'],
     features: [
-      'Multiple-choice quiz',
-      'Dynamic Loading',
+      'Multiple-choice quiz engine',
+      'Dynamic question loading',
       'Optimized queries',
       'Form handling & validation',
     ],
     githubUrl: 'https://github.com/nabil0203/Quiz_Verse',
     imageUrl: '/images/projects/quizverse.png',
-    featured: true
+    featured: true,
+    year: '2025',
+    status: 'Archived',
   },
   {
     id: 'qr-code-generator',
     title: 'QR Code Generator',
-    description: 'Users can generate QR codes from text or URLs.',
+    shortDescription: 'A Python script that reads texts and generates QR codes.',
+    description: 'A simple Python script that reads a Text/URL from a Text file. Then generates a QR code and saves it as an image.',
     tools: ['Python', 'qrcode'],
     features: [
       'Reads input from a text file',
@@ -201,64 +217,80 @@ export const projectsData: Project[] = [
     ],
     githubUrl: 'https://github.com/nabil0203/QR_Code_Generator',
     imageUrl: '/images/projects/qrcode.jpg',
-    featured: false
+    featured: false,
+    year: '2025',
+    status: 'Archived',
   },
   {
     id: 'auto-vault',
     title: 'Auto Vault',
-    description: 'A lightweight PHP and MySQL web application for managing cars of a showroom.',
+    shortDescription: 'A web application for managing a car showroom inventory.',
+    description: 'A lightweight PHP and MySQL web application for managing a car showroom inventory.',
     tools: ['PHP', 'MySQL', 'CSS', 'HTML'],
     features: [
-      'CRUD operations',
-      'MySQL-backed data',
-      'Course lab project (SE_332)',
+      'Full CRUD operations',
+      'MySQL-backed persistent data',
+      'Clean tabular dashboard',
+      'University lab project for SE-332'
     ],
     githubUrl: 'https://github.com/nabil0203/AutoVault',
-    featured: false
+    featured: false,
+    year: '2024',
+    status: 'Archived',
   },
   {
     id: 'scholar-shelf',
     title: 'Scholar Shelf',
-    description: 'An educational platform connecting students with tutors and study resources.',
+    shortDescription: 'A platform for connecting students with tutors.',
+    description: 'An educational platform connecting students with tutors and study resources, supporting session scheduling and progress tracking.',
     tools: ['PHP', 'MySQL', 'CSS'],
     features: [
       'Student-tutor connection platform',
       'Session scheduling',
       'Resource sharing & progress tracking',
+      'University lab project for SE-224'
     ],
     githubUrl: 'https://github.com/nabil0203/Scholar_Shelf',
-    featured: false
+    featured: false,
+    year: '2024',
+    status: 'Archived',
   },
   {
     id: 'carMaster',
     title: 'CarMaster',
-    description: 'A console-based Car Showroom Management System built using Java and OOP principles.',
+    shortDescription: 'A console-based Car Showroom Management System',
+    description: 'A Car Showroom Management System demonstrating core OOP principles in Java with a full menu-driven interface.',
     tools: ['Java', 'OOP'],
     features: [
       'Menu-driven console interface',
       'Add, update, display & delete cars',
-      'Display cars by brand and price range',
+      'Filter cars by brand and price range',
       'OOP design principles',
+      'University project for SE-221'
     ],
     githubUrl: 'https://github.com/nabil0203/CarMaster',
-    featured: false
+    featured: false,
+    year: '2024',
+    status: 'Archived',
   },
   {
     id: 'pharm-ease',
     title: 'Pharm Ease',
-    description: 'A console-based pharmacy management system',
+    shortDescription: 'A console-based pharmacy management system',
+    description: 'A pharmacy management system written in C, handling medicine inventory, stock alerts, and patient records.',
     tools: ['C language'],
     features: [
       'Console-based interface',
       'Add, update, display & delete medicines',
       'Inventory management & stock alerts',
       'Patient records management',
+      'University lab project for SE-133'
     ],
     githubUrl: 'https://github.com/nabil0203/Pharm_Ease',
-    featured: false
+    featured: false,
+    year: '2024',
+    status: 'Archived',
   },
-
-
 ]
 
 // Additional Information Data

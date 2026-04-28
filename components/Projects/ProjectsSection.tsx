@@ -1,17 +1,29 @@
 'use client'
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 import MotionDiv from '../MotionDiv'
 import ProjectCard from './ProjectCard'
 import { projectsData } from '@/data/portfolioData'
 
-const INITIAL_VISIBLE = 6
+const PREVIEW_COUNT = 6
+const previewProjects = projectsData.slice(0, PREVIEW_COUNT)
 
 export default function ProjectsSection() {
-  const [showAll, setShowAll] = useState(false)
-  const displayedProjects = showAll ? projectsData : projectsData.slice(0, INITIAL_VISIBLE)
-  const hasMore = projectsData.length > INITIAL_VISIBLE
+  const hasMore = projectsData.length > PREVIEW_COUNT
+
+  useEffect(() => {
+    // Wait a brief moment to allow native browser scroll-to-hash to occur
+    // remove hash
+    const timer = setTimeout(() => {
+      if (window.location.hash === '#projects') {
+        window.history.replaceState(null, '', window.location.pathname)
+      }
+    }, 100)
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <section id="projects" className="py-16 md:py-24 scroll-mt-24 lg:scroll-mt-0 relative bg-secondary/5">
@@ -41,41 +53,34 @@ export default function ProjectsSection() {
           </div>
         </MotionDiv>
 
-        {/* Project grid */}
+        {/* Project grid — always shows first 6, compact preview cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
-          <AnimatePresence mode="popLayout">
-            {displayedProjects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
-            ))}
-          </AnimatePresence>
+          {previewProjects.map((project, index) => (
+            <ProjectCard
+              key={`${project.id}-${index}`}
+              project={project}
+              index={index}
+            />
+          ))}
         </div>
 
-        {/* Show More / Show Less */}
+        {/* Link to full projects page */}
         {hasMore && (
           <MotionDiv className="mt-12 flex flex-col items-center gap-3" delay={0.1}>
-            <motion.button
-              onClick={() => setShowAll((prev) => !prev)}
-              className="group relative flex items-center gap-2.5 px-7 py-3 rounded-full text-sm font-semibold text-white border border-white/10 bg-white/5 backdrop-blur-sm hover:border-accent/40 hover:bg-accent/8 transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-accent/10"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <span>{showAll ? 'Show Less' : `View All ${projectsData.length} Projects`}</span>
-              <motion.svg
-                className="w-4 h-4 text-accent"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                animate={{ rotate: showAll ? 180 : 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
+            <Link href="/projects" aria-label={`View all ${projectsData.length} projects`}>
+              <motion.span
+                className="group relative inline-flex items-center gap-2.5 px-7 py-3 rounded-full text-sm font-semibold text-white border border-white/10 bg-white/5 backdrop-blur-sm hover:border-accent/40 hover:bg-accent/8 transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-accent/10 cursor-pointer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </motion.svg>
-            </motion.button>
-            {!showAll && (
-              <p className="text-[11px] text-secondary/40 font-mono">
-                Showing {INITIAL_VISIBLE} of {projectsData.length}
-              </p>
-            )}
+                <span>View All {projectsData.length} Projects</span>
+                {/* Arrow icon */}
+                <ArrowRight className="w-4 h-4 text-accent group-hover:translate-x-0.5 transition-transform duration-200" />
+              </motion.span>
+            </Link>
+            <p className="text-[11px] text-secondary/40 font-mono">
+              Showing {PREVIEW_COUNT} of {projectsData.length}
+            </p>
           </MotionDiv>
         )}
       </div>

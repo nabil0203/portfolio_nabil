@@ -36,7 +36,7 @@ export default function DesktopBar({ navItems, activeSection, isVisible }: Deskt
       </motion.button>
 
       {/* Nav items — vertically centered */}
-      <div className="flex-1 flex flex-col justify-center space-y-2">
+      <div className="flex-1 flex flex-col justify-center space-y-4">
         {navItems.map((item) => {
           const isActive = activeSection === item.id
           const isAtHero = !isVisible

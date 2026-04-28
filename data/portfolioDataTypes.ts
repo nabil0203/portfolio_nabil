@@ -36,12 +36,15 @@ export interface Project {
   id: string
   title: string
   description: string
+  shortDescription?: string
   tools: string[]
   features?: string[]
   githubUrl?: string
   liveUrl?: string
   imageUrl?: string
   featured?: boolean
+  year?: string
+  status?: 'Live' | 'In Development' | 'Archived'
 }
 
 export interface PersonalDetails {

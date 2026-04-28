@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { scrollToSection, scrollToHero } from '@/utils/dom'
 import Image from 'next/image'
+import { Menu, X } from 'lucide-react'
 
 interface MobileNavProps {
   navItems: Array<{ id: string; label: string; Icon: any }>
@@ -39,21 +40,11 @@ export default function MobileNav({ navItems, activeSection }: MobileNavProps) {
           whileTap={{ scale: 0.95 }}
           aria-label="Toggle menu"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            {isMobileMenuOpen ? (
-              <path d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
+          {isMobileMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </motion.button>
       </div>
 

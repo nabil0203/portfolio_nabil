@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic'
 import Sidebar from '@/components/Sidebar/Sidebar'
-import MotionDiv from '@/components/Shared/MotionDiv'
+import MotionDiv from '@/components/MotionDiv'
 import HeroSection from '@/components/Hero/HeroSection'
-import Footer from '@/components/Layout/Footer'
+import Footer from '@/components/Footer'
 
 // Dynamic imports for sections below the fold
 const AboutSection = dynamic(() => import('@/components/About/AboutSection'))
@@ -10,7 +10,7 @@ const SkillsSection = dynamic(() => import('@/components/Skills/SkillsSection'))
 const ProjectsSection = dynamic(() => import('@/components/Projects/ProjectsSection'))
 const AdditionalInfoSection = dynamic(() => import('@/components/AdditionalInfo/AdditionalInfoSection'))
 const ContactSection = dynamic(() => import('@/components/Contact/ContactSection'))
-const BackToTop = dynamic(() => import('@/components/Layout/BackToTop'))
+const BackToTop = dynamic(() => import('@/components/BackToTop'))
 
 export default function Home() {
   return (

@@ -1,6 +1,6 @@
 'use client'
 
-import MotionDiv from '../Shared/MotionDiv'
+import MotionDiv from '../MotionDiv'
 import { skillsData } from '@/data/portfolioData'
 import SkillCard from './SkillCard'
 import { Skill } from '@/data/portfolioDataTypes'

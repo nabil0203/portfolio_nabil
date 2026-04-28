@@ -9,7 +9,7 @@ import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { SCROLL_THRESHOLD } from '@/data/constants'
 
 import MobileNav from './MobileNav'
-import DesktopNav from './DesktopNav'
+import DesktopBar from './DesktopBar'
 
 const navItems = [
   { id: 'about', label: 'About', Icon: User },
@@ -21,7 +21,7 @@ const navItems = [
 
 /**
  * Sidebar layout component providing desktop and mobile navigation.
- * Utilizes `MobileNav` and `DesktopNav` depending on the viewport size.
+ * Utilizes `MobileNav` and `DesktopBar` depending on the viewport size.
  * Handles tracking active sections and setting responsive CSS variables.
  */
 export default function Sidebar() {
@@ -41,7 +41,7 @@ export default function Sidebar() {
   // Sync the CSS variable for the page padding
   useEffect(() => {
     if (isLargeScreen) {
-      document.documentElement.style.setProperty('--sidebar-width', !isReady ? '0px' : isVisible ? '96px' : '64px')
+      document.documentElement.style.setProperty('--sidebar-width', !isReady ? '0px' : isVisible ? '80px' : '64px')
     } else {
       document.documentElement.style.setProperty('--sidebar-width', '0px')
     }
@@ -53,7 +53,7 @@ export default function Sidebar() {
     : { opacity: 0, y: -100, width: "100%" }
 
   const sidebarAnimate = isLargeScreen
-    ? { opacity: isReady ? 1 : 0, x: isReady ? 0 : -64, width: isVisible ? 96 : 64 } // Width animates between 96px and 64px
+    ? { opacity: isReady ? 1 : 0, x: isReady ? 0 : -64, width: isVisible ? 80 : 64 } // Width animates between 80px and 64px
     : { opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -100, width: "100%" }
 
   return (
@@ -69,7 +69,7 @@ export default function Sidebar() {
       style={{ pointerEvents: (isLargeScreen || isVisible) ? 'auto' : 'none' }}
     >
       <MobileNav navItems={navItems} activeSection={activeSection} />
-      <DesktopNav navItems={navItems} activeSection={activeSection} isVisible={isVisible} />
+      <DesktopBar navItems={navItems} activeSection={activeSection} isVisible={isVisible} />
     </motion.header>
   )
 }

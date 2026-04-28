@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useTransform } from 'framer-motion'
-import MotionDiv from '../Shared/MotionDiv'
+import MotionDiv from '../MotionDiv'
 
 import { useMousePosition } from '@/hooks/useMousePosition'
 import SummaryCard from './SummaryCard'

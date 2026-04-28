@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import MotionDiv from '../Shared/MotionDiv'
+import MotionDiv from '../MotionDiv'
 import ProjectCard from './ProjectCard'
 import { projectsData } from '@/data/portfolioData'
 

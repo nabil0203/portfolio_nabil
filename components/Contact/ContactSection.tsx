@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import MotionDiv from '../Shared/MotionDiv'
+import MotionDiv from '../MotionDiv'
 import ContactInfo from './ContactInfo'
 import ContactForm from './ContactForm'
 

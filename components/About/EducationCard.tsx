@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, MotionValue } from 'framer-motion'
-import MotionDiv from '../Shared/MotionDiv'
+import MotionDiv from '../MotionDiv'
 import { educationData } from '@/data/portfolioData'
 import { GraduationCap, Calendar, Award } from 'lucide-react'
 

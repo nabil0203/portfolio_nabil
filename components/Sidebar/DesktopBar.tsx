@@ -4,13 +4,13 @@ import { motion } from 'framer-motion'
 import { scrollToSection, scrollToHero } from '@/utils/dom'
 import Image from 'next/image'
 
-interface DesktopNavProps {
+interface DesktopBarProps {
   navItems: Array<{ id: string; label: string; Icon: any }>
   activeSection: string
   isVisible: boolean
 }
 
-export default function DesktopNav({ navItems, activeSection, isVisible }: DesktopNavProps) {
+export default function DesktopBar({ navItems, activeSection, isVisible }: DesktopBarProps) {
   return (
     <nav className="hidden lg:flex flex-col h-full px-3 py-6">
       {/* Brand — pinned at top */}
@@ -45,7 +45,7 @@ export default function DesktopNav({ navItems, activeSection, isVisible }: Deskt
             <motion.button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`group relative flex flex-col items-center justify-center w-full max-w-[72px] mx-auto aspect-square font-medium tracking-wide rounded-xl transition-colors duration-200 ${
+              className={`group relative flex flex-col items-center justify-center w-full max-w-[56px] mx-auto aspect-square font-medium tracking-wide rounded-xl transition-colors duration-200 ${
                 isActive ? 'text-white' : 'text-secondary hover:text-accent hover:bg-accent/10'
               }`}
               animate={{

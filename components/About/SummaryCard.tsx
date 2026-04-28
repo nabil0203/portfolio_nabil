@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, MotionValue } from 'framer-motion'
-import MotionDiv from '../Shared/MotionDiv'
+import MotionDiv from '../MotionDiv'
 import { personalInfo } from '@/data/portfolioData'
 import { User } from 'lucide-react'
 

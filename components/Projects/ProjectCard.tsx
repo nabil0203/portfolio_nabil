@@ -85,21 +85,21 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         {/* CTA row */}
-        <div className="flex items-center gap-2 pt-4 border-t border-slate-800/60">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-3 pt-4 border-t border-slate-800/60">
           {project.githubUrl && (
             <motion.a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
               aria-label={`View ${project.title} source on GitHub`}
-              className="flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold border border-slate-700/50 bg-slate-800/40 text-secondary hover:text-white hover:border-slate-600/60 hover:bg-slate-700/50 transition-all duration-200"
+              className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg text-[11px] sm:text-xs font-semibold border border-slate-700/50 bg-slate-800/40 text-secondary hover:text-white hover:border-slate-600/60 hover:bg-slate-700/50 transition-all duration-200"
               whileHover={{ y: -1 }} whileTap={{ scale: 0.96 }}>
-              <Github className="w-4 h-4 shrink-0" /><span>GitHub</span>
+              <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /><span className="whitespace-nowrap">GitHub</span>
             </motion.a>
           )}
           {project.liveUrl && (
             <motion.a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
               aria-label={`View live demo of ${project.title}`}
-              className="flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold border border-blue-900/60 bg-blue-950/40 text-accent hover:bg-blue-900/50 hover:border-blue-700/50 hover:text-white transition-all duration-200"
+              className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg text-[11px] sm:text-xs font-semibold border border-blue-900/60 bg-blue-950/40 text-accent hover:bg-blue-900/50 hover:border-blue-700/50 hover:text-white transition-all duration-200"
               whileHover={{ y: -1 }} whileTap={{ scale: 0.96 }}>
-              <ExternalLink className="w-4 h-4 shrink-0" /><span>Live Demo</span>
+              <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /><span className="whitespace-nowrap">Live Demo</span>
             </motion.a>
           )}
 
@@ -107,7 +107,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           <Link
             href={`/projects#${project.id}`}
             aria-label={`Show full details for ${project.title}`}
-            className="ml-auto flex items-center gap-1.5 text-[11px] font-medium text-secondary/40 hover:text-accent/80 transition-colors duration-200 group/details"
+            className="ml-auto flex items-center gap-1.5 text-[11px] font-bold text-secondary hover:text-accent/80 transition-colors duration-200 group/details whitespace-nowrap"
           >
             <span>Details</span>
             <ChevronRight className="w-3 h-3 opacity-60 group-hover/details:translate-x-0.5 group-hover/details:opacity-100 transition-all duration-200" />

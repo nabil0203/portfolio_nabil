@@ -16,23 +16,25 @@ const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon, ariaLabel
     target="_blank"
     rel="noopener noreferrer"
     aria-label={ariaLabel}
-    whileHover={{ scale: 1.05, y: -2 }}
-    whileTap={{ scale: 0.95 }}
-    transition={{ duration: 0.1 }}
-    className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-2 sm:px-8 sm:py-3
-    rounded-lg bg-gradient-to-r from-blue-950/60 to-slate-900/60 border border-blue-800/50 backdrop-blur-md
-    hover:from-blue-900/70 hover:to-blue-950/60 hover:border-blue-600/60 hover:shadow-[0_0_22px_rgba(59,130,246,0.25)]
-    text-slate-300 hover:text-white text-sm sm:text-base font-medium tracking-wide
-    transition-all duration-200 ease-out
-    w-auto z-20 group"
+    whileHover={{ scale: 1.05, y: -4 }}
+    whileTap={{ scale: 0.98 }}
+    className="relative group inline-flex items-center justify-center gap-3 px-5 sm:px-8 py-3.5 w-full sm:w-auto rounded-2xl bg-white/5 backdrop-blur-lg overflow-hidden transition-all duration-300"
+
   >
-    {Icon && (
-      <Icon 
-        className="w-4 h-4 sm:w-5 sm:h-5 text-accent/70 group-hover:text-accent transition-colors" 
-        aria-hidden="true" 
-      />
-    )}
-    <span>{children}</span>
+    {/* Hover background effect */}
+    <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    
+    <div className="relative flex items-center gap-3">
+      {Icon && (
+        <Icon 
+          className="w-5 h-5 text-primary group-hover:text-white transition-colors duration-300" 
+          aria-hidden="true" 
+        />
+      )}
+      <span className="text-slate-200 group-hover:text-white font-semibold tracking-wide transition-colors duration-300">
+        {children}
+      </span>
+    </div>
   </motion.a>
 )
 

@@ -51,13 +51,12 @@ export default function MobileNav({ navItems, activeSection }: MobileNavProps) {
       {/* Mobile dropdown menu */}
       {isMobileMenuOpen && (
         <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.1 }}
-          className="mt-4 pb-4 border-t border-accent/20 pt-4"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          className="mt-4 pb-4 border-t border-white/10 pt-4"
         >
-          <div className="flex flex-col space-y-2">
+          <div className="grid grid-cols-2 gap-2">
             {navItems.map((item) => {
               const isActive = activeSection === item.id
               return (
@@ -67,22 +66,15 @@ export default function MobileNav({ navItems, activeSection }: MobileNavProps) {
                     scrollToSection(item.id)
                     setIsMobileMenuOpen(false)
                   }}
-                  className={`relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-left transition-all duration-100 ${
-                    isActive ? 'text-accent' : 'text-secondary hover:text-accent'
+                  className={`relative flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+                    isActive 
+                      ? 'bg-accent/10 text-accent border border-accent/20' 
+                      : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
                   }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ duration: 0.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <item.Icon size={14} className="shrink-0" />
+                  <item.Icon size={16} className={`shrink-0 ${isActive ? 'text-accent' : 'text-slate-500'}`} />
                   {item.label}
-                  {isActive && (
-                    <motion.div
-                      className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-accent to-accent-secondary"
-                      layoutId="mobileActiveIndicator"
-                      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                    />
-                  )}
                 </motion.button>
               )
             })}

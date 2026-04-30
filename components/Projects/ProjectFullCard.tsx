@@ -1,12 +1,13 @@
 'use client'
 
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
+import MotionDiv from '../MotionDiv'
 import { Project } from '@/data/portfolioDataTypes'
 import { Github, ExternalLink } from 'lucide-react'
 import { MouseEvent } from 'react'
 
 interface ProjectFullCardProps {
-  project: Project & { imageUrl?: string }
+  project: Project
   index: number
 }
 
@@ -15,11 +16,19 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
-  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
+  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent<HTMLDivElement>) {
     const { left, top } = currentTarget.getBoundingClientRect()
     mouseX.set(clientX - left)
     mouseY.set(clientY - top)
   }
+
+  const background = useMotionTemplate`
+    radial-gradient(
+      600px circle at ${mouseX}px ${mouseY}px,
+      rgba(99, 102, 241, 0.15),
+      transparent 80%
+    )
+  `
 
   const statusColor = {
     'Live': 'text-emerald-400 bg-emerald-400/10 border-emerald-500/30',
@@ -28,14 +37,11 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
   }[project.status ?? 'Archived']
 
   return (
-    <motion.div
+    <MotionDiv
       id={project.id}
       onMouseMove={handleMouseMove}
       className="relative flex flex-col rounded-3xl border border-slate-800/60 overflow-hidden group shadow-2xl shadow-black/60 min-h-[400px] sm:min-h-[480px] bg-slate-950"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      delay={(index % 4) * 0.1}
       whileHover={{
         borderColor: 'rgba(99,102,241,0.45)',
         boxShadow: '0 32px 80px rgba(59,130,246,0.16), 0 0 0 1px rgba(99,102,241,0.25)',
@@ -44,15 +50,7 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
       {/* ── INTERACTIVE MOUSE SPOTLIGHT ── */}
       <motion.div
         className="pointer-events-none absolute -inset-px z-20 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              600px circle at ${mouseX}px ${mouseY}px,
-              rgba(99, 102, 241, 0.15),
-              transparent 80%
-            )
-          `,
-        }}
+        style={{ background }}
       />
 
       {/* ── BACKGROUND ── */}
@@ -117,7 +115,7 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
                 rel="noopener noreferrer"
                 aria-label={`View ${project.title} on GitHub`}
                 className="flex flex-1 items-center justify-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-sm font-semibold bg-white/5 border border-white/10 text-white backdrop-blur-md shadow-lg hover:bg-white/10 hover:border-white/30 transition-all duration-300 whitespace-nowrap"
-                whileHover={{ y: -3, scale: 1.02 }} 
+                whileHover={{ y: -3, scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
               >
                 <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
@@ -131,7 +129,7 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
                 rel="noopener noreferrer"
                 aria-label={`Live demo of ${project.title}`}
                 className="flex flex-1 items-center justify-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-sm font-semibold border border-indigo-500/50 text-white bg-indigo-500/20 backdrop-blur-md shadow-lg hover:bg-indigo-500 hover:shadow-[0_0_25px_rgba(99,102,241,0.5)] hover:border-indigo-400 transition-all duration-300 whitespace-nowrap"
-                whileHover={{ y: -3, scale: 1.02 }} 
+                whileHover={{ y: -3, scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
               >
                 <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
@@ -159,8 +157,8 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
                 {project.features.map((feature, i) => (
-                  <motion.li 
-                    key={feature} 
+                  <motion.li
+                    key={feature}
                     className="flex items-start gap-2.5 text-sm text-slate-400 group-hover:text-slate-300 transition-colors"
                     initial={{ opacity: 0, x: 10 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -180,7 +178,7 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
             <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-3">Technologies</p>
             <div className="flex flex-row flex-wrap gap-2">
               {project.tools.map((tool) => (
-                <span 
+                <span
                   key={tool}
                   className="text-[11px] font-medium tracking-wide text-cyan-100 bg-cyan-950/40 px-3 py-1.5 rounded-lg border border-cyan-800/50 hover:border-cyan-400/60 hover:bg-cyan-900/60 hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-900/50 transition-all duration-300 cursor-default whitespace-nowrap backdrop-blur-sm"
                 >
@@ -192,6 +190,6 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
 
         </div>
       </div>
-    </motion.div>
+    </MotionDiv>
   )
 }

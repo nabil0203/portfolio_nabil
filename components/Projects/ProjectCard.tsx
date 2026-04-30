@@ -1,20 +1,20 @@
 'use client'
 
+import React from 'react'
 import Link from 'next/link'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import MotionDiv from '../MotionDiv'
 import { Project } from '@/data/portfolioDataTypes'
 import { Github, ExternalLink, ChevronRight } from 'lucide-react'
 
 interface ProjectCardProps {
-  project: Project & { imageUrl?: string }
+  project: Project
   index: number
 }
 
-
-
-/* ─────────────────────────────────────────────────────────
-   Compact vertical preview card — used on main page 3-col grid
-───────────────────────────────────────────────────────── */
+/**
+ * Compact vertical preview card — used on main page 3-col grid
+ */
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
@@ -30,20 +30,20 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   }
 
   return (
-    <motion.div
+    <MotionDiv
       className="relative flex flex-col rounded-2xl border border-slate-800/60 bg-gradient-to-b from-slate-800/30 to-slate-900/10 backdrop-blur-sm overflow-hidden group shadow-xl shadow-black/40"
       style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.4, delay: (index % 6) * 0.05, ease: 'easeOut' }}
+      delay={(index % 6) * 0.05}
       whileHover={{
         y: -6,
         borderColor: 'rgba(99,102,241,0.4)',
         boxShadow: '0 24px 60px rgba(59,130,246,0.12), 0 0 0 1px rgba(99,102,241,0.2)',
       }}
       onMouseMove={handleMouseMove}
-      onMouseLeave={() => { x.set(0); y.set(0) }}
+      onMouseLeave={() => {
+        x.set(0)
+        y.set(0)
+      }}
     >
       {/* Accent bar */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent via-accent-secondary to-accent-glow opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
@@ -114,6 +114,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </Link>
         </div>
       </div>
-    </motion.div>
+    </MotionDiv>
   )
 }

@@ -5,7 +5,8 @@ import HeroSection from '@/components/Hero/HeroSection'
 import Footer from '@/components/Footer'
 
 // Dynamic imports for sections below the fold
-const AboutSection = dynamic(() => import('@/components/About/AboutSection'))
+const AboutCard = dynamic(() => import('@/components/About/AboutCard'))
+const EducationSection = dynamic(() => import('@/components/Education/EducationSection'))
 const SkillsSection = dynamic(() => import('@/components/Skills/SkillsSection'))
 const ProjectsSection = dynamic(() => import('@/components/Projects/ProjectsSection'))
 const AdditionalInfoSection = dynamic(() => import('@/components/AdditionalInfo/AdditionalInfoSection'))
@@ -19,13 +20,16 @@ export default function Home() {
       <HeroSection />
       <main>
         <MotionDiv>
-          <AboutSection />
+          <AboutCard />
         </MotionDiv>
         <MotionDiv>
           <SkillsSection />
         </MotionDiv>
         <MotionDiv>
           <ProjectsSection />
+        </MotionDiv>
+        <MotionDiv>
+          <EducationSection />
         </MotionDiv>
         <MotionDiv>
           <AdditionalInfoSection />

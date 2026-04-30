@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
 
 export default function ScrollIndicator() {
   const scrollToNextSection = () => {
@@ -11,30 +12,35 @@ export default function ScrollIndicator() {
   }
 
   return (
-    <div className="relative md:absolute md:bottom-4 md:left-0 md:right-0 flex justify-center z-20 mt-8 md:mt-0">
+    <div 
+      className="relative mx-auto mt-12 mb-8 sm:mb-0 sm:absolute sm:bottom-8 sm:left-1/2 sm:-translate-x-1/2 lg:left-[calc(50%+var(--sidebar-width,0px)/2)] flex flex-col items-center gap-3 z-20 cursor-pointer group transition-all duration-500 ease-in-out" 
+      onClick={scrollToNextSection}
+    >
+
+
       <motion.div
-        className="cursor-pointer"
-        onClick={scrollToNextSection}
-        initial={{ opacity: 0, y: -10 }}
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.3 }}
-        whileHover={{ scale: 1.1, transition: { duration: 0.1 } }}
+        transition={{ delay: 1, duration: 0.8 }}
+        className="flex flex-col items-center gap-2"
       >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-accent text-sm font-medium">Scroll Down</span>
-          <div className="w-6 h-10 border-2 border-slate-700/60 rounded-full flex justify-center p-1">
-            <motion.div
-              className="w-1 h-3 bg-accent rounded-full"
-              animate={{ y: [0, 8, 0] }}
-              transition={{
-                duration: 1,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </div>
-        </div>
+        <span className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-bold group-hover:text-primary transition-colors duration-300">
+          Discover
+        </span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5 backdrop-blur-sm"
+        >
+          <ChevronDown className="w-4 h-4 text-primary" />
+        </motion.div>
       </motion.div>
     </div>
   )
 }
+
+

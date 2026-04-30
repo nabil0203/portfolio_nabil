@@ -5,9 +5,9 @@ import {
   PersonalInfo,
   SiteMetadata,
   Contact,
-  Education,
   Skill,
   Project,
+  Education,
   VolunteerExperience,
   PersonalDetails
 } from '@/data/portfolioDataTypes'
@@ -36,6 +36,26 @@ export const personalInfo: PersonalInfo = {
   ],
 }
 
+// Strong Sides
+export const statsData = [
+  {
+    label: 'Problems Solved',
+    value: '400+',
+  },
+  {
+    label: 'CGPA',
+    value: '3.90',
+  },
+  {
+    label: 'Projects Built',
+    value: '5+',
+  },
+  {
+    label: 'Years of Building & Learning',
+    value: '2+',
+  }
+]
+
 
 // Education Data
 export const educationData = [
@@ -56,6 +76,15 @@ export const educationData = [
     gpa: 'GPA: 5.00',
     graduation: 'Jun 2018 - Jan 2021',
     description: '',
+  },
+  {
+    degree: 'SSC in Science',
+    institution: 'Jahangirnagar University School and College',
+    logo: '/images/education/jusc.png',
+    url: 'https://juschoolcollege.org',
+    gpa: 'GPA: 5.00',
+    graduation: 'Jan 2016 - May 2018',
+    description: '',
   }
 ];
 
@@ -73,7 +102,7 @@ export const skillsData: Skill[] = [
   { name: 'Java', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
 
   // Backend
-  { name: 'Django', category: 'Backend', logo: 'https://cdn.simpleicons.org/django/989898' }, 
+  { name: 'Django', category: 'Backend', logo: 'https://cdn.simpleicons.org/django/989898' },
   { name: 'Django REST Framework', category: 'Backend', logo: 'https://www.django-rest-framework.org/img/logo.png' },
   // Frontend
   { name: 'React', category: 'Frontend', logo: 'https://cdn.simpleicons.org/react' },
@@ -152,7 +181,7 @@ export const projectsData: Project[] = [
     id: 'taskify',
     title: 'Taskify',
     shortDescription: 'A task management application with drag-and-drop functionality.',
-    description: 'A modern, sleek, and intuitive task management tool designed to enhance productivity. Taskify features seamless drag-and-drop task prioritization, real-time updates, deadline tracking, and customizable Kanban-style workflows for efficient daily organization.',
+    description: 'A modern, sleek, and intuitive task management tool designed to enhance productivity. Taskify features seamless drag-and-drop task prioritization, real-time updates, deadline tracking, and customizable workflows for efficient daily organization.',
     tools: ['Django', 'Bootstrap', 'SQLite', 'HTML'],
     features: [
       'Drag and drop task management',

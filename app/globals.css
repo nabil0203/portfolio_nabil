@@ -23,6 +23,9 @@
 
   :root {
     --sidebar-width: 0px;
+    --accent-rgb: 59, 130, 246;
+    --accent-secondary-rgb: 139, 92, 246;
+    --accent-glow-rgb: 6, 182, 212;
   }
 
   .page-wrapper {

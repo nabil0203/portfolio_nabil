@@ -2,17 +2,25 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, useTransform } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import MotionDiv from '../MotionDiv'
 import ProjectCard from './ProjectCard'
 import { projectsData } from '@/data/portfolioData'
+import { useMousePosition } from '@/hooks/useMousePosition'
 
 const PREVIEW_COUNT = 6
 const previewProjects = projectsData.slice(0, PREVIEW_COUNT)
 
 export default function ProjectsSection() {
   const hasMore = projectsData.length > PREVIEW_COUNT
+  const { smoothMouseX, smoothMouseY } = useMousePosition()
+
+  // Background parallax movement
+  const x1 = useTransform(smoothMouseX, [-0.5, 0.5], [-30, 30])
+  const y1 = useTransform(smoothMouseY, [-0.5, 0.5], [-30, 30])
+  const x2 = useTransform(smoothMouseX, [-0.5, 0.5], [40, -40])
+  const y2 = useTransform(smoothMouseY, [-0.5, 0.5], [40, -40])
 
   useEffect(() => {
     // Wait a brief moment to allow native browser scroll-to-hash to occur
@@ -26,14 +34,31 @@ export default function ProjectsSection() {
   }, [])
 
   return (
-    <section id="projects" className="py-16 md:py-24 scroll-mt-24 lg:scroll-mt-0 relative bg-[#020617]">
-
-      {/* Subtle background ambience */}
+    <section id="projects" className="py-20 md:py-32 scroll-mt-24 lg:scroll-mt-0 relative bg-background overflow-hidden">
+      
+      {/* Premium Background Layer */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-accent-secondary/5 blur-[120px]" />
+        {/* Subtle radial gradient to center */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(15,23,42,0.6),rgba(2,6,23,1))]" />
+        
+        {/* Dot Pattern */}
+        <div className="absolute inset-0 bg-dot-pattern-faint opacity-[0.15]" />
+        
+        {/* Interactive Ambient Glows */}
+        <motion.div 
+          className="absolute top-[-10%] -left-[10%] w-[800px] h-[800px] rounded-full bg-accent/8 blur-[130px]"
+          style={{ x: x1, y: y1 }}
+        />
+        <motion.div 
+          className="absolute bottom-[-10%] -right-[10%] w-[800px] h-[800px] rounded-full bg-accent-secondary/8 blur-[130px]"
+          style={{ x: x2, y: y2 }}
+        />
+        
+        {/* Fixed Center Ambient */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] h-[500px] rounded-full bg-accent-glow/5 blur-[150px] opacity-60" />
       </div>
 
-      <div className="section-content">
+      <div className="section-content relative z-10">
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
 
           {/* Section Header */}

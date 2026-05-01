@@ -51,7 +51,7 @@ export const statsData = [
     value: '5+',
   },
   {
-    label: 'Years of Building & Learning',
+    label: 'Years of Learning',
     value: '2+',
   }
 ]

@@ -27,11 +27,11 @@ const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon, ariaLabel
     <div className="relative flex items-center gap-3">
       {Icon && (
         <Icon 
-          className="w-5 h-5 text-primary group-hover:text-white transition-colors duration-300" 
+          className="w-5 h-5 text-accent transition-colors duration-300" 
           aria-hidden="true" 
         />
       )}
-      <span className="text-slate-200 group-hover:text-white font-semibold tracking-wide transition-colors duration-300">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow font-bold tracking-wide transition-all duration-300">
         {children}
       </span>
     </div>

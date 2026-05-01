@@ -13,9 +13,10 @@ interface EducationCardProps {
     graduation: string
     description?: string
   }
+  isRightSide?: boolean
 }
 
-export default function EducationCard({ edu }: EducationCardProps) {
+export default function EducationCard({ edu, isRightSide = true }: EducationCardProps) {
   const LogoContent = (
     <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-800/50 border border-slate-700/50 p-2.5 sm:p-3 shadow-lg flex items-center justify-center backdrop-blur-md group-hover:border-accent/40 transition-all duration-300">
       <img
@@ -31,7 +32,8 @@ export default function EducationCard({ edu }: EducationCardProps) {
       {/* Subtle glow effect on hover */}
       <div className="absolute -inset-0.5 bg-gradient-to-r from-accent/20 via-accent-secondary/20 to-accent-glow/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
 
-      <div className="relative bg-slate-900/60 backdrop-blur-xl border border-slate-800/60 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden transition-all duration-300 group-hover:translate-y-[-2px] group-hover:border-slate-700/60">
+      <div className={`relative bg-slate-900/60 backdrop-blur-xl border border-slate-800/60 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden transition-all duration-300 group-hover:translate-y-[-2px] group-hover:border-slate-700/60 
+        ${isRightSide ? 'border-l-4 border-l-accent' : 'md:border-l-0 md:border-r-4 md:border-r-accent border-l-4 border-l-accent'}`}>
 
         {/* Background Decorative Gradient */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-accent/10 transition-colors duration-500" />

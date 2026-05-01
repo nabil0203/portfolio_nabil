@@ -63,7 +63,7 @@ function TimelineItem({ edu, index }: { edu: any, index: number }) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, type: "spring", bounce: 0.3, delay: index * 0.1 }}
         >
-          <EducationCard edu={edu} />
+          <EducationCard edu={edu} isRightSide={isEven} />
         </motion.div>
       </div>
 

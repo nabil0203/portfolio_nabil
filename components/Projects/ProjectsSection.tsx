@@ -39,9 +39,7 @@ export default function ProjectsSection() {
           {/* Section Header */}
           <MotionDiv className="mb-14 text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4">
-              My{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow">
-                Projects
+              My <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow"> Projects
               </span>
             </h2>
             {/* Decorative rule */}

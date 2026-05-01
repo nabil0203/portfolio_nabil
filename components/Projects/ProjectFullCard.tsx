@@ -40,7 +40,7 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
     <MotionDiv
       id={project.id}
       onMouseMove={handleMouseMove}
-      className="relative flex flex-col rounded-[2.5rem] border border-slate-800/50 overflow-hidden group shadow-[0_32px_100px_rgba(0,0,0,0.8)] min-h-[450px] sm:min-h-[520px] bg-[#030712]"
+      className="relative flex flex-col rounded-[2.5rem] border border-slate-800/50 overflow-hidden group shadow-[0_32px_100px_rgba(0,0,0,0.8)] min-h-[450px] sm:min-h-[520px] bg-[#030712] scroll-mt-20"
       delay={(index % 4) * 0.1}
       whileHover={{
         borderColor: 'rgba(99,102,241,0.25)',

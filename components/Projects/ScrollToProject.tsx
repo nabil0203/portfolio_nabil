@@ -16,7 +16,7 @@ export default function ScrollToProject() {
     const timer = setTimeout(() => {
       const el = document.getElementById(id)
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
     }, 120)
 

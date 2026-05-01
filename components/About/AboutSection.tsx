@@ -34,12 +34,12 @@ export default function AboutSection() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch mt-10">
             {/* Stats Grid - Left */}
-            <div className="order-2 lg:order-1 lg:col-span-5 xl:col-span-4 h-full">
+            <div className="order-1 lg:order-1 lg:col-span-5 xl:col-span-4 h-full">
               <AboutCard />
             </div>
 
             {/* Summary Card - Right */}
-            <MotionDiv className="order-1 lg:order-2 lg:col-span-7 xl:col-span-8">
+            <MotionDiv className="order-2 lg:order-2 lg:col-span-7 xl:col-span-8">
               <SummarySection x1={x1} y1={y1} x2={x2} y2={y2} />
             </MotionDiv>
           </div>

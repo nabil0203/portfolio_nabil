@@ -18,8 +18,8 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 25 })
-  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 25 })
+  const mouseXSpring = useSpring(x, { stiffness: 500, damping: 30 })
+  const mouseYSpring = useSpring(y, { stiffness: 500, damping: 30 })
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['5deg', '-5deg'])
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-5deg', '5deg'])
 
@@ -31,12 +31,16 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <MotionDiv
-      className="relative h-full flex flex-col rounded-3xl border border-slate-800/50 bg-[#030712]/60 backdrop-blur-xl overflow-hidden group shadow-2xl transition-all duration-500"
+      className="relative h-full flex flex-col rounded-3xl border border-slate-800/50 bg-[#030712]/60 backdrop-blur-xl overflow-hidden group shadow-2xl transition-colors duration-300"
       style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
       delay={(index % 6) * 0.05}
       whileHover={{
         y: -10,
         borderColor: 'rgba(99,102,241,0.3)',
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "easeOut"
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => {
@@ -45,8 +49,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       }}
     >
       {/* Decorative Background Glow */}
-      <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/5 rounded-full blur-[100px] group-hover:bg-accent/10 transition-colors duration-700" />
-      <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-accent-secondary/5 rounded-full blur-[100px] group-hover:bg-accent-secondary/10 transition-colors duration-700" />
+      <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/5 rounded-full blur-[100px] group-hover:bg-accent/10 transition-colors duration-500" />
+      <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-accent-secondary/5 rounded-full blur-[100px] group-hover:bg-accent-secondary/10 transition-colors duration-500" />
 
       {/* Image Container with Breathing Room */}
       {project.imageUrl && (
@@ -56,7 +60,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             <img 
               src={project.imageUrl} 
               alt={project.title}
-              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-60" 
+              className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-60" 
               loading="lazy"
             />
             
@@ -71,7 +75,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       )}
 
       {/* Body Content */}
-      <div className="flex flex-col flex-1 p-6 sm:p-7">
+      <div className="relative z-20 flex flex-col flex-1 p-6 sm:p-7">
         <div className="flex items-start justify-between gap-4 mb-4">
           <div className="flex flex-col gap-1">
              <span className="text-[10px] font-bold text-accent-secondary uppercase tracking-[0.2em] opacity-80">
@@ -89,7 +93,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
         {/* Tech Stack - Pill Style */}
         <div className="flex flex-wrap gap-2 mb-8">
-          {project.tools.slice(0, 4).map((tool) => (
+          {project.tools.map((tool) => (
             <span 
               key={tool} 
               className="text-[10px] font-bold px-3 py-1 bg-slate-800/30 text-slate-300 rounded-lg border border-slate-700/50 group-hover:border-accent/30 transition-all duration-300"
@@ -97,15 +101,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               {tool}
             </span>
           ))}
-          {project.tools.length > 4 && (
-            <span className="text-[10px] font-bold text-secondary/40 py-1">
-              +{project.tools.length - 4} more
-            </span>
-          )}
         </div>
 
         {/* Footer Actions */}
-        <div className="mt-auto pt-6 flex items-center justify-between border-t border-slate-800/40">
+        <div className="relative z-30 mt-auto pt-6 flex items-center justify-between border-t border-slate-800/40">
           <div className="flex items-center gap-3">
             {project.githubUrl && (
               <motion.a 
@@ -133,15 +132,20 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             )}
           </div>
 
-          <Link
-            href={`/projects#${project.id}`}
-            className="flex items-center gap-2 text-xs font-black text-white uppercase tracking-wider group/link hover:text-accent transition-colors duration-300"
+          <motion.div
+            whileHover={{ x: 3 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Details
-            <div className="p-1.5 rounded-lg bg-slate-800/50 group-hover/link:bg-accent/10 transition-colors duration-300">
-              <ChevronRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform duration-300" />
-            </div>
-          </Link>
+            <Link
+              href={`/projects#${project.id}`}
+              className="flex items-center gap-2 text-xs font-black text-white uppercase tracking-wider group/link hover:text-accent transition-all duration-300 py-1"
+            >
+              <span className="relative z-10">Details</span>
+              <div className="p-1.5 rounded-lg bg-slate-800/50 group-hover/link:bg-accent/10 transition-colors duration-300">
+                <ChevronRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform duration-300" />
+              </div>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </MotionDiv>

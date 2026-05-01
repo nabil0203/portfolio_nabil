@@ -83,7 +83,7 @@ export default function HeroSection() {
 
             <motion.h2
               variants={letterVariants}
-              className="text-xl sm:text-2xl md:text-3xl font-medium text-slate-300 mb-8 max-w-2xl"
+              className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200 mb-8 max-w-2xl"
             >
               {personalInfo.title.split(',').map((part, index) => (
                 <span key={index} className="block">

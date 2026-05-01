@@ -3,7 +3,7 @@
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import MotionDiv from '../MotionDiv'
 import { Project } from '@/data/portfolioDataTypes'
-import { Github, ExternalLink } from 'lucide-react'
+import { Github, ExternalLink, Check, Code2 } from 'lucide-react'
 import { MouseEvent } from 'react'
 
 interface ProjectFullCardProps {
@@ -40,7 +40,7 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
     <MotionDiv
       id={project.id}
       onMouseMove={handleMouseMove}
-      className="relative flex flex-col rounded-[2.5rem] border border-slate-800/50 overflow-hidden group shadow-[0_32px_100px_rgba(0,0,0,0.8)] min-h-[450px] sm:min-h-[520px] bg-[#030712] scroll-mt-20"
+      className="relative flex flex-col rounded-[2.5rem] border border-slate-800/50 overflow-hidden group shadow-[0_32px_100px_rgba(0,0,0,0.8)] min-h-[450px] sm:min-h-[520px] bg-[#030712] !scroll-mt-28"
       delay={(index % 4) * 0.1}
       whileHover={{
         borderColor: 'rgba(99,102,241,0.25)',
@@ -154,8 +154,9 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
           {/* Key Features */}
           {project.features && project.features.length > 0 && (
             <div className="space-y-4">
-              <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-accent-secondary/80 flex items-center gap-4">
-                Key Deliverables
+              <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-accent-secondary/80 flex items-center gap-3">
+                <Check className="w-3.5 h-3.5 text-accent" />
+                <span>Key <span className='text-accent'>Features</span></span>
                 <span className="h-px bg-white/10 flex-1" />
               </h4>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
@@ -178,7 +179,10 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
 
           {/* Tech Stack */}
           <div className="pt-4">
-             <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-accent-secondary/80 mb-4">Core Stack</h4>
+            <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-accent-secondary/80 mb-4 flex items-center gap-2">
+              <Code2 className="w-3.5 h-3.5 text-accent" />
+              Core Stack
+            </h4>
             <div className="flex flex-wrap gap-2">
               {project.tools.map((tool) => (
                 <span

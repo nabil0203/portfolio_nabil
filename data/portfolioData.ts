@@ -29,7 +29,7 @@ export const personalInfo: PersonalInfo = {
   title: 'Web Developer, Majoring in Software Engineering',
   heroDescription: 'Building scalable web applications with Django and React. Problem solver with 400+ solved problems across major platforms.',
   aboutDescription: [
-    'I’m a Software Engineering undergraduate with a focus on full-stack development using Django, React, and REST APIs. I prioritize clean architecture, performance, and maintainable code.',
+    'I’m a Software Engineering undergraduate with a focus on web development using Django, React, and REST APIs. I prioritize clean architecture, performance, and maintainable code.',
     'Building systems that solve real-world problems, including e-commerce platforms, learning management systems, and other productivity tools.',
     'Alongside development, I have a good foundation in Data Structures, Algorithms, and Object-Oriented Programming. Solved 400+ problems on major online platforms.',
     'Currently open to internship and junior developer opportunities where I can leverage my technical skills, contribute to impactful projects, and grow professionally within a dynamic development team.',

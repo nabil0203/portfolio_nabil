@@ -5,7 +5,8 @@ import Link from 'next/link'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import MotionDiv from '../MotionDiv'
 import { Project } from '@/data/portfolioDataTypes'
-import { Github, ExternalLink, ChevronRight } from 'lucide-react'
+import { Github, ExternalLink, ChevronRight, Code2 } from 'lucide-react'
+
 
 interface ProjectCardProps {
   project: Project
@@ -93,6 +94,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
         {/* Tech Stack - Pill Style */}
         <div className="flex flex-wrap gap-2 mb-8">
+          <span className="text-[10px] font-bold text-accent-secondary/60 uppercase tracking-wider w-full mb-3 flex items-center gap-2">
+            <Code2 className="w-3.5 h-3.5 text-accent" />
+            <span className='text-accent'>Built With</span>
+          </span>
           {project.tools.map((tool) => (
             <span 
               key={tool} 

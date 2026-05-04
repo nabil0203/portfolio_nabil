@@ -18,20 +18,20 @@ const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon, ariaLabel
     aria-label={ariaLabel}
     whileHover={{ scale: 1.05, y: -4 }}
     whileTap={{ scale: 0.98 }}
-    className="relative group inline-flex items-center justify-center gap-3 px-5 sm:px-8 py-3.5 w-full sm:w-auto rounded-2xl bg-white/5 backdrop-blur-lg overflow-hidden transition-all duration-300"
-
+    transition={{ duration: 0.1 }}
+    className="relative group inline-flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-8 py-3.5 w-[calc(50%-0.375rem)] sm:w-auto rounded-2xl bg-white/5 backdrop-blur-lg overflow-hidden border border-accent/25 group-hover:border-accent/50 transition-all duration-100"
   >
     {/* Hover background effect */}
-    <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-100" />
     
     <div className="relative flex items-center gap-3">
       {Icon && (
         <Icon 
-          className="w-5 h-5 text-accent transition-colors duration-300" 
+          className="w-5 h-5 text-accent transition-colors duration-100" 
           aria-hidden="true" 
         />
       )}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow font-bold tracking-wide transition-all duration-300">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow font-bold tracking-wide transition-all duration-100">
         {children}
       </span>
     </div>

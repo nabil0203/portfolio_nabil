@@ -68,8 +68,11 @@ export default function Sidebar() {
         /* mobile / tablet: top bar */
         top-0 left-0 right-0 border-b border-white/10 shadow-2xl
         /* large screens: left sidebar (floating design) */
-        lg:top-6 lg:left-6 lg:bottom-6 lg:right-auto lg:border lg:border-white/10 lg:rounded-[2rem] lg:shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)] lg:bg-slate-900/30 lg:hover:bg-slate-900/50"
-      animate={sidebarAnimate}
+        lg:top-6 lg:left-6 lg:bottom-6 lg:right-auto lg:border lg:border-white/10 lg:shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)] lg:bg-slate-900/30 lg:hover:bg-slate-900/50"
+      animate={{
+        ...sidebarAnimate,
+        borderRadius: isLargeScreen ? (isVisible ? 32 : 24) : 0
+      }}
       transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }} 
       style={{ pointerEvents: (isLargeScreen || isVisible) ? 'auto' : 'none' }}
     >

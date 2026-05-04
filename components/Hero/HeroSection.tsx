@@ -102,8 +102,12 @@ export default function HeroSection() {
 
             <motion.div
               variants={letterVariants}
-              className="grid grid-cols-2 sm:flex sm:flex-row justify-center lg:justify-start gap-3 w-full sm:w-auto"
+              className="flex flex-wrap justify-center lg:justify-start gap-3 w-full sm:w-auto"
             >
+              <HeroButton href={contactData.github} Icon={Github} ariaLabel="Open my GitHub profile">
+                GitHub
+              </HeroButton>
+
               <HeroButton href={contactData.linkedin} Icon={Linkedin} ariaLabel="Open my LinkedIn profile">
                 LinkedIn
               </HeroButton>
@@ -113,12 +117,6 @@ export default function HeroSection() {
                   Resume
                 </HeroButton>
               )}
-
-              <div className="col-span-2 sm:col-auto w-full sm:w-auto">
-                <HeroButton href={contactData.github} Icon={Github} ariaLabel="Open my GitHub profile">
-                  GitHub
-                </HeroButton>
-              </div>
             </motion.div>
 
 

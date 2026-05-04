@@ -39,7 +39,7 @@ export default function AboutCard() {
                 <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow tracking-tight leading-none mb-3 drop-shadow-2xl transition-all duration-300">
                   {stat.value}
                 </div>
-                <div className="w-full text-center px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest text-white bg-slate-950/40 border border-slate-800/60 shadow-inner group-hover:border-accent/30 transition-colors duration-300">
+                <div className="w-full text-center px-2 py-1 lg:py-1.5 rounded-lg text-[10px] lg:text-[12px] font-bold uppercase tracking-widest text-white bg-slate-950/40 border border-slate-800/60 shadow-inner group-hover:border-accent/30 transition-all duration-300">
                   {stat.label}
                 </div>
               </div>

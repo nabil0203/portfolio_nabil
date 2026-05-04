@@ -81,7 +81,7 @@ export default function DesktopBar({ navItems, activeSection, isVisible }: Deskt
 
               <motion.span
                 initial={false}
-                className={`relative z-10 whitespace-nowrap text-[10px] font-bold uppercase tracking-wider overflow-visible px-1 text-center transition-colors duration-300 ${isActive ? 'text-accent' : 'text-slate-500 group-hover:text-slate-300'
+                className={`relative z-10 whitespace-nowrap text-[9px] font-bold uppercase tracking-wider overflow-visible px-1 text-center transition-colors duration-300 ${isActive ? 'text-white/80' : 'text-slate-500 group-hover:text-slate-300'
                   }`}
                 animate={{
                   height: isAtHero ? 0 : "auto",

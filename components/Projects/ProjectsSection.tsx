@@ -90,19 +90,25 @@ export default function ProjectsSection() {
 
           {/* Link to full projects page */}
           {hasMore && (
-            <MotionDiv className="mt-12 flex flex-col items-center gap-3" delay={0.1}>
-              <Link href="/projects" aria-label={`View all ${projectsData.length} projects`}>
+            <MotionDiv className="mt-12 flex flex-col items-center gap-4" delay={0.2}>
+              <Link href="/projects" aria-label={`View all ${projectsData.length} projects`} className="group relative flex justify-center">
+                {/* Gentle, slow pulse behind the button */}
+                <div 
+                  className="absolute -inset-0.5 bg-gradient-to-r from-accent to-accent-glow rounded-full opacity-20 blur-[2px] group-hover:opacity-40 animate-pulse transition-opacity duration-300"
+                  style={{ animationDuration: '4s' }}
+                />
+                
                 <motion.span
-                  className="group relative inline-flex items-center gap-2.5 px-7 py-3 rounded-full text-sm font-semibold text-white border border-white/10 bg-white/5 backdrop-blur-sm hover:border-accent/40 hover:bg-accent/8 transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-accent/10 cursor-pointer"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
+                  className="relative flex items-center gap-3 px-6 py-2.5 rounded-full text-sm font-medium text-white border border-accent/30 bg-black/60 backdrop-blur-md hover:border-accent/60 transition-colors duration-300 cursor-pointer shadow-lg"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <span>View All {projectsData.length} Projects</span>
-                  {/* Arrow icon */}
-                  <ArrowRight className="w-4 h-4 text-accent group-hover:translate-x-0.5 transition-transform duration-200" />
+                  <span className="tracking-wide">View All Projects</span>
+                  <ArrowRight className="w-4 h-4 text-white/70 group-hover:text-white group-hover:translate-x-1 transition-all duration-300 ml-0.5" />
                 </motion.span>
               </Link>
-              <p className="text-[11px] text-secondary/40 font-mono">
+              
+              <p className="text-[11px] text-secondary/50 font-mono uppercase tracking-widest mt-1">
                 Showing {PREVIEW_COUNT} of {projectsData.length}
               </p>
             </MotionDiv>

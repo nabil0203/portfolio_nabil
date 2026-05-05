@@ -11,7 +11,7 @@ export default function HeroImage() {
       {/* Rich Ambient Glow System */}
       <div className="absolute -inset-24 bg-gradient-to-tr from-indigo-500/15 via-purple-500/10 to-pink-500/15 blur-[140px] opacity-70 group-hover:opacity-100 transition-opacity duration-1000" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-accent/5 blur-[100px] rounded-full opacity-40" />
-      
+
       {/* Decorative Light Orbs */}
       <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo-500/10 blur-[80px] rounded-full animate-pulse" />
       <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-500/10 blur-[80px] rounded-full animate-pulse [animation-delay:2s]" />
@@ -80,7 +80,7 @@ export default function HeroImage() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
           </div>
-          <span className="text-[10px] font-black text-white uppercase tracking-widest">Available</span>
+          <span className="text-[10px] font-black text-white uppercase tracking-widest">OPEN TO WORK</span>
         </motion.div>
 
         {/* Engineering Student Badge - Bottom Right */}

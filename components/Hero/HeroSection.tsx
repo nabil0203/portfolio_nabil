@@ -74,16 +74,16 @@ export default function HeroSection() {
 
             <motion.h1
               variants={letterVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight leading-[1.1]"
             >
-              <span className="bg-gradient-to-r from-primary via-blue-400 to-accent bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary/80 via-blue-400 to-accent bg-clip-text text-transparent">
                 {personalInfo.name}
               </span>
             </motion.h1>
 
             <motion.h2
               variants={letterVariants}
-              className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200 mb-8 max-w-2xl"
+              className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200 mb-8 max-w-2xl md:whitespace-nowrap"
             >
               {personalInfo.title.split(',').map((part, index) => (
                 <span key={index} className="block">

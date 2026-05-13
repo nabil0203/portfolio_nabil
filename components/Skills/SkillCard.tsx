@@ -85,7 +85,7 @@ export default function SkillCard({ category, skills }: SkillCardProps) {
                             href={skill.url ?? undefined}
                             target={skill.url ? '_blank' : undefined}
                             rel={skill.url ? 'noopener noreferrer' : undefined}
-                            className={`group/icon flex flex-col items-center justify-center w-24 sm:w-[104px] gap-2 sm:gap-2.5 p-3 sm:p-4 rounded-2xl border border-slate-800/60 bg-slate-900/20 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 ${style.tileHover} ${skill.url ? 'cursor-pointer' : 'cursor-default'}`}
+                            className={`group/icon flex flex-col items-center justify-center w-24 sm:w-[104px] gap-2 sm:gap-2.5 p-3 sm:p-4 rounded-2xl border border-slate-700/50 bg-slate-900/20 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 ${style.tileHover} ${skill.url ? 'cursor-pointer' : 'cursor-default'}`}
                         >
                             <div className={`h-8 w-8 flex items-center justify-center relative mx-auto transition-all duration-300 ${style.glow}`}>
                                 {skill.logo ? (

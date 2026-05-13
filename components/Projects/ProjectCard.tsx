@@ -32,7 +32,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <MotionDiv
-      className="relative h-full flex flex-col rounded-3xl border border-slate-800/50 bg-[#030712]/60 backdrop-blur-xl overflow-hidden group shadow-2xl transition-colors duration-300"
+      className="relative h-full flex flex-col rounded-3xl border border-slate-700/50 bg-[#030712]/60 backdrop-blur-xl overflow-hidden group shadow-2xl transition-colors duration-300"
       style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
       delay={(index % 6) * 0.05}
       whileHover={{

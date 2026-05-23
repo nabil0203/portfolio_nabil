@@ -44,7 +44,7 @@ export const statsData = [
   },
   {
     label: 'CGPA',
-    value: '3.90',
+    value: '3.91',
   },
   {
     label: 'Projects Built',
@@ -64,7 +64,7 @@ export const educationData = [
     institution: 'Daffodil International University',
     logo: '/images/education/diu.png',
     url: 'https://daffodilvarsity.edu.bd',
-    gpa: 'CGPA: 3.90',
+    gpa: 'CGPA: 3.91',
     graduation: 'Jan 2023 - Dec 2026',
     description: 'Received Result-Based Scholarship',
   },

@@ -104,6 +104,7 @@ export const skillsData: Skill[] = [
   // Backend
   { name: 'Django', category: 'Backend', logo: 'https://cdn.simpleicons.org/django/989898' },
   { name: 'Django REST Framework', category: 'Backend', logo: 'https://www.django-rest-framework.org/img/logo.png' },
+  
   // Frontend
   { name: 'React', category: 'Frontend', logo: 'https://cdn.simpleicons.org/react' },
   { name: 'Tailwind CSS', category: 'Frontend', logo: 'https://cdn.simpleicons.org/tailwindcss' },

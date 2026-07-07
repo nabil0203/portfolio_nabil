@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Linkedin } from 'lucide-react'
+import { Mail, Phone, MapPin, Linkedin, Link2 } from 'lucide-react'
 
 import {
   PersonalInfo,
@@ -356,6 +356,7 @@ export const volunteerExperiencesData: VolunteerExperience[] = [
 // Contact Information
 export const contactData: Contact = {
   email: 'nabilahmed0203@gmail.com',
+  biolink: 'https://nabil0203.bio.link',
   location: 'Dhamrai, Dhaka, Bangladesh',
   github: 'https://github.com/nabil0203',
   linkedin: 'https://linkedin.com/in/nabil0203',
@@ -368,18 +369,28 @@ export const contactItems = [
     icon: Linkedin,
     label: 'LinkedIn',
     value: 'Chowdhury Nabil Ahmed',
+    href: contactData.linkedin,
     color: 'text-blue-500'
   },
   {
     icon: Mail,
     label: 'Email',
     value: contactData.email,
+    href: `mailto:${contactData.email}`,
+    color: 'text-blue-400'
+  },
+  {
+    icon: Link2,
+    label: 'Bio Link',
+    value: 'nabil0203.bio.link',
+    href: contactData.biolink,
     color: 'text-blue-400'
   },
   {
     icon: MapPin,
     label: 'Location',
     value: contactData.location,
+    href: undefined,
     color: 'text-pink-400'
   },
 ]

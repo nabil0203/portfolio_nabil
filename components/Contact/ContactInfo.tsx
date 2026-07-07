@@ -33,9 +33,20 @@ export default function ContactInfo() {
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-xs sm:text-sm text-secondary font-medium">{item.label}</p>
-              <p className="text-white mt-0.5 font-medium text-[13px] sm:text-sm md:text-base truncate">
-                {item.value}
-              </p>
+              {item.href ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white mt-0.5 font-medium text-[13px] sm:text-sm md:text-base truncate block hover:text-accent transition-colors underline-offset-2 hover:underline"
+                >
+                  {item.value}
+                </a>
+              ) : (
+                <p className="text-white mt-0.5 font-medium text-[13px] sm:text-sm md:text-base truncate">
+                  {item.value}
+                </p>
+              )}
             </div>
           </motion.div>
         ))}

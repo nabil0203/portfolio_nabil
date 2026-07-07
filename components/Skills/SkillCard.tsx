@@ -8,15 +8,61 @@ interface SkillCardProps {
     skills: Array<{ name: string; url?: string; logo?: string }>;
 }
 
+interface SkillChipProps {
+    skill: { name: string; url?: string; logo?: string };
+    size?: 'sm' | 'md';
+}
+
+function SkillChip({ skill, size = 'md' }: SkillChipProps) {
+    const Tag = skill.url ? 'a' : 'div'
+    const isSmall = size === 'sm'
+
+    return (
+        <Tag
+            key={skill.name}
+            href={skill.url ?? undefined}
+            target={skill.url ? '_blank' : undefined}
+            rel={skill.url ? 'noopener noreferrer' : undefined}
+            role="listitem"
+            className={`
+                inline-flex items-center gap-2 rounded-xl
+                border border-slate-700/50 bg-slate-900/30 backdrop-blur-sm
+                transition-all duration-200
+                hover:border-accent/40 hover:bg-accent/5 hover:text-slate-100
+                ${skill.url ? 'cursor-pointer' : 'cursor-default'}
+                ${isSmall ? 'px-3.5 py-2' : 'px-4 py-2.5 gap-2.5'}
+            `}
+        >
+            <span
+                className={`flex items-center justify-center shrink-0 ${isSmall ? 'w-[18px] h-[18px]' : 'w-[22px] h-[22px]'}`}
+            >
+                {skill.logo ? (
+                    <Image
+                        src={skill.logo}
+                        alt=""
+                        width={isSmall ? 18 : 22}
+                        height={isSmall ? 18 : 22}
+                        className="object-contain"
+                        unoptimized
+                    />
+                ) : (
+                    <Code className={`text-slate-500 ${isSmall ? 'w-3.5 h-3.5' : 'w-4 h-4'}`} />
+                )}
+            </span>
+            <span className={`font-medium text-slate-300 whitespace-nowrap leading-none transition-colors duration-200 ${isSmall ? 'text-[0.8rem]' : 'text-sm'}`}>
+                {skill.name}
+            </span>
+            {skill.url && (
+                <span className={`text-slate-500 -ml-0.5 leading-none ${isSmall ? 'text-[0.6rem]' : 'text-[0.65rem]'}`}>↗</span>
+            )}
+        </Tag>
+    )
+}
+
 export default function SkillCard({ category, skills }: SkillCardProps) {
     return (
         <>
             {/* ── DESKTOP: horizontal lane (sm and up) ── */}
-            {/*
-                items-stretch (default) so the label column grows to the full
-                height of the chips area (which may wrap to multiple lines).
-                The label column uses flex+items-center internally to stay centred.
-            */}
             <div className="hidden sm:flex gap-3 md:gap-4 lg:gap-5 py-2">
 
                 {/* Category label — full-height bordered badge, text centred */}
@@ -30,46 +76,9 @@ export default function SkillCard({ category, skills }: SkillCardProps) {
 
                 {/* Wrapping chip grid */}
                 <div className="flex flex-1 min-w-0 flex-wrap gap-2 py-1" role="list">
-                    {skills.map((skill) => {
-                        const Tag = skill.url ? 'a' : 'div'
-                        return (
-                            <Tag
-                                key={skill.name}
-                                href={skill.url ?? undefined}
-                                target={skill.url ? '_blank' : undefined}
-                                rel={skill.url ? 'noopener noreferrer' : undefined}
-                                role="listitem"
-                                className={`
-                                    inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl
-                                    border border-slate-700/50 bg-slate-900/30 backdrop-blur-sm
-                                    transition-all duration-200
-                                    hover:border-accent/40 hover:bg-accent/5 hover:text-slate-100
-                                    ${skill.url ? 'cursor-pointer' : 'cursor-default'}
-                                `}
-                            >
-                                <span className="w-[22px] h-[22px] flex items-center justify-center shrink-0">
-                                    {skill.logo ? (
-                                        <Image
-                                            src={skill.logo}
-                                            alt=""
-                                            width={22}
-                                            height={22}
-                                            className="object-contain"
-                                            unoptimized
-                                        />
-                                    ) : (
-                                        <Code className="w-4 h-4 text-slate-500" />
-                                    )}
-                                </span>
-                                <span className="text-sm font-medium text-slate-300 whitespace-nowrap leading-none transition-colors duration-200">
-                                    {skill.name}
-                                </span>
-                                {skill.url && (
-                                    <span className="text-[0.65rem] text-slate-500 -ml-0.5 leading-none">↗</span>
-                                )}
-                            </Tag>
-                        )
-                    })}
+                    {skills.map((skill) => (
+                        <SkillChip key={skill.name} skill={skill} size="md" />
+                    ))}
                 </div>
             </div>
 
@@ -86,46 +95,9 @@ export default function SkillCard({ category, skills }: SkillCardProps) {
 
                 {/* Wrapping chip grid */}
                 <div className="flex flex-wrap gap-2" role="list">
-                    {skills.map((skill) => {
-                        const Tag = skill.url ? 'a' : 'div'
-                        return (
-                            <Tag
-                                key={skill.name}
-                                href={skill.url ?? undefined}
-                                target={skill.url ? '_blank' : undefined}
-                                rel={skill.url ? 'noopener noreferrer' : undefined}
-                                role="listitem"
-                                className={`
-                                    inline-flex items-center gap-2 px-3.5 py-2 rounded-lg
-                                    border border-slate-700/50 bg-slate-900/30
-                                    transition-all duration-200
-                                    hover:border-accent/40 hover:bg-accent/5 hover:text-slate-100
-                                    ${skill.url ? 'cursor-pointer' : 'cursor-default'}
-                                `}
-                            >
-                                <span className="w-[18px] h-[18px] flex items-center justify-center shrink-0">
-                                    {skill.logo ? (
-                                        <Image
-                                            src={skill.logo}
-                                            alt=""
-                                            width={18}
-                                            height={18}
-                                            className="object-contain"
-                                            unoptimized
-                                        />
-                                    ) : (
-                                        <Code className="w-3.5 h-3.5 text-slate-500" />
-                                    )}
-                                </span>
-                                <span className="text-[0.8rem] font-medium text-slate-300 whitespace-nowrap">
-                                    {skill.name}
-                                </span>
-                                {skill.url && (
-                                    <span className="text-[0.6rem] text-slate-500 leading-none">↗</span>
-                                )}
-                            </Tag>
-                        )
-                    })}
+                    {skills.map((skill) => (
+                        <SkillChip key={skill.name} skill={skill} size="sm" />
+                    ))}
                 </div>
             </div>
         </>

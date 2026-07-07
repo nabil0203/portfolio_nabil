@@ -1,7 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import MotionDiv from '../MotionDiv'
+import SectionDivider from '../SectionDivider'
 import ContactInfo from './ContactInfo'
 import ContactForm from './ContactForm'
 
@@ -14,13 +14,7 @@ export default function ContactSection() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4">
               Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow">Touch</span>
             </h2>
-            <div className="mt-6 flex items-center justify-center gap-3">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-accent/50 rounded-full" />
-              <div className="h-1.5 w-1.5 rounded-full bg-accent-secondary/60" />
-              <div className="h-px w-24 bg-gradient-to-r from-accent/50 via-accent-secondary/60 to-accent-glow/50 rounded-full" />
-              <div className="h-1.5 w-1.5 rounded-full bg-accent-glow/60" />
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-accent/50 rounded-full" />
-            </div>
+            <SectionDivider />
           </MotionDiv>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">

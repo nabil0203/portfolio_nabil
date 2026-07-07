@@ -8,7 +8,7 @@ const iconMap = {
   'Problems Solved': Code2,
   'CGPA': GraduationCap,
   'Projects Built': FolderCode,
-  'Building & Learning': Briefcase
+  'Years of Learning': Briefcase
 }
 
 export default function AboutCard() {
@@ -30,10 +30,7 @@ export default function AboutCard() {
               {/* Background Decorative Gradient */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-full blur-2xl -mr-12 -mt-12 group-hover:bg-accent/10 transition-colors duration-500" />
 
-              {/* Icon Watermark */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] opacity-[0.05] group-hover:opacity-[0.1] group-hover:scale-125 transition-all duration-700 pointer-events-none">
-                <Icon className="w-20 h-20 text-accent" />
-              </div>
+
 
               <div className="relative z-10 flex flex-col items-center">
                 <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow tracking-tight leading-none mb-3 drop-shadow-2xl transition-all duration-300">

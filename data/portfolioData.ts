@@ -60,7 +60,7 @@ export const statsData = [
 // Education Data
 export const educationData = [
   {
-    degree: 'B.Sc. in Software Engineering',
+    degree: 'BSc. in Software Engineering',
     institution: 'Daffodil International University',
     logo: '/images/education/diu.png',
     url: 'https://daffodilvarsity.edu.bd',

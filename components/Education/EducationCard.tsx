@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { GraduationCap, Calendar, Award, ExternalLink } from 'lucide-react'
 
 interface EducationCardProps {
@@ -32,7 +31,7 @@ export default function EducationCard({ edu, isRightSide = true }: EducationCard
       {/* Subtle glow effect on hover */}
       <div className="absolute -inset-0.5 bg-gradient-to-r from-accent/20 via-accent-secondary/20 to-accent-glow/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
 
-      <div className={`relative bg-slate-900/60 backdrop-blur-xl border border-slate-800/60 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden transition-all duration-300 group-hover:translate-y-[-2px] group-hover:border-slate-700/60 
+      <div className={`relative bg-slate-900/60 backdrop-blur-xl border border-slate-800/60 rounded-2xl p-4 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300 group-hover:translate-y-[-2px] group-hover:border-slate-700/60 
         ${isRightSide ? 'border-l-4 border-l-accent' : 'md:border-l-0 md:border-r-4 md:border-r-accent border-l-4 border-l-accent'}`}>
 
         {/* Background Decorative Gradient */}

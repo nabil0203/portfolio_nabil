@@ -22,14 +22,6 @@ export default function ProjectFullCard({ project, index }: ProjectFullCardProps
     mouseY.set(clientY - top)
   }
 
-  const background = useMotionTemplate`
-    radial-gradient(
-      600px circle at ${mouseX}px ${mouseY}px,
-      rgba(99, 102, 241, 0.15),
-      transparent 80%
-    )
-  `
-
   const statusColor = {
     'Live': 'text-emerald-400 bg-emerald-400/10 border-emerald-500/30',
     'In Development': 'text-amber-400 bg-amber-400/10 border-amber-500/30',

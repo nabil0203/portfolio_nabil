@@ -32,7 +32,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <MotionDiv
-      className="relative h-full flex flex-col rounded-2xl border border-slate-700/50 bg-[#030712]/60 backdrop-blur-xl overflow-hidden group shadow-xl transition-colors duration-300"
+      className="relative h-full flex flex-col rounded-2xl border border-slate-600/70 bg-[#030712]/90 backdrop-blur-xl overflow-hidden group shadow-xl transition-colors duration-300"
       style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
       delay={(index % 6) * 0.05}
       whileHover={{
@@ -57,13 +57,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       {project.imageUrl && (
         <div className="relative p-3 pb-0">
           <div className="relative h-32 sm:h-36 rounded-xl overflow-hidden shadow-inner group-hover:shadow-accent/20 transition-all duration-500">
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10" />
             <img
               src={project.imageUrl}
               alt={project.title}
-              className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-60"
+              className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 opacity-100"
               loading="lazy"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Status Badge */}
             {project.status && (
@@ -88,7 +88,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         </div>
 
-        <p className="text-secondary/70 text-xs leading-relaxed mb-4 line-clamp-2">
+        <p className="text-secondary/100 text-xs leading-relaxed mb-4 line-clamp-2">
           {project.shortDescription || project.description}
         </p>
 

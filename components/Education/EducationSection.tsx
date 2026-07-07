@@ -2,12 +2,13 @@
 
 import { motion } from 'framer-motion'
 import MotionDiv from '../MotionDiv'
+import SectionDivider from '../SectionDivider'
 import { educationData } from '@/data/portfolioData'
 import EducationCard from './EducationCard'
 
 export default function EducationSection() {
   return (
-    <section id="education" className="py-24 md:py-32 scroll-mt-24 lg:scroll-mt-0 bg-[#030712] relative overflow-hidden">
+    <section id="education" className="py-16 md:py-20 scroll-mt-24 lg:scroll-mt-0 bg-[#030712] relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-dot-pattern-faint opacity-50 pointer-events-none" />
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
@@ -17,24 +18,18 @@ export default function EducationSection() {
 
       <div className="section-content">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <MotionDiv className="text-center mb-20">
+          <MotionDiv className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4">
               Academic <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow">Journey</span>
             </h2>
-            <div className="mt-8 flex items-center justify-center gap-3">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-accent/50 rounded-full" />
-              <div className="h-2 w-2 rounded-full bg-accent-secondary/60 animate-pulse" />
-              <div className="h-px w-24 bg-gradient-to-r from-accent/50 via-accent-secondary/60 to-accent-glow/50 rounded-full" />
-              <div className="h-2 w-2 rounded-full bg-accent-glow/60 animate-pulse" />
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-accent/50 rounded-full" />
-            </div>
+            <SectionDivider />
           </MotionDiv>
 
           <div className="relative max-w-6xl mx-auto">
             {/* Vertical Timeline Bar */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/20 via-accent-secondary/40 to-accent-glow/20 md:-translate-x-1/2" />
 
-            <div className="space-y-12 md:space-y-24">
+            <div className="space-y-8 md:space-y-12">
               {educationData.map((edu, index) => (
                 <TimelineItem
                   key={edu.institution + index}

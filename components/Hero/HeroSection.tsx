@@ -74,7 +74,7 @@ export default function HeroSection() {
 
             <motion.h1
               variants={letterVariants}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight leading-[1.1]"
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight leading-[1.1] whitespace-nowrap"
             >
               <span className="bg-gradient-to-r from-primary/80 via-blue-400 to-accent bg-clip-text text-transparent">
                 {personalInfo.name}
@@ -83,10 +83,10 @@ export default function HeroSection() {
 
             <motion.h2
               variants={letterVariants}
-              className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-200 mb-8 max-w-2xl md:whitespace-nowrap"
+              className="text-base sm:text-2xl md:text-3xl font-bold text-slate-200 mb-8 max-w-2xl"
             >
               {personalInfo.title.split(',').map((part, index) => (
-                <span key={index} className="block">
+                <span key={index} className="block whitespace-nowrap">
                   {part.trim()}
                 </span>
               ))}
@@ -119,13 +119,6 @@ export default function HeroSection() {
               )}
             </motion.div>
 
-
-            <motion.div
-              variants={letterVariants}
-              className="mt-12 flex items-center gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
-            >
-              {/* Add some subtle trust badges or tech icons here if desired */}
-            </motion.div>
           </motion.div>
 
           {/* RIGHT COLUMN — Profile Image */}

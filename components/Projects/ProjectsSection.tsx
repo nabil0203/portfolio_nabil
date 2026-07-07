@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion, useTransform } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import MotionDiv from '../MotionDiv'
+import SectionDivider from '../SectionDivider'
 import ProjectCard from './ProjectCard'
 import { projectsData } from '@/data/portfolioData'
 import { useMousePosition } from '@/hooks/useMousePosition'
@@ -64,17 +65,10 @@ export default function ProjectsSection() {
           {/* Section Header */}
           <MotionDiv className="mb-14 text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4">
-              My <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow"> Projects
+              My <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow">Projects
               </span>
             </h2>
-            {/* Decorative rule */}
-            <div className="mt-6 flex items-center justify-center gap-3">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-accent/50 rounded-full" />
-              <div className="h-1.5 w-1.5 rounded-full bg-accent-secondary/60" />
-              <div className="h-px w-24 bg-gradient-to-r from-accent/50 via-accent-secondary/60 to-accent-glow/50 rounded-full" />
-              <div className="h-1.5 w-1.5 rounded-full bg-accent-glow/60" />
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-accent/50 rounded-full" />
-            </div>
+            <SectionDivider />
           </MotionDiv>
 
           {/* Project grid — always shows first 6, compact preview cards */}

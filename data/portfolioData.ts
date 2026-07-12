@@ -94,13 +94,6 @@ export const educationData = [
 // - Devicons CDN:      https://cdn.jsdelivr.net/gh/devicons/devicon/icons/<name>/<file>.svg
 export const skillsData: Skill[] = [
 
-  // Programming Languages
-  { name: 'Python', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-  { name: 'C', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
-  { name: 'C++', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
-  { name: 'JavaScript', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-  { name: 'Java', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-
   // Backend
   { name: 'Django', category: 'Backend', logo: 'https://cdn.simpleicons.org/django/989898' },
   { name: 'Django REST Framework', category: 'Backend', logo: 'https://www.django-rest-framework.org/img/logo.png' },
@@ -109,8 +102,13 @@ export const skillsData: Skill[] = [
   { name: 'React', category: 'Frontend', logo: 'https://cdn.simpleicons.org/react' },
   { name: 'Tailwind CSS', category: 'Frontend', logo: 'https://cdn.simpleicons.org/tailwindcss' },
   { name: 'Bootstrap', category: 'Frontend', logo: 'https://cdn.simpleicons.org/bootstrap' },
-  { name: 'HTML', category: 'Frontend', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-  { name: 'CSS', category: 'Frontend', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+
+  // Programming Languages
+  { name: 'Python', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+  { name: 'C', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
+  { name: 'C++', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
+  { name: 'JavaScript', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+  { name: 'Java', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
 
   // Database
   { name: 'PostgreSQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
@@ -134,7 +132,6 @@ export const skillsData: Skill[] = [
   { name: 'LeetCode', category: 'Problem Solving Platforms', url: 'https://leetcode.com/u/BlaZe_0203/', logo: 'https://cdn.simpleicons.org/leetcode' },
   { name: 'Beecrowd', category: 'Problem Solving Platforms', url: 'https://judge.beecrowd.com/en/profile/757266', logo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAclBMVEX////9/P3r5e7x7fO4pMRCAGr18/eKY55fEH76+ftVAHebfKzc0uFRAHTFtc5vNopSAHWjh7Kgg7BZAHmwmb3Tx9pzPo3HuNDYzd5mJIPg2OVoJ4RiGoDRxNiBVZd9T5WWdah5SJGQbKOGXZy+q8ipj7e703yJAAABHklEQVR4AbzQRWLDMBBA0W/FUeWx5ahWwIzp/Y8YZtj2aSUa4j8FCmYzvgvnmh/Dd5HEJDblu8WCmfvlq8wvV2ufbs5yXuXiRXxhvPfOObElL6o6b8JVazrTr5omleG1B5uSoKTDGIDYbXikZY1WdFaRSgZEvubRaEsSGhcDa6uAUJbcJXZERdQSAaVrAYo5dwunKVm6kKPRrQD1UMQxXImWBSfaV0BQxFwNoihJb1knm0Ak431IbkJpCtGXmXUAJXc/bnVqYrxUpIDtfMXNzFVoRWvL441kQOBNwN2fhCQouz7e+AjIXkZpfER5Os1kC+e3j1KJUVDXyq2BS7ZHa9/HfTzUpp6yLOv9yIvSugPxh+UOrOZVpB8F7DesAABdZRHOHW9vPgAAAABJRU5ErkJggg==' },
   { name: 'HackerRank', category: 'Problem Solving Platforms', url: 'https://www.hackerrank.com/profile/BlaZe_0203', logo: 'https://cdn.simpleicons.org/hackerrank' },
-  { name: 'CodeChef', category: 'Problem Solving Platforms', url: 'https://www.codechef.com/users/blaze_0203', logo: 'https://cdn.simpleicons.org/codechef/white' },
 
 ]
 

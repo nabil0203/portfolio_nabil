@@ -6,20 +6,21 @@ import HeroButton from './HeroButton'
 import HeroImage from './HeroImage'
 import { Github, FileText, Linkedin } from 'lucide-react'
 import { personalInfo, contactData } from '@/data/portfolioData'
-import { useMousePosition } from '@/hooks/useMousePosition'
+import { useMousePositionContext } from '@/contexts/MousePositionContext'
 
 const glowTransition: any = {
-  duration: 4,
+  duration: 5,
   repeat: Infinity,
   repeatType: "reverse",
   ease: 'easeInOut',
+  delay: 1.5, // wait for initial paint before breathing starts
 }
 
 const textVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+    transition: { staggerChildren: 0.12, delayChildren: 0.2 },
   },
 } as const
 
@@ -29,13 +30,13 @@ const letterVariants = {
 }
 
 export default function HeroSection() {
-  const { smoothMouseX, smoothMouseY } = useMousePosition()
+  const { smoothMouseX, smoothMouseY } = useMousePositionContext()
 
-  const x1 = useTransform(smoothMouseX, [-0.5, 0.5], [-40, 40])
-  const y1 = useTransform(smoothMouseY, [-0.5, 0.5], [-40, 40])
+  const x1 = useTransform(smoothMouseX, [-0.5, 0.5], [-20, 20])
+  const y1 = useTransform(smoothMouseY, [-0.5, 0.5], [-20, 20])
 
-  const x2 = useTransform(smoothMouseX, [-0.5, 0.5], [40, -40])
-  const y2 = useTransform(smoothMouseY, [-0.5, 0.5], [40, -40])
+  const x2 = useTransform(smoothMouseX, [-0.5, 0.5], [20, -20])
+  const y2 = useTransform(smoothMouseY, [-0.5, 0.5], [20, -20])
 
   return (
     <section
@@ -47,14 +48,14 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-dot-pattern-faint opacity-[0.15]" />
 
         <motion.div
-          className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"
-          style={{ x: x1, y: y1 }}
+          className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px]"
+          style={{ x: x1, y: y1, willChange: 'transform' }}
           animate={{ opacity: [0.3, 0.5, 0.3] }}
           transition={glowTransition}
         />
         <motion.div
-          className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px]"
-          style={{ x: x2, y: y2 }}
+          className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px]"
+          style={{ x: x2, y: y2, willChange: 'transform' }}
           animate={{ opacity: [0.3, 0.5, 0.3] }}
           transition={glowTransition}
         />
@@ -124,9 +125,9 @@ export default function HeroSection() {
           {/* RIGHT COLUMN — Profile Image */}
           <motion.div
             className="relative flex-shrink-0 order-1 lg:order-2"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
           >
             <HeroImage />
           </motion.div>

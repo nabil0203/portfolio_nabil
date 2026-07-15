@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { personalInfo, siteMetadata } from '@/data/portfolioData'
+import { MousePositionProvider } from '@/contexts/MousePositionContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -45,7 +46,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} min-h-screen bg-slate-950 text-white`}>{children}</body>
+      <body className={`${inter.className} min-h-screen bg-slate-950 text-white`}>
+        <MousePositionProvider>
+          {children}
+        </MousePositionProvider>
+      </body>
     </html>
   )
 }

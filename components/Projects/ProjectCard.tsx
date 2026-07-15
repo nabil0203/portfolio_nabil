@@ -2,11 +2,10 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import MotionDiv from '../MotionDiv'
 import { Project } from '@/data/portfolioDataTypes'
 import { Github, ExternalLink, ChevronRight, Code2 } from 'lucide-react'
-
 
 interface ProjectCardProps {
   project: Project
@@ -14,53 +13,28 @@ interface ProjectCardProps {
 }
 
 /**
- * Compact vertical preview card — used on main page 3-col grid
+ * Compact vertical preview card — used on main page 3-col grid.
+ * 3D tilt removed (was running 6× useSpring + useTransform per card).
+ * Replaced with a simple CSS lift + border glow on hover.
  */
 export default function ProjectCard({ project, index }: ProjectCardProps) {
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
-  const mouseXSpring = useSpring(x, { stiffness: 500, damping: 30 })
-  const mouseYSpring = useSpring(y, { stiffness: 500, damping: 30 })
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['5deg', '-5deg'])
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-5deg', '5deg'])
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    x.set((e.clientX - rect.left) / rect.width - 0.5)
-    y.set((e.clientY - rect.top) / rect.height - 0.5)
-  }
-
   return (
     <MotionDiv
-      className="relative h-full flex flex-col rounded-2xl border border-slate-600/70 bg-[#030712]/90 backdrop-blur-xl overflow-hidden group shadow-xl transition-colors duration-300"
-      style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+      className="relative h-full flex flex-col rounded-2xl border border-slate-600/70 bg-[#030712]/90 backdrop-blur-xl overflow-hidden group shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30"
       delay={(index % 6) * 0.05}
-      whileHover={{
-        y: -6,
-        borderColor: 'rgba(99,102,241,0.3)',
-      }}
-      transition={{
-        duration: 0.3,
-        ease: "easeOut"
-      }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={() => {
-        x.set(0)
-        y.set(0)
-      }}
     >
       {/* Decorative Background Glow */}
-      <div className="absolute -top-16 -right-16 w-32 h-32 bg-accent/5 rounded-full blur-[80px] group-hover:bg-accent/10 transition-colors duration-500" />
-      <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-accent-secondary/5 rounded-full blur-[80px] group-hover:bg-accent-secondary/10 transition-colors duration-500" />
+      <div className="absolute -top-16 -right-16 w-32 h-32 bg-accent/5 rounded-full blur-[60px] group-hover:bg-accent/10 transition-colors duration-500" />
+      <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-accent-secondary/5 rounded-full blur-[60px] group-hover:bg-accent-secondary/10 transition-colors duration-500" />
 
       {/* Image Container */}
       {project.imageUrl && (
         <div className="relative p-3 pb-0">
-          <div className="relative h-32 sm:h-36 rounded-xl overflow-hidden shadow-inner group-hover:shadow-accent/20 transition-all duration-500">
+          <div className="relative h-32 sm:h-36 rounded-xl overflow-hidden shadow-inner">
             <img
               src={project.imageUrl}
               alt={project.title}
-              className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 opacity-100"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-100"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -137,20 +111,15 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             )}
           </div>
 
-          <motion.div
-            whileHover={{ x: 3 }}
-            whileTap={{ scale: 0.95 }}
+          <Link
+            href={`/projects#${project.id}`}
+            className="flex items-center gap-1.5 text-[10px] font-black text-white uppercase tracking-wider group/link hover:text-accent transition-all duration-300 py-1"
           >
-            <Link
-              href={`/projects#${project.id}`}
-              className="flex items-center gap-1.5 text-[10px] font-black text-white uppercase tracking-wider group/link hover:text-accent transition-all duration-300 py-1"
-            >
-              <span className="relative z-10">Details</span>
-              <div className="p-1 rounded-md bg-slate-800/50 group-hover/link:bg-accent/10 transition-colors duration-300">
-                <ChevronRight className="w-3 h-3 group-hover/link:translate-x-0.5 transition-transform duration-300" />
-              </div>
-            </Link>
-          </motion.div>
+            <span className="relative z-10">Details</span>
+            <div className="p-1 rounded-md bg-slate-800/50 group-hover/link:bg-accent/10 transition-colors duration-300">
+              <ChevronRight className="w-3 h-3 group-hover/link:translate-x-0.5 transition-transform duration-300" />
+            </div>
+          </Link>
         </div>
       </div>
     </MotionDiv>

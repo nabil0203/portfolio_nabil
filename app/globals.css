@@ -42,6 +42,16 @@
       padding-left: var(--sidebar-width);
     }
   }
+
+  /* Badge float keyframes — CSS-only, zero JS cost */
+  @keyframes badgeFloatUp {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-5px); }
+  }
+  @keyframes badgeFloatDown {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(5px); }
+  }
 }
 
 @layer components {

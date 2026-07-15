@@ -93,7 +93,7 @@ export const educationData = [
 // - Simple Icons CDN:  https://cdn.simpleicons.org/<slug>[/<color>]
 // - Devicons CDN:      https://cdn.jsdelivr.net/gh/devicons/devicon/icons/<name>/<file>.svg
 export const skillsData: Skill[] = [
-
+  
   // Backend
   { name: 'Django', category: 'Backend', logo: 'https://cdn.simpleicons.org/django/989898' },
   { name: 'Django REST Framework', category: 'Backend', logo: 'https://www.django-rest-framework.org/img/logo.png' },
@@ -102,19 +102,20 @@ export const skillsData: Skill[] = [
   { name: 'React', category: 'Frontend', logo: 'https://cdn.simpleicons.org/react' },
   { name: 'Tailwind CSS', category: 'Frontend', logo: 'https://cdn.simpleicons.org/tailwindcss' },
   { name: 'Bootstrap', category: 'Frontend', logo: 'https://cdn.simpleicons.org/bootstrap' },
-
+  
+  
+  // Database
+  { name: 'PostgreSQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+  { name: 'MySQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+  { name: 'SQLite', category: 'Database', logo: 'https://cdn.simpleicons.org/sqlite/989898' },
+  { name: 'Supabase', category: 'Database', logo: 'https://cdn.simpleicons.org/supabase' },
+  
   // Programming Languages
   { name: 'Python', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
   { name: 'C', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
   { name: 'C++', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
   { name: 'JavaScript', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
   { name: 'Java', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-
-  // Database
-  { name: 'PostgreSQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-  { name: 'MySQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-  { name: 'SQLite', category: 'Database', logo: 'https://cdn.simpleicons.org/sqlite/989898' },
-  { name: 'Supabase', category: 'Database', logo: 'https://cdn.simpleicons.org/supabase' },
 
   // Tools
   { name: 'GitHub', category: 'Tools', logo: 'https://cdn.simpleicons.org/github/white' },
@@ -126,6 +127,7 @@ export const skillsData: Skill[] = [
   { name: 'Data Structures', category: 'Others' },
   { name: 'Algorithms', category: 'Others' },
   { name: 'OOP', category: 'Others' },
+  { name: 'Design Patterns', category: 'Others' },
 
   // Problem Solving Platforms
   { name: 'Codeforces', category: 'Problem Solving Platforms', url: 'https://codeforces.com/profile/BlaZe_0203', logo: 'https://cdn.simpleicons.org/codeforces' },

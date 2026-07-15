@@ -29,7 +29,7 @@ export default function SkillsSection() {
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent-secondary/10 rounded-full blur-[128px] pointer-events-none -translate-y-1/2 -mr-48 scale-150"></div>
 
       <div className="section-content">
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8 relative z-10">
           <MotionDiv className="text-center mb-10">
             <h2
               id="skills-heading"

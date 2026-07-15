@@ -32,9 +32,10 @@ export default function ScrollIndicator() {
           transition={{
             duration: 2,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
+            delay: 2, // don't start bouncing until the hero has settled
           }}
-          className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5 backdrop-blur-sm"
+          className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5"
         >
           <ChevronDown className="w-4 h-4 text-primary" />
         </motion.div>

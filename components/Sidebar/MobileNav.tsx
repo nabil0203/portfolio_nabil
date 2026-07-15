@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { scrollToSection, scrollToHero } from '@/utils/dom'
 import Image from 'next/image'
@@ -49,38 +49,41 @@ export default function MobileNav({ navItems, activeSection }: MobileNavProps) {
       </div>
 
       {/* Mobile dropdown menu */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="mt-4 pb-4 border-t border-white/10 pt-4"
-        >
-          <div className="grid grid-cols-2 gap-2">
-            {navItems.map((item) => {
-              const isActive = activeSection === item.id
-              return (
-                <motion.button
-                  key={item.id}
-                  onClick={() => {
-                    scrollToSection(item.id)
-                    setIsMobileMenuOpen(false)
-                  }}
-                  className={`relative flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
-                    isActive 
-                      ? 'bg-accent/10 text-accent border border-accent/20' 
-                      : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
-                  }`}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <item.Icon size={16} className={`shrink-0 ${isActive ? 'text-accent' : 'text-slate-500'}`} />
-                  {item.label}
-                </motion.button>
-              )
-            })}
-          </div>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            className="mt-4 pb-4 border-t border-white/10 pt-4"
+          >
+            <div className="grid grid-cols-2 gap-2">
+              {navItems.map((item) => {
+                const isActive = activeSection === item.id
+                return (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => {
+                      scrollToSection(item.id)
+                      setIsMobileMenuOpen(false)
+                    }}
+                    className={`relative flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+                      isActive 
+                        ? 'bg-accent/10 text-accent border border-accent/20' 
+                        : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
+                    }`}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <item.Icon size={16} className={`shrink-0 ${isActive ? 'text-accent' : 'text-slate-500'}`} />
+                    {item.label}
+                  </motion.button>
+                )
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   )
 }

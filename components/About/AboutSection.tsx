@@ -1,21 +1,11 @@
 'use client'
 
-import { useTransform } from 'framer-motion'
 import MotionDiv from '../MotionDiv'
 import SectionDivider from '../SectionDivider'
-import { useMousePosition } from '@/hooks/useMousePosition'
 import SummarySection from './SummarySection'
 import AboutCard from './AboutCard'
 
 export default function AboutSection() {
-  const { smoothMouseX, smoothMouseY } = useMousePosition()
-
-  const x1 = useTransform(smoothMouseX, [-0.5, 0.5], [-30, 30])
-  const y1 = useTransform(smoothMouseY, [-0.5, 0.5], [-30, 30])
-
-  const x2 = useTransform(smoothMouseX, [-0.5, 0.5], [40, -40])
-  const y2 = useTransform(smoothMouseY, [-0.5, 0.5], [40, -40])
-
   return (
     <section id="about" className="pt-24 pb-24 md:pb-32 scroll-mt-24 lg:scroll-mt-0 bg-[#030712]">
       <div className="section-content">
@@ -35,7 +25,7 @@ export default function AboutSection() {
 
             {/* Summary Card - Right */}
             <MotionDiv className="order-2 lg:order-2 lg:col-span-7 xl:col-span-8">
-              <SummarySection x1={x1} y1={y1} x2={x2} y2={y2} />
+              <SummarySection />
             </MotionDiv>
           </div>
         </div>

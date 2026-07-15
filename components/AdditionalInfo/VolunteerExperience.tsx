@@ -1,18 +1,11 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Calendar } from 'lucide-react'
 import { volunteerExperiencesData } from '@/data/portfolioData'
 
 export default function VolunteerExperience() {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="rounded-2xl border border-slate-800/60 bg-slate-900/30 backdrop-blur-xl p-6 sm:p-8 flex flex-col"
-    >
+    <div className="rounded-2xl border border-slate-800/60 bg-slate-900/30 backdrop-blur-xl p-6 sm:p-8 flex flex-col">
        <div className="flex items-center gap-3 sm:gap-4 mb-8">
          <span className="text-accent text-xl font-light select-none flex-shrink-0">—</span>
          <h3 className="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.10em] text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/50 leading-none">
@@ -45,6 +38,6 @@ export default function VolunteerExperience() {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   )
 }

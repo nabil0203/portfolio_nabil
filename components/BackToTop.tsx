@@ -86,8 +86,8 @@ export default function BackToTop() {
             transition: { duration: 0.3, ease: "easeIn" } 
           }}
           transition={{ 
-            duration: 1.2,
-            ease: "easeInOut",
+            duration: 0.4,
+            ease: "easeOut",
             bottom: { duration: 0.1 } // Snappier response
           }}
           onClick={scrollToHero}

@@ -9,7 +9,7 @@ import SectionDivider from '../SectionDivider'
 import ProjectCard from './ProjectCard'
 import { projectsData } from '@/data/portfolioData'
 
-const PREVIEW_COUNT = 6
+const PREVIEW_COUNT = 4
 const previewProjects = projectsData.slice(0, PREVIEW_COUNT)
 
 export default function ProjectsSection() {
@@ -38,7 +38,7 @@ export default function ProjectsSection() {
       </div>
 
       <div className="section-content relative z-10">
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="relative max-w-5xl mx-auto px-5 sm:px-8">
 
           {/* Section Header */}
           <MotionDiv className="mb-14 text-center">
@@ -49,8 +49,8 @@ export default function ProjectsSection() {
             <SectionDivider />
           </MotionDiv>
 
-          {/* Project grid — always shows first 6, compact preview cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
+          {/* Project list — stacked horizontal cards */}
+          <div className="flex flex-col gap-16 lg:gap-24">
             {previewProjects.map((project, index) => (
               <ProjectCard
                 key={`${project.id}-${index}`}
@@ -62,25 +62,23 @@ export default function ProjectsSection() {
 
           {/* Link to full projects page */}
           {hasMore && (
-            <MotionDiv className="mt-12 flex flex-col items-center gap-4" delay={0.2}>
-              <Link href="/projects" aria-label={`View all ${projectsData.length} projects`} className="group relative flex justify-center">
-                {/* Gentle, slow pulse behind the button */}
-                <div 
-                  className="absolute -inset-0.5 bg-gradient-to-r from-accent to-accent-glow rounded-full opacity-20 blur-[2px] group-hover:opacity-40 animate-pulse transition-opacity duration-300"
-                  style={{ animationDuration: '4s' }}
-                />
-                
+            <MotionDiv className="mt-20 flex flex-col items-center gap-3" delay={0.2}>
+              <Link
+                href="/projects"
+                aria-label={`View all ${projectsData.length} projects`}
+                className="group relative inline-flex items-center"
+              >
                 <motion.span
-                  className="relative flex items-center gap-3 px-6 py-2.5 rounded-full text-sm font-medium text-white border border-accent/30 bg-black/60 backdrop-blur-md hover:border-accent/60 transition-colors duration-300 cursor-pointer shadow-lg"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  className="flex items-center gap-3 px-8 py-3 rounded-lg text-sm font-bold text-white bg-accent hover:bg-accent/85 shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all duration-300 cursor-pointer"
+                  whileHover={{ y: -2, scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   <span className="tracking-wide">View All Projects</span>
-                  <ArrowRight className="w-4 h-4 text-white/70 group-hover:text-white group-hover:translate-x-1 transition-all duration-300 ml-0.5" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </motion.span>
               </Link>
-              
-              <p className="text-[11px] text-secondary/50 font-mono uppercase tracking-widest mt-1">
+
+              <p className="text-[11px] text-secondary/40 font-mono uppercase tracking-widest">
                 Showing {PREVIEW_COUNT} of {projectsData.length}
               </p>
             </MotionDiv>

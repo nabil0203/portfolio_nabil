@@ -66,7 +66,7 @@ export const educationData = [
     url: 'https://daffodilvarsity.edu.bd',
     gpa: 'CGPA: 3.91',
     graduation: 'Jan 2023 - Dec 2026',
-    description: 'Received Result-Based Scholarship',
+    description: '35% Result-Based Waiver Recipient',
   },
   {
     degree: 'HSC in Science',
@@ -93,23 +93,23 @@ export const educationData = [
 // - Simple Icons CDN:  https://cdn.simpleicons.org/<slug>[/<color>]
 // - Devicons CDN:      https://cdn.jsdelivr.net/gh/devicons/devicon/icons/<name>/<file>.svg
 export const skillsData: Skill[] = [
-  
+
   // Backend
   { name: 'Django', category: 'Backend', logo: 'https://cdn.simpleicons.org/django/989898' },
   { name: 'Django REST Framework', category: 'Backend', logo: 'https://www.django-rest-framework.org/img/logo.png' },
-  
+
   // Frontend
   { name: 'React', category: 'Frontend', logo: 'https://cdn.simpleicons.org/react' },
   { name: 'Tailwind CSS', category: 'Frontend', logo: 'https://cdn.simpleicons.org/tailwindcss' },
   { name: 'Bootstrap', category: 'Frontend', logo: 'https://cdn.simpleicons.org/bootstrap' },
-  
-  
+
+
   // Database
   { name: 'PostgreSQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
   { name: 'MySQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
   { name: 'SQLite', category: 'Database', logo: 'https://cdn.simpleicons.org/sqlite/989898' },
   { name: 'Supabase', category: 'Database', logo: 'https://cdn.simpleicons.org/supabase' },
-  
+
   // Programming Languages
   { name: 'Python', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
   { name: 'C', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
@@ -139,25 +139,7 @@ export const skillsData: Skill[] = [
 
 // Projects Data
 export const projectsData: Project[] = [
-  {
-    id: 'shopnest',
-    title: 'ShopNest',
-    shortDescription: 'A full-featured single-vendor e-commerce platform.',
-    description: 'A full-featured, modern single-vendor e-commerce platform built with Django. ShopNest provides a complete online shopping experience with product management, shopping cart, secure payment integration, and user authentication.',
-    tools: ['Django', 'SQLite', 'Tailwind CSS', 'SSLCommerz Api'],
-    features: [
-      'User authentication & authorization',
-      'Product catalog with search & filtering',
-      'Shopping cart & order management',
-      'SSLCommerz payment gateway integration',
-    ],
-    githubUrl: 'https://github.com/nabil0203/ShopNest',
-    liveUrl: 'https://shopnest-4thm.onrender.com/',
-    imageUrl: '/images/projects/shopnest.png',
-    featured: true,
-    year: '2025',
-    status: 'Live',
-  },
+
   {
     id: 'farm2market',
     title: 'Farm2Market',
@@ -173,6 +155,25 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/nabil0203/Farm2Market',
     liveUrl: 'https://farm2market-dtll.onrender.com/',
     imageUrl: '/images/projects/farm2market.png',
+    featured: true,
+    year: '2025',
+    status: 'Live',
+  },
+  {
+    id: 'shopnest',
+    title: 'ShopNest',
+    shortDescription: 'A full-featured single-vendor e-commerce platform.',
+    description: 'A full-featured, modern single-vendor e-commerce platform built with Django. ShopNest provides a complete online shopping experience with product management, shopping cart, secure payment integration, and user authentication.',
+    tools: ['Django', 'SQLite', 'Tailwind CSS', 'SSLCommerz Api'],
+    features: [
+      'User authentication & authorization',
+      'Product catalog with search & filtering',
+      'Shopping cart & order management',
+      'SSLCommerz payment gateway integration',
+    ],
+    githubUrl: 'https://github.com/nabil0203/ShopNest',
+    liveUrl: 'https://shopnest-4thm.onrender.com/',
+    imageUrl: '/images/projects/shopnest.png',
     featured: true,
     year: '2025',
     status: 'Live',

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import MotionDiv from '../MotionDiv'
 import { Project } from '@/data/portfolioDataTypes'
-import { Github, ExternalLink, ChevronRight, Code2 } from 'lucide-react'
+import { Github, ArrowUpRight, ChevronRight } from 'lucide-react'
 
 interface ProjectCardProps {
   project: Project
@@ -13,113 +13,138 @@ interface ProjectCardProps {
 }
 
 /**
- * Compact vertical preview card — used on main page 3-col grid.
- * 3D tilt removed (was running 6× useSpring + useTransform per card).
- * Replaced with a simple CSS lift + border glow on hover.
+ * Horizontal two-column card.
+ * Even index  → content LEFT  | image RIGHT
+ * Odd  index  → image  LEFT   | content RIGHT
+ * Mobile: always image on top, content below.
  */
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const isReversed = index % 2 === 1
+
   return (
     <MotionDiv
-      className="relative h-full flex flex-col rounded-2xl border border-slate-600/70 bg-[#030712]/90 backdrop-blur-xl overflow-hidden group shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30"
-      delay={(index % 6) * 0.05}
+      className="group relative w-full"
+      delay={(index % 4) * 0.08}
     >
-      {/* Decorative Background Glow */}
-      <div className="absolute -top-16 -right-16 w-32 h-32 bg-accent/5 rounded-full blur-[60px] group-hover:bg-accent/10 transition-colors duration-500" />
-      <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-accent-secondary/5 rounded-full blur-[60px] group-hover:bg-accent-secondary/10 transition-colors duration-500" />
-
-      {/* Image Container */}
-      {project.imageUrl && (
-        <div className="relative p-3 pb-0">
-          <div className="relative h-32 sm:h-36 rounded-xl overflow-hidden shadow-inner">
-            <img
-              src={project.imageUrl}
-              alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-100"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-            {/* Status Badge */}
-            {project.status && (
-              <div className="absolute top-2 right-2 z-20 px-2 py-0.5 rounded-full bg-slate-950/60 backdrop-blur-md border border-white/10 text-[9px] font-bold text-accent uppercase tracking-wider">
-                {project.status}
-              </div>
-            )}
-          </div>
-        </div>
+      {/* Subtle separator line above each card (except first) */}
+      {index !== 0 && (
+        <div className="absolute -top-5 lg:-top-7 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-700/80 to-transparent" />
       )}
 
-      {/* Body Content */}
-      <div className="relative z-20 flex flex-col flex-1 p-4 sm:p-5">
-        <div className="flex items-start justify-between gap-3 mb-2">
-          <div className="flex flex-col gap-0.5">
-            <span className="text-[9px] font-bold text-accent-secondary uppercase tracking-[0.2em] opacity-80">
-              # {String(index + 1).padStart(2, '0')}
-            </span>
-            <h3 className="text-base sm:text-lg font-black text-white leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent group-hover:via-accent-secondary group-hover:to-accent-glow transition-all duration-300">
-              {project.title}
-            </h3>
-          </div>
-        </div>
+      <div
+        className={`flex flex-col md:flex-row ${
+          isReversed
+            ? 'md:flex-row-reverse items-center gap-12 lg:gap-28'
+            : 'items-start gap-4 lg:gap-4'
+        }`}
+      >
+        {/* ── Content Half ── */}
+        <div className="flex flex-col flex-1 min-w-0">
 
-        <p className="text-secondary/100 text-xs leading-relaxed mb-4 line-clamp-2">
-          {project.shortDescription || project.description}
-        </p>
-
-        {/* Tech Stack - Pill Style */}
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          <span className="text-[9px] font-bold text-accent-secondary/60 uppercase tracking-wider w-full mb-1.5 flex items-center gap-1.5">
-            <Code2 className="w-3 h-3 text-accent" />
-            <span className='text-accent'>Built With</span>
+          {/* Index label */}
+          <span className="text-[11px] font-bold text-accent uppercase tracking-[0.2em] mb-3 opacity-70">
+            Project #{String(index + 1).padStart(2, '0')}
           </span>
-          {project.tools.map((tool) => (
-            <span
-              key={tool}
-              className="text-[10px] font-bold px-2 py-0.5 bg-slate-800/30 text-slate-300 rounded-md border border-slate-700/50 group-hover:border-accent/30 transition-all duration-300"
-            >
-              {tool}
-            </span>
-          ))}
-        </div>
 
-        {/* Footer Actions */}
-        <div className="relative z-30 mt-auto pt-3 flex items-center justify-between border-t border-slate-800/40">
-          <div className="flex items-center gap-2">
+          {/* Title */}
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent group-hover:via-accent-secondary group-hover:to-accent-glow transition-all duration-300">
+            {project.title}
+          </h3>
+
+          {/* Tech Tags */}
+          <div className="flex flex-wrap gap-2 mb-5">
+            {project.tools.map((tool) => (
+              <span
+                key={tool}
+                className="text-[11px] font-semibold px-3 py-1 bg-slate-800/40 text-slate-300 rounded-full border border-slate-700/60 group-hover:border-accent/30 transition-colors duration-300"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+
+          {/* Description */}
+          <p className="text-secondary text-sm sm:text-[15px] leading-relaxed mb-8">
+            {project.shortDescription || project.description}
+          </p>
+
+          {/* Action Buttons */}
+          <div className="flex items-center gap-3 flex-wrap">
             {project.githubUrl && (
               <motion.a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 text-secondary hover:text-white hover:border-accent/50 hover:bg-accent/5 transition-all duration-300"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/60 text-slate-300 text-sm font-semibold hover:text-white hover:border-accent/50 hover:bg-accent/10 hover:shadow-md hover:shadow-accent/10 transition-all duration-300"
                 whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.97 }}
               >
-                <Github className="w-4 h-4" />
+                <Github className="w-3.5 h-3.5" />
+                Github
               </motion.a>
             )}
+
             {project.liveUrl && (
               <motion.a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 text-secondary hover:text-white hover:border-accent/50 hover:bg-accent/5 transition-all duration-300"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/60 text-slate-300 text-sm font-semibold hover:text-white hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:shadow-md hover:shadow-emerald-500/10 transition-all duration-300"
                 whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.97 }}
               >
-                <ExternalLink className="w-4 h-4" />
+                <ArrowUpRight className="w-3.5 h-3.5" />
+                Live
               </motion.a>
             )}
-          </div>
 
-          <Link
-            href={`/projects#${project.id}`}
-            className="flex items-center gap-1.5 text-[10px] font-black text-white uppercase tracking-wider group/link hover:text-accent transition-all duration-300 py-1"
-          >
-            <span className="relative z-10">Details</span>
-            <div className="p-1 rounded-md bg-slate-800/50 group-hover/link:bg-accent/10 transition-colors duration-300">
-              <ChevronRight className="w-3 h-3 group-hover/link:translate-x-0.5 transition-transform duration-300" />
-            </div>
-          </Link>
+            <Link
+              href={`/projects#${project.id}`}
+              className="flex items-center gap-1.5 text-sm font-semibold text-accent/70 hover:text-accent underline-offset-4 hover:underline transition-all duration-300 group/details"
+            >
+              Details
+              <ChevronRight className="w-4 h-4 text-accent/40 group-hover/details:text-accent group-hover/details:translate-x-0.5 transition-transform duration-300" />
+            </Link>
+          </div>
+        </div>
+
+        {/* ── Image Half ── */}
+        <div className="w-full md:w-[42%] flex-shrink-0">
+          <div className="relative rounded-2xl overflow-hidden aspect-video bg-slate-800/40 shadow-2xl ring-1 ring-white/5 group-hover:ring-accent/20 transition-all duration-500">
+            {project.imageUrl ? (
+              <>
+                <img
+                  src={project.imageUrl}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                {/* Subtle overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-slate-950/20 opacity-75 group-hover:opacity-95 transition-opacity duration-500" />
+              </>
+            ) : (
+              /* Fallback placeholder when no image */
+              <div className="w-full h-full flex items-center justify-center bg-slate-800/60">
+                <Github className="w-12 h-12 text-slate-600" />
+              </div>
+            )}
+
+            {/* Status Badge */}
+            {project.status && (
+              <div
+                className={`absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider backdrop-blur-md border ${
+                  project.status === 'Live'
+                    ? 'bg-emerald-950/70 border-emerald-500/40 text-emerald-400'
+                    : 'bg-slate-950/60 border-white/10 text-accent'
+                }`}
+              >
+                {project.status === 'Live' && (
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse align-middle" />
+                )}
+                {project.status}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </MotionDiv>

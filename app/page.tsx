@@ -10,6 +10,7 @@ const EducationSection = dynamic(() => import('@/components/Education/EducationS
 const SkillsSection = dynamic(() => import('@/components/Skills/SkillsSection'))
 const ProjectsSection = dynamic(() => import('@/components/Projects/ProjectsSection'))
 const AdditionalInfoSection = dynamic(() => import('@/components/AdditionalInfo/AdditionalInfoSection'))
+const CertificationsSection = dynamic(() => import('@/components/Certifications/CertificationsSection'))
 const ContactSection = dynamic(() => import('@/components/Contact/ContactSection'))
 const BackToTop = dynamic(() => import('@/components/BackToTop'))
 
@@ -30,6 +31,9 @@ export default function Home() {
         </MotionDiv>
         <MotionDiv>
           <EducationSection />
+        </MotionDiv>
+        <MotionDiv>
+          <CertificationsSection />
         </MotionDiv>
         <MotionDiv>
           <AdditionalInfoSection />

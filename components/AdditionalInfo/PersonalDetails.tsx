@@ -30,26 +30,7 @@ export default function PersonalDetails() {
               ))}
             </div>
           </div>
-        )}
-
-        {personalDetailsData.certifications.length > 0 && (
-          <div className="group">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-lg bg-slate-800/40 border border-slate-700/50 group-hover:border-accent/40 group-hover:bg-blue-950/40 transition-colors">
-                  <Award className="w-5 h-5 text-accent" />
-              </div>
-              <h4 className="text-lg font-semibold text-white">Certifications</h4>
-            </div>
-            <ul className="space-y-2.5 pl-14">
-              {personalDetailsData.certifications.map((certification) => (
-                <li key={certification} className="text-secondary text-sm sm:text-base flex items-start gap-2.5 leading-relaxed">
-                  <span className="text-accent mt-1 text-xs">▹</span>
-                  {certification}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        )}  
 
         {personalDetailsData.programs.length > 0 && (
           <div className="group">

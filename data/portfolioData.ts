@@ -329,9 +329,6 @@ export const personalDetailsData: PersonalDetails = {
     'Bengali (Native)',
     'English (Proficient)',
   ],
-  certifications: [
-    'International English Language Testing System (IELTS 7.0)',
-  ],
   programs: [
     'Aspire Leaders Program 2024 (Harvard Business School)',
   ],
@@ -352,6 +349,40 @@ export const volunteerExperiencesData: VolunteerExperience[] = [
     duration: 'May 2023 - Jun 2024',
   },
 ]
+
+
+// Certifications Data
+export const certificationsData = [
+  {
+    title: 'Full Stack Web Development with Python, Django & React',
+    issuer: 'Ostad',
+    icon: 'code',
+    images: [
+      '/images/certifications/ostad-1.jpg',
+      '/images/certifications/ostad-2.jpg',
+    ],
+  },
+  {
+    title: 'CS Fundamentals',
+    issuer: 'Phitron',
+    icon: 'cpu',
+    images: [
+      '/images/certifications/ds_grade.png',
+      '/images/certifications/algo_grade.png',
+      '/images/certifications/cpp_grade.png',
+      '/images/certifications/c_grade.png',
+    ],
+  },
+  {
+    title: 'International English Language Testing System (IELTS)',
+    issuer: 'Band 7.0',
+    icon: 'globe',
+    images: [
+      '/images/certifications/ielts.jpg',
+    ],
+  },
+]
+
 
 // Contact Information
 export const contactData: Contact = {

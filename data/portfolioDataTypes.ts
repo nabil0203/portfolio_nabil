@@ -49,7 +49,6 @@ export interface Project {
 
 export interface PersonalDetails {
   languages: string[]
-  certifications: string[]
   programs: string[]
   hobbies: string[]
 }

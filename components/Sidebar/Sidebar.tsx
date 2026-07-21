@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { User, Zap, FolderOpen, BookOpen, Mail, GraduationCap } from 'lucide-react'
+import { User, Zap, FolderOpen, BookOpen, Mail, GraduationCap, BadgeCheck } from 'lucide-react'
 
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { useScrollSpy } from '@/hooks/useScrollSpy'
@@ -16,6 +16,7 @@ const navItems = [
   { id: 'skills', label: 'Skills', Icon: Zap },
   { id: 'projects', label: 'Projects', Icon: FolderOpen },
   { id: 'education', label: 'Study', Icon: GraduationCap },
+  { id: 'certifications', label: 'Courses', Icon: BadgeCheck },
   { id: 'additional-information', label: 'Info', Icon: BookOpen },
   { id: 'contact', label: 'Contact', Icon: Mail }
 ]

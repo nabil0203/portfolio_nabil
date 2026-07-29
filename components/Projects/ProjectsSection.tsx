@@ -28,7 +28,7 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects" className="py-20 md:py-32 scroll-mt-24 lg:scroll-mt-0 relative bg-background overflow-hidden">
-      
+
       {/* Static Background Layer — no mouse tracking */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(15,23,42,0.6),rgba(2,6,23,1))]" />
@@ -63,20 +63,22 @@ export default function ProjectsSection() {
           {/* Link to full projects page */}
           {hasMore && (
             <MotionDiv className="mt-20 flex flex-col items-center gap-3" delay={0.2}>
-              <Link
-                href="/projects"
-                aria-label={`View all ${projectsData.length} projects`}
-                className="group relative inline-flex items-center"
+              {/* motion.div is OUTSIDE rotate-btn so the y-lift isn't clipped by overflow:hidden */}
+              <motion.div
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
               >
-                <motion.span
-                  className="flex items-center gap-3 px-8 py-3 rounded-lg text-sm font-bold text-white bg-accent hover:bg-accent/85 shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all duration-300 cursor-pointer"
-                  whileHover={{ y: -2, scale: 1.02 }}
-                  whileTap={{ scale: 0.97 }}
+                <Link
+                  href="/projects"
+                  aria-label={`View all ${projectsData.length} projects`}
+                  className="group rotate-btn"
                 >
-                  <span className="tracking-wide">View All Projects</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </motion.span>
-              </Link>
+                  <span className="rotate-btn-inner group flex items-center gap-3 px-8 py-3 text-sm font-bold text-white cursor-pointer transition-colors duration-300">
+                    <span className="tracking-wide">View All Projects</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                </Link>
+              </motion.div>
 
               <p className="text-[11px] text-secondary/40 font-mono uppercase tracking-widest">
                 Showing {PREVIEW_COUNT} of {projectsData.length}

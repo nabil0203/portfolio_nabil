@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion'
 import MotionDiv from '../MotionDiv'
-import SectionDivider from '../SectionDivider'
+import SectionHeader from '../SectionHeader'
 import { educationData } from '@/data/portfolioData'
+import { Education } from '@/data/portfolioDataTypes'
 import EducationCard from './EducationCard'
 
 export default function EducationSection() {
@@ -18,12 +19,7 @@ export default function EducationSection() {
 
       <div className="section-content">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <MotionDiv className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4">
-              Academic <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow">Journey</span>
-            </h2>
-            <SectionDivider />
-          </MotionDiv>
+          <SectionHeader label="Academic" highlight="Journey" className="mb-12" />
 
           <div className="relative max-w-6xl mx-auto">
             {/* Vertical Timeline Bar */}
@@ -45,7 +41,7 @@ export default function EducationSection() {
   )
 }
 
-function TimelineItem({ edu, index }: { edu: any, index: number }) {
+function TimelineItem({ edu, index }: { edu: Education; index: number }) {
   const isEven = index % 2 === 0
 
   return (
@@ -55,8 +51,8 @@ function TimelineItem({ edu, index }: { edu: any, index: number }) {
         <motion.div
           initial={{ opacity: 0, x: isEven ? 50 : -50, scale: 0.95 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, type: "spring", bounce: 0.3, delay: index * 0.1 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.7, type: 'spring', bounce: 0.3, delay: index * 0.1 }}
         >
           <EducationCard edu={edu} isRightSide={isEven} />
         </motion.div>
@@ -64,10 +60,11 @@ function TimelineItem({ edu, index }: { edu: any, index: number }) {
 
       {/* Dot on the bar */}
       <div className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-background border-2 border-accent/30 flex items-center justify-center -translate-x-1/2 z-20 shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-500 group-hover:border-accent">
-        <div className={`w-3 h-3 rounded-full ${index % 3 === 0 ? 'bg-accent' :
-            index % 3 === 1 ? 'bg-accent-secondary' :
-              'bg-accent-glow'
-          } animate-pulse shadow-[0_0_10px_currentColor]`} />
+        <div className={`w-3 h-3 rounded-full ${
+          index % 3 === 0 ? 'bg-accent' :
+          index % 3 === 1 ? 'bg-accent-secondary' :
+          'bg-accent-glow'
+        } animate-pulse shadow-[0_0_10px_currentColor]`} />
       </div>
 
       {/* Empty space for the other side on desktop */}

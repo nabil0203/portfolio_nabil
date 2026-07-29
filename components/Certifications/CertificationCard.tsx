@@ -1,9 +1,11 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Code2, Cpu, Globe, BadgeCheck, ImageIcon, ZoomIn, Images } from 'lucide-react'
+import type { ElementType } from 'react'
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, ElementType> = {
   code: Code2,
   cpu: Cpu,
   globe: Globe,
@@ -21,6 +23,7 @@ interface CertificationCardProps {
 }
 
 export default function CertificationCard({ cert, index, onOpen }: CertificationCardProps) {
+  const [imgError, setImgError] = useState(false)
   const Icon = iconMap[cert.icon] ?? Code2
   const hasMultiple = cert.images.length > 1
 
@@ -43,25 +46,19 @@ export default function CertificationCard({ cert, index, onOpen }: Certification
           aria-label={`View ${cert.title} certificate`}
           className="relative w-full h-40 bg-slate-800/60 overflow-hidden flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
         >
-          <img
-            src={cert.images[0]}
-            alt={`${cert.title} certificate`}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            onError={e => {
-              const el = e.currentTarget
-              el.style.display = 'none'
-              const fb = el.nextElementSibling as HTMLElement | null
-              if (fb) fb.style.display = 'flex'
-            }}
-          />
-          {/* Fallback placeholder */}
-          <div
-            style={{ display: 'none' }}
-            className="absolute inset-0 flex-col items-center justify-center gap-2 text-slate-500"
-          >
-            <ImageIcon className="w-8 h-8" />
-            <span className="text-xs">No image yet</span>
-          </div>
+          {imgError ? (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-slate-500">
+              <ImageIcon className="w-8 h-8" />
+              <span className="text-xs">No image yet</span>
+            </div>
+          ) : (
+            <img
+              src={cert.images[0]}
+              alt={`${cert.title} certificate`}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              onError={() => setImgError(true)}
+            />
+          )}
 
           {/* Multi-image badge */}
           {hasMultiple && (

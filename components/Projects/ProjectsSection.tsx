@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import MotionDiv from '../MotionDiv'
-import SectionDivider from '../SectionDivider'
+import SectionHeader from '../SectionHeader'
 import ProjectCard from './ProjectCard'
 import { projectsData } from '@/data/portfolioData'
 
@@ -40,14 +40,7 @@ export default function ProjectsSection() {
       <div className="section-content relative z-10">
         <div className="relative max-w-5xl mx-auto px-5 sm:px-8">
 
-          {/* Section Header */}
-          <MotionDiv className="mb-14 text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4">
-              My <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow">Projects
-              </span>
-            </h2>
-            <SectionDivider />
-          </MotionDiv>
+          <SectionHeader label="My" highlight="Projects" className="mb-14" />
 
           {/* Project list — stacked horizontal cards */}
           <div className="flex flex-col gap-16 lg:gap-24">

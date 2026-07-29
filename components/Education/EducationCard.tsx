@@ -1,28 +1,23 @@
 'use client'
 
 import { GraduationCap, Calendar, Award, ExternalLink } from 'lucide-react'
+import type { Education } from '@/data/portfolioDataTypes'
 
 interface EducationCardProps {
-  edu: {
-    degree: string
-    institution: string
-    logo: string
-    url?: string
-    gpa?: string
-    graduation: string
-    description?: string
-  }
+  edu: Education
   isRightSide?: boolean
 }
 
 export default function EducationCard({ edu, isRightSide = true }: EducationCardProps) {
   const LogoContent = (
     <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-800/50 border border-slate-700/50 p-2.5 sm:p-3 shadow-lg flex items-center justify-center backdrop-blur-md group-hover:border-accent/40 transition-all duration-300">
-      <img
-        src={edu.logo}
-        alt={edu.institution}
-        className="w-full h-full object-contain drop-shadow-md group-hover:scale-110 transition-transform duration-300"
-      />
+      {edu.logo && (
+        <img
+          src={edu.logo}
+          alt={edu.institution}
+          className="w-full h-full object-contain drop-shadow-md group-hover:scale-110 transition-transform duration-300"
+        />
+      )}
     </div>
   )
 
@@ -31,7 +26,7 @@ export default function EducationCard({ edu, isRightSide = true }: EducationCard
       {/* Subtle glow effect on hover */}
       <div className="absolute -inset-0.5 bg-gradient-to-r from-accent/20 via-accent-secondary/20 to-accent-glow/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
 
-      <div className={`relative bg-slate-900/60 backdrop-blur-xl border border-slate-800/60 rounded-2xl p-4 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300 group-hover:translate-y-[-2px] group-hover:border-slate-700/60 
+      <div className={`relative bg-slate-900/60 backdrop-blur-xl border border-slate-800/60 rounded-2xl p-4 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300 group-hover:translate-y-[-2px] group-hover:border-slate-700/60
         ${isRightSide ? 'border-l-4 border-l-accent' : 'md:border-l-0 md:border-r-4 md:border-r-accent border-l-4 border-l-accent'}`}>
 
         {/* Background Decorative Gradient */}
@@ -75,25 +70,19 @@ export default function EducationCard({ edu, isRightSide = true }: EducationCard
               {edu.gpa && (
                 <div className="flex items-center gap-2 bg-accent/10 rounded-xl py-1.5 px-4 border border-accent/20">
                   <GraduationCap className="w-3.5 h-3.5 text-accent" />
-                  <span className="text-secondary text-sm font-medium">
-                    {edu.gpa}
-                  </span>
+                  <span className="text-secondary text-sm font-medium">{edu.gpa}</span>
                 </div>
               )}
 
               <div className="flex items-center gap-2 bg-accent-secondary/10 rounded-xl py-1.5 px-4 border border-accent-secondary/20">
                 <Calendar className="w-3.5 h-3.5 text-accent-secondary" />
-                <span className="text-secondary text-sm font-medium">
-                  {edu.graduation}
-                </span>
+                <span className="text-secondary text-sm font-medium">{edu.graduation}</span>
               </div>
 
               {edu.description && (
                 <div className="flex items-center gap-2 bg-accent-glow/10 rounded-xl py-1.5 px-4 border border-accent-glow/20">
                   <Award className="w-3.5 h-3.5 text-accent-glow" />
-                  <span className="text-secondary text-sm font-medium">
-                    {edu.description}
-                  </span>
+                  <span className="text-secondary text-sm font-medium">{edu.description}</span>
                 </div>
               )}
             </div>

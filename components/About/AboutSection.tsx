@@ -1,7 +1,7 @@
 'use client'
 
 import MotionDiv from '../MotionDiv'
-import SectionDivider from '../SectionDivider'
+import SectionHeader from '../SectionHeader'
 import SummarySection from './SummarySection'
 import AboutCard from './AboutCard'
 
@@ -10,12 +10,7 @@ export default function AboutSection() {
     <section id="about" className="pt-24 pb-24 md:pb-32 scroll-mt-24 lg:scroll-mt-0 bg-[#030712]">
       <div className="section-content">
         <div className="max-w-7xl mx-auto px-6">
-          <MotionDiv className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow">Me</span>
-            </h2>
-            <SectionDivider />
-          </MotionDiv>
+          <SectionHeader label="About" highlight="Me" className="mb-16" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch mt-10">
             {/* Stats Grid - Left */}

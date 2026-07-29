@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Linkedin, Link2 } from 'lucide-react'
+import { Mail, MapPin, Linkedin, Link2 } from 'lucide-react'
 
 import {
   PersonalInfo,

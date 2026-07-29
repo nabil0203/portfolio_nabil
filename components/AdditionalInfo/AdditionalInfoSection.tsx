@@ -1,7 +1,7 @@
 'use client'
 
 import MotionDiv from '../MotionDiv'
-import SectionDivider from '../SectionDivider'
+import SectionHeader from '../SectionHeader'
 import PersonalDetails from './PersonalDetails'
 import VolunteerExperience from './VolunteerExperience'
 
@@ -14,12 +14,7 @@ export default function AdditionalInfoSection() {
 
       <div className="section-content">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
-          <MotionDiv className="text-center mb-10 md:mb-16">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4">
-              Additional <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow">Information</span>
-            </h2>
-            <SectionDivider />
-          </MotionDiv>
+          <SectionHeader label="Additional" highlight="Information" className="mb-10 md:mb-16" />
 
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 relative z-10">
             <MotionDiv>

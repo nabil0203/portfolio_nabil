@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import MotionDiv from '../MotionDiv'
-import SectionDivider from '../SectionDivider'
+import SectionHeader from '../SectionHeader'
 import { certificationsData } from '@/data/portfolioData'
 import CertificationCard from './CertificationCard'
 import CertificationLightbox from './CertificationLightbox'
@@ -75,16 +75,7 @@ export default function CertificationsSection() {
 
         <div className="section-content">
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            {/* Heading */}
-            <MotionDiv className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4">
-                Courses &amp;{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow">
-                  Certifications
-                </span>
-              </h2>
-              <SectionDivider />
-            </MotionDiv>
+            <SectionHeader label="Courses &" highlight="Certifications" className="mb-12" />
 
             {/* Cards grid */}
             <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

@@ -1,7 +1,7 @@
 'use client'
 
 import MotionDiv from '../MotionDiv'
-import SectionDivider from '../SectionDivider'
+import SectionHeader from '../SectionHeader'
 import { skillsData } from '@/data/portfolioData'
 import SkillCard from './SkillCard'
 import { Skill } from '@/data/portfolioDataTypes'
@@ -30,15 +30,7 @@ export default function SkillsSection() {
 
       <div className="section-content">
         <div className="max-w-5xl mx-auto px-5 sm:px-8 relative z-10">
-          <MotionDiv className="text-center mb-10">
-            <h2
-              id="skills-heading"
-              className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4"
-            >
-              Skills <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow">&amp; Technologies</span>
-            </h2>
-            <SectionDivider />
-          </MotionDiv>
+          <SectionHeader label="Skills" highlight="& Technologies" className="mb-10" id="skills-heading" />
 
           <div className="flex flex-col gap-3">
             {Object.entries(skillGroups).map(([category, skills], index) => (

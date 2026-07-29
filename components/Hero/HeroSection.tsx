@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useTransform } from 'framer-motion'
+import { motion, useTransform, Transition } from 'framer-motion'
 import ScrollIndicator from './ScrollIndicator'
 import HeroButton from './HeroButton'
 import HeroImage from './HeroImage'
@@ -8,7 +8,7 @@ import { Github, FileText, Linkedin } from 'lucide-react'
 import { personalInfo, contactData } from '@/data/portfolioData'
 import { useMousePositionContext } from '@/contexts/MousePositionContext'
 
-const glowTransition: any = {
+const glowTransition: Transition = {
   duration: 5,
   repeat: Infinity,
   repeatType: "reverse",

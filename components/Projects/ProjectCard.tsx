@@ -64,9 +64,19 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
 
           {/* Description */}
-          <p className="text-secondary text-sm sm:text-[15px] leading-relaxed mb-8">
+          <p className="text-secondary text-sm sm:text-[15px] leading-relaxed mb-5 md:mb-8">
             {project.shortDescription || project.description}
           </p>
+
+          {/* Mobile-only image — sits between description & buttons */}
+          {project.imageUrl && (
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              className="block md:hidden w-full rounded-2xl aspect-video object-cover mb-5"
+              loading="lazy"
+            />
+          )}
 
           {/* Action Buttons */}
           <div className="flex items-center gap-3 flex-wrap">
@@ -108,8 +118,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         </div>
 
-        {/* ── Image Half ── */}
-        <div className="w-full md:w-[42%] flex-shrink-0">
+        {/* ── Image Half — hidden on mobile (rendered inline above), visible on md+ ── */}
+        <div className="hidden md:block w-full md:w-[42%] flex-shrink-0">
           <div className="relative rounded-2xl overflow-hidden aspect-video bg-slate-800/40 shadow-2xl ring-1 ring-white/5 group-hover:ring-accent/20 transition-all duration-500">
             {project.imageUrl ? (
               <>

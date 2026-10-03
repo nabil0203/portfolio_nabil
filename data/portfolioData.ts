@@ -26,7 +26,7 @@ export const siteMetadata: SiteMetadata = {
 // Personal Information
 export const personalInfo: PersonalInfo = {
   name: 'Chowdhury Nabil Ahmed',
-  title: 'Web Developer, Majoring in Software Engineering',
+  title: 'Software Developer, Majoring in Software Engineering',
   heroDescription: 'Building scalable web applications with Django and React. Problem solver with 400+ solved problems across major platforms.',
   aboutDescription: [
     'I’m a Software Engineering undergraduate with a focus on web development using Django, React, and REST APIs. I prioritize clean architecture, performance, and maintainable code.',

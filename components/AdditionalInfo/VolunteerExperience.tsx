@@ -1,43 +1,41 @@
 'use client'
 
-import { Calendar } from 'lucide-react'
+import { HeartHandshake } from 'lucide-react'
 import { volunteerExperiencesData } from '@/data/portfolioData'
 
+/**
+ * Standalone card. Dates sit in the left column, aligned with the label
+ * column of the Personal Details card above it.
+ */
 export default function VolunteerExperience() {
+  if (volunteerExperiencesData.length === 0) return null
+
   return (
-    <div className="rounded-lg border border-steel-300 bg-steel-100  p-6 sm:p-8 flex flex-col">
-       <div className="flex items-center gap-3 sm:gap-4 mb-8">
-         <span className="text-accent text-xl font-light select-none flex-shrink-0">—</span>
-         <h3 className="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.10em] text-steel-800 leading-none">
-            Volunteer Experience
-         </h3>
+    <div className="overflow-hidden rounded-xl border border-steel-300 bg-steel-100">
+      <div className="flex items-center gap-3 border-b border-steel-300 px-6 py-4 sm:px-8">
+        <HeartHandshake className="h-5 w-5 shrink-0 text-steel-500" aria-hidden="true" />
+        <h3 className="font-display text-base font-semibold text-steel-800">Volunteering</h3>
       </div>
-      
-      <div className="space-y-5 flex-1">
-        {volunteerExperiencesData.map((experience) => (
-          <div 
-              key={`${experience.organization}-${experience.role}`} 
-              className="group bg-steel-100 border border-steel-300 hover:border-steel-300 p-5 rounded-xl transition-all duration-300 hover:bg-steel-100"
+
+      <ul>
+        {volunteerExperiencesData.map(experience => (
+          <li
+            key={`${experience.organization}-${experience.role}`}
+            className="grid gap-1 border-t border-steel-300 first:border-t-0 px-6 py-5 sm:px-8 md:grid-cols-[13rem_1fr] md:gap-10"
           >
-            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-3">
-                <div>
-                    <h4 className="text-base sm:text-lg font-bold text-steel-800/90 group-hover:text-accent-glow transition-colors whitespace-nowrap overflow-hidden text-ellipsis">{experience.organization}</h4>
-                    <h5 className="text-sm sm:text-base font-medium text-accent mt-0.5">{experience.role}</h5>
-                </div>
-                <div className="flex items-center gap-1.5 text-xs sm:text-sm text-secondary bg-steel-100 px-2.5 py-1.5 rounded-md border border-steel-300 whitespace-nowrap w-fit">
-                    <Calendar className="w-3.5 h-3.5" />
-                    <span>{experience.duration}</span>
-                </div>
-            </div>
-            
-            {experience.description && (
-              <p className="text-sm sm:text-base text-secondary leading-relaxed mt-4 pt-4 border-t border-steel-300">
+            <p className="text-sm tabular-nums text-steel-500 md:pt-0.5">{experience.duration}</p>
+            <div className="min-w-0">
+              <p className="text-[15px] font-semibold text-steel-800">{experience.organization}</p>
+              <p className="text-sm text-steel-500">{experience.role}</p>
+              {experience.description && (
+                <p className="mt-2 max-w-prose text-sm leading-relaxed text-steel-600">
                   {experience.description}
-              </p>
-            )}
-          </div>
+                </p>
+              )}
+            </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

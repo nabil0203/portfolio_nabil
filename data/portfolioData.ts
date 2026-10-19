@@ -52,7 +52,7 @@ export const statsData = [
   },
   {
     label: 'Years of Learning',
-    value: '2+',
+    value: '2.5+',
   }
 ]
 
@@ -94,28 +94,29 @@ export const educationData = [
 // - Devicons CDN:      https://cdn.jsdelivr.net/gh/devicons/devicon/icons/<name>/<file>.svg
 export const skillsData: Skill[] = [
 
-  // Backend
-  { name: 'Django', category: 'Backend', logo: 'https://cdn.simpleicons.org/django/989898' },
-  { name: 'Django REST Framework', category: 'Backend', logo: 'https://www.django-rest-framework.org/img/logo.png' },
-
-  // Frontend
-  { name: 'React', category: 'Frontend', logo: 'https://cdn.simpleicons.org/react' },
-  { name: 'Tailwind CSS', category: 'Frontend', logo: 'https://cdn.simpleicons.org/tailwindcss' },
-  { name: 'Bootstrap', category: 'Frontend', logo: 'https://cdn.simpleicons.org/bootstrap' },
-
-
-  // Database
-  { name: 'PostgreSQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-  { name: 'MySQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-  { name: 'SQLite', category: 'Database', logo: 'https://cdn.simpleicons.org/sqlite/989898' },
-  { name: 'Supabase', category: 'Database', logo: 'https://cdn.simpleicons.org/supabase' },
-
   // Programming Languages
   { name: 'Python', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
   { name: 'C', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
   { name: 'C++', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
   { name: 'JavaScript', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
   { name: 'Java', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+
+
+  // Backend
+  { name: 'Django', category: 'Backend', logo: 'https://cdn.simpleicons.org/django/989898' },
+  { name: 'Django REST Framework', category: 'Backend', logo: 'https://www.django-rest-framework.org/img/logo.png' },
+  { name: 'JWT', category: 'Backend', logo: 'https://img.icons8.com/?size=100&id=rHpveptSuwDz&format=png&color=000000' },
+
+  // Frontend
+  { name: 'React', category: 'Frontend', logo: 'https://cdn.simpleicons.org/react' },
+  { name: 'Tailwind CSS', category: 'Frontend', logo: 'https://cdn.simpleicons.org/tailwindcss' },
+  { name: 'Bootstrap', category: 'Frontend', logo: 'https://cdn.simpleicons.org/bootstrap' },
+
+  // Database
+  { name: 'PostgreSQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+  { name: 'MySQL', category: 'Database', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+  { name: 'SQLite', category: 'Database', logo: 'https://cdn.simpleicons.org/sqlite/989898' },
+  { name: 'Supabase', category: 'Database', logo: 'https://cdn.simpleicons.org/supabase' },
 
   // Tools
   { name: 'GitHub', category: 'Tools', logo: 'https://cdn.simpleicons.org/github/white' },
@@ -156,7 +157,7 @@ export const projectsData: Project[] = [
     liveUrl: 'https://farm2market-dtll.onrender.com/',
     imageUrl: '/images/projects/farm2market.png',
     featured: true,
-    year: '2025',
+    year: '2026',
     status: 'Live',
   },
   {

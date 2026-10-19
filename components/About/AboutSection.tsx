@@ -7,9 +7,9 @@ import AboutCard from './AboutCard'
 
 export default function AboutSection() {
   return (
-    <section id="about" className="pt-24 pb-24 md:pb-32 scroll-mt-24 lg:scroll-mt-0 bg-steel-50">
-      <div className="section-content">
-        <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="pt-24 pb-24 md:pb-32 scroll-mt-16 bg-steel-50">
+      <div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <SectionHeader label="About" highlight="Me" className="mb-16" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch mt-10">

@@ -7,9 +7,9 @@ import ContactForm from './ContactForm'
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-steel-50 scroll-mt-24 lg:scroll-mt-0">
-      <div className="section-content">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section id="contact" className="py-24 relative overflow-hidden bg-steel-50 scroll-mt-16">
+      <div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
           <SectionHeader label="Get In" highlight="Touch" className="mb-16" />
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">

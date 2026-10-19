@@ -1,75 +1,61 @@
 'use client'
 
-import { Languages, Award, GraduationCap, Heart } from 'lucide-react'
+import { Languages, GraduationCap, Compass } from 'lucide-react'
 import { personalDetailsData } from '@/data/portfolioData'
+import InfoRow from './InfoRow'
 
+// "Bengali (Native)" -> { name: "Bengali", level: "Native" }
+const splitLevel = (value: string) => {
+  const match = value.match(/^(.*?)\s*\((.*)\)\s*$/)
+  return match ? { name: match[1], level: match[2] } : { name: value, level: '' }
+}
+
+const PlainList = ({ items }: { items: string[] }) => (
+  <ul className="space-y-2">
+    {items.map(item => (
+      <li key={item} className="text-[15px] leading-relaxed text-steel-700">
+        {item}
+      </li>
+    ))}
+  </ul>
+)
+
+/** Renders as rows inside the shared profile sheet. */
 export default function PersonalDetails() {
+  const { languages, programs, hobbies } = personalDetailsData
+
   return (
-    <div className="rounded-lg border border-steel-300 bg-steel-100  p-6 sm:p-8">
-      <div className="flex items-center gap-3 sm:gap-4 mb-8">
-         <span className="text-accent text-xl font-light select-none flex-shrink-0">—</span>
-         <h3 className="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.10em] text-steel-800 leading-none">
-            Personal Details
-         </h3>
-      </div>
-      
-      <div className="space-y-8">
-        {personalDetailsData.languages.length > 0 && (
-          <div className="group">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-lg bg-steel-100 border border-steel-300 group-hover:border-accent/40 group-hover:bg-steel-200 transition-colors">
-                  <Languages className="w-5 h-5 text-accent" />
-              </div>
-              <h4 className="text-lg font-semibold text-steel-800">Languages</h4>
-            </div>
-            <div className="flex flex-wrap gap-2 sm:gap-3 pl-14">
-              {personalDetailsData.languages.map((language) => (
-                <span key={language} className="px-3 py-1.5 rounded-lg bg-steel-200 border border-steel-300 text-secondary text-sm font-medium hover:border-cyan-700/50 transition-colors">
-                    {language}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}  
-
-        {personalDetailsData.programs.length > 0 && (
-          <div className="group">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-lg bg-steel-100 border border-steel-300 group-hover:border-accent/40 group-hover:bg-steel-200 transition-colors">
-                  <GraduationCap className="w-5 h-5 text-accent" />
-              </div>
-              <h4 className="text-lg font-semibold text-steel-800">Programs</h4>
-            </div>
-            <ul className="space-y-2.5 pl-14">
-              {personalDetailsData.programs.map((program) => (
-                <li key={program} className="text-secondary text-sm sm:text-base flex items-start gap-2.5 leading-relaxed">
-                  <span className="text-accent mt-1 text-xs">▹</span>
-                  {program}
+    <>
+      {languages.length > 0 && (
+        <InfoRow Icon={Languages} label="Languages">
+          <ul className="flex flex-wrap gap-2">
+            {languages.map(language => {
+              const { name, level } = splitLevel(language)
+              return (
+                <li
+                  key={language}
+                  className="flex items-baseline gap-2 rounded-md border border-steel-300 bg-steel-50 px-3 py-1.5"
+                >
+                  <span className="text-sm font-semibold text-steel-800">{name}</span>
+                  {level && <span className="text-sm text-steel-500">{level}</span>}
                 </li>
-              ))}
-            </ul>
-          </div>
-        )}
+              )
+            })}
+          </ul>
+        </InfoRow>
+      )}
 
-        {personalDetailsData.hobbies.length > 0 && (
-          <div className="group">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 rounded-lg bg-steel-100 border border-steel-300 group-hover:border-accent/40 group-hover:bg-steel-200 transition-colors">
-                  <Heart className="w-5 h-5 text-accent" />
-              </div>
-              <h4 className="text-lg font-semibold text-steel-800">Hobbies</h4>
-            </div>
-            <ul className="space-y-2.5 pl-14">
-              {personalDetailsData.hobbies.map((hobby) => (
-                <li key={hobby} className="text-secondary text-sm sm:text-base flex items-start gap-2.5 leading-relaxed">
-                  <span className="text-accent mt-1 text-xs">▹</span>
-                  {hobby}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    </div>
+      {programs.length > 0 && (
+        <InfoRow Icon={GraduationCap} label="Programs">
+          <PlainList items={programs} />
+        </InfoRow>
+      )}
+
+      {hobbies.length > 0 && (
+        <InfoRow Icon={Compass} label="Interests">
+          <PlainList items={hobbies} />
+        </InfoRow>
+      )}
+    </>
   )
 }

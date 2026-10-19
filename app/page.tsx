@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import Sidebar from '@/components/Sidebar/Sidebar'
+import Navbar from '@/components/Navbar/Navbar'
 import MotionDiv from '@/components/MotionDiv'
 import HeroSection from '@/components/Hero/HeroSection'
 import Footer from '@/components/Footer'
@@ -16,8 +16,8 @@ const BackToTop = dynamic(() => import('@/components/BackToTop'))
 
 export default function Home() {
   return (
-    <div className="page-wrapper">
-      <Sidebar />
+    <div>
+      <Navbar />
       <HeroSection />
       <main>
         <MotionDiv>

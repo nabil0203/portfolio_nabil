@@ -26,8 +26,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-steel-800 py-8 relative z-10">
-      <div className="section-content">
-        <div className="max-w-7xl mx-auto px-6">
+      <div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="text-center">
             <div className="flex justify-center space-x-6 mb-6">
               {socialLinks.map((link) => (

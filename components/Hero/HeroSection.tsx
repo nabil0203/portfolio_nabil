@@ -21,10 +21,10 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100dvh] flex flex-col justify-center items-center bg-steel-800 text-steel-50 overflow-hidden px-6 md:px-12 pt-24 sm:pt-0"
+      className="relative min-h-[100dvh] flex flex-col justify-center items-center bg-steel-800 text-steel-50 overflow-hidden pt-24 sm:pt-0"
     >
-      <div className="section-content w-full flex justify-center">
-        <div className="relative z-10 max-w-7xl w-full flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-20 py-12">
+      <div className="w-full">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-20 py-12">
           {/* Text */}
           <motion.div
             className="flex-1 min-w-0 flex flex-col items-start order-2 lg:order-1"
@@ -34,14 +34,14 @@ export default function HeroSection() {
           >
             <motion.h1
               variants={item}
-              className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight leading-[0.95] text-steel-50 mb-8"
+              className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-6xl font-extrabold tracking-tight leading-[0.95] text-steel-50 mb-8"
             >
               {personalInfo.name}
             </motion.h1>
 
             <motion.h2
               variants={item}
-              className="text-lg sm:text-2xl font-semibold text-steel-300 mb-6 max-w-2xl"
+              className="text-lg sm:text-3xl font-semibold text-steel-300 mb-6 max-w-2xl"
             >
               {personalInfo.title.split(',').map((part, index) => (
                 <span key={index} className="block">

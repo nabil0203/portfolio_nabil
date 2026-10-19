@@ -23,11 +23,11 @@ export default function SkillsSection() {
   }
 
   return (
-    <section id="skills" className="pt-24 pb-8 md:pt-32 md:pb-16 scroll-mt-24 lg:scroll-mt-0 relative overflow-hidden bg-steel-50" aria-labelledby="skills-heading">
+    <section id="skills" className="pt-24 pb-8 md:pt-32 md:pb-16 scroll-mt-16 relative overflow-hidden bg-steel-50" aria-labelledby="skills-heading">
       {/* Background decorations for extra modern feel */}
 
-      <div className="section-content">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8 relative z-10">
+      <div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
           <SectionHeader label="Skills" highlight="& Technologies" className="mb-10" id="skills-heading" />
 
           <div className="flex flex-col gap-3">

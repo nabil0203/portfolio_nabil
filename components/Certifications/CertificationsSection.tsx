@@ -64,14 +64,14 @@ export default function CertificationsSection() {
     <>
       <section
         id="certifications"
-        className="py-16 md:py-20 scroll-mt-24 lg:scroll-mt-0 bg-steel-50 relative overflow-hidden"
+        className="py-16 md:py-20 scroll-mt-16 bg-steel-50 relative overflow-hidden"
       >
         {/* Background patterns */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         </div>
 
-        <div className="section-content">
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div>
+          <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
             <SectionHeader label="Courses &" highlight="Certifications" className="mb-12" />
 
             {/* Cards grid */}

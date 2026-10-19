@@ -9,13 +9,13 @@ import EducationCard from './EducationCard'
 
 export default function EducationSection() {
   return (
-    <section id="education" className="py-16 md:py-20 scroll-mt-24 lg:scroll-mt-0 bg-steel-50 relative overflow-hidden">
+    <section id="education" className="py-16 md:py-20 scroll-mt-16 bg-steel-50 relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
       </div>
 
-      <div className="section-content">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
           <SectionHeader label="Academic" highlight="Journey" className="mb-12" />
 
           <div className="relative max-w-6xl mx-auto">
@@ -57,11 +57,10 @@ function TimelineItem({ edu, index }: { edu: Education; index: number }) {
 
       {/* Dot on the bar */}
       <div className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-steel-50 border-2 border-accent/30 flex items-center justify-center -translate-x-1/2 z-20 shadow-none transition-all duration-500 group-hover:border-accent">
-        <div className={`w-3 h-3 rounded-full ${
-          index % 3 === 0 ? 'bg-accent' :
+        <div className={`w-3 h-3 rounded-full ${index % 3 === 0 ? 'bg-accent' :
           index % 3 === 1 ? 'bg-accent-secondary' :
-          'bg-accent-glow'
-        } animate-pulse shadow-none`} />
+            'bg-accent-glow'
+          } animate-pulse shadow-none`} />
       </div>
 
       {/* Empty space for the other side on desktop */}

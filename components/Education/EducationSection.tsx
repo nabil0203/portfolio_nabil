@@ -9,12 +9,9 @@ import EducationCard from './EducationCard'
 
 export default function EducationSection() {
   return (
-    <section id="education" className="py-16 md:py-20 scroll-mt-24 lg:scroll-mt-0 bg-[#030712] relative overflow-hidden">
+    <section id="education" className="py-16 md:py-20 scroll-mt-24 lg:scroll-mt-0 bg-steel-50 relative overflow-hidden">
       {/* Background patterns */}
-      <div className="absolute inset-0 bg-dot-pattern-faint opacity-50 pointer-events-none" />
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 -left-20 w-80 h-80 bg-accent/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-accent-secondary/5 rounded-full blur-[120px]" />
       </div>
 
       <div className="section-content">
@@ -23,7 +20,7 @@ export default function EducationSection() {
 
           <div className="relative max-w-6xl mx-auto">
             {/* Vertical Timeline Bar */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/20 via-accent-secondary/40 to-accent-glow/20 md:-translate-x-1/2" />
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 md:-translate-x-1/2 bg-steel-300" />
 
             <div className="space-y-8 md:space-y-12">
               {educationData.map((edu, index) => (
@@ -59,12 +56,12 @@ function TimelineItem({ edu, index }: { edu: Education; index: number }) {
       </div>
 
       {/* Dot on the bar */}
-      <div className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-background border-2 border-accent/30 flex items-center justify-center -translate-x-1/2 z-20 shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-500 group-hover:border-accent">
+      <div className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-steel-50 border-2 border-accent/30 flex items-center justify-center -translate-x-1/2 z-20 shadow-none transition-all duration-500 group-hover:border-accent">
         <div className={`w-3 h-3 rounded-full ${
           index % 3 === 0 ? 'bg-accent' :
           index % 3 === 1 ? 'bg-accent-secondary' :
           'bg-accent-glow'
-        } animate-pulse shadow-[0_0_10px_currentColor]`} />
+        } animate-pulse shadow-none`} />
       </div>
 
       {/* Empty space for the other side on desktop */}

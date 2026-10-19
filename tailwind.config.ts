@@ -1,30 +1,46 @@
 import type { Config } from 'tailwindcss'
 
+/**
+ * Light Steel palette — nine neutral steps from paper to ink.
+ * steel-50  #F8F9FA   steel-500 #6C757D
+ * steel-100 #E9ECEF   steel-600 #495057
+ * steel-200 #DEE2E6   steel-700 #343A40
+ * steel-300 #CED4DA   steel-800 #212529
+ * steel-400 #ADB5BD
+ */
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        'background': '#020617', // Deep Navy
-        'surface': '#0f172a',    // Dark Slate
-        'accent': '#3b82f6',     // Electric Blue
-        'accent-secondary': '#8b5cf6', // Vibrant Purple (NEW)
-        'accent-glow': '#06b6d4',      // Neon Cyan (NEW)
-        'primary': '#f8fafc',    // High-contrast white
-        'secondary': '#94a3b8',  // Muted Slate
+        steel: {
+          50: '#F8F9FA',
+          100: '#E9ECEF',
+          200: '#DEE2E6',
+          300: '#CED4DA',
+          400: '#ADB5BD',
+          500: '#6C757D',
+          600: '#495057',
+          700: '#343A40',
+          800: '#212529',
+        },
+        // Semantic aliases (kept so existing class names keep working)
+        background: '#F8F9FA',
+        surface: '#E9ECEF',
+        primary: '#212529',
+        secondary: '#495057',
+        accent: '#343A40',
+        'accent-secondary': '#495057',
+        'accent-glow': '#6C757D',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        mono: ['Roboto Mono', 'monospace'],
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'dot-pattern-faint': "url(\"data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231E1E1E' fill-opacity='0.1'%3E%3Ccircle cx='10' cy='10' r='1.5'/%3E%3C/g%3E%3C/svg%3E\")",
+        sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
     },
   },

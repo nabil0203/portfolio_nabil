@@ -29,7 +29,7 @@ export default function BackToTop() {
           exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.3, ease: 'easeIn' } }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
           onClick={scrollToHero}
-          className="fixed right-8 bottom-8 z-50 bg-accent text-primary p-3 rounded-full shadow-lg"
+          className="fixed right-8 bottom-8 z-50 bg-accent text-steel-50 p-3 rounded-full shadow-none"
           whileHover={{ scale: 1.1, transition: { duration: 0.1 } }}
           whileTap={{ scale: 0.9 }}
           aria-label="Back to top"

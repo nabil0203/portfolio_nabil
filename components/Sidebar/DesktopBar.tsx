@@ -27,7 +27,7 @@ export default function DesktopBar({ navItems, activeSection, isVisible }: Deskt
             height: isVisible ? 44 : 40,
           }}
           transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-          className="relative flex items-center justify-center rounded-2xl bg-slate-800/70 border border-accent/25 shadow-[0_0_12px_-4px_rgba(59,130,246,0.4)]"
+          className="relative flex items-center justify-center rounded-lg bg-steel-700 border border-steel-600 shadow-none"
         >
           <Image
             src="/logo.png"
@@ -49,8 +49,8 @@ export default function DesktopBar({ navItems, activeSection, isVisible }: Deskt
             <motion.button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`group relative flex flex-col items-center justify-center w-full mx-auto aspect-square rounded-2xl ${isVisible ? 'max-w-[64px]' : 'max-w-[48px]'
-                } ${isActive ? 'text-white' : 'text-slate-400 hover:text-white'
+              className={`group relative flex flex-col items-center justify-center w-full mx-auto aspect-square rounded-lg ${isVisible ? 'max-w-[64px]' : 'max-w-[48px]'
+                } ${isActive ? 'text-steel-50' : 'text-steel-400 hover:text-steel-50'
                 }`}
               animate={{
                 opacity: isAtHero ? 0.65 : 1,
@@ -66,7 +66,7 @@ export default function DesktopBar({ navItems, activeSection, isVisible }: Deskt
               {isActive && !isAtHero && (
                 <motion.div
                   layoutId="sidebarActiveCapsule"
-                  className="absolute inset-0 bg-accent/25 border border-accent/50 rounded-2xl shadow-[inset_0_0_12px_-4px_rgba(59,130,246,0.2)]"
+                  className="absolute inset-0 bg-steel-50/15 border border-steel-50/30 rounded-lg shadow-none"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
@@ -75,13 +75,13 @@ export default function DesktopBar({ navItems, activeSection, isVisible }: Deskt
 
               <item.Icon
                 size={isActive ? 24 : 20}
-                className={`relative z-10 shrink-0 transition-all duration-300 ${isActive ? 'text-accent' : 'text-slate-500 group-hover:text-accent-glow'
+                className={`relative z-10 shrink-0 transition-all duration-300 ${isActive ? 'text-steel-50' : 'text-steel-400 group-hover:text-steel-50'
                   }`}
               />
 
               <motion.span
                 initial={false}
-                className={`relative z-10 whitespace-nowrap text-[9px] font-bold uppercase tracking-wider overflow-visible px-1 text-center transition-colors duration-300 ${isActive ? 'text-white/80' : 'text-slate-500 group-hover:text-slate-300'
+                className={`relative z-10 whitespace-nowrap text-[9px] font-bold uppercase tracking-wider overflow-visible px-1 text-center transition-colors duration-300 ${isActive ? 'text-steel-100' : 'text-steel-400 group-hover:text-steel-200'
                   }`}
                 animate={{
                   height: isAtHero ? 0 : "auto",
@@ -93,10 +93,10 @@ export default function DesktopBar({ navItems, activeSection, isVisible }: Deskt
               </motion.span>
 
               {/* Tooltip for collapsed state */}
-              <div className={`absolute left-full ml-4 px-3 py-1.5 bg-slate-900/90 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider rounded-xl border border-white/10 shadow-2xl pointer-events-none z-50 whitespace-nowrap transition-all duration-300 ${isAtHero ? 'opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-x-[-8px] group-hover:translate-x-0' : 'hidden'
+              <div className={`absolute left-full ml-4 px-3 py-1.5 bg-steel-800  text-steel-50 text-xs font-bold uppercase tracking-wider rounded-xl border border-steel-600 shadow-none pointer-events-none z-50 whitespace-nowrap transition-all duration-300 ${isAtHero ? 'opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-x-[-8px] group-hover:translate-x-0' : 'hidden'
                 }`}>
                 {/* Left-pointing caret */}
-                <span className="absolute right-full top-1/2 -translate-y-1/2 border-[5px] border-transparent border-r-slate-900/90" />
+                <span className="absolute right-full top-1/2 -translate-y-1/2 border-[5px] border-transparent border-r-steel-800" />
                 {item.label}
               </div>
             </motion.button>

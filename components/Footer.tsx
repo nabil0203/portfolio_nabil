@@ -25,7 +25,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-surface/90 py-6 border-t border-white/5 relative z-10">
+    <footer className="bg-steel-800 py-8 relative z-10">
       <div className="section-content">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
@@ -36,7 +36,7 @@ export default function Footer() {
                   href={link.url}
                   target={link.url.startsWith('http') ? '_blank' : undefined}
                   rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="text-secondary hover:text-accent hover:scale-110 hover:-translate-y-1 transition-all duration-300"
+                  className="text-steel-400 hover:text-steel-50 transition-colors duration-200"
                   aria-label={`Visit ${link.name} profile`}
                 >
                   {link.icon}
@@ -44,7 +44,7 @@ export default function Footer() {
               ))}
             </div>
 
-            <p className="text-gray-400">
+            <p className="text-steel-400 text-sm">
               © {currentYear} {personalInfo.name}. All rights reserved.
             </p>
           </div>

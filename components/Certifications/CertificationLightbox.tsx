@@ -48,7 +48,7 @@ export default function CertificationLightbox({
           onClick={onClose}
         >
           {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-md" />
+          <div className="absolute inset-0 bg-steel-800/85" />
 
           {/* Modal */}
           <motion.div
@@ -58,19 +58,19 @@ export default function CertificationLightbox({
             exit={{ opacity: 0, scale: 0.88, y: 24 }}
             transition={{ duration: 0.3, type: 'spring', bounce: 0.2 }}
             onClick={e => e.stopPropagation()}
-            className="relative z-10 max-w-3xl w-full bg-slate-900/90 backdrop-blur-xl border border-slate-700/60 rounded-3xl shadow-2xl overflow-hidden"
+            className="relative z-10 max-w-3xl w-full bg-steel-100  border border-steel-300 rounded-xl shadow-none overflow-hidden"
           >
             {/* Close — top-right, dim by default, fully visible on hover */}
             <button
               onClick={onClose}
               aria-label="Close certificate viewer"
-              className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-black/40 border border-white/10 flex items-center justify-center text-white/30 hover:text-white hover:bg-red-900/60 hover:border-red-500/40 transition-all duration-200"
+              className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-steel-50 border border-steel-300 flex items-center justify-center text-steel-500 hover:text-steel-800 hover:bg-steel-200 transition-all duration-200"
             >
               <X className="w-4 h-4" />
             </button>
 
             {/* Image area — clean, no overlaid controls */}
-            <div className="relative w-full bg-slate-800/60 flex items-center justify-center min-h-[200px]">
+            <div className="relative w-full bg-steel-100 flex items-center justify-center min-h-[200px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeImage}
@@ -90,11 +90,11 @@ export default function CertificationLightbox({
             </div>
 
             {/* Footer: title+issuer LEFT · nav controls RIGHT */}
-            <div className="px-5 py-3 flex items-center justify-between gap-4 border-t border-slate-700/50">
+            <div className="px-5 py-3 flex items-center justify-between gap-4 border-t border-steel-300">
 
               {/* Left — title + issuer */}
               <div className="min-w-0 flex flex-col gap-0.5">
-                <p className="text-white font-semibold text-xs sm:text-sm truncate">
+                <p className="text-steel-800 font-semibold text-xs sm:text-sm truncate">
                   {cert.title}
                 </p>
                 <span className="inline-flex items-center gap-1 text-xs text-accent-secondary">
@@ -116,13 +116,13 @@ export default function CertificationLightbox({
                         className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
                           i === lightbox.imageIndex
                             ? 'bg-accent scale-125'
-                            : 'bg-slate-600 hover:bg-slate-400'
+                            : 'bg-steel-300 hover:bg-steel-500'
                         }`}
                       />
                     ))}
                   </div>
 
-                  <span className="text-xs text-slate-500 tabular-nums">
+                  <span className="text-xs text-steel-500 tabular-nums">
                     {lightbox.imageIndex + 1}/{cert.images.length}
                   </span>
 
@@ -130,7 +130,7 @@ export default function CertificationLightbox({
                   <button
                     onClick={onPrev}
                     aria-label="Previous image"
-                    className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600/50 flex items-center justify-center text-slate-300 hover:text-white transition-all duration-200"
+                    className="w-8 h-8 rounded-lg bg-steel-50 hover:bg-steel-200 border border-steel-300 flex items-center justify-center text-steel-700 hover:text-steel-800 transition-all duration-200"
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </button>
@@ -139,7 +139,7 @@ export default function CertificationLightbox({
                   <button
                     onClick={onNext}
                     aria-label="Next image"
-                    className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600/50 flex items-center justify-center text-slate-300 hover:text-white transition-all duration-200"
+                    className="w-8 h-8 rounded-lg bg-steel-50 hover:bg-steel-200 border border-steel-300 flex items-center justify-center text-steel-700 hover:text-steel-800 transition-all duration-200"
                   >
                     <ChevronRight className="w-4 h-4" />
                   </button>

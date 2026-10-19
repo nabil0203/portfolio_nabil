@@ -19,22 +19,22 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-steel-50">
       <ScrollToProject />
 
       {/* Top bar */}
-      <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5 px-5 sm:px-8">
+      <header className="sticky top-0 z-50 bg-steel-200  border-b border-steel-300 px-5 sm:px-8">
         <div className="max-w-7xl mx-auto h-16 flex items-center gap-4">
           <Link
             href="/#projects"
-            className="group inline-flex items-center gap-2 text-sm font-medium text-secondary hover:text-white transition-colors duration-200"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-secondary hover:text-steel-800 transition-colors duration-200"
             aria-label="Back to portfolio"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform duration-200" />
             Back
           </Link>
-          <span className="text-white/10">|</span>
-          <h1 className="text-sm font-semibold text-white/70 tracking-wide">
+          <span className="text-steel-800/10">|</span>
+          <h1 className="text-sm font-semibold text-steel-600 tracking-wide">
             All Projects
           </h1>
           <span className="ml-auto text-[11px] font-mono text-secondary/50">
@@ -47,13 +47,12 @@ export default function ProjectsPage() {
       <section className="relative py-14 md:py-20 px-5 sm:px-8 overflow-hidden">
         {/* Background glow */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-accent/10 blur-[120px]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-steel-800 tracking-tight mb-4">
             My{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-secondary to-accent-glow">
+            <span className="text-steel-800 ">
               Projects
             </span>
           </h2>
@@ -77,7 +76,7 @@ export default function ProjectsPage() {
           <div className="mt-8 mb-4 flex justify-center">
             <Link 
               href="/#projects"
-              className="group flex items-center gap-3 px-8 py-4 bg-accent/10 border border-accent/20 rounded-full text-accent-glow font-bold backdrop-blur-md hover:bg-accent hover:text-white hover:border-accent hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] transition-all duration-300"
+              className="group flex items-center gap-3 px-8 py-4 bg-accent/10 border border-accent/20 rounded-full text-accent-glow font-bold  hover:bg-accent hover:text-steel-800 hover:border-accent  transition-all duration-300"
             >
               <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               Back to Main Page

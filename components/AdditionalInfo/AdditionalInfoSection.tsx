@@ -7,10 +7,8 @@ import VolunteerExperience from './VolunteerExperience'
 
 export default function AdditionalInfoSection() {
   return (
-    <section id="additional-information" className="pt-24 pb-12 md:pt-32 md:pb-20 scroll-mt-24 lg:scroll-mt-0 relative overflow-hidden bg-[#0a0a0f]">
+    <section id="additional-information" className="pt-24 pb-12 md:pt-32 md:pb-20 scroll-mt-24 lg:scroll-mt-0 relative overflow-hidden bg-steel-50">
       {/* Background decorations for extra modern feel */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent/5 rounded-full blur-[128px] pointer-events-none -translate-y-1/2 -ml-48 scale-150"></div>
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent-secondary/5 rounded-full blur-[128px] pointer-events-none -translate-y-1/2 -mr-48 scale-150"></div>
 
       <div className="section-content">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">

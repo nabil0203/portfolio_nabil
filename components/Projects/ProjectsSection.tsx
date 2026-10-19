@@ -27,14 +27,10 @@ export default function ProjectsSection() {
   }, [])
 
   return (
-    <section id="projects" className="py-20 md:py-32 scroll-mt-24 lg:scroll-mt-0 relative bg-background overflow-hidden">
+    <section id="projects" className="py-20 md:py-32 scroll-mt-24 lg:scroll-mt-0 relative bg-steel-50 overflow-hidden">
 
       {/* Static Background Layer — no mouse tracking */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(15,23,42,0.6),rgba(2,6,23,1))]" />
-        <div className="absolute inset-0 bg-dot-pattern-faint opacity-[0.15]" />
-        <div className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[100px]" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-accent-secondary/5 blur-[100px]" />
       </div>
 
       <div className="section-content relative z-10">
@@ -66,7 +62,7 @@ export default function ProjectsSection() {
                   aria-label={`View all ${projectsData.length} projects`}
                   className="group rotate-btn"
                 >
-                  <span className="rotate-btn-inner group flex items-center gap-3 px-8 py-3 text-sm font-bold text-white cursor-pointer transition-colors duration-300">
+                  <span className="rotate-btn-inner group flex items-center gap-3 px-8 py-3 text-sm font-semibold text-steel-50 cursor-pointer transition-colors duration-300">
                     <span className="tracking-wide">View All Projects</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>

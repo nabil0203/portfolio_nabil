@@ -35,7 +35,7 @@ export default function MobileNav({ navItems, activeSection }: MobileNavProps) {
 
         {/* Mobile hamburger */}
         <motion.button
-          className="text-secondary hover:text-accent p-2 transition-colors"
+          className="text-steel-300 hover:text-steel-50 p-2 transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           whileTap={{ scale: 0.95 }}
           aria-label="Toggle menu"
@@ -56,7 +56,7 @@ export default function MobileNav({ navItems, activeSection }: MobileNavProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="mt-4 pb-4 border-t border-white/10 pt-4"
+            className="mt-4 pb-4 border-t border-steel-600 pt-4"
           >
             <div className="grid grid-cols-2 gap-2">
               {navItems.map((item) => {
@@ -70,12 +70,12 @@ export default function MobileNav({ navItems, activeSection }: MobileNavProps) {
                     }}
                     className={`relative flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                       isActive 
-                        ? 'bg-accent/10 text-accent border border-accent/20' 
-                        : 'text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
+                        ? 'bg-steel-50/10 text-steel-50 border border-steel-600' 
+                        : 'text-steel-400 hover:text-steel-50 hover:bg-steel-50/10 border border-transparent'
                     }`}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <item.Icon size={16} className={`shrink-0 ${isActive ? 'text-accent' : 'text-slate-500'}`} />
+                    <item.Icon size={16} className={`shrink-0 ${isActive ? 'text-steel-50' : 'text-steel-400'}`} />
                     {item.label}
                   </motion.button>
                 )

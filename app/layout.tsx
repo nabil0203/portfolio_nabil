@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Bricolage_Grotesque, Instrument_Sans } from 'next/font/google'
 import './globals.css'
 import { personalInfo, siteMetadata } from '@/data/portfolioData'
-import { MousePositionProvider } from '@/contexts/MousePositionContext'
 
-const inter = Inter({ subsets: ['latin'] })
+const display = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-display', display: 'swap' })
+const body = Instrument_Sans({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
 
 export const metadata: Metadata = {
   title: siteMetadata.title,
@@ -45,11 +45,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} min-h-screen bg-slate-950 text-white`}>
-        <MousePositionProvider>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <body className="font-sans min-h-screen bg-steel-50 text-steel-800">
+        
           {children}
-        </MousePositionProvider>
+        
       </body>
     </html>
   )

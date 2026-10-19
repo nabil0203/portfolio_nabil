@@ -3,16 +3,25 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --sidebar-width: 0px;
+    --accent-rgb: 52, 58, 64;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply antialiased;
+    @apply antialiased bg-steel-50 text-steel-800;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display), system-ui, sans-serif;
   }
 
   :target {
-    scroll-margin-top: 6rem; 
+    scroll-margin-top: 6rem;
   }
 
   @media (min-width: 1024px) {
@@ -21,15 +30,17 @@
     }
   }
 
-  :root {
-    --sidebar-width: 0px;
-    --accent-rgb: 59, 130, 246;
-    --accent-secondary-rgb: 139, 92, 246;
-    --accent-glow-rgb: 6, 182, 212;
+  :focus-visible {
+    outline: 2px solid #343A40;
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: #343A40;
+    color: #F8F9FA;
   }
 
   .page-wrapper {
-    /* Backgrounds span full width, content uses dynamic padding */
     transition: padding-left 0.4s ease-out;
   }
 
@@ -43,87 +54,41 @@
     }
   }
 
-  /* Badge float keyframes — CSS-only, zero JS cost */
-  @keyframes badgeFloatUp {
-    0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-5px); }
-  }
-  @keyframes badgeFloatDown {
-    0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(5px); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
 @layer components {
-
-  /* ── Rotating-border button ──────────────────────────────────────── */
+  /* Solid ink button that inverts on hover (used for "View All Projects") */
   .rotate-btn {
-    position: relative;
-    border-radius: 0.5rem;   /* rounded-lg */
-    overflow: hidden;
-    padding: 2px;            /* border thickness */
     display: inline-flex;
+    border: 1px solid #212529;
+    border-radius: 0.5rem;
+    background: #212529;
+    transition: background-color 0.2s ease;
   }
+  .rotate-btn:hover { background: #F8F9FA; }
+  .rotate-btn-inner { border-radius: 0.5rem; transition: color 0.2s ease; }
+  .rotate-btn:hover .rotate-btn-inner { color: #212529; }
 
-  .rotate-btn::before {
-    content: '';
-    position: absolute;
-    inset: -100%;            /* oversized so corners stay covered while rotating */
-    background: conic-gradient(
-      from 0deg,
-      #3b82f6,               /* Electric Blue  */
-      #8b5cf6,               /* Vibrant Purple */
-      #06b6d4,               /* Neon Cyan      */
-      #3b82f6                /* back to Blue   */
-    );
-    animation: rotate-border 3s linear infinite;
-    z-index: 0;
-  }
-
-  @keyframes rotate-border {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-  }
-
-  .rotate-btn-inner {
-    position: relative;
-    z-index: 1;
-    border-radius: 6px;      /* 2 px inset from wrapper's 8 px */
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    background: rgba(15, 23, 42, 0.80); /* dark glassmorphism surface */
-  }
-
-
-  /* Custom scrollbar for webkit browsers */
-  ::-webkit-scrollbar {
-    width: 12px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-background;
-  }
-
+  ::-webkit-scrollbar { width: 12px; }
+  ::-webkit-scrollbar-track { background: #E9ECEF; }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-      to bottom,
-      rgba(59, 130, 246, 0.5),
-      rgba(139, 92, 246, 0.5)
-    );
-    @apply rounded-full border-[3px] border-solid border-background bg-clip-padding;
+    background: #ADB5BD;
+    border: 3px solid #E9ECEF;
+    border-radius: 9999px;
+    background-clip: padding-box;
   }
+  ::-webkit-scrollbar-thumb:hover { background: #6C757D; }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(
-      to bottom,
-      rgba(59, 130, 246, 0.8),
-      rgba(139, 92, 246, 0.8)
-    );
-  }
-
-  /* Firefox support */
   * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(59, 130, 246, 0.3) transparent;
+    scrollbar-color: #ADB5BD transparent;
   }
 }

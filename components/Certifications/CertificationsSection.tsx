@@ -64,13 +64,10 @@ export default function CertificationsSection() {
     <>
       <section
         id="certifications"
-        className="py-16 md:py-20 scroll-mt-24 lg:scroll-mt-0 bg-[#030712] relative overflow-hidden"
+        className="py-16 md:py-20 scroll-mt-24 lg:scroll-mt-0 bg-steel-50 relative overflow-hidden"
       >
         {/* Background patterns */}
-        <div className="absolute inset-0 bg-dot-pattern-faint opacity-50 pointer-events-none" />
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-          <div className="absolute top-1/3 -right-20 w-80 h-80 bg-accent/5 rounded-full blur-[120px]" />
-          <div className="absolute bottom-1/3 -left-20 w-80 h-80 bg-accent-secondary/5 rounded-full blur-[120px]" />
         </div>
 
         <div className="section-content">

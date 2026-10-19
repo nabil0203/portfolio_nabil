@@ -10,12 +10,12 @@ interface EducationCardProps {
 
 export default function EducationCard({ edu, isRightSide = true }: EducationCardProps) {
   const LogoContent = (
-    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-800/50 border border-slate-700/50 p-2.5 sm:p-3 shadow-lg flex items-center justify-center backdrop-blur-md group-hover:border-accent/40 transition-all duration-300">
+    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-lg bg-steel-100 border border-steel-300 p-2.5 sm:p-3 shadow-none flex items-center justify-center  group-hover:border-accent/40 transition-all duration-300">
       {edu.logo && (
         <img
           src={edu.logo}
           alt={edu.institution}
-          className="w-full h-full object-contain drop-shadow-md group-hover:scale-110 transition-transform duration-300"
+          className="w-full h-full object-contain  group-hover:scale-110 transition-transform duration-300"
         />
       )}
     </div>
@@ -24,19 +24,17 @@ export default function EducationCard({ edu, isRightSide = true }: EducationCard
   return (
     <div className="group relative">
       {/* Subtle glow effect on hover */}
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-accent/20 via-accent-secondary/20 to-accent-glow/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
 
-      <div className={`relative bg-slate-900/60 backdrop-blur-xl border border-slate-800/60 rounded-2xl p-4 sm:p-5 shadow-2xl overflow-hidden transition-all duration-300 group-hover:translate-y-[-2px] group-hover:border-slate-700/60
+      <div className={`relative bg-steel-100  border border-steel-300 rounded-lg p-4 sm:p-5 shadow-none overflow-hidden transition-all duration-300  group-hover:border-steel-300
         ${isRightSide ? 'border-l-4 border-l-accent' : 'md:border-l-0 md:border-r-4 md:border-r-accent border-l-4 border-l-accent'}`}>
 
         {/* Background Decorative Gradient */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-accent/10 transition-colors duration-500" />
 
         <div className="flex flex-col sm:flex-row gap-6 relative z-10">
           {/* Logo Section */}
           <div className="shrink-0">
             {edu.url ? (
-              <a href={edu.url} target="_blank" rel="noopener noreferrer" className="block outline-none focus:ring-2 focus:ring-accent/50 rounded-2xl">
+              <a href={edu.url} target="_blank" rel="noopener noreferrer" className="block outline-none focus:ring-2 focus:ring-accent/50 rounded-lg">
                 {LogoContent}
               </a>
             ) : (
@@ -47,7 +45,7 @@ export default function EducationCard({ edu, isRightSide = true }: EducationCard
           {/* Details Section */}
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2 mb-2">
-              <h4 className="text-lg sm:text-xl font-bold text-white leading-tight group-hover:text-accent transition-colors duration-300">
+              <h4 className="text-lg sm:text-xl font-bold text-steel-800 leading-tight group-hover:text-accent transition-colors duration-300">
                 {edu.degree}
               </h4>
               {edu.url && (

@@ -65,11 +65,11 @@ export default function Sidebar() {
   return (
     <motion.header
       initial={sidebarInitial}
-      className="fixed z-50 bg-slate-950/60 backdrop-blur-xl
+      className="fixed z-50 bg-steel-800/95 
         /* mobile / tablet: top bar */
-        top-0 left-0 right-0 border-b border-white/10 shadow-2xl
+        top-0 left-0 right-0 border-b border-steel-600 shadow-none
         /* large screens: left sidebar (floating design) */
-        lg:top-6 lg:left-6 lg:bottom-6 lg:right-auto lg:border lg:border-white/10 lg:shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)] lg:bg-slate-900/30 lg:hover:bg-slate-900/50"
+        lg:top-6 lg:left-6 lg:bottom-6 lg:right-auto lg:border lg:border-steel-600 lg:shadow-none lg:bg-steel-800/95 lg:hover:bg-steel-800"
       animate={{
         ...sidebarAnimate,
         borderRadius: isLargeScreen ? (isVisible ? 32 : 24) : 0

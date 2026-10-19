@@ -31,7 +31,7 @@ const InputField = ({
         rows={5}
         value={value}
         onChange={onChange}
-        className="w-full bg-slate-900/40 border border-slate-800/60 rounded-xl px-4 py-3 text-white placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-blue-900/60 transition-all resize-none"
+        className="w-full bg-steel-100 border border-steel-300 rounded-xl px-4 py-3 text-steel-800 placeholder:text-steel-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-steel-400 transition-all resize-none"
       />
     ) : (
       <input
@@ -41,7 +41,7 @@ const InputField = ({
         type={type}
         value={value}
         onChange={onChange}
-        className="w-full bg-slate-900/40 border border-slate-800/60 rounded-xl px-4 py-3 text-white placeholder:text-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-blue-900/60 transition-all"
+        className="w-full bg-steel-100 border border-steel-300 rounded-xl px-4 py-3 text-steel-800 placeholder:text-steel-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-steel-400 transition-all"
       />
     )}
   </div>
@@ -51,15 +51,13 @@ export default function ContactForm() {
   const { formData, status, handleChange, handleSubmit } = useContactForm()
 
   return (
-    <div className="bg-slate-900/30 backdrop-blur-xl border border-slate-800/60 p-8 rounded-2xl relative overflow-hidden group">
+    <div className="bg-steel-100  border border-steel-300 p-8 rounded-lg relative overflow-hidden group">
       {/* Decorative glow */}
-      <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-colors duration-500" />
-      <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-colors duration-500" />
 
       <div className="relative z-10 mb-8">
         <div className="flex items-center gap-3 sm:gap-4 mb-4">
           <span className="text-accent text-xl font-light select-none flex-shrink-0">—</span>
-          <h3 className="inline-block text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.10em] text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/50 leading-none">
+          <h3 className="inline-block text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.10em] text-steel-800 leading-none">
             Send a Message
           </h3>
         </div>
@@ -83,7 +81,7 @@ export default function ContactForm() {
         <button
           disabled={status !== 'idle'}
           type="submit"
-          className="w-full relative py-4 px-6 rounded-xl bg-accent text-white font-semibold flex items-center justify-center gap-2 hover:bg-accent/90 disabled:opacity-70 disabled:cursor-not-allowed transition-all overflow-hidden group/btn"
+          className="w-full relative py-4 px-6 rounded-xl bg-accent text-steel-50 font-semibold flex items-center justify-center gap-2 hover:bg-accent/90 disabled:opacity-70 disabled:cursor-not-allowed transition-all overflow-hidden group/btn"
         >
           {status === 'idle' && (
             <>
@@ -117,7 +115,7 @@ export default function ContactForm() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="text-green-400 text-sm text-center font-medium flex items-center justify-center gap-2"
+              className="text-steel-700 text-sm text-center font-medium flex items-center justify-center gap-2"
             >
               <CheckCircle2 size={14} />
               Thanks for reaching out! I'll get back to you soon.
@@ -128,7 +126,7 @@ export default function ContactForm() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="text-red-400 text-sm text-center font-medium flex items-center justify-center gap-2"
+              className="text-steel-800 text-sm text-center font-medium flex items-center justify-center gap-2"
             >
               <AlertCircle size={14} />
               Something went wrong. Please try again later.

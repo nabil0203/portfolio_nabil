@@ -28,7 +28,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       {/* Subtle separator line above each card (except first) */}
       {index !== 0 && (
-        <div className="absolute -top-5 lg:-top-7 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-700/80 to-transparent" />
+        <div className="absolute -top-5 lg:-top-7 left-0 right-0 h-px " />
       )}
 
       <div
@@ -47,7 +47,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </span>
 
           {/* Title */}
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent group-hover:via-accent-secondary group-hover:to-accent-glow transition-all duration-300">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-steel-800 leading-tight mb-4  transition-all duration-300">
             {project.title}
           </h3>
 
@@ -56,7 +56,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             {project.tools.map((tool) => (
               <span
                 key={tool}
-                className="text-[11px] font-semibold px-3 py-1 bg-slate-800/40 text-slate-300 rounded-full border border-slate-700/60 group-hover:border-accent/30 transition-colors duration-300"
+                className="text-[11px] font-semibold px-3 py-1 bg-steel-100 text-steel-700 rounded-full border border-steel-300 group-hover:border-accent/30 transition-colors duration-300"
               >
                 {tool}
               </span>
@@ -73,7 +73,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             <img
               src={project.imageUrl}
               alt={project.title}
-              className="block md:hidden w-full rounded-2xl aspect-video object-cover mb-5"
+              className="block md:hidden w-full rounded-lg aspect-video object-cover mb-5"
               loading="lazy"
             />
           )}
@@ -85,7 +85,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/60 text-slate-300 text-sm font-semibold hover:text-white hover:border-accent/50 hover:bg-accent/10 hover:shadow-md hover:shadow-accent/10 transition-all duration-300"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-steel-100 border border-steel-300 text-steel-700 text-sm font-semibold hover:text-steel-800 hover:border-accent/50 hover:bg-accent/10   transition-all duration-300"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -99,7 +99,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/60 text-slate-300 text-sm font-semibold hover:text-white hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:shadow-md hover:shadow-emerald-500/10 transition-all duration-300"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-steel-100 border border-steel-300 text-steel-700 text-sm font-semibold hover:text-steel-800 hover:border-steel-400 hover:bg-steel-700   transition-all duration-300"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -120,7 +120,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
         {/* ── Image Half — hidden on mobile (rendered inline above), visible on md+ ── */}
         <div className="hidden md:block w-full md:w-[42%] flex-shrink-0">
-          <div className="relative rounded-2xl overflow-hidden aspect-video bg-slate-800/40 shadow-2xl ring-1 ring-white/5 group-hover:ring-accent/20 transition-all duration-500">
+          <div className="relative rounded-lg overflow-hidden aspect-video bg-steel-100 shadow-none ring-1 ring-steel-300 group-hover:ring-steel-500 transition-all duration-500">
             {project.imageUrl ? (
               <>
                 <img
@@ -130,26 +130,26 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                   loading="lazy"
                 />
                 {/* Subtle overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-slate-950/20 opacity-75 group-hover:opacity-95 transition-opacity duration-500" />
+                <div className="absolute inset-0 opacity-75 group-hover:opacity-95 transition-opacity duration-500" />
               </>
             ) : (
               /* Fallback placeholder when no image */
-              <div className="w-full h-full flex items-center justify-center bg-slate-800/60">
-                <Github className="w-12 h-12 text-slate-600" />
+              <div className="w-full h-full flex items-center justify-center bg-steel-100">
+                <Github className="w-12 h-12 text-steel-500" />
               </div>
             )}
 
             {/* Status Badge */}
             {project.status && (
               <div
-                className={`absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider backdrop-blur-md border ${
+                className={`absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider  border ${
                   project.status === 'Live'
-                    ? 'bg-emerald-950/70 border-emerald-500/40 text-emerald-400'
-                    : 'bg-slate-950/60 border-white/10 text-accent'
+                    ? 'bg-steel-800 border-steel-700 text-steel-50'
+                    : 'bg-steel-50 border-steel-300 text-steel-700'
                 }`}
               >
                 {project.status === 'Live' && (
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse align-middle" />
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-steel-700 mr-1.5 animate-pulse align-middle" />
                 )}
                 {project.status}
               </div>

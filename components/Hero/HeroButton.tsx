@@ -16,7 +16,7 @@ const HeroButton: React.FC<HeroButtonProps> = ({ href, children, Icon, ariaLabel
     target="_blank"
     rel="noopener noreferrer"
     aria-label={ariaLabel}
-    className={`inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-3 rounded-lg border text-sm sm:text-base font-semibold transition-colors duration-200 ${
+    className={`inline-flex items-center justify-center gap-2 sm:gap-2.5 px-3 sm:px-6 py-3 rounded-lg border text-sm sm:text-base font-semibold transition-colors duration-200 ${
       primary
         ? 'bg-steel-50 text-steel-800 border-steel-50 hover:bg-steel-200 hover:border-steel-200'
         : 'bg-transparent text-steel-100 border-steel-500 hover:bg-steel-700 hover:border-steel-400'

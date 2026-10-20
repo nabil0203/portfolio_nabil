@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 export default function HeroImage() {
   return (
     <motion.div
-      className="relative w-56 sm:w-72 lg:w-[400px] shrink-0"
+      className="relative w-48 sm:w-60 lg:w-[400px] shrink-0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -20,7 +20,7 @@ export default function HeroImage() {
           src="/images/profile.jpg"
           alt="Chowdhury Nabil Ahmed — profile photo"
           fill
-          sizes="(min-width: 1024px) 400px, 288px"
+          sizes="(min-width: 1024px) 400px, 240px"
           className="object-cover grayscale contrast-[1.05] transition-[filter] duration-700 group-hover:grayscale-0"
           priority
         />

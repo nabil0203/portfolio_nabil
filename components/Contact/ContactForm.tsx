@@ -51,7 +51,7 @@ export default function ContactForm() {
   const { formData, status, handleChange, handleSubmit } = useContactForm()
 
   return (
-    <div className="bg-steel-100  border border-steel-300 p-8 rounded-lg relative overflow-hidden group">
+    <div className="bg-steel-100  border border-steel-300 p-5 sm:p-8 rounded-lg relative overflow-hidden group">
       {/* Decorative glow */}
 
       <div className="relative z-10 mb-8">

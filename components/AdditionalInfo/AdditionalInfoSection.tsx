@@ -9,7 +9,7 @@ export default function AdditionalInfoSection() {
   return (
     <section
       id="additional-information"
-      className="py-20 md:py-28 scroll-mt-16 bg-steel-50"
+      className="py-16 md:py-20 scroll-mt-16 bg-steel-50"
     >
       <div>
         <div className="max-w-7xl mx-auto px-5 sm:px-8">

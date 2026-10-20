@@ -38,20 +38,20 @@ export default function ProjectsSection() {
   }
 
   return (
-    <section id="projects" className="py-20 md:py-28 scroll-mt-16 bg-steel-50">
+    <section id="projects" className="py-16 md:py-20 scroll-mt-16 bg-steel-50">
       <div>
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <SectionHeader label="My" highlight="Projects" className="mb-8 md:mb-10" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start">
             {/* ── Project list (pinned on desktop) ── */}
-            <div className="lg:col-span-4 min-w-0 lg:sticky lg:top-8 lg:self-start">
+            <div className="lg:col-span-4 min-w-0 lg:sticky lg:top-28 lg:self-start">
               <div
                 role="tablist"
                 aria-label="Projects"
                 aria-orientation="vertical"
                 onKeyDown={onKeyDown}
-                className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto lg:max-h-[calc(100dvh-4rem)] pb-2 lg:pb-0 lg:pr-1 snap-x"
+                className="flex flex-nowrap md:flex-wrap lg:flex-nowrap lg:flex-col gap-2 overflow-x-auto md:overflow-x-visible lg:overflow-y-auto lg:max-h-[calc(100dvh-7rem)] pb-2 lg:pb-0 lg:pr-1 snap-x"
               >
                 {projectsData.map((p, i) => {
                   const isActive = p.id === project.id

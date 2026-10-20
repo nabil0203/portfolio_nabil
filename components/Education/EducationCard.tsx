@@ -26,7 +26,7 @@ export default function EducationCard({ edu, isRightSide = true }: EducationCard
       {/* Subtle glow effect on hover */}
 
       <div className={`relative bg-steel-100  border border-steel-300 rounded-lg p-4 sm:p-5 shadow-none overflow-hidden transition-all duration-300  group-hover:border-steel-300
-        ${isRightSide ? 'border-l-4 border-l-accent' : 'md:border-l-0 md:border-r-4 md:border-r-accent border-l-4 border-l-accent'}`}>
+        ${isRightSide ? 'border-l-4 border-l-accent' : 'lg:border-l-0 lg:border-r-4 lg:border-r-accent border-l-4 border-l-accent'}`}>
 
         {/* Background Decorative Gradient */}
 

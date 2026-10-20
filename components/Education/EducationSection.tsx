@@ -20,7 +20,7 @@ export default function EducationSection() {
 
           <div className="relative max-w-6xl mx-auto">
             {/* Vertical Timeline Bar */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 md:-translate-x-1/2 bg-steel-300" />
+            <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-0.5 lg:-translate-x-1/2 bg-steel-300" />
 
             <div className="space-y-8 md:space-y-12">
               {educationData.map((edu, index) => (
@@ -42,9 +42,9 @@ function TimelineItem({ edu, index }: { edu: Education; index: number }) {
   const isEven = index % 2 === 0
 
   return (
-    <div className={`relative flex items-center justify-between w-full mb-8 last:mb-0 group ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+    <div className={`relative flex items-center justify-between w-full mb-8 last:mb-0 group ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
       {/* Content Card Area */}
-      <div className="w-full md:w-[48%] pl-12 md:pl-0">
+      <div className="w-full lg:w-[48%] pl-12 lg:pl-0">
         <motion.div
           initial={{ opacity: 0, x: isEven ? 50 : -50, scale: 0.95 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
@@ -56,7 +56,7 @@ function TimelineItem({ edu, index }: { edu: Education; index: number }) {
       </div>
 
       {/* Dot on the bar */}
-      <div className="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-steel-50 border-2 border-accent/30 flex items-center justify-center -translate-x-1/2 z-20 shadow-none transition-all duration-500 group-hover:border-accent">
+      <div className="absolute left-4 lg:left-1/2 w-8 h-8 rounded-full bg-steel-50 border-2 border-accent/30 flex items-center justify-center -translate-x-1/2 z-20 shadow-none transition-all duration-500 group-hover:border-accent">
         <div className={`w-3 h-3 rounded-full ${index % 3 === 0 ? 'bg-accent' :
           index % 3 === 1 ? 'bg-accent-secondary' :
             'bg-accent-glow'
@@ -64,7 +64,7 @@ function TimelineItem({ edu, index }: { edu: Education; index: number }) {
       </div>
 
       {/* Empty space for the other side on desktop */}
-      <div className="hidden md:block md:w-[48%]" />
+      <div className="hidden lg:block lg:w-[48%]" />
     </div>
   )
 }

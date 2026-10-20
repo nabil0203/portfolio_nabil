@@ -7,7 +7,7 @@ import ContactForm from './ContactForm'
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-steel-50 scroll-mt-16">
+    <section id="contact" className="py-16 md:py-20 relative overflow-hidden bg-steel-50 scroll-mt-16">
       <div>
         <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
           <SectionHeader label="Get In" highlight="Touch" className="mb-16" />

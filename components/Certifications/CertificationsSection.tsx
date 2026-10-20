@@ -66,14 +66,15 @@ export default function CertificationsSection() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <SectionHeader label="Courses &" highlight="Certifications" className="mb-8 md:mb-10" />
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             {certificationsData.map((cert, certIndex) => (
-              <CertificationCard
-                key={cert.title}
-                cert={cert}
-                index={certIndex}
-                onOpen={(imageIndex = 0) => openLightbox(certIndex, imageIndex)}
-              />
+              <div key={cert.title} className="md:max-lg:[&:last-child:nth-child(odd)]:col-span-2">
+                <CertificationCard
+                  cert={cert}
+                  index={certIndex}
+                  onOpen={(imageIndex = 0) => openLightbox(certIndex, imageIndex)}
+                />
+              </div>
             ))}
           </div>
         </div>

@@ -25,7 +25,7 @@ export default function SkillsSection() {
   return (
     <section
       id="skills"
-      className="py-20 md:py-28 scroll-mt-16 bg-steel-50"
+      className="py-16 md:py-20 scroll-mt-16 bg-steel-50"
       aria-labelledby="skills-heading"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8">

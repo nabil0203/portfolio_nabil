@@ -7,7 +7,7 @@ import AboutCard from './AboutCard'
 
 export default function AboutSection() {
   return (
-    <section id="about" className="pt-24 pb-24 md:pb-32 scroll-mt-16 bg-steel-50">
+    <section id="about" className="py-16 md:py-20 scroll-mt-16 bg-steel-50">
       <div>
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <SectionHeader label="About" highlight="Me" className="mb-16" />

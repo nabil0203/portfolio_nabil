@@ -21,27 +21,27 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100dvh] flex flex-col justify-center items-center bg-steel-800 text-steel-50 overflow-hidden pt-24 sm:pt-0"
+      className="relative min-h-[100dvh] flex flex-col justify-center items-center bg-steel-800 text-steel-50 overflow-hidden pt-24 md:pt-0"
     >
       <div className="w-full">
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-20 py-12">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-12 md:gap-10 lg:gap-20 py-12">
           {/* Text */}
           <motion.div
-            className="flex-1 min-w-0 flex flex-col items-start order-2 lg:order-1"
+            className="flex-1 min-w-0 flex flex-col items-start order-2 md:order-1"
             variants={container}
             initial="hidden"
             animate="visible"
           >
             <motion.h1
               variants={item}
-              className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-6xl font-extrabold tracking-tight leading-[0.95] text-steel-50 mb-8"
+              className="font-display text-5xl sm:text-6xl md:text-5xl lg:text-7xl xl:text-6xl font-extrabold tracking-tight leading-[0.95] text-steel-50 mb-8"
             >
               {personalInfo.name}
             </motion.h1>
 
             <motion.h2
               variants={item}
-              className="text-lg sm:text-3xl font-semibold text-steel-300 mb-6 max-w-2xl"
+              className="text-lg sm:text-2xl lg:text-3xl font-semibold text-steel-300 mb-6 max-w-2xl"
             >
               {personalInfo.title.split(',').map((part, index) => (
                 <span key={index} className="block">
@@ -57,7 +57,7 @@ export default function HeroSection() {
               {personalInfo.heroDescription}
             </motion.p>
 
-            <motion.div variants={item} className="flex flex-wrap gap-3">
+            <motion.div variants={item} className="flex flex-wrap gap-2 sm:gap-3">
               {contactData.resume && (
                 <HeroButton href={contactData.resume} Icon={FileText} ariaLabel="View my Resume" primary>
                   Resume
@@ -73,7 +73,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Portrait */}
-          <div className="order-1 lg:order-2 pr-4 pb-4 sm:pr-5 sm:pb-5">
+          <div className="order-1 md:order-2 self-center md:self-auto pr-4 pb-4 sm:pr-5 sm:pb-5">
             <HeroImage />
           </div>
         </div>

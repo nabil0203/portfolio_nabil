@@ -1,9 +1,21 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Copy, Check } from 'lucide-react'
 import { contactItems } from '@/data/portfolioData'
 
 export default function ContactInfo() {
+  const [copied, setCopied] = useState(false)
+
+  const copyEmail = async (email: string) => {
+    try {
+      await navigator.clipboard.writeText(email)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {}
+  }
+
   return (
     <div className="space-y-8 lg:pt-8">
       <div>
@@ -33,7 +45,26 @@ export default function ContactInfo() {
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-xs sm:text-sm text-secondary font-medium">{item.label}</p>
-              {item.href ? (
+              {item.label === 'Email' ? (
+                <div className="flex items-center gap-2 mt-0.5 min-w-0">
+                  <span className="text-steel-800 font-medium text-[13px] sm:text-sm md:text-base truncate select-all">
+                    {item.value}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => copyEmail(item.value)}
+                    title={copied ? 'Copied!' : 'Copy email'}
+                    aria-label="Copy email"
+                    className="p-1 shrink-0 text-secondary hover:text-accent transition-colors"
+                  >
+                    {copied ? (
+                      <Check className="w-4 h-4 text-emerald-600" />
+                    ) : (
+                      <Copy className="w-4 h-4" />
+                    )}
+                  </button>
+                </div>
+              ) : item.href ? (
                 <a
                   href={item.href}
                   target="_blank"

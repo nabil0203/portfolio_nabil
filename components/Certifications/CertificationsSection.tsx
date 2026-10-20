@@ -62,29 +62,19 @@ export default function CertificationsSection() {
 
   return (
     <>
-      <section
-        id="certifications"
-        className="py-16 md:py-20 scroll-mt-16 bg-steel-50 relative overflow-hidden"
-      >
-        {/* Background patterns */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        </div>
+      <section id="certifications" className="py-16 md:py-20 scroll-mt-16 bg-steel-50">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+          <SectionHeader label="Courses &" highlight="Certifications" className="mb-8 md:mb-10" />
 
-        <div>
-          <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
-            <SectionHeader label="Courses &" highlight="Certifications" className="mb-12" />
-
-            {/* Cards grid */}
-            <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {certificationsData.map((cert, certIndex) => (
-                <CertificationCard
-                  key={cert.title}
-                  cert={cert}
-                  index={certIndex}
-                  onOpen={() => openLightbox(certIndex, 0)}
-                />
-              ))}
-            </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+            {certificationsData.map((cert, certIndex) => (
+              <CertificationCard
+                key={cert.title}
+                cert={cert}
+                index={certIndex}
+                onOpen={(imageIndex = 0) => openLightbox(certIndex, imageIndex)}
+              />
+            ))}
           </div>
         </div>
       </section>

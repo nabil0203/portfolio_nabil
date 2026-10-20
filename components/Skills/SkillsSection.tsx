@@ -23,11 +23,13 @@ export default function SkillsSection() {
   }
 
   return (
-    <section id="skills" className="pt-24 pb-8 md:pt-32 md:pb-16 scroll-mt-16 relative overflow-hidden bg-steel-50" aria-labelledby="skills-heading">
-      {/* Background decorations for extra modern feel */}
-
-      <div>
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
+    <section
+      id="skills"
+      className="py-20 md:py-28 scroll-mt-16 bg-steel-50"
+      aria-labelledby="skills-heading"
+    >
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="mx-auto w-fit max-w-full">
           <SectionHeader label="Skills" highlight="& Technologies" className="mb-10" id="skills-heading" />
 
           <div className="flex flex-col gap-3">

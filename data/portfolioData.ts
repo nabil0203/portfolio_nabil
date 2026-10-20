@@ -98,8 +98,8 @@ export const skillsData: Skill[] = [
   { name: 'Python', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
   { name: 'C', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
   { name: 'C++', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
-  { name: 'JavaScript', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
   { name: 'Java', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+  { name: 'JavaScript', category: 'Programming Languages', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
 
 
   // Backend
@@ -119,10 +119,14 @@ export const skillsData: Skill[] = [
   { name: 'Supabase', category: 'Database', logo: 'https://cdn.simpleicons.org/supabase' },
 
   // Tools
-  { name: 'GitHub', category: 'Tools', logo: 'https://cdn.simpleicons.org/github/white' },
   { name: 'Git', category: 'Tools', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+  { name: 'GitHub', category: 'Tools', logo: 'https://cdn.simpleicons.org/github/black' },
   { name: 'Postman', category: 'Tools', logo: 'https://cdn.simpleicons.org/postman' },
   { name: 'VS Code', category: 'Tools', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
+  
+  // deployment
+  {name: 'Render', category: 'Deployment', logo: 'https://cdn.simpleicons.org/render'},
+  {name: 'Vercel', category: 'Deployment', logo: 'https://cdn.simpleicons.org/vercel'},
 
   // Others
   { name: 'Data Structures', category: 'Others' },
@@ -375,7 +379,7 @@ export const certificationsData = [
   },
   {
     title: 'International English Language Testing System (IELTS)',
-    issuer: 'Band 7.0',
+    issuer: 'IDP',
     icon: 'globe',
     images: [
       '/images/certifications/ielts.jpg',

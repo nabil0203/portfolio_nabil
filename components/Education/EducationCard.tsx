@@ -1,92 +1,86 @@
 'use client'
 
-import { GraduationCap, Calendar, Award, ExternalLink } from 'lucide-react'
+import { Award, ArrowUpRight } from 'lucide-react'
 import type { Education } from '@/data/portfolioDataTypes'
 
 interface EducationCardProps {
   edu: Education
-  isRightSide?: boolean
 }
 
-export default function EducationCard({ edu, isRightSide = true }: EducationCardProps) {
-  const LogoContent = (
-    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-lg bg-steel-100 border border-steel-300 p-2.5 sm:p-3 shadow-none flex items-center justify-center  group-hover:border-accent/40 transition-all duration-300">
-      {edu.logo && (
-        <img
-          src={edu.logo}
-          alt={edu.institution}
-          className="w-full h-full object-contain  group-hover:scale-110 transition-transform duration-300"
-        />
-      )}
+// "CGPA: 3.91" -> { label: "CGPA", value: "3.91" }
+const splitGrade = (gpa: string) => {
+  const [label, ...rest] = gpa.split(':')
+  return rest.length ? { label: label.trim(), value: rest.join(':').trim() } : { label: 'Grade', value: gpa }
+}
+
+/**
+ * One education entry. The grade is the key figure, so it gets its own
+ * large number on the right; everything else reads top to bottom.
+ */
+export default function EducationCard({ edu }: EducationCardProps) {
+  const grade = edu.gpa ? splitGrade(edu.gpa) : null
+
+  const logo = (
+    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-steel-300 bg-steel-50 p-2 sm:h-14 sm:w-14 sm:p-2.5">
+      {edu.logo && <img src={edu.logo} alt="" className="h-full w-full object-contain" />}
     </div>
   )
 
   return (
-    <div className="group relative">
-      {/* Subtle glow effect on hover */}
+    <article className="rounded-xl border border-steel-300 bg-steel-100 p-4 sm:p-6">
+      <div className="flex items-start gap-3 sm:gap-4">
+        {logo}
 
-      <div className={`relative bg-steel-100  border border-steel-300 rounded-lg p-4 sm:p-5 shadow-none overflow-hidden transition-all duration-300  group-hover:border-steel-300
-        ${isRightSide ? 'border-l-4 border-l-accent' : 'lg:border-l-0 lg:border-r-4 lg:border-r-accent border-l-4 border-l-accent'}`}>
-
-        {/* Background Decorative Gradient */}
-
-        <div className="flex flex-col sm:flex-row gap-6 relative z-10">
-          {/* Logo Section */}
-          <div className="shrink-0">
+        <div className="min-w-0 flex-1">
+          <h4 className="font-display text-base font-semibold leading-snug text-steel-800 sm:text-xl">
+            {edu.degree}
+          </h4>
+          <p className="mt-0.5 text-sm font-medium text-steel-600 sm:text-base">
             {edu.url ? (
-              <a href={edu.url} target="_blank" rel="noopener noreferrer" className="block outline-none focus:ring-2 focus:ring-accent/50 rounded-lg">
-                {LogoContent}
+              <a
+                href={edu.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-steel-800"
+              >
+                {edu.institution}
+                <ArrowUpRight className="ml-1 inline h-3.5 w-3.5 align-[-2px]" aria-hidden="true" />
               </a>
             ) : (
-              LogoContent
+              edu.institution
             )}
-          </div>
-
-          {/* Details Section */}
-          <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between gap-2 mb-2">
-              <h4 className="text-lg sm:text-xl font-bold text-steel-800 leading-tight group-hover:text-accent transition-colors duration-300">
-                {edu.degree}
-              </h4>
-              {edu.url && (
-                <a
-                  href={edu.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-secondary hover:text-accent transition-colors p-1"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              )}
-            </div>
-
-            <p className="text-accent font-semibold text-sm sm:text-base mb-4 tracking-wide">
-              {edu.institution}
-            </p>
-
-            <div className="flex flex-wrap gap-3 mt-auto">
-              {edu.gpa && (
-                <div className="flex items-center gap-2 bg-accent/10 rounded-xl py-1.5 px-4 border border-accent/20">
-                  <GraduationCap className="w-3.5 h-3.5 text-accent" />
-                  <span className="text-secondary text-sm font-medium">{edu.gpa}</span>
-                </div>
-              )}
-
-              <div className="flex items-center gap-2 bg-accent-secondary/10 rounded-xl py-1.5 px-4 border border-accent-secondary/20">
-                <Calendar className="w-3.5 h-3.5 text-accent-secondary" />
-                <span className="text-secondary text-sm font-medium">{edu.graduation}</span>
-              </div>
-
-              {edu.description && (
-                <div className="flex items-center gap-2 bg-accent-glow/10 rounded-xl py-1.5 px-4 border border-accent-glow/20">
-                  <Award className="w-3.5 h-3.5 text-accent-glow" />
-                  <span className="text-secondary text-sm font-medium">{edu.description}</span>
-                </div>
-              )}
-            </div>
-          </div>
+          </p>
         </div>
+
+        {grade && (
+          <div className="hidden shrink-0 text-right sm:block">
+            <p className="font-display text-2xl font-bold leading-none tabular-nums text-steel-800 sm:text-3xl">
+              {grade.value}
+            </p>
+            <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-steel-500">
+              {grade.label}
+            </p>
+          </div>
+        )}
       </div>
-    </div>
+
+      {(edu.description || grade) && (
+        <div className={`mt-4 flex flex-col gap-2 border-t border-steel-300 pt-3 ${edu.description ? '' : 'sm:hidden'}`}>
+          {/* Phones: the grade moves down here so the title gets the full width */}
+          {grade && (
+            <p className="flex items-baseline gap-2 sm:hidden">
+              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-steel-500">{grade.label}</span>
+              <span className="font-display text-lg font-bold tabular-nums text-steel-800">{grade.value}</span>
+            </p>
+          )}
+          {edu.description && (
+            <p className="flex items-start gap-2 text-sm text-steel-700">
+              <Award className="mt-0.5 h-4 w-4 shrink-0 text-steel-500" aria-hidden="true" />
+              {edu.description}
+            </p>
+          )}
+        </div>
+      )}
+    </article>
   )
 }

@@ -21,7 +21,7 @@ export default function HeroImage() {
           alt="Chowdhury Nabil Ahmed — profile photo"
           fill
           sizes="(min-width: 1024px) 400px, 240px"
-          className="object-cover grayscale contrast-[1.05] transition-[filter] duration-700 group-hover:grayscale-0"
+          className="object-cover"
           priority
         />
       </div>

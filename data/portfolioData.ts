@@ -378,7 +378,7 @@ export const certificationsData = [
     ],
   },
   {
-    title: 'International English Language Testing System (IELTS)',
+    title: 'IELTS - Band 7.0',
     issuer: 'IDP',
     icon: 'globe',
     images: [

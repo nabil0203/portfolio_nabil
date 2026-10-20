@@ -2,7 +2,15 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, ImageIcon } from 'lucide-react'
+import { ArrowUpRight, Code2, Cpu, Globe, ImageIcon } from 'lucide-react'
+import type { ElementType } from 'react'
+
+// Maps the `icon` value in portfolioData.ts to a lucide icon
+const iconMap: Record<string, ElementType> = {
+  code: Code2,
+  cpu: Cpu,
+  globe: Globe,
+}
 
 interface CertificationCardProps {
   cert: {
@@ -18,11 +26,12 @@ interface CertificationCardProps {
 /**
  * Compact column card: short document preview, issuer, title, footer.
  * The title button is stretched over the whole card (one big click target);
- * the page thumbnails sit above it so they can open a specific image.
+ * the lightbox handles moving between images.
  */
 export default function CertificationCard({ cert, index, onOpen }: CertificationCardProps) {
   const [imgError, setImgError] = useState(false)
   const count = cert.images.length
+  const Icon = iconMap[cert.icon] ?? Code2
 
   return (
     <motion.article
@@ -48,22 +57,34 @@ export default function CertificationCard({ cert, index, onOpen }: Certification
 
       {/* Details */}
       <div className="flex flex-1 flex-col p-4">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-steel-500">{cert.issuer}</p>
+        <div className="flex items-start gap-3">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-steel-300 bg-steel-50 text-steel-700">
+            <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+          </span>
 
-        <h3 className="mt-1 font-display text-base font-semibold leading-snug text-steel-800">
-          <button
-            type="button"
-            onClick={() => onOpen(0)}
-            aria-label={`View ${cert.title} certificate${count > 1 ? `, ${count} images` : ''}`}
-            className="text-left after:absolute after:inset-0 after:content-['']"
-          >
-            {cert.title}
-          </button>
-        </h3>
+          <div className="min-w-0">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-steel-500">{cert.issuer}</p>
 
-        {/* Footer: page thumbnails (if several) and the action, on one line */}
+            <h3 className="mt-1 font-display text-base font-semibold leading-snug text-steel-800">
+              <button
+                type="button"
+                onClick={() => onOpen(0)}
+                aria-label={`View ${cert.title} certificate${count > 1 ? `, ${count} images` : ''}`}
+                className="text-left after:absolute after:inset-0 after:content-['']"
+              >
+                {cert.title}
+              </button>
+            </h3>
+          </div>
+        </div>
+
+        {/* Footer: image count (if several) and the action, on one line */}
         <div className="mt-auto flex items-center justify-between gap-3 pt-4">
-          
+          {count > 1 ? (
+            <span className="text-xs tabular-nums text-steel-500">{count} images</span>
+          ) : (
+            <span />
+          )}
 
           <span
             className="flex shrink-0 items-center gap-1 text-sm font-semibold text-steel-700 transition-colors group-hover:text-steel-800"

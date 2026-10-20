@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Bricolage_Grotesque, Instrument_Sans } from 'next/font/google'
+import { Plus_Jakarta_Sans, Inter } from 'next/font/google'
 import './globals.css'
 import { personalInfo, siteMetadata } from '@/data/portfolioData'
 
-const display = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-display', display: 'swap' })
-const body = Instrument_Sans({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
+const display = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-display', display: 'swap' })
+const body = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
 
 export const metadata: Metadata = {
   title: siteMetadata.title,

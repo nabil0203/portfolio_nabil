@@ -34,14 +34,14 @@ export default function HeroSection() {
           >
             <motion.h1
               variants={item}
-              className="font-display text-5xl sm:text-6xl md:text-5xl lg:text-7xl xl:text-6xl font-extrabold tracking-tight leading-[0.95] text-steel-50 mb-8"
+              className="font-display text-4xl min-[420px]:text-4xl sm:text-6xl md:text-5xl lg:text-7xl xl:text-6xl font-extrabold tracking-tight leading-[0.95] text-steel-50 mb-8"
             >
               {personalInfo.name}
             </motion.h1>
 
             <motion.h2
               variants={item}
-              className="text-lg sm:text-2xl lg:text-3xl font-semibold text-steel-300 mb-6 max-w-2xl"
+              className="text-lg sm:text-2xl lg:text-3xl font-bold text-steel-300 mb-6 max-w-2xl"
             >
               {personalInfo.title.split(',').map((part, index) => (
                 <span key={index} className="block">
@@ -57,7 +57,7 @@ export default function HeroSection() {
               {personalInfo.heroDescription}
             </motion.p>
 
-            <motion.div variants={item} className="flex flex-wrap gap-2 sm:gap-3">
+            <motion.div variants={item} className="grid w-full max-w-md grid-flow-col auto-cols-fr gap-2 sm:gap-3">
               {contactData.resume && (
                 <HeroButton href={contactData.resume} Icon={FileText} ariaLabel="View my Resume" primary>
                   Resume

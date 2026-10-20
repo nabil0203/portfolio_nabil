@@ -27,7 +27,7 @@ export default function HeroImage() {
       </div>
 
       {/* Availability tag, pinned to the frame */}
-      <div className="absolute -bottom-3 left-4 sm:left-6 flex items-center gap-2 rounded-md bg-steel-50 px-3 py-1.5 text-xs sm:text-sm font-semibold text-steel-800">
+      <div className="absolute -bottom-3 left-2 sm:left-2 flex items-center gap-1 rounded-md bg-steel-50 px-3 py-1.5 text-xs sm:text-sm font-semibold text-steel-800">
         <span className="relative flex h-2 w-2" aria-hidden="true">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-steel-500 opacity-60" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-steel-800" />

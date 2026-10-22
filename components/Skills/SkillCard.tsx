@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Code } from 'lucide-react'
+import { ArrowUpRight, Code } from 'lucide-react'
 import type { Skill } from '@/data/portfolioDataTypes'
 
 interface SkillCardProps {
@@ -46,7 +46,7 @@ function SkillChip({ skill }: { skill: Skill }) {
         {skill.name}
       </span>
       {skill.url && (
-        <span className="text-steel-500 -ml-0.5 leading-none text-[0.6rem] sm:text-[0.65rem]">↗</span>
+        <ArrowUpRight className="ml-1 inline h-3.5 w-3.5 align-[-2px]" aria-hidden="true" />
       )}
     </Tag>
   )

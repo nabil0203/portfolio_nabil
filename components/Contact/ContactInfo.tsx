@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Copy, Check } from 'lucide-react'
+import { Copy, Check, ArrowUpRight } from 'lucide-react'
 import { contactItems } from '@/data/portfolioData'
 
 export default function ContactInfo() {
@@ -72,6 +72,7 @@ export default function ContactInfo() {
                   className="text-steel-800 mt-0.5 font-medium text-[13px] sm:text-sm md:text-base truncate block hover:text-accent transition-colors underline-offset-2 hover:underline"
                 >
                   {item.value}
+                  <ArrowUpRight className="ml-1 inline h-3.5 w-3.5 align-[-2px]" aria-hidden="true" />
                 </a>
               ) : (
                 <p className="text-steel-800 mt-0.5 font-medium text-[13px] sm:text-sm md:text-base truncate">

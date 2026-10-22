@@ -392,7 +392,7 @@ export const certificationsData = [
 export const contactData: Contact = {
   email: 'nabilahmed0203@gmail.com',
   location: 'Dhamrai, Dhaka, Bangladesh',
-  phone: '+880170954627',
+  phone: '+8801709548627',
   github: 'https://github.com/nabil0203',
   linkedin: 'https://linkedin.com/in/nabil0203',
   resume: 'https://drive.google.com/file/d/12LMfHVCskTmOKRfbn6wUQjbzcQ8166xE/view?usp=sharing'

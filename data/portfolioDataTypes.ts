@@ -62,7 +62,7 @@ export interface VolunteerExperience {
 
 export interface Contact {
   email: string
-  biolink?: string
+  phone?: string
   location: string
   github: string
   linkedin: string

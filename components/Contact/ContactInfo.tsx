@@ -6,13 +6,13 @@ import { Copy, Check } from 'lucide-react'
 import { contactItems } from '@/data/portfolioData'
 
 export default function ContactInfo() {
-  const [copied, setCopied] = useState(false)
+  const [copiedLabel, setCopiedLabel] = useState<string | null>(null)
 
-  const copyEmail = async (email: string) => {
+  const handleCopy = async (label: string, value: string) => {
     try {
-      await navigator.clipboard.writeText(email)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      await navigator.clipboard.writeText(value)
+      setCopiedLabel(label)
+      setTimeout(() => setCopiedLabel(null), 2000)
     } catch {}
   }
 
@@ -26,7 +26,7 @@ export default function ContactInfo() {
           </h3>
         </div>
         <p className="text-sm sm:text-base text-secondary max-w-xl">
-          Feel free to reach out for collaborations, opportunities, or just a friendly chat about technology and development.
+          Feel free to reach out for collaborations, opportunities or just a friendly chat about technology and development.
         </p>
       </div>
 
@@ -45,20 +45,20 @@ export default function ContactInfo() {
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-xs sm:text-sm text-secondary font-medium">{item.label}</p>
-              {item.label === 'Email' ? (
+              {item.label === 'Email' || item.label === 'Phone' ? (
                 <div className="flex items-center gap-2 mt-0.5 min-w-0">
                   <span className="text-steel-800 font-medium text-[13px] sm:text-sm md:text-base truncate select-all">
                     {item.value}
                   </span>
                   <button
                     type="button"
-                    onClick={() => copyEmail(item.value)}
-                    title={copied ? 'Copied!' : 'Copy email'}
-                    aria-label="Copy email"
+                    onClick={() => handleCopy(item.label, item.value)}
+                    title={copiedLabel === item.label ? 'Copied!' : `Copy ${item.label.toLowerCase()}`}
+                    aria-label={`Copy ${item.label.toLowerCase()}`}
                     className="p-1 shrink-0 text-secondary hover:text-accent transition-colors"
                   >
-                    {copied ? (
-                      <Check className="w-4 h-4 text-emerald-600" />
+                    {copiedLabel === item.label ? (
+                      <Check className="w-4 h-4 text-steel-800" />
                     ) : (
                       <Copy className="w-4 h-4" />
                     )}

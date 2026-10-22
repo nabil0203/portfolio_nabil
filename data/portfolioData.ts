@@ -1,5 +1,5 @@
 
-import { Mail, MapPin, Linkedin, Link2 } from 'lucide-react'
+import { Mail, MapPin, Linkedin, Link2, Phone } from 'lucide-react'
 
 import {
   PersonalInfo,
@@ -391,8 +391,8 @@ export const certificationsData = [
 // Contact Information
 export const contactData: Contact = {
   email: 'nabilahmed0203@gmail.com',
-  biolink: 'https://nabil0203.bio.link',
   location: 'Dhamrai, Dhaka, Bangladesh',
+  phone: '+880170954627',
   github: 'https://github.com/nabil0203',
   linkedin: 'https://linkedin.com/in/nabil0203',
   resume: 'https://drive.google.com/file/d/12LMfHVCskTmOKRfbn6wUQjbzcQ8166xE/view?usp=sharing'
@@ -415,11 +415,11 @@ export const contactItems = [
     color: 'text-blue-400'
   },
   {
-    icon: Link2,
-    label: 'Bio Link',
-    value: 'nabil0203.bio.link',
-    href: contactData.biolink,
-    color: 'text-blue-400'
+    icon: Phone,
+    label: 'Phone',
+    value: contactData.phone,
+    href: `tel:${contactData.phone}`,
+    color: 'text-green-400'
   },
   {
     icon: MapPin,

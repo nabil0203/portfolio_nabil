@@ -1,22 +1,16 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import MotionDiv from '../MotionDiv'
 import SectionHeader from '../SectionHeader'
 import { certificationsData } from '@/data/portfolioData'
 import CertificationCard from './CertificationCard'
-import CertificationLightbox from './CertificationLightbox'
-
-interface LightboxState {
-  certIndex: number
-  imageIndex: number
-}
+import CertificationLightbox, { type LightboxState } from './CertificationLightbox'
 
 export default function CertificationsSection() {
   const [lightbox, setLightbox] = useState<LightboxState | null>(null)
 
-  const openLightbox = (certIndex: number, imageIndex = 0) =>
-    setLightbox({ certIndex, imageIndex })
+  const openLightbox = (certIndex: number) =>
+    setLightbox({ certIndex, imageIndex: 0 })
 
   const closeLightbox = useCallback(() => setLightbox(null), [])
 
@@ -72,7 +66,7 @@ export default function CertificationsSection() {
                 <CertificationCard
                   cert={cert}
                   index={certIndex}
-                  onOpen={(imageIndex = 0) => openLightbox(certIndex, imageIndex)}
+                  onOpen={() => openLightbox(certIndex)}
                 />
               </div>
             ))}

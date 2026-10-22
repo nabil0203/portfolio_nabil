@@ -6,16 +6,13 @@ import { skillsData } from '@/data/portfolioData'
 import SkillCard from './SkillCard'
 import { Skill } from '@/data/portfolioDataTypes'
 
-const skillGroups = (skillsData as Skill[]).reduce(
-  (acc, skill) => {
-    if (!acc[skill.category]) {
-      acc[skill.category] = []
-    }
-    acc[skill.category].push({ name: skill.name, url: skill.url, logo: skill.logo })
-    return acc
-  },
-  {} as Record<string, Array<{ name: string; url?: string; logo?: string }>>,
-)
+const skillGroups = skillsData.reduce<Record<string, Skill[]>>((acc, skill) => {
+  if (!acc[skill.category]) {
+    acc[skill.category] = []
+  }
+  acc[skill.category].push(skill)
+  return acc
+}, {})
 
 export default function SkillsSection() {
   if (Object.keys(skillGroups).length === 0) {

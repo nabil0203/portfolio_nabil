@@ -12,11 +12,7 @@ export default function AboutCard() {
           delay={index * 0.1}
           className="relative group h-full"
         >
-          {/* Subtle glow effect on hover */}
-
           <div className="relative h-full bg-steel-100  border border-steel-300 border-l-4 border-l-accent rounded-xl p-5 flex flex-col items-center justify-center text-center transition-all duration-300  group-hover:border-steel-300 shadow-none overflow-hidden">
-
-            {/* Background Decorative Gradient */}
 
             <div className="relative z-10 flex flex-col items-center">
               <div className="text-3xl sm:text-4xl font-black text-steel-800 tracking-tight leading-none mb-3  transition-all duration-300">

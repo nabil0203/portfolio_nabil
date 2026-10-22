@@ -122,15 +122,12 @@ portfolio_nabil/
 │   ├── MotionDiv.tsx            # Viewport scroll-reveal wrapper component
 │   ├── SectionDivider.tsx       # Visual section separator
 │   └── SectionHeader.tsx        # Consistent typography section headers
-├── contexts/
-│   └── MousePositionContext.tsx # Context provider for throttled mouse tracking (RAF)
 ├── data/
 │   ├── constants.ts             # Global constants (Web3Forms API key, scroll thresholds)
 │   ├── portfolioData.ts         # Single source of truth for all portfolio content
 │   └── portfolioDataTypes.ts    # TypeScript definitions for all portfolio data entities
 ├── hooks/
 │   ├── useContactForm.ts        # Form submission hook (honeypot, status management, Web3Forms)
-│   ├── useMediaQuery.ts         # CSS media query listener hook
 │   └── useScrollSpy.ts          # IntersectionObserver active navigation tracker
 ├── public/
 │   ├── images/
@@ -141,7 +138,7 @@ portfolio_nabil/
 │   └── logo.png                 # Personal brand logo
 ├── utils/
 │   └── dom.ts                   # Smooth scroll helper utilities
-├── next.config.js               # Next.js security headers & image domain settings
+├── next.config.js               # Next.js security headers
 ├── package.json                 # Scripts and package dependencies
 ├── tailwind.config.ts           # Tailwind CSS design system tokens and theme extensions
 └── tsconfig.json                # TypeScript configuration

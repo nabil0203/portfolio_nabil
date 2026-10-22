@@ -3,9 +3,9 @@
 import { useState } from 'react'
 import { WEB3FORMS_ACCESS_KEY, WEB3FORMS_URL } from '@/data/constants'
 
-export type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
-export interface ContactFormData {
+interface ContactFormData {
   name: string
   email: string
   subject: string

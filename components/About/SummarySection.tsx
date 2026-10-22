@@ -6,11 +6,7 @@ import { User, Sparkles } from 'lucide-react'
 export default function SummarySection() {
   return (
     <div className="relative group h-full">
-      {/* Premium glow effect on hover */}
-
       <div className="relative h-full bg-steel-100  border border-steel-300 rounded-xl p-6 sm:p-8 shadow-none overflow-hidden flex flex-col transition-all duration-300 group-hover:border-steel-300">
-
-        {/* Static background gradient — no longer mouse-driven */}
 
         <div className="flex items-center gap-4 mb-8 relative z-10">
           <div className="p-3 bg-accent/10 rounded-lg border border-accent/20 shadow-none">

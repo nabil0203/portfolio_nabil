@@ -28,14 +28,10 @@ const config: Config = {
           700: '#343A40',
           800: '#212529',
         },
-        // Semantic aliases (kept so existing class names keep working)
-        background: '#F8F9FA',
-        surface: '#E9ECEF',
-        primary: '#212529',
+        // Semantic aliases
         secondary: '#495057',
         accent: '#343A40',
         'accent-secondary': '#495057',
-        'accent-glow': '#6C757D',
       },
       fontFamily: {
         sans: ['var(--font-body)', 'system-ui', 'sans-serif'],

@@ -16,34 +16,34 @@ const BackToTop = dynamic(() => import('@/components/BackToTop'))
 
 export default function Home() {
   return (
-    <div>
-      <Navbar />
-      <HeroSection />
-      <main>
-        <MotionDiv>
-          <AboutSection />
-        </MotionDiv>
-        <MotionDiv>
-          <SkillsSection />
-        </MotionDiv>
-        <MotionDiv>
-          <ProjectsSection />
-        </MotionDiv>
-        <MotionDiv>
-          <EducationSection />
-        </MotionDiv>
-        <MotionDiv>
-          <CertificationsSection />
-        </MotionDiv>
-        <MotionDiv>
-          <AdditionalInfoSection />
-        </MotionDiv>
-        <MotionDiv>
-          <ContactSection />
-        </MotionDiv>
-      </main>
-      <Footer />
-      <BackToTop />
-    </div>
+    <>
+    <Navbar />
+    <HeroSection />
+    <main>
+      <MotionDiv>
+        <AboutSection />
+      </MotionDiv>
+      <MotionDiv>
+        <SkillsSection />
+      </MotionDiv>
+      <MotionDiv>
+        <ProjectsSection />
+      </MotionDiv>
+      <MotionDiv>
+        <EducationSection />
+      </MotionDiv>
+      <MotionDiv>
+        <CertificationsSection />
+      </MotionDiv>
+      <MotionDiv>
+        <AdditionalInfoSection />
+      </MotionDiv>
+      <MotionDiv>
+        <ContactSection />
+      </MotionDiv>
+    </main>
+    <Footer />
+    <BackToTop />
+    </>
   )
 }

@@ -1,5 +1,5 @@
 
-import { Mail, MapPin, Linkedin, Link2, Phone } from 'lucide-react'
+import { Mail, MapPin, Linkedin, Phone } from 'lucide-react'
 
 import {
   PersonalInfo,
@@ -7,7 +7,6 @@ import {
   Contact,
   Skill,
   Project,
-  Education,
   VolunteerExperience,
   PersonalDetails
 } from '@/data/portfolioDataTypes'

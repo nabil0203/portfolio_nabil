@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { BadgeCheck, ChevronLeft, ChevronRight, X } from 'lucide-react'
 import ImageWithFallback from './ImageWithFallback'
 
-interface LightboxState {
+export interface LightboxState {
   certIndex: number
   imageIndex: number
 }

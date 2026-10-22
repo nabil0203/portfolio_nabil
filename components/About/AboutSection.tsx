@@ -8,21 +8,19 @@ import AboutCard from './AboutCard'
 export default function AboutSection() {
   return (
     <section id="about" className="py-16 md:py-20 scroll-mt-16 bg-steel-50">
-      <div>
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <SectionHeader label="About" highlight="Me" className="mb-16" />
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <SectionHeader label="About" highlight="Me" className="mb-16" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch mt-10">
-            {/* Stats Grid - Left */}
-            <div className="order-1 lg:order-1 lg:col-span-5 xl:col-span-4 h-full">
-              <AboutCard />
-            </div>
-
-            {/* Summary Card - Right */}
-            <MotionDiv className="order-2 lg:order-2 lg:col-span-7 xl:col-span-8">
-              <SummarySection />
-            </MotionDiv>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch mt-10">
+          {/* Stats Grid - Left */}
+          <div className="order-1 lg:order-1 lg:col-span-5 xl:col-span-4 h-full">
+            <AboutCard />
           </div>
+
+          {/* Summary Card - Right */}
+          <MotionDiv className="order-2 lg:order-2 lg:col-span-7 xl:col-span-8">
+            <SummarySection />
+          </MotionDiv>
         </div>
       </div>
     </section>

@@ -10,7 +10,6 @@ const InputField = ({
   type = 'text', 
   value, 
   onChange, 
-  required = true,
   isTextArea = false 
 }: { 
   id: string, 
@@ -18,14 +17,13 @@ const InputField = ({
   type?: string, 
   value: string, 
   onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
-  required?: boolean,
   isTextArea?: boolean
 }) => (
   <div className="space-y-2">
     <label htmlFor={id} className="text-sm font-medium text-secondary ml-1">{label}</label>
     {isTextArea ? (
       <textarea
-        required={required}
+        required
         id={id}
         name={id}
         rows={5}
@@ -35,7 +33,7 @@ const InputField = ({
       />
     ) : (
       <input
-        required={required}
+        required
         id={id}
         name={id}
         type={type}
@@ -51,9 +49,7 @@ export default function ContactForm() {
   const { formData, status, handleChange, handleSubmit } = useContactForm()
 
   return (
-    <div className="bg-steel-100  border border-steel-300 p-5 sm:p-8 rounded-lg relative overflow-hidden group">
-      {/* Decorative glow */}
-
+    <div className="bg-steel-100  border border-steel-300 p-5 sm:p-8 rounded-lg relative overflow-hidden">
       <div className="relative z-10 mb-8">
         <div className="flex items-center gap-3 sm:gap-4 mb-4">
           <span className="text-accent text-xl font-light select-none flex-shrink-0">—</span>

@@ -14,8 +14,8 @@ export default function HeroImage() {
       {/* Offset frame behind the portrait */}
       <div className="absolute inset-0 translate-x-4 translate-y-4 sm:translate-x-5 sm:translate-y-5 rounded-lg border border-steel-500" aria-hidden="true" />
 
-      {/* Portrait — rendered in steel greys; colour returns on hover */}
-      <div className="group relative aspect-[4/5] overflow-hidden rounded-lg bg-steel-700">
+      {/* Portrait */}
+      <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-steel-700">
         <Image
           src="/images/profile.jpg"
           alt="Chowdhury Nabil Ahmed — profile photo"

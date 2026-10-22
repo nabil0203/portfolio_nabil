@@ -20,7 +20,7 @@ interface CertificationCardProps {
     images: string[]
   }
   index: number
-  onOpen: (imageIndex?: number) => void
+  onOpen: () => void
 }
 
 /**
@@ -68,7 +68,7 @@ export default function CertificationCard({ cert, index, onOpen }: Certification
             <h3 className="mt-1 font-display text-base font-semibold leading-snug text-steel-800">
               <button
                 type="button"
-                onClick={() => onOpen(0)}
+                onClick={onOpen}
                 aria-label={`View ${cert.title} certificate${count > 1 ? `, ${count} images` : ''}`}
                 className="text-left after:absolute after:inset-0 after:content-['']"
               >

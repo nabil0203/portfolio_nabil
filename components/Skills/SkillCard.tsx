@@ -2,14 +2,15 @@
 
 import Image from 'next/image'
 import { Code } from 'lucide-react'
+import type { Skill } from '@/data/portfolioDataTypes'
 
 interface SkillCardProps {
   category: string
-  skills: Array<{ name: string; url?: string; logo?: string }>
+  skills: Skill[]
 }
 
 /** A single skill chip — size is responsive via Tailwind classes. */
-function SkillChip({ skill }: { skill: { name: string; url?: string; logo?: string } }) {
+function SkillChip({ skill }: { skill: Skill }) {
   const Tag = skill.url ? 'a' : 'div'
 
   return (

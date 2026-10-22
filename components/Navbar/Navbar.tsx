@@ -17,7 +17,8 @@ const navItems = [
   { id: 'additional-information', label: 'Additional' },
 ]
 const contactItem = { id: 'contact', label: 'Contact' }
-const spyIds = [...navItems, contactItem].map(item => item.id)
+const allItems = [...navItems, contactItem]
+const spyIds = allItems.map(item => item.id)
 
 /**
  * Sticky top navigation.
@@ -25,7 +26,7 @@ const spyIds = [...navItems, contactItem].map(item => item.id)
  * Mobile: logo and a menu button; links open in a panel below the bar.
  */
 export default function Navbar() {
-  const { activeSection } = useScrollSpy(spyIds, SCROLL_THRESHOLD)
+  const activeSection = useScrollSpy(spyIds, SCROLL_THRESHOLD)
   const [menuOpen, setMenuOpen] = useState(false)
 
   // Close the mobile menu with Escape
@@ -122,7 +123,7 @@ export default function Navbar() {
             className="lg:hidden border-t border-steel-700 bg-steel-800 px-5 pb-5 pt-2 sm:px-8"
           >
             <ul className="flex flex-col">
-              {[...navItems, contactItem].map(item => {
+              {allItems.map(item => {
                 const isActive = activeSection === item.id
                 return (
                   <li key={item.id} className="border-b border-steel-700 last:border-b-0">

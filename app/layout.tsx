@@ -47,9 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="font-sans min-h-screen bg-steel-50 text-steel-800">
-        
-          {children}
-        
+        {children}
       </body>
     </html>
   )

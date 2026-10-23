@@ -54,7 +54,14 @@ export default function Navbar() {
           aria-label="Back to top"
           className={`shrink-0 rounded-lg ${ring}`}
         >
-          <Image src="/logo.png" alt="" width={36} height={36} className="object-contain" priority />
+          <Image
+            src="/logo.png"
+            alt=""
+            width={1195}
+            height={512}
+            className="block h-9 w-auto"
+            priority
+          />
         </button>
 
         {/* Desktop links */}
@@ -67,9 +74,8 @@ export default function Navbar() {
                   type="button"
                   onClick={() => go(item.id)}
                   aria-current={isActive ? 'true' : undefined}
-                  className={`relative py-2 text-sm font-medium transition-colors duration-200 ${ring} ${
-                    isActive ? 'text-steel-50' : 'text-steel-400 hover:text-steel-50'
-                  }`}
+                  className={`relative py-2 text-sm font-medium transition-colors duration-200 ${ring} ${isActive ? 'text-steel-50' : 'text-steel-400 hover:text-steel-50'
+                    }`}
                 >
                   {item.label}
                   {isActive && (
@@ -89,11 +95,10 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => go(contactItem.id)}
-          className={`hidden lg:inline-flex rounded-lg px-4 py-2 text-sm font-semibold transition-colors duration-200 ${ring} ${
-            activeSection === contactItem.id
+          className={`hidden lg:inline-flex rounded-lg px-4 py-2 text-sm font-semibold transition-colors duration-200 ${ring} ${activeSection === contactItem.id
               ? 'bg-steel-200 text-steel-800'
               : 'bg-steel-50 text-steel-800 hover:bg-steel-200'
-          }`}
+            }`}
         >
           {contactItem.label}
         </button>
@@ -131,9 +136,8 @@ export default function Navbar() {
                       type="button"
                       onClick={() => go(item.id)}
                       aria-current={isActive ? 'true' : undefined}
-                      className={`flex w-full items-center justify-between py-3.5 text-left text-base font-medium ${ring} ${
-                        isActive ? 'text-steel-50' : 'text-steel-300'
-                      }`}
+                      className={`flex w-full items-center justify-between py-3.5 text-left text-base font-medium ${ring} ${isActive ? 'text-steel-50' : 'text-steel-300'
+                        }`}
                     >
                       {item.label}
                       {isActive && <span className="h-1.5 w-1.5 rounded-full bg-steel-50" aria-hidden="true" />}

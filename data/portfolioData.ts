@@ -148,14 +148,14 @@ export const projectsData: Project[] = [
     id: 'edustack',
     title: 'EduStack',
     shortDescription: 'A full-stack e-learning platform with role-based access and course management.',
-    description: 'A learning management system built with Django REST Framework and React. EduStack supports three user roles—Admins, Teachers, and Students—with workflows for course management, video lessons, study materials, assignment submissions, and grading. JWT-based authentication secures access to role-specific features.',
+    description: 'A learning management system built with Django REST Framework and React. EduStack supports three user roles - Admins, Teachers, and Students with workflows for course management, video lessons, study materials, assignment submissions, and grading. JWT-based authentication secures access to role-specific features.',
     tools: [
       'Django', 'Django REST Framework', 'React', 'Vite', 'React Router', 'Axios', 'SQLite','JWT'
     ],
     features: [
       'Role-based access control for Admins, Teachers, and Students',
       'Course creation, management, and category filtering',
-      'Video lessons and downloadable study materials',
+      'Downloadable study materials',
       'Assignment submissions, grading, and feedback',
       'Student enrollment and progress tracking',
       'JWT authentication with token refresh and blacklisting',

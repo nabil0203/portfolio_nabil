@@ -122,10 +122,10 @@ export const skillsData: Skill[] = [
   { name: 'GitHub', category: 'Tools', logo: 'https://cdn.simpleicons.org/github/black' },
   { name: 'Postman', category: 'Tools', logo: 'https://cdn.simpleicons.org/postman' },
   { name: 'VS Code', category: 'Tools', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
-  
+
   // deployment
-  {name: 'Render', category: 'Deployment', logo: 'https://cdn.simpleicons.org/render'},
-  {name: 'Vercel', category: 'Deployment', logo: 'https://cdn.simpleicons.org/vercel'},
+  { name: 'Render', category: 'Deployment', logo: 'https://cdn.simpleicons.org/render' },
+  { name: 'Vercel', category: 'Deployment', logo: 'https://cdn.simpleicons.org/vercel' },
 
   // Others
   { name: 'Data Structures', category: 'Others' },
@@ -145,6 +145,29 @@ export const skillsData: Skill[] = [
 export const projectsData: Project[] = [
 
   {
+    id: 'edustack',
+    title: 'EduStack',
+    shortDescription: 'A full-stack e-learning platform with role-based access and course management.',
+    description: 'A learning management system built with Django REST Framework and React. EduStack supports three user roles—Admins, Teachers, and Students—with workflows for course management, video lessons, study materials, assignment submissions, and grading. JWT-based authentication secures access to role-specific features.',
+    tools: [
+      'Django', 'Django REST Framework', 'React', 'Vite', 'React Router', 'Axios', 'SQLite','JWT'
+    ],
+    features: [
+      'Role-based access control for Admins, Teachers, and Students',
+      'Course creation, management, and category filtering',
+      'Video lessons and downloadable study materials',
+      'Assignment submissions, grading, and feedback',
+      'Student enrollment and progress tracking',
+      'JWT authentication with token refresh and blacklisting',
+      'REST API integration between React and Django'
+    ],
+    githubUrl: 'https://github.com/nabil0203/EduStack',
+    liveUrl: '',
+    imageUrl: '',
+    year: '2026',
+    status: 'In Development',
+  },
+  {
     id: 'farm2market',
     title: 'Farm2Market',
     shortDescription: 'A modern multi-role agricultural marketplace.',
@@ -159,7 +182,6 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/nabil0203/Farm2Market',
     liveUrl: 'https://farm2market-dtll.onrender.com/',
     imageUrl: '/images/projects/farm2market.png',
-    featured: true,
     year: '2026',
     status: 'Live',
   },
@@ -178,7 +200,6 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/nabil0203/ShopNest',
     liveUrl: 'https://shopnest-4thm.onrender.com/',
     imageUrl: '/images/projects/shopnest.png',
-    featured: true,
     year: '2025',
     status: 'Live',
   },
@@ -197,7 +218,6 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/nabil0203/Coinly',
     liveUrl: 'https://coinly0203.vercel.app/',
     imageUrl: '/images/projects/coinly.png',
-    featured: true,
     year: '2025',
     status: 'Live',
   },
@@ -215,7 +235,6 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/nabil0203/taskify',
     liveUrl: 'https://taskify-cq2h.onrender.com',
     imageUrl: '/images/projects/taskify.jpg',
-    featured: true,
     year: '2025',
     status: 'Live',
   },
@@ -233,9 +252,8 @@ export const projectsData: Project[] = [
     ],
     githubUrl: 'https://github.com/nabil0203/Quiz_Verse',
     imageUrl: '/images/projects/quizverse.png',
-    featured: true,
     year: '2025',
-    status: 'Archived',
+    status: '',
   },
   {
     id: 'qr-code-generator',
@@ -250,9 +268,8 @@ export const projectsData: Project[] = [
     ],
     githubUrl: 'https://github.com/nabil0203/QR_Code_Generator',
     imageUrl: '/images/projects/qrcode.jpg',
-    featured: false,
     year: '2025',
-    status: 'Archived',
+    status: '',
   },
   {
     id: 'auto-vault',
@@ -267,9 +284,8 @@ export const projectsData: Project[] = [
       'University lab project for SE-332'
     ],
     githubUrl: 'https://github.com/nabil0203/AutoVault',
-    featured: false,
     year: '2024',
-    status: 'Archived',
+    status: '',
   },
   {
     id: 'scholar-shelf',
@@ -284,9 +300,8 @@ export const projectsData: Project[] = [
       'University lab project for SE-224'
     ],
     githubUrl: 'https://github.com/nabil0203/Scholar_Shelf',
-    featured: false,
     year: '2024',
-    status: 'Archived',
+    status: '',
   },
   {
     id: 'carMaster',
@@ -302,9 +317,8 @@ export const projectsData: Project[] = [
       'University project for SE-221'
     ],
     githubUrl: 'https://github.com/nabil0203/CarMaster',
-    featured: false,
     year: '2024',
-    status: 'Archived',
+    status: '',
   },
   {
     id: 'pharm-ease',
@@ -320,9 +334,8 @@ export const projectsData: Project[] = [
       'University lab project for SE-133'
     ],
     githubUrl: 'https://github.com/nabil0203/Pharm_Ease',
-    featured: false,
     year: '2024',
-    status: 'Archived',
+    status: '',
   },
 ]
 

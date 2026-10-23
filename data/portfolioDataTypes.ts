@@ -42,9 +42,8 @@ export interface Project {
   githubUrl?: string
   liveUrl?: string
   imageUrl?: string
-  featured?: boolean
   year?: string
-  status?: 'Live' | 'In Development' | 'Archived'
+  status?: 'Live' | 'In Development' | ''
 }
 
 export interface PersonalDetails {

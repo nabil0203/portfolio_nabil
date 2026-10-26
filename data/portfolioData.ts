@@ -355,12 +355,12 @@ export const personalDetailsData: PersonalDetails = {
 
 export const volunteerExperiencesData: VolunteerExperience[] = [
   {
-    organization: 'DIU Software Engineering Club',
+    organization: 'Software Engineering Club(SEC), DIU',
     role: 'General Member',
     duration: 'Feb 2023 - Present',
   },
   {
-    organization: 'Cyber Security Centre, DIU',
+    organization: 'Cyber Security Centre(CSC), DIU',
     role: 'General Member',
     duration: 'May 2023 - Jun 2024',
   },
@@ -383,10 +383,10 @@ export const certificationsData = [
     issuer: 'Phitron',
     icon: 'cpu',
     images: [
+      '/images/certifications/c_grade.png',
+      '/images/certifications/cpp_grade.png',
       '/images/certifications/ds_grade.png',
       '/images/certifications/algo_grade.png',
-      '/images/certifications/cpp_grade.png',
-      '/images/certifications/c_grade.png',
     ],
   },
   {
